@@ -7,3 +7,10 @@ Main program for the game.
 
 @version 0.0 18/03/2025
 */
+
+#include <stdio.h>
+
+int main() {
+    printf("Welcome to ProjetOS-2025!\n");
+    return 0;
+}

@@ -13,6 +13,7 @@ This file contains the functions to manage the links between the different files
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
+#include <limits.h> // Ajouté pour PATH_MAX
 
 /**
  * Create a hard link between two files.
@@ -51,7 +52,7 @@ int create_soft_link(const char *target, const char *linkpath) {
  * @return 0 on success, -1 on failure.
  */
 int display_soft_link_target(const char *linkpath) {
-    char buffer[PATH_MAX];
+    char buffer[PATH_MAX]; // PATH_MAX est maintenant défini
     ssize_t len = readlink(linkpath, buffer, sizeof(buffer) - 1);
     if (len == -1) {
         fprintf(stderr, "Error reading symbolic link: %s\n", strerror(errno));
