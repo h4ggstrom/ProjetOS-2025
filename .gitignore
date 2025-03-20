@@ -1,0 +1,3 @@
+#build and bin files excluded
+build/
+bin/

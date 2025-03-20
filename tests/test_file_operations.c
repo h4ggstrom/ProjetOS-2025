@@ -16,32 +16,32 @@ This file contains the tests for the file_operations.c file.
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-#include "../include/file_operations.h" // Inclure la fonction mycp
+#include "../include/file_operations.h" // Include the mycp function
 
-// Fonction utilitaire pour créer un fichier temporaire avec du contenu
-void create_temp_file(const char *path, const char *content) {
+// Utility function to create a temporary file with content
+static void create_temp_file(const char *path, const char *content) {
     int fd = open(path, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     cr_assert(fd >= 0, "Failed to create temporary file: %s", path);
     write(fd, content, strlen(content));
     close(fd);
 }
 
-// Test pour vérifier la copie d'un fichier
+// Test to verify successful file copy
 Test(file_operations, test_mycp_success) {
     const char *source_path = "test_source.txt";
     const char *dest_path = "test_dest.txt";
     const char *content = "Hello, world!";
 
-    // Créer un fichier source temporaire
+    // Create a temporary source file
     create_temp_file(source_path, content);
 
-    // Appeler la fonction mycp
+    // Call the mycp function
     int result = mycp(source_path, dest_path);
 
-    // Vérifier que la fonction a réussi
+    // Verify that the function succeeded
     cr_assert_eq(result, 0, "mycp failed with result: %d", result);
 
-    // Vérifier que le fichier de destination contient les mêmes données
+    // Verify that the destination file contains the same data
     char buffer[256] = {0};
     int fd = open(dest_path, O_RDONLY);
     cr_assert(fd >= 0, "Failed to open destination file: %s", dest_path);
@@ -50,25 +50,24 @@ Test(file_operations, test_mycp_success) {
 
     cr_assert_str_eq(buffer, content, "Content mismatch between source and destination");
 
-    // Nettoyer les fichiers temporaires
+    // Clean up temporary files
     remove(source_path);
     remove(dest_path);
-}
-
-// Test pour vérifier le comportement avec un fichier source inexistant
+}  
+// Test to verify behavior when source file does not exist
 Test(file_operations, test_mycp_source_not_found) {
     const char *source_path = "nonexistent.txt";
     const char *dest_path = "test_dest.txt";
 
-    // Appeler la fonction mycp
+    // Call the mycp function
     int result = mycp(source_path, dest_path);
 
-    // Vérifier que la fonction retourne une erreur
+    // Verify that the function returns an error
     cr_assert_eq(result, -1, "mycp should fail when source file does not exist");
 
-    // Vérifier que le fichier de destination n'a pas été créé
+    // Verify that the destination file was not created
     cr_assert(access(dest_path, F_OK) == -1, "Destination file should not exist");
 
-    // Nettoyer les fichiers temporaires (au cas où)
+    // Clean up temporary files (just in case)
     remove(dest_path);
-}
+}  
