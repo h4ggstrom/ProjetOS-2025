@@ -24,6 +24,9 @@ Test(create_hard_link, success) {
     const char *target = "test_target.txt";
     const char *linkpath = "test_hard_link.txt";
 
+    remove(target);
+    remove(linkpath);
+
     // Create a test target file
     FILE *file = fopen(target, "w");
     cr_assert_not_null(file, "Failed to create test target file.");
@@ -32,6 +35,7 @@ Test(create_hard_link, success) {
 
     // Test creating a hard link
     int result = create_hard_link(target, linkpath);
+    printf("create_hard_link result: %d\n", result);
     cr_assert_eq(result, 0, "create_hard_link failed with result: %d", result);
 
     // Verify the hard link
@@ -49,6 +53,9 @@ Test(create_soft_link, success) {
     const char *target = "test_target.txt";
     const char *linkpath = "test_soft_link.txt";
 
+    remove(target);
+    remove(linkpath);
+
     // Create a test target file
     FILE *file = fopen(target, "w");
     cr_assert_not_null(file, "Failed to create test target file.");
@@ -57,6 +64,7 @@ Test(create_soft_link, success) {
 
     // Test creating a symbolic link
     int result = create_soft_link(target, linkpath);
+    printf("create_soft_link result: %d\n", result);
     cr_assert_eq(result, 0, "create_soft_link failed with result: %d", result);
 
     // Verify the symbolic link
@@ -68,7 +76,7 @@ Test(create_soft_link, success) {
 
     // Cleanup
     remove(target);
-    remove(linkpath);
+    remove(linkpath); 
 }
 
 Test(display_soft_link_target, success) {

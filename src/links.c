@@ -39,10 +39,19 @@ int create_hard_link(const char *target, const char *linkpath) {
  * @return 0 on success, -1 on failure.
  */
 int create_soft_link(const char *target, const char *linkpath) {
+    // Vérifier si la cible existe
+    if (access(target, F_OK) == -1) {
+        fprintf(stderr, "Error: Target file does not exist: %s\n", strerror(errno));
+        return -1;
+    }
+
+    // Créer le lien symbolique
     if (symlink(target, linkpath) == -1) {
         fprintf(stderr, "Error creating symbolic link: %s\n", strerror(errno));
         return -1;
     }
+
+    printf("Symbolic link created successfully: %s -> %s\n", linkpath, target);
     return 0;
 }
 
