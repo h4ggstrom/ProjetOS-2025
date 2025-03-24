@@ -14,6 +14,7 @@ This file contains the functions to manage the links between the different files
 #include <errno.h>
 #include <string.h>
 #include <limits.h> // Ajouté pour PATH_MAX
+#include <linux/limits.h>
 
 /**
  * Create a hard link between two files.
