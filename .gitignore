@@ -1,3 +1,4 @@
 # Exclude bin and build directories and their contents
 bin/
 build/
+tmp/
