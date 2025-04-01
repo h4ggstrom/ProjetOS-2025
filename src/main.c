@@ -14,9 +14,25 @@ Killian Treuil (%)
 */
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "../include/partition.h"
 #include "../include/file_operations.h"
 #include "../include/links.h"
+
+// Fonction pour afficher le menu
+void display_menu() {
+    printf("\nMenu des commandes principales :\n");
+    printf("1. Créer un fichier\n");
+    printf("2. Supprimer un fichier\n");
+    printf("3. Copier un fichier\n");
+    printf("4. Déplacer un fichier\n");
+    printf("5. Créer un répertoire\n");
+    printf("6. Créer un lien symbolique\n");
+    printf("7. Créer un lien dur\n");
+    printf("8. Quitter\n");
+    printf("Choisissez une option : ");
+}
 
 int main() {
     // Création des répertoires
@@ -39,5 +55,88 @@ int main() {
     create_hard_link("demo/rep02/file_test_lien_dur.txt", "demo/rep02/rep02_01/file_test_lien_dur.txt");
 
     printf("Arborescence créée avec succès dans le dossier 'demo' !\n");
+
+    // Menu interactif
+    int choice;
+    char path[256], target[256], content[256];
+    while (1) {
+        display_menu();
+        scanf("%d", &choice);
+        getchar(); // Consommer le caractère '\n' restant
+
+        switch (choice) {
+            case 1: // Créer un fichier
+                printf("Entrez le chemin du fichier : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0'; // Supprimer le '\n'
+                printf("Entrez le contenu du fichier (laisser vide pour aucun contenu) : ");
+                fgets(content, sizeof(content), stdin);
+                content[strcspn(content, "\n")] = '\0';
+                create_file(path, strlen(content) > 0 ? content : NULL);
+                break;
+
+            case 2: // Supprimer un fichier
+                printf("Entrez le chemin du fichier à supprimer : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0';
+                delete_file(path);
+                break;
+
+            case 3: // Copier un fichier
+                printf("Entrez le chemin du fichier source : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0';
+                printf("Entrez le chemin du fichier destination : ");
+                fgets(target, sizeof(target), stdin);
+                target[strcspn(target, "\n")] = '\0';
+                mycp(path, target);
+                break;
+
+            case 4: // Déplacer un fichier
+                printf("Entrez le chemin du fichier source : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0';
+                printf("Entrez le répertoire de destination : ");
+                fgets(target, sizeof(target), stdin);
+                target[strcspn(target, "\n")] = '\0';
+                mymv(path, target);
+                break;
+
+            case 5: // Créer un répertoire
+                printf("Entrez le chemin du répertoire à créer : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0';
+                create_directory(path);
+                break;
+
+            case 6: // Créer un lien symbolique
+                printf("Entrez le chemin de la cible : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0';
+                printf("Entrez le chemin du lien symbolique : ");
+                fgets(target, sizeof(target), stdin);
+                target[strcspn(target, "\n")] = '\0';
+                create_soft_link(path, target);
+                break;
+
+            case 7: // Créer un lien dur
+                printf("Entrez le chemin de la cible : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0';
+                printf("Entrez le chemin du lien dur : ");
+                fgets(target, sizeof(target), stdin);
+                target[strcspn(target, "\n")] = '\0';
+                create_hard_link(path, target);
+                break;
+
+            case 8: // Quitter
+                printf("Au revoir !\n");
+                exit(0);
+
+            default:
+                printf("Option invalide. Veuillez réessayer.\n");
+        }
+    }
+
     return 0;
 }
