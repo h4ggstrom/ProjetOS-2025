@@ -5,7 +5,7 @@ This file contains the functions to manage the links between the different files
 @author Alexandre Ledard (%)
 @author Killian Treuil (%)
 
-@version 0.0 18/03/2025
+@version 0.2 18/03/2025
 */
 
 #include <stdio.h>
