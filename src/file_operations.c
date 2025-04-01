@@ -15,6 +15,43 @@ This file contains the functions that are used to read and write to files.
 #include <string.h>
 #include <errno.h>
 #include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * Create a file with optional content.
+ * 
+ * @param path The path of the file to create.
+ * @param content The content to write to the file (can be NULL).
+ * @return 0 on success, -1 on failure.
+ */
+int create_file(const char *path, const char *content) {
+    FILE *file = fopen(path, "w");
+    if (!file) {
+        fprintf(stderr, "Error creating file: %s\n", strerror(errno));
+        return -1;
+    }
+    if (content) {
+        fprintf(file, "%s", content);
+    }
+    fclose(file);
+    printf("File created successfully: %s\n", path);
+    return 0;
+}
+
+/**
+ * Delete a file.
+ * 
+ * @param path The path of the file to delete.
+ * @return 0 on success, -1 on failure.
+ */
+int delete_file(const char *path) {
+    if (unlink(path) == -1) {
+        fprintf(stderr, "Error deleting file: %s\n", strerror(errno));
+        return -1;
+    }
+    printf("File deleted successfully: %s\n", path);
+    return 0;
+}
 
 int mycp(const char *source_path, const char *dest_path) {
     int source_fd, dest_fd;
