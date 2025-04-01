@@ -73,3 +73,35 @@ int mycp(const char *source_path, const char *dest_path) {
 
     return 0; // Success
 }
+
+/**
+ * @brief function to move a file from one location to another.
+ * 
+ * @param source_path source file path
+ * @param dest_dir destination directory path
+ * @return int
+ * @retval 0 on success
+ * @retval -1 on failure
+ */
+int mymv(const char *source_path, const char *dest_dir) {
+    char dest_path[4096];
+    const char *filename = strrchr(source_path, '/');
+    
+    // Extract the filename from the source path
+    if (filename) {
+        filename++; // Skip the '/'
+    } else {
+        filename = source_path;
+    }
+
+    // Construct the destination path
+    snprintf(dest_path, sizeof(dest_path), "%s/%s", dest_dir, filename);
+
+    // Use rename to move the file
+    if (rename(source_path, dest_path) < 0) {
+        perror("Error moving file");
+        return -1;
+    }
+
+    return 0; // Success
+}
