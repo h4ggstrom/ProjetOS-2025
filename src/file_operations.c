@@ -16,6 +16,7 @@ This file contains the functions that are used to read and write to files.
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <dirent.h> // Pour parcourir les répertoires
 
 /**
  * Create a file with optional content.
@@ -141,4 +142,34 @@ int mymv(const char *source_path, const char *dest_dir) {
     }
 
     return 0; // Success
+}
+
+/**
+ * Print the content of a directory.
+ * 
+ * @param path The path of the directory to print. If NULL or empty, the current directory is used.
+ * @return 0 on success, -1 on failure.
+ */
+int print_directory_content(const char *path) {
+    DIR *dir;
+    struct dirent *entry;
+
+    // Si aucun chemin n'est fourni, utiliser le répertoire courant
+    if (path == NULL || strlen(path) == 0) {
+        path = ".";
+    }
+
+    dir = opendir(path);
+    if (!dir) {
+        fprintf(stderr, "Error opening directory '%s': %s\n", path, strerror(errno));
+        return -1;
+    }
+
+    printf("Contenu du répertoire '%s' :\n", path);
+    while ((entry = readdir(dir)) != NULL) {
+        printf("%s\n", entry->d_name);
+    }
+
+    closedir(dir);
+    return 0;
 }

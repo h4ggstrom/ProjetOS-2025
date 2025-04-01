@@ -40,5 +40,6 @@ $(TEST_BIN): $(TEST_OBJ_FILES) $(filter-out $(BUILD_DIR)/main.o, $(OBJ_FILES))
 # Nettoyage des fichiers générés
 clean:
 	rm -rf $(BUILD_DIR) $(BIN_DIR)
+	rm -rf demo/*
 
 .PHONY: all tests clean

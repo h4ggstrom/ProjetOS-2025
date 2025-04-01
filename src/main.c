@@ -18,6 +18,7 @@ Killian Treuil (%)
 #include <string.h>
 #include "../include/partition.h"
 #include "../include/file_operations.h"
+#include "../include/permissions.h"
 #include "../include/links.h"
 
 // Fonction pour afficher le menu
@@ -30,7 +31,9 @@ void display_menu() {
     printf("5. Créer un répertoire\n");
     printf("6. Créer un lien symbolique\n");
     printf("7. Créer un lien dur\n");
-    printf("8. Quitter\n");
+    printf("8. Modifier les droits d'accès d'un fichier\n");
+    printf("9. Afficher le contenu d'un répertoire\n"); // Nouvelle option
+    printf("10. Quitter\n");
     printf("Choisissez une option : ");
 }
 
@@ -129,7 +132,31 @@ int main() {
                 create_hard_link(path, target);
                 break;
 
-            case 8: // Quitter
+            case 8: // Modifier les droits d'accès d'un fichier
+                printf("Entrez le chemin du fichier ou répertoire : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0'; // Supprimer le '\n'
+                printf("Entrez les nouveaux droits (en octal, ex: 0644) : ");
+                unsigned int mode;
+                scanf("%o", &mode); // Lire les droits en octal
+                getchar(); // Consommer le caractère '\n' restant
+                if (change_permissions(path, mode) == 0) {
+                    printf("Droits modifiés avec succès pour : %s\n", path);
+                } else {
+                    printf("Échec de la modification des droits pour : %s\n", path);
+                }
+                break;
+
+            case 9: // Afficher le contenu d'un répertoire
+                printf("Entrez le chemin du répertoire (laisser vide pour le répertoire courant) : ");
+                fgets(path, sizeof(path), stdin);
+                path[strcspn(path, "\n")] = '\0'; // Supprimer le '\n'
+                if (print_directory_content(strlen(path) > 0 ? path : NULL) == -1) {
+                    printf("Erreur lors de l'affichage du contenu du répertoire.\n");
+                }
+                break;
+
+            case 10: // Quitter
                 printf("Au revoir !\n");
                 exit(0);
 
