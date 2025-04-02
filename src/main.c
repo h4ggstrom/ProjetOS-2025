@@ -35,6 +35,42 @@ void execute_cd(char **args);
 int is_string_numeric(const char *str);
 
 
+/**
+ * @brief Point d'entrée principal du shell interactif
+ * 
+ * @return int Code de sortie :
+ *             - EXIT_SUCCESS (0) en cas de succès
+ *             - EXIT_FAILURE (1) en cas d'erreur critique
+ * 
+ * @details Fonctionnement du shell :
+ * 
+ * ### Commandes internes :
+ * - `exit` : Quitte le shell
+ * - `cd [dir]` : Change le répertoire courant
+ * - `display_menu` : Affiche le menu des options
+ * - `build_demo` : Construit l'arborescence de démonstration
+ * 
+ * ### Options numériques (1-10) :
+ * 1. Créer un fichier
+ * 2. Supprimer un fichier
+ * 3. Copier un fichier
+ * 4. Déplacer un fichier
+ * 5. Créer un répertoire
+ * 6. Créer un lien symbolique
+ * 7. Créer un lien dur
+ * 8. Modifier les permissions
+ * 9. Lister un répertoire
+ * 10. Quitter
+ * 
+ * ### Commandes externes :
+ * Exécute n'importe quelle commande système disponible dans $PATH
+ * 
+ * @note Le shell gère jusqu'à MAX_ARGS arguments par commande
+ * @warning Les commandes externes sont exécutées dans un processus fils
+ * 
+ * @see execute_cd(), display_menu(), build_demo() pour les fonctions internes
+ * @see create_file(), delete_file(), mycp() pour les opérations sur fichiers
+ */
 int main() {
     char line[MAX_LINE];
     char *args[MAX_ARGS];
@@ -216,6 +252,9 @@ void display_menu() {
     printf("10. Quitter\n");
 }
 
+/**
+ * @brief Creer l'ensemble des fichiers et répertoires nécéssaire à la demo.
+ */
 void build_demo(){
      // Création des répertoires
      create_directories_recursively("demo/rep01/rep01_01");
@@ -239,6 +278,10 @@ void build_demo(){
      printf("Arborescence créée avec succès dans le dossier 'demo' !\n");
 }
 
+/**
+ * @brief fonction qui gére la commande cd(déplacement de repertoire) pour notre shell.
+ * @param args Le tableau d'arguments du shell
+ */
 void execute_cd(char **args) {
     if (args[1] == NULL) {
         fprintf(stderr, "cd: argument attendu\n");
@@ -255,7 +298,10 @@ void execute_cd(char **args) {
     }
 }
 
-
+/**
+ * @brief vérifie si la chaine de caractères est un nombre
+ * @param str string à vérifier
+ */
 int is_string_numeric(const char *str) {
     if (str == NULL) return 0;
     for (int i = 0; str[i] != '\0'; i++) {
