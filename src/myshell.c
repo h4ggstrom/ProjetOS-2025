@@ -24,7 +24,7 @@ void execute_cd(char **args) {
         }
     }
 }
-
+/*
 int main() {
     char line[MAX_LINE];
     char *args[MAX_ARGS];
@@ -79,4 +79,4 @@ int main() {
     }
 
     return EXIT_SUCCESS;
-}
+}*/
