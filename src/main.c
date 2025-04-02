@@ -165,6 +165,7 @@ int main() {
                     default:
                         printf("Option invalide. Veuillez réessayer.\n");
                 }
+                continue;
             }
 
         }else if (strcmp(args[0], "exit") == 0) {
