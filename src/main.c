@@ -33,6 +33,7 @@ void display_menu();
 void build_demo();
 void execute_cd(char **args);
 int is_string_numeric(const char *str);
+void display_help();
 
 
 /**
@@ -80,7 +81,7 @@ int main() {
 
     while (1) {
         // Afficher le prompt
-        printf("myshell> ");
+        printf("Tapez \"help\" pour afficher l'aide\nmyshell> ");
         fflush(stdout);
 
         // Lire la ligne de commande
@@ -206,6 +207,9 @@ int main() {
 
         }else if (strcmp(args[0], "exit") == 0) {
             break;
+        }else if (strcmp(args[0], "help") == 0) {
+            display_help();
+            continue;
         }else if (strcmp(args[0], "display_menu") == 0) {
             display_menu();
             continue; // Passer à l'itération suivante sans forker
@@ -279,7 +283,7 @@ void build_demo(){
 }
 
 /**
- * @brief fonction qui gére la commande cd(déplacement de repertoire) pour notre shell.
+ * @brief fonction qui gére la commande cd (déplacement de repertoire) pour notre shell.
  * @param args Le tableau d'arguments du shell
  */
 void execute_cd(char **args) {
@@ -310,6 +314,36 @@ int is_string_numeric(const char *str) {
         }
     }
     return 1;
+}
+
+/**
+ * @brief Affiche l'aide pour toutes les commandes disponibles
+ * 
+ * @details Liste toutes les commandes internes et leur fonctionnalité
+ */
+void display_help() {
+    printf("\nAide du shell - Commandes disponibles:\n\n");
+    
+    printf("Commandes internes:\n");
+    printf("  %-20s %s\n", "exit", "Quitter le shell");
+    printf("  %-20s %s\n", "cd [dir]", "Changer de répertoire");
+    printf("  %-20s %s\n", "build_demo", "Construire l'arborescence de démo");
+    printf("  %-20s %s\n", "help", "Afficher cette aide");
+    
+    printf("\nOptions numériques (1-10):\n");
+    printf("  %-20s %s\n", "1", "Créer un fichier");
+    printf("  %-20s %s\n", "2", "Supprimer un fichier");
+    printf("  %-20s %s\n", "3", "Copier un fichier");
+    printf("  %-20s %s\n", "4", "Déplacer un fichier");
+    printf("  %-20s %s\n", "5", "Créer un répertoire");
+    printf("  %-20s %s\n", "6", "Créer un lien symbolique");
+    printf("  %-20s %s\n", "7", "Créer un lien dur");
+    printf("  %-20s %s\n", "8", "Modifier les permissions");
+    printf("  %-20s %s\n", "9", "Lister un répertoire");
+    printf("  %-20s %s\n", "10", "Quitter");
+    
+    printf("\nCommandes externes:\n");
+    printf("  Toutes les commandes système disponibles dans $PATH\n");
 }
 
 /*
