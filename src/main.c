@@ -175,6 +175,9 @@ int main() {
         } else if (strcmp(args[0], "cd") == 0) {
             execute_cd(args);
             continue; // Passer à l'itération suivante sans forker
+        }else if (strcmp(args[0], "build_demo") == 0) {
+            build_demo();
+            continue; // Passer à l'itération suivante sans forker
         }
 
         // Forker un processus enfant
