@@ -25,7 +25,7 @@
  *          TAILLES DES STRUCTURES            *
  **********************************************/
 
-#define BLOCK_SIZE_DEFAULT 4096  // Taille par défaut d'un bloc (4Ko)
+#define BLOCK_SIZE_DEFAULT 1024  // Taille par défaut d'un bloc (4Ko)
 #define SUPERBLOCK_SIZE 512      // Taille du superbloc
 #define INODE_SIZE 128           // Taille d'un inode
 #define DIR_ENTRY_SIZE 32        // Taille d'une entrée de répertoire

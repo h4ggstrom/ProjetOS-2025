@@ -67,6 +67,7 @@ void init_partition(FileSystem *fs, const char *img_path, uint32_t total_size, u
     fs->inode_table[0].created_at = time(NULL);
     fs->inode_table[0].modified_at = time(NULL);
     fs->inode_table[0].accessed_at = time(NULL);
+    fs->inode_table[0].is_used = 1;
 
     // Initialiser la structure Directory pour le répertoire racine
     Directory *root_dir = malloc(sizeof(Directory));
@@ -136,6 +137,8 @@ void load_partition(FileSystem *fs, const char *img_path) {
     for (uint32_t i = 0; i < fs->superblock.total_blocks; i++) {
         fs->partition.blocks[i].index = i;
         fs->partition.blocks[i].data = malloc(fs->superblock.block_size);
+        fs->partition.block_size = fs->superblock.block_size;
+        fs->partition.total_blocks = fs->superblock.total_blocks;
         fread(fs->partition.blocks[i].data, fs->superblock.block_size, 1, img_file);
         fs->partition.blocks[i].is_free = (fs->partition.bitmap[i] == 0);
     }
@@ -152,13 +155,24 @@ void load_partition(FileSystem *fs, const char *img_path) {
  * @return Index of the allocated block, or -1 if no blocks are available
  */
 int allocate_block(FileSystem *fs) {
-    for (uint32_t i = 0; i < fs->superblock.total_blocks; i++) {
-        if (fs->partition.bitmap[i] == 0) { // Bloc libre
-            fs->partition.bitmap[i] = 1;   // Marquer comme utilisé
-            fs->superblock.free_blocks--;  // Réduire le nombre de blocs libres
-            fs->partition.blocks[i].is_free = false; // Mettre à jour l'état du bloc
-            fs->partition.blocks[i].data = calloc(1, fs->superblock.block_size); // Allouer la mémoire pour le bloc
-            return i; // Retourner l'index du bloc alloué
+    if (!fs || !fs->partition.bitmap) return -1;
+
+    uint32_t total_bytes = (fs->superblock.total_blocks + 7) / 8;
+    
+    for (uint32_t byte = 0; byte < total_bytes; byte++) {
+        if (fs->partition.bitmap[byte] != 0xFF) { // Au moins un bit libre dans ce byte
+            for (uint8_t bit = 0; bit < 8; bit++) {
+                uint32_t block_idx = byte * 8 + bit;
+                if (block_idx >= fs->superblock.total_blocks) break;
+                
+                if (!(fs->partition.bitmap[byte] & (1 << bit))) {
+                    // Marquer le bloc comme utilisé
+                    fs->partition.bitmap[byte] |= (1 << bit);
+                    fs->superblock.free_blocks--;
+                    fs->partition.blocks[block_idx].is_free = false;
+                    return block_idx;
+                }
+            }
         }
     }
     return -1; // Aucun bloc libre
@@ -619,9 +633,15 @@ bool split_path(const char *full_path, char *parent_path, char *filename) {
  * @param fs Pointeur vers le système de fichiers
  * @return uint32_t Numéro d'inode alloué, ou (uint32_t)-1 si erreur
  */
+
 uint32_t allocate_inode(FileSystem *fs) {
+    if (!fs) return (uint32_t)-1;
     for (uint32_t i = 0; i < MAX_FILES; i++) {
-        if (fs->inode_table[i].id == 0) { // Inode libre
+        // Vérifie à la fois le flag is_used ET l'id
+        if (!fs->inode_table[i].is_used && fs->inode_table[i].id == 0) {
+            // Marque l'inode comme utilisé
+            fs->inode_table[i].is_used = true;
+            fs->inode_table[i].id = i; // ID correspond à l'index
             return i;
         }
     }
@@ -647,6 +667,7 @@ void init_inode(Inode *inode, uint32_t id, uint16_t permissions, bool is_directo
     inode->modified_at = inode->created_at;
     inode->accessed_at = inode->created_at;
     inode->is_directory = is_directory;
+    inode->is_used = 0;
 }
 
 /**
@@ -659,38 +680,50 @@ void init_inode(Inode *inode, uint32_t id, uint16_t permissions, bool is_directo
  * @return true si succès, false si échec
  */
 bool add_directory_entry(FileSystem *fs, uint32_t dir_inode, uint32_t entry_inode, const char *name) {
-    if (dir_inode >= MAX_FILES || entry_inode >= MAX_FILES || !name) {
+    // 1. Vérifications
+    if (!fs || dir_inode >= MAX_FILES || entry_inode >= MAX_FILES || !name || strlen(name) >= MAX_FILENAME_LEN) {
         return false;
     }
 
-    Inode *dir = &fs->inode_table[dir_inode];
-    if (!dir->is_directory) {
+    Inode *dir_inode_ptr = &fs->inode_table[dir_inode];
+    if (!dir_inode_ptr->is_directory) {
         return false;
     }
 
-    Directory directory;
-    if (!read_directory(fs, dir_inode, &directory)) {
+    // 2. Charger le répertoire
+    Directory dir;
+    if (!read_directory(fs, dir_inode, &dir)) {
         return false;
     }
 
-    // Vérifier si le répertoire est plein
-    if (directory.entry_count >= DIR_ENTRIES_LIMIT) {
+    // 3. Vérifier si l'entrée existe déjà
+    for (uint32_t i = 0; i < dir.entry_count; i++) {
+        if (strcmp(dir.names[i], name) == 0) {
+            return false; // Entrée déjà existante
+        }
+    }
+
+    // 4. Vérifier la capacité
+    if (dir.entry_count >= DIR_ENTRIES_LIMIT) {
         return false;
     }
 
-    // Vérifier si le nom est trop long
-    if (strlen(name) >= MAX_FILENAME_LEN) {
+    // 5. Ajouter la nouvelle entrée
+    dir.entries[dir.entry_count] = entry_inode;
+    strncpy(dir.names[dir.entry_count], name, MAX_FILENAME_LEN - 1);
+    dir.names[dir.entry_count][MAX_FILENAME_LEN - 1] = '\0'; // Sécurité
+    dir.entry_count++;
+
+    // 6. Sauvegarder
+    if (!write_directory(fs, dir_inode, &dir)) {
         return false;
     }
 
-    // Ajouter la nouvelle entrée
-    directory.entries[directory.entry_count] = entry_inode;
-    strncpy(directory.names[directory.entry_count], name, MAX_FILENAME_LEN - 1);
-    directory.names[directory.entry_count][MAX_FILENAME_LEN - 1] = '\0';
-    directory.entry_count++;
+    // 7. Mettre à jour les métadonnées
+    dir_inode_ptr->modified_at = time(NULL);
+    dir_inode_ptr->size += sizeof(Directory); // Taille approximative
 
-    // Écrire le répertoire modifié
-    return write_directory(fs, dir_inode, &directory);
+    return true;
 }
 
 /**
@@ -700,20 +733,34 @@ bool add_directory_entry(FileSystem *fs, uint32_t dir_inode, uint32_t entry_inod
  * @param inode_num Numéro d'inode à libérer
  */
 void free_inode(FileSystem *fs, uint32_t inode_num) {
-    if (inode_num >= MAX_FILES) {
+    // 1. Vérifications de sécurité
+    if (!fs || inode_num >= MAX_FILES) {
         return;
     }
 
     Inode *inode = &fs->inode_table[inode_num];
-    if (inode->id == 0) {
-        return; // Déjà libre
+    
+
+    // 3. Gestion des liens (comptage de références)
+    if (inode->links_count > 1) {
+        inode->links_count--;
+        return; // On ne libère pas tant qu'il reste des liens
     }
 
-    // Libérer les blocs associés
-    //truncate_file(fs, inode_num);
-
-    // Marquer l'inode comme libre
-    memset(inode, 0, sizeof(Inode));
+    // 4. Libération des ressources
+    //truncate_file(fs, inode_num); // Doit être implémentée
+    
+    // 5. Réinitialisation sélective (conserve le numéro)
+    inode->is_used = false;
+    inode->size = 0;
+    inode->is_directory = false;
+    inode->links_count = 0;
+    memset(inode->blocks, 0, sizeof(inode->blocks));
+    inode->indirect_block = 0;
+    inode->double_indirect = 0;
+    
+    // Optionnel : conserver certaines infos pour le débogage
+    inode->modified_at = (uint64_t)time(NULL);
 }
 
 /**
@@ -795,40 +842,48 @@ bool write_directory(FileSystem *fs, uint32_t dir_inode, Directory *dir) {
  * @return true si les blocs sont disponibles, false sinon
  */
 bool ensure_inode_blocks(FileSystem *fs, Inode *inode, uint32_t blocks_needed) {
-    uint32_t current_blocks = 0;
-    
-    // Compter les blocs déjà alloués
-    for (int i = 0; i < 12; i++) {
-        if (inode->blocks[i] != 0) current_blocks++;
+    // 1. Vérifications de sécurité
+    if (!fs || !inode || blocks_needed > 12) {  // Maximum 12 blocs directs
+        return false;
     }
-    
-    // Si suffisamment de blocs, retourner vrai
+
+    // 2. Compter les blocs déjà alloués
+    uint32_t current_blocks = 0;
+    for (uint32_t i = 0; i < 12; i++) {
+        if (inode->blocks[i] != 0) {
+            current_blocks++;
+        }
+    }
+
+    // 3. Vérifier si allocation nécessaire
     if (current_blocks >= blocks_needed) {
         return true;
     }
-    
-    // Allouer les blocs supplémentaires nécessaires
+
+    // 4. Allouer les nouveaux blocs temporairement
     uint32_t blocks_to_allocate = blocks_needed - current_blocks;
+    uint32_t new_blocks[12] = {0};
+    uint32_t allocated_count = 0;
+
     for (uint32_t i = 0; i < blocks_to_allocate; i++) {
-        int new_block = allocate_block(fs);
-        if (new_block == -1) {
-            // Échec, libérer les blocs déjà alloués
-            for (uint32_t j = 0; j < i; j++) {
-                free_block(fs, inode->blocks[current_blocks + j]);
-                inode->blocks[current_blocks + j] = 0;
+        int block_num = allocate_block(fs);
+        if (block_num == -1) {
+            // Rollback : libérer les blocs déjà alloués
+            for (uint32_t j = 0; j < allocated_count; j++) {
+                free_block(fs, new_blocks[j]);
             }
             return false;
         }
-        
-        // Trouver le premier slot libre dans les blocs directs
-        for (int j = 0; j < 12; j++) {
-            if (inode->blocks[j] == 0) {
-                inode->blocks[j] = new_block;
-                break;
-            }
+        new_blocks[allocated_count++] = block_num;
+    }
+
+    // 5. Assigner les nouveaux blocs aux slots vides
+    for (uint32_t i = 0, assigned = 0; i < 12 && assigned < allocated_count; i++) {
+        if (inode->blocks[i] == 0) {
+            inode->blocks[i] = new_blocks[assigned++];
         }
     }
-    
+
     return true;
 }
 

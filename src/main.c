@@ -118,11 +118,11 @@ int main()
         else if (strcmp(args[0], "build") == 0)
         {
             printf("Début du Build de la partition\n");
-            init_partition(&fs, "image.img", 50000, 1024);
+            init_partition(&fs, "image.img", 50000, 4096);
             printf("Build de la partition terminé\n");
             continue;
         }
-        else if (strcmp(args[0], "load_partition") == 0)
+        else if (strcmp(args[0], "load") == 0)
         {
             printf("Test chargement de la partition\n");
             load_partition(&fs, "image.img");
@@ -131,7 +131,7 @@ int main()
         }
         else if (strcmp(args[0], "create_file") == 0)
         {
-            uint32_t new_file = create_file(&fs, "test.txt",
+            uint32_t new_file = create_file(&fs,"/test.txt",
                                             S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
             if (new_file != (uint32_t)-1)
             {
@@ -200,7 +200,7 @@ void display_help()
 void build_partition(FileSystem *fs)
 {
     printf("Début du Build de la partition");
-    init_partition(fs, "image.img", 50000, 1024);
+    init_partition(fs, "image.img", 5000000, 1024);
     printf("Build de la partition terminé");
 }
 

@@ -56,6 +56,7 @@ typedef struct Inode {
     uint64_t modified_at;      ///< Last modification timestamp
     uint64_t accessed_at;      ///< Last access timestamp
     bool is_directory;         ///< Indicates whether the inode represents a directory
+    bool is_used; ///< Indicates if the inode is allocated/used
 } Inode;
 
 /**
