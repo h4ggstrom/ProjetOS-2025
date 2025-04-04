@@ -152,26 +152,3 @@ int vfs_close(VirtualFS *vfs, int fd) {
     return SUCCESS;
 }
 
-int main() {
-    VirtualFS vfs;
-    vfs_init(&vfs);
-
-    // Créer et ouvrir un fichier
-    int fd = vfs_open(&vfs, "test.txt", O_CREAT | O_RDWR);
-    if (fd < 0) {
-        perror("Erreur d'ouverture");
-        return 1;
-    }
-
-    printf("Fichier ouvert avec fd = %d\n", fd);
-
-    // Ici vous pourriez ajouter des opérations read/write/close...
-    // ... opérations sur le fichier ...
-    // Fermer le fichier
-    if (vfs_close(&vfs, fd) != SUCCESS) {
-        perror("Erreur lors de la fermeture");
-        return 1;
-    }
-    printf("Fichier fermé avec succès\n");
-    return SUCCESS;
-}
