@@ -1,158 +1,196 @@
 /**
-This file contains the functions to create and manage partitions.
-
-@author Robin de Angelis (%)
-@author Alexandre Ledard (%)
-@author Killian Treuil (%)
-
-@version 0.1 01/04/2025
-*/
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/stat.h>
-#include <errno.h>
-#include <string.h>
-#include <fcntl.h>
-
-/**
- * Create an empty partition (directory).
+ * @file partition.c
+ * @brief This file contains the functions to create and manage partitions.
  * 
- * @param path The path of the directory to create.
- * @return 0 on success, -1 on failure.
- */
-int create_partition(const char *path) {
-    if (mkdir(path, 0755) == -1) {
-        if (errno == EEXIST) {
-            fprintf(stderr, "Error: Directory already exists: %s\n", path);
-        } else {
-            fprintf(stderr, "Error creating directory: %s\n", strerror(errno));
-        }
-        return -1;
-    }
-    printf("Partition created successfully: %s\n", path);
-    return 0;
-}
-
-/**
- * Create a directory.
+ * @details This module defines the structures and functions required to manage
+ *          a file system partition, including block management, inode handling,
+ *          and directory operations.
  * 
- * @param path The path of the directory to create.
- * @return 0 on success, -1 on failure.
- */
-int create_directory(const char *path) {
-    if (mkdir(path, 0755) == -1) {
-        if (errno == EEXIST) {
-            fprintf(stderr, "Error: Directory already exists: %s\n", path);
-        } else {
-            fprintf(stderr, "Error creating directory: %s\n", strerror(errno));
-        }
-        return -1;
-    }
-    printf("Directory created successfully: %s\n", path);
-    return 0;
-}
-
-/**
- * Create a directory with specific permissions.
+ * @version 0.3
+ * @date 04/04/2025
  * 
- * @param path The path of the directory to create.
- * @param permissions The permissions to set for the directory.
- * @return 0 on success, -1 on failure.
+ * @authors
+ * - Robin de Angelis (%)
+ * - Alexandre Ledard (%)
+ * - Killian Treuil (%)
  */
-int create_directory_with_permissions(const char *path, mode_t permissions) {
-    if (mkdir(path, permissions) == -1) {
-        if (errno == EEXIST) {
-            fprintf(stderr, "Error: Directory already exists: %s\n", path);
-        } else {
-            fprintf(stderr, "Error creating directory: %s\n", strerror(errno));
-        }
-        return -1;
-    }
-    printf("Directory created successfully: %s\n", path);
-    return 0;
-}
 
-#include <stdio.h>
+#include "partition.h" // Inclure les déclarations des structures et fonctions
+
 #include <stdlib.h>
 #include <string.h>
-#include <errno.h>
-#include <linux/limits.h>
+#include <stdio.h>
+#include <time.h>
+
+#define MAX_FILES 1024 ///< Maximum number of files in the inode table
 
 /**
- * Create and mount a virtual partition.
+ * @brief Initializes a new partition and saves it to a file.
  * 
- * @param file_path The path of the file to use as a partition.
- * @param mount_point The directory where the partition will be mounted.
- * @param size_mb The size of the partition in megabytes.
- * @return 0 on success, -1 on failure.
+ * @param fs Pointer to the FileSystem structure
+ * @param img_path Path to the file where the partition will be saved
+ * @param total_size Total size of the partition (in bytes)
+ * @param block_size Size of each block (in bytes)
  */
-int create_virtual_partition(const char *file_path, const char *mount_point, int size_mb) {
-    char command[256];
+void init_partition(FileSystem *fs, const char *img_path, uint32_t total_size, uint32_t block_size) {
+    // Calculer le nombre total de blocs
+    uint32_t total_blocks = total_size / block_size;
 
-    // Step 1: Create a file of the specified size
-    snprintf(command, sizeof(command), "dd if=/dev/zero of=%s bs=1M count=%d", file_path, size_mb);
-    if (system(command) != 0) {
-        fprintf(stderr, "Error creating partition file: %s\n", strerror(errno));
-        return -1;
+    // Initialiser le superblock
+    strncpy(fs->superblock.magic, "MYFS", 8);
+    fs->superblock.total_size = total_size;
+    fs->superblock.block_size = block_size;
+    fs->superblock.total_blocks = total_blocks;
+    fs->superblock.free_blocks = total_blocks;
+    fs->superblock.file_table_start = sizeof(Superblock); // La table des fichiers commence après le superblock
+    fs->superblock.data_start = fs->superblock.file_table_start + (sizeof(Inode) * MAX_FILES);
+
+    // Initialiser le bitmap
+    fs->partition.bitmap = calloc(total_blocks, sizeof(uint8_t));
+
+    // Initialiser les blocs
+    fs->partition.blocks = malloc(total_blocks * sizeof(Block));
+    for (uint32_t i = 0; i < total_blocks; i++) {
+        fs->partition.blocks[i].index = i;
+        fs->partition.blocks[i].data = NULL;
+        fs->partition.blocks[i].is_free = true;
     }
 
-    // Step 2: Format the file with ext4
-    snprintf(command, sizeof(command), "mkfs.ext4 %s", file_path);
-    if (system(command) != 0) {
-        fprintf(stderr, "Error formatting partition file: %s\n", strerror(errno));
-        return -1;
+    // Initialiser la table des inodes
+    fs->inode_table = calloc(MAX_FILES, sizeof(Inode));
+
+    // Initialiser l'inode du répertoire racine
+    fs->inode_table[0].id = 0;
+    fs->inode_table[0].size = 0;
+    fs->inode_table[0].permissions = 0755; // rwxr-xr-x
+    fs->inode_table[0].links_count = 1;
+    fs->inode_table[0].is_directory = true;
+    fs->inode_table[0].created_at = time(NULL);
+    fs->inode_table[0].modified_at = time(NULL);
+    fs->inode_table[0].accessed_at = time(NULL);
+
+    // Initialiser la structure Directory pour le répertoire racine
+    Directory *root_dir = malloc(sizeof(Directory));
+    root_dir->parent_inode = 0; // Le parent du répertoire racine est lui-même
+    root_dir->entry_count = 0;
+    memset(root_dir->entries, 0, sizeof(root_dir->entries));
+    memset(root_dir->names, 0, sizeof(root_dir->names));
+
+    // Associer la structure Directory au premier bloc
+    fs->partition.blocks[0].data = (uint8_t *)root_dir;
+    fs->partition.blocks[0].is_free = false;
+
+    // Sauvegarder la partition dans un fichier .img
+    FILE *img_file = fopen(img_path, "wb");
+    if (!img_file) {
+        perror("Erreur lors de la création du fichier .img");
+        exit(EXIT_FAILURE);
     }
 
-    // Step 3: Create the mount point directory
-    snprintf(command, sizeof(command), "mkdir -p %s", mount_point);
-    if (system(command) != 0) {
-        fprintf(stderr, "Error creating mount point: %s\n", strerror(errno));
-        return -1;
-    }
+    // Écrire le superblock
+    fwrite(&fs->superblock, sizeof(Superblock), 1, img_file);
 
-    // Step 4: Mount the file as a partition
-    snprintf(command, sizeof(command), "sudo mount %s %s", file_path, mount_point);
-    if (system(command) != 0) {
-        fprintf(stderr, "Error mounting partition: %s\n", strerror(errno));
-        return -1;
-    }
+    // Écrire la table des inodes
+    fwrite(fs->inode_table, sizeof(Inode), MAX_FILES, img_file);
 
-    printf("Virtual partition created and mounted successfully at %s\n", mount_point);
-    return 0;
+    // Écrire le bitmap
+    fwrite(fs->partition.bitmap, sizeof(uint8_t), total_blocks, img_file);
+
+    // Écrire les blocs de données (initialement vides)
+    uint8_t *empty_block = calloc(1, block_size);
+    for (uint32_t i = 0; i < total_blocks; i++) {
+        fwrite(empty_block, block_size, 1, img_file);
+    }
+    free(empty_block);
+
+    fclose(img_file);
+
+    printf("Partition initialisée et sauvegardée dans '%s'.\n", img_path);
 }
 
 /**
- * Create directories recursively.
+ * @brief Loads an existing partition from a file.
  * 
- * @param path The path of the directories to create.
- * @return 0 on success, -1 on failure.
+ * @param fs Pointer to the FileSystem structure
+ * @param img_path Path to the file containing the partition
  */
-int create_directories_recursively(const char *path) {
-    char temp[PATH_MAX];
-    char *p = NULL;
-    size_t len;
+void load_partition(FileSystem *fs, const char *img_path) {
+    FILE *img_file = fopen(img_path, "rb");
+    if (!img_file) {
+        perror("Erreur lors de l'ouverture du fichier .img");
+        exit(EXIT_FAILURE);
+    }
 
-    snprintf(temp, sizeof(temp), "%s", path);
-    len = strlen(temp);
-    if (temp[len - 1] == '/')
-        temp[len - 1] = '\0';
+    // Lire le superblock
+    fread(&fs->superblock, sizeof(Superblock), 1, img_file);
 
-    for (p = temp + 1; *p; p++) {
-        if (*p == '/') {
-            *p = '\0';
-            if (mkdir(temp, 0755) != 0 && errno != EEXIST) {
-                fprintf(stderr, "Error creating directory '%s': %s\n", temp, strerror(errno));
-                return -1;
-            }
-            *p = '/';
+    // Allouer et lire la table des inodes
+    fs->inode_table = calloc(MAX_FILES, sizeof(Inode));
+    fread(fs->inode_table, sizeof(Inode), MAX_FILES, img_file);
+
+    // Allouer et lire le bitmap
+    fs->partition.bitmap = calloc(fs->superblock.total_blocks, sizeof(uint8_t));
+    fread(fs->partition.bitmap, sizeof(uint8_t), fs->superblock.total_blocks, img_file);
+
+    // Allouer les blocs
+    fs->partition.blocks = malloc(fs->superblock.total_blocks * sizeof(Block));
+    for (uint32_t i = 0; i < fs->superblock.total_blocks; i++) {
+        fs->partition.blocks[i].index = i;
+        fs->partition.blocks[i].data = malloc(fs->superblock.block_size);
+        fread(fs->partition.blocks[i].data, fs->superblock.block_size, 1, img_file);
+        fs->partition.blocks[i].is_free = (fs->partition.bitmap[i] == 0);
+    }
+
+    fclose(img_file);
+
+    printf("Partition chargée depuis '%s'.\n", img_path);
+}
+
+/**
+ * @brief Allocates a free block in the partition.
+ * 
+ * @param fs Pointer to the FileSystem structure
+ * @return Index of the allocated block, or -1 if no blocks are available
+ */
+int allocate_block(FileSystem *fs) {
+    for (uint32_t i = 0; i < fs->superblock.total_blocks; i++) {
+        if (fs->partition.bitmap[i] == 0) { // Bloc libre
+            fs->partition.bitmap[i] = 1;   // Marquer comme utilisé
+            fs->superblock.free_blocks--;  // Réduire le nombre de blocs libres
+            fs->partition.blocks[i].is_free = false; // Mettre à jour l'état du bloc
+            fs->partition.blocks[i].data = calloc(1, fs->superblock.block_size); // Allouer la mémoire pour le bloc
+            return i; // Retourner l'index du bloc alloué
         }
     }
+    return -1; // Aucun bloc libre
+}
 
-    if (mkdir(temp, 0755) != 0 && errno != EEXIST) {
-        fprintf(stderr, "Error creating directory '%s': %s\n", temp, strerror(errno));
-        return -1;
+/**
+ * @brief Frees a block in the partition.
+ * 
+ * @param fs Pointer to the FileSystem structure
+ * @param block_index Index of the block to free
+ */
+void free_block(FileSystem *fs, uint32_t block_index) {
+    if (block_index < fs->superblock.total_blocks && fs->partition.bitmap[block_index] == 1) {
+        fs->partition.bitmap[block_index] = 0; // Marquer comme libre
+        fs->superblock.free_blocks++;         // Augmenter le nombre de blocs libres
+        free(fs->partition.blocks[block_index].data); // Libérer les données du bloc
+        fs->partition.blocks[block_index].data = NULL;
+        fs->partition.blocks[block_index].is_free = true;
     }
+}
 
-    return 0;
+/**
+ * @brief Checks if a block is free.
+ * 
+ * @param fs Pointer to the FileSystem structure
+ * @param block_index Index of the block to check
+ * @return true if the block is free, false otherwise
+ */
+bool is_block_free(FileSystem *fs, uint32_t block_index) {
+    if (block_index < fs->superblock.total_blocks) {
+        return fs->partition.bitmap[block_index] == 0;
+    }
+    return false; // Index invalide
 }
