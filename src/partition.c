@@ -21,8 +21,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <time.h>
-
-#define MAX_FILES 1024 ///< Maximum number of files in the inode table
+#include <constantes.h>
 
 /**
  * @brief Initializes a new partition and saves it to a file.
@@ -193,4 +192,715 @@ bool is_block_free(FileSystem *fs, uint32_t block_index) {
         return fs->partition.bitmap[block_index] == 0;
     }
     return false; // Index invalide
+}
+
+/**
+ * @brief Lit des données depuis un seul bloc
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param block_num Numéro du bloc à lire
+ * @param buffer Buffer de destination
+ * @param size Nombre d'octets à lire
+ * @param offset Offset dans le bloc
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool read_single_block(FileSystem *fs, uint32_t block_num, uint8_t *buffer, 
+    uint32_t size, uint32_t offset) {
+if (!fs || !buffer || block_num >= fs->partition.total_blocks || 
+offset + size > fs->partition.block_size) {
+return false;
+}
+
+Block *block = &fs->partition.blocks[block_num];
+if (!block || block->is_free) {
+return false;
+}
+
+memcpy(buffer, block->data + offset, size);
+return true;
+}
+
+/**
+ * @brief Lit les données d'un inode depuis plusieurs blocs
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode Pointeur vers l'inode
+ * @param buffer Buffer de destination
+ * @param size Taille à lire
+ * @param offset Offset de départ dans le fichier
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool read_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t size, uint32_t offset) {
+    if (!fs || !inode || !buffer || offset > inode->size) {
+        return false;
+    }
+
+    // Calculer la taille effective à lire
+    uint32_t remaining_bytes = inode->size - offset;
+    if (size > remaining_bytes) {
+        size = remaining_bytes;
+    }
+    if (size == 0) {
+        return true;
+    }
+
+    uint32_t bytes_read = 0;
+    uint32_t current_pos = offset;
+    uint32_t block_size = fs->partition.block_size;
+
+    // 1. Lire les blocs directs
+    for (int i = 0; i < 12 && bytes_read < size; i++) {
+        if (inode->blocks[i] == 0) {
+            continue;
+        }
+
+        uint32_t block_offset = current_pos % block_size;
+        uint32_t bytes_in_block = block_size - block_offset;
+        uint32_t bytes_to_read = (size - bytes_read) < bytes_in_block ? 
+                                (size - bytes_read) : bytes_in_block;
+
+        if (current_pos / block_size == i) {
+            if (!read_single_block(fs, inode->blocks[i], 
+                                 buffer + bytes_read, 
+                                 bytes_to_read, 
+                                 block_offset)) {
+                return false;
+            }
+            bytes_read += bytes_to_read;
+            current_pos += bytes_to_read;
+        }
+    }
+
+    // 2. Lire le bloc indirect simple si nécessaire
+    if (bytes_read < size && inode->indirect_block != 0) {
+        uint32_t indirect_block_pointers[block_size / sizeof(uint32_t)];
+        if (!read_single_block(fs, inode->indirect_block, 
+                             (uint8_t*)indirect_block_pointers, 
+                             block_size, 0)) {
+            return false;
+        }
+
+        uint32_t start_block = 12;
+        uint32_t end_block = start_block + (block_size / sizeof(uint32_t));
+
+        for (uint32_t i = start_block; i < end_block && bytes_read < size; i++) {
+            if (indirect_block_pointers[i - start_block] == 0) {
+                continue;
+            }
+
+            uint32_t block_offset = current_pos % block_size;
+            uint32_t bytes_in_block = block_size - block_offset;
+            uint32_t bytes_to_read = (size - bytes_read) < bytes_in_block ? 
+                                    (size - bytes_read) : bytes_in_block;
+
+            if (current_pos / block_size == i) {
+                if (!read_single_block(fs, indirect_block_pointers[i - start_block], 
+                                     buffer + bytes_read, 
+                                     bytes_to_read, 
+                                     block_offset)) {
+                    return false;
+                }
+                bytes_read += bytes_to_read;
+                current_pos += bytes_to_read;
+            }
+        }
+    }
+
+    // 3. Lire le bloc doublement indirect si nécessaire
+    if (bytes_read < size && inode->double_indirect != 0) {
+        uint32_t double_indirect_block_pointers[block_size / sizeof(uint32_t)];
+        if (!read_single_block(fs, inode->double_indirect, 
+                             (uint8_t*)double_indirect_block_pointers, 
+                             block_size, 0)) {
+            return false;
+        }
+
+        uint32_t pointers_per_block = block_size / sizeof(uint32_t);
+        uint32_t start_block = 12 + (block_size / sizeof(uint32_t));
+        uint32_t block_index = start_block;
+
+        for (uint32_t i = 0; i < pointers_per_block && bytes_read < size; i++) {
+            if (double_indirect_block_pointers[i] == 0) {
+                block_index += pointers_per_block;
+                continue;
+            }
+
+            uint32_t indirect_block_pointers[pointers_per_block];
+            if (!read_single_block(fs, double_indirect_block_pointers[i], 
+                                 (uint8_t*)indirect_block_pointers, 
+                                 block_size, 0)) {
+                return false;
+            }
+
+            for (uint32_t j = 0; j < pointers_per_block && bytes_read < size; j++) {
+                if (indirect_block_pointers[j] == 0) {
+                    block_index++;
+                    continue;
+                }
+
+                uint32_t block_offset = current_pos % block_size;
+                uint32_t bytes_in_block = block_size - block_offset;
+                uint32_t bytes_to_read = (size - bytes_read) < bytes_in_block ? 
+                                        (size - bytes_read) : bytes_in_block;
+
+                if (current_pos / block_size == block_index) {
+                    if (!read_single_block(fs, indirect_block_pointers[j], 
+                                         buffer + bytes_read, 
+                                         bytes_to_read, 
+                                         block_offset)) {
+                        return false;
+                    }
+                    bytes_read += bytes_to_read;
+                    current_pos += bytes_to_read;
+                }
+                block_index++;
+            }
+        }
+    }
+
+    return bytes_read == size;
+}
+
+
+/**
+ * @brief Lit le contenu d'un répertoire dans une structure Directory
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode_num Numéro de l'inode du répertoire
+ * @param dir Pointeur vers la structure Directory à remplir
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool read_directory(FileSystem *fs, uint32_t inode_num, Directory *dir) {
+    if (!fs || inode_num >= MAX_FILES || !dir || !fs->inode_table[inode_num].is_directory) {
+        return false;
+    }
+
+    Inode *inode = &fs->inode_table[inode_num];
+    uint8_t *buffer = malloc(inode->size);
+    if (!buffer) {
+        return false;
+    }
+
+    // Lire les données du répertoire depuis les blocs
+    if (!read_inode_data(fs, inode, buffer, inode->size, 0)) {
+        free(buffer);
+        return false;
+    }
+
+    // Désérialiser la structure Directory
+    memcpy(dir, buffer, sizeof(Directory));
+    free(buffer);
+    return true;}
+
+/**
+ * @brief Trouve l'inode correspondant à un chemin donné
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin du fichier (ex: "/dir1/file.txt")
+ * @return uint32_t Numéro de l'inode trouvé, ou (uint32_t)-1 si non trouvé
+ */
+uint32_t find_inode_by_path(FileSystem *fs, const char *path) {
+    // Vérification des paramètres
+    if (!fs || !path || path[0] != '/') {
+        return (uint32_t)-1;
+    }
+
+    // Cas spécial pour la racine
+    if (strcmp(path, "/") == 0) {
+        return 0;  // On suppose que l'inode 0 est le répertoire racine
+    }
+
+    // Copie du chemin pour éviter de modifier l'original
+    char *path_copy = strdup(path);
+    if (!path_copy) {
+        return (uint32_t)-1;
+    }
+
+    uint32_t current_inode = 0;  // On commence à la racine (inode 0)
+    char *token = strtok(path_copy, "/");
+    char *next_token = NULL;
+
+    while (token != NULL) {
+        // Vérifier que current_inode est un répertoire
+        if (current_inode >= MAX_FILES || !fs->inode_table[current_inode].is_directory) {
+            free(path_copy);
+            return (uint32_t)-1;
+        }
+
+        // Lire le répertoire
+        Directory dir;
+        if (!read_directory(fs, current_inode, &dir)) {
+            free(path_copy);
+            return (uint32_t)-1;
+        }
+
+        // Vérifier si le token existe dans le répertoire
+        uint32_t found_inode = (uint32_t)-1;
+        for (uint32_t i = 0; i < dir.entry_count; i++) {
+            if (strcmp(dir.names[i], token) == 0) {
+                found_inode = dir.entries[i];
+                break;
+            }
+        }
+
+        if (found_inode == (uint32_t)-1) {
+            free(path_copy);
+            return (uint32_t)-1;
+        }
+
+        // Préparer la prochaine itération
+        current_inode = found_inode;
+        next_token = strtok(NULL, "/");
+        
+        // Si c'est le dernier token et qu'on a trouvé, on retourne l'inode
+        if (next_token == NULL) {
+            free(path_copy);
+            return current_inode;
+        }
+        
+        token = next_token;
+    }
+
+    free(path_copy);
+    return (uint32_t)-1;
+}
+
+/**
+ * @brief Ouvre un fichier et retourne un descripteur de fichier
+ * 
+ * @param fs         Pointeur vers le système de fichiers
+ * @param path       Chemin du fichier à ouvrir
+ * @param mode       Mode d'ouverture (O_RDONLY, O_WRONLY, etc.)
+ * @return int       Descripteur de fichier (≥0) en cas de succès, -1 en cas d'erreur
+ */
+int open_file(FileSystem *fs, const char *path, int mode) {
+    // 1. Trouver l'inode correspondant au chemin
+    uint32_t inode_id = find_inode_by_path(fs, path);
+    
+    // Si le fichier n'existe pas et que O_CREAT est spécifié, le créer
+   if (inode_id == (uint32_t)-1 && (mode & O_CREAT)) {
+        //inode_id = create_file(fs, path);
+        if (inode_id == (uint32_t)-1) {
+            return -1;  // Échec de la création
+        }
+    } else if (inode_id == (uint32_t)-1) {
+        return -1;  // Fichier non trouvé
+    }
+
+    // 2. Vérifier les permissions
+    Inode *inode = &fs->inode_table[inode_id];
+    if ((mode & O_WRONLY || mode & O_RDWR) && !(inode->permissions & 0222)) {
+        return -1;  // Pas les permissions en écriture
+    }
+    if ((mode & O_RDONLY || mode & O_RDWR) && !(inode->permissions & 0444)) {
+        return -1;  // Pas les permissions en lecture
+    }
+
+    // 3. Tronquer le fichier si O_TRUNC est spécifié
+    if (mode & O_TRUNC) {
+        //truncate_file(fs, inode_id);
+    }
+
+    // 4. Trouver un slot libre dans la table des descripteurs
+    int fd = -1;
+    for (uint32_t i = 0; i < fs->max_open_files; i++) {
+        if (!fs->open_files_table[i].is_used) {
+            fd = i;
+            break;
+        }
+    }
+    if (fd == -1) {
+        return -1;  // Trop de fichiers ouverts
+    }
+
+    // 5. Initialiser le descripteur de fichier
+    fs->open_files_table[fd].fd_id = fd;
+    fs->open_files_table[fd].inode_id = inode_id;
+    fs->open_files_table[fd].current_pos = 0;
+    fs->open_files_table[fd].mode = mode;
+    fs->open_files_table[fd].is_used = true;
+
+    // 6. Mettre à jour le timestamp d'accès
+    inode->accessed_at = (uint64_t)time(NULL);
+
+    return fd;
+}
+
+
+/**
+ * @brief Crée un nouveau fichier dans le système de fichiers
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin complet du nouveau fichier
+ * @param mode Mode et permissions du fichier
+ * @return uint32_t Numéro d'inode du fichier créé, ou (uint32_t)-1 en cas d'erreur
+ */
+uint32_t create_file(FileSystem *fs, const char *path, uint16_t mode) {
+    // 1. Vérifier les paramètres
+    if (!fs || !path || path[0] != '/') {
+        return (uint32_t)-1;
+    }
+
+    // 2. Extraire le répertoire parent et le nom du fichier
+    char parent_path[MAX_PATH_LEN];
+    char filename[MAX_FILENAME_LEN];
+    if (!split_path(path, parent_path, filename)) {
+        return (uint32_t)-1;
+    }
+
+    // 3. Trouver l'inode du répertoire parent
+    uint32_t parent_inode = find_inode_by_path(fs, parent_path);
+    if (parent_inode == (uint32_t)-1) {
+        return (uint32_t)-1;
+    }
+
+    // 4. Vérifier que le fichier n'existe pas déjà
+    if (find_file_in_directory(fs, parent_inode, filename) != (uint32_t)-1) {
+        return (uint32_t)-1; // Fichier existe déjà
+    }
+
+    // 5. Allouer un nouvel inode
+    uint32_t new_inode = allocate_inode(fs);
+    if (new_inode == (uint32_t)-1) {
+        return (uint32_t)-1;
+    }
+
+    // 6. Initialiser le nouvel inode
+    Inode *inode = &fs->inode_table[new_inode];
+    init_inode(inode, new_inode, mode & ~S_IFMT, false); // S_IFMT est le masque pour le type
+
+    // 7. Ajouter l'entrée dans le répertoire parent
+    if (!add_directory_entry(fs, parent_inode, new_inode, filename)) {
+        free_inode(fs, new_inode);
+        return (uint32_t)-1;
+    }
+
+    return new_inode;
+}
+
+/**
+ * @brief Sépare un chemin en répertoire parent et nom de fichier
+ * 
+ * @param full_path Chemin complet
+ * @param parent_path Buffer pour le chemin du parent
+ * @param filename Buffer pour le nom du fichier
+ * @return true si succès, false si échec
+ */
+bool split_path(const char *full_path, char *parent_path, char *filename) {
+    if (!full_path || !parent_path || !filename) {
+        return false;
+    }
+
+    // Trouver le dernier '/'
+    const char *last_slash = strrchr(full_path, '/');
+    if (!last_slash) {
+        return false;
+    }
+
+    // Copier le parent path
+    size_t parent_len = last_slash - full_path;
+    if (parent_len == 0) {
+        strcpy(parent_path, "/"); // Cas racine
+    } else {
+        strncpy(parent_path, full_path, parent_len);
+        parent_path[parent_len] = '\0';
+    }
+
+    // Copier le filename
+    strncpy(filename, last_slash + 1, MAX_FILENAME_LEN - 1);
+    filename[MAX_FILENAME_LEN - 1] = '\0';
+
+    return true;
+}
+
+/**
+ * @brief Alloue un nouvel inode libre
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @return uint32_t Numéro d'inode alloué, ou (uint32_t)-1 si erreur
+ */
+uint32_t allocate_inode(FileSystem *fs) {
+    for (uint32_t i = 0; i < MAX_FILES; i++) {
+        if (fs->inode_table[i].id == 0) { // Inode libre
+            return i;
+        }
+    }
+    return (uint32_t)-1; // Plus d'inodes disponibles
+}
+
+/**
+ * @brief Initialise un nouvel inode
+ * 
+ * @param inode Pointeur vers l'inode à initialiser
+ * @param id Numéro d'inode
+ * @param permissions Permissions du fichier
+ * @param is_directory Si true, crée un répertoire
+ */
+void init_inode(Inode *inode, uint32_t id, uint16_t permissions, bool is_directory) {
+    memset(inode, 0, sizeof(Inode));
+    inode->id = id;
+    inode->permissions = permissions | (is_directory ? S_IFDIR : S_IFREG);
+    inode->links_count = 1;
+    inode->owner_id = 0; // Root par défaut
+    inode->group_id = 0; // Root group par défaut
+    inode->created_at = time(NULL);
+    inode->modified_at = inode->created_at;
+    inode->accessed_at = inode->created_at;
+    inode->is_directory = is_directory;
+}
+
+/**
+ * @brief Ajoute une entrée dans un répertoire
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param dir_inode Inode du répertoire
+ * @param entry_inode Inode à ajouter
+ * @param name Nom de l'entrée
+ * @return true si succès, false si échec
+ */
+bool add_directory_entry(FileSystem *fs, uint32_t dir_inode, uint32_t entry_inode, const char *name) {
+    if (dir_inode >= MAX_FILES || entry_inode >= MAX_FILES || !name) {
+        return false;
+    }
+
+    Inode *dir = &fs->inode_table[dir_inode];
+    if (!dir->is_directory) {
+        return false;
+    }
+
+    Directory directory;
+    if (!read_directory(fs, dir_inode, &directory)) {
+        return false;
+    }
+
+    // Vérifier si le répertoire est plein
+    if (directory.entry_count >= DIR_ENTRIES_LIMIT) {
+        return false;
+    }
+
+    // Vérifier si le nom est trop long
+    if (strlen(name) >= MAX_FILENAME_LEN) {
+        return false;
+    }
+
+    // Ajouter la nouvelle entrée
+    directory.entries[directory.entry_count] = entry_inode;
+    strncpy(directory.names[directory.entry_count], name, MAX_FILENAME_LEN - 1);
+    directory.names[directory.entry_count][MAX_FILENAME_LEN - 1] = '\0';
+    directory.entry_count++;
+
+    // Écrire le répertoire modifié
+    return write_directory(fs, dir_inode, &directory);
+}
+
+/**
+ * @brief Libère un inode
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode_num Numéro d'inode à libérer
+ */
+void free_inode(FileSystem *fs, uint32_t inode_num) {
+    if (inode_num >= MAX_FILES) {
+        return;
+    }
+
+    Inode *inode = &fs->inode_table[inode_num];
+    if (inode->id == 0) {
+        return; // Déjà libre
+    }
+
+    // Libérer les blocs associés
+    //truncate_file(fs, inode_num);
+
+    // Marquer l'inode comme libre
+    memset(inode, 0, sizeof(Inode));
+}
+
+/**
+ * @brief Trouve un fichier dans un répertoire
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param dir_inode Inode du répertoire
+ * @param name Nom du fichier à trouver
+ * @return uint32_t Inode du fichier trouvé, ou (uint32_t)-1 si non trouvé
+ */
+uint32_t find_file_in_directory(FileSystem *fs, uint32_t dir_inode, const char *name) {
+    Directory dir;
+    if (!read_directory(fs, dir_inode, &dir)) {
+        return (uint32_t)-1;
+    }
+
+    for (uint32_t i = 0; i < dir.entry_count; i++) {
+        if (strcmp(dir.names[i], name) == 0) {
+            return dir.entries[i];
+        }
+    }
+
+    return (uint32_t)-1;
+}
+
+/**
+ * @brief Écrit le contenu d'un répertoire dans les blocs de l'inode
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param dir_inode Inode du répertoire à écrire
+ * @param dir Pointeur vers la structure Directory à écrire
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool write_directory(FileSystem *fs, uint32_t dir_inode, Directory *dir) {
+    // 1. Vérifications de base
+    if (!fs || dir_inode >= MAX_FILES || !dir || !fs->inode_table[dir_inode].is_directory) {
+        return false;
+    }
+
+    Inode *inode = &fs->inode_table[dir_inode];
+    uint32_t block_size = fs->partition.block_size;
+    uint32_t required_size = sizeof(Directory);
+    
+    // 2. Calculer le nombre de blocs nécessaires
+    uint32_t blocks_needed = (required_size + block_size - 1) / block_size;
+
+    // 3. Vérifier/gérer l'allocation des blocs
+    if (!ensure_inode_blocks(fs, inode, blocks_needed)) {
+        return false;
+    }
+
+    // 4. Sérialiser la structure Directory dans un buffer
+    uint8_t *buffer = malloc(required_size);
+    if (!buffer) {
+        return false;
+    }
+    memcpy(buffer, dir, required_size);
+
+    // 5. Écrire le buffer dans les blocs de l'inode
+    bool success = write_inode_data(fs, inode, buffer, required_size, 0);
+    
+    free(buffer);
+    
+    // 6. Mettre à jour la taille et les métadonnées de l'inode
+    if (success) {
+        inode->size = required_size;
+        inode->modified_at = (uint64_t)time(NULL);
+    }
+
+    return success;
+}
+
+/**
+ * @brief Garantit que l'inode a assez de blocs alloués
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode Pointeur vers l'inode
+ * @param blocks_needed Nombre de blocs nécessaires
+ * @return true si les blocs sont disponibles, false sinon
+ */
+bool ensure_inode_blocks(FileSystem *fs, Inode *inode, uint32_t blocks_needed) {
+    uint32_t current_blocks = 0;
+    
+    // Compter les blocs déjà alloués
+    for (int i = 0; i < 12; i++) {
+        if (inode->blocks[i] != 0) current_blocks++;
+    }
+    
+    // Si suffisamment de blocs, retourner vrai
+    if (current_blocks >= blocks_needed) {
+        return true;
+    }
+    
+    // Allouer les blocs supplémentaires nécessaires
+    uint32_t blocks_to_allocate = blocks_needed - current_blocks;
+    for (uint32_t i = 0; i < blocks_to_allocate; i++) {
+        int new_block = allocate_block(fs);
+        if (new_block == -1) {
+            // Échec, libérer les blocs déjà alloués
+            for (uint32_t j = 0; j < i; j++) {
+                free_block(fs, inode->blocks[current_blocks + j]);
+                inode->blocks[current_blocks + j] = 0;
+            }
+            return false;
+        }
+        
+        // Trouver le premier slot libre dans les blocs directs
+        for (int j = 0; j < 12; j++) {
+            if (inode->blocks[j] == 0) {
+                inode->blocks[j] = new_block;
+                break;
+            }
+        }
+    }
+    
+    return true;
+}
+
+/**
+ * @brief Écrit des données dans les blocs d'un inode
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode Pointeur vers l'inode
+ * @param buffer Données à écrire
+ * @param size Taille des données
+ * @param offset Offset dans le fichier
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool write_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t size, uint32_t offset) {
+    if (!fs || !inode || !buffer || offset > inode->size) {
+        return false;
+    }
+
+    uint32_t block_size = fs->partition.block_size;
+    uint32_t bytes_written = 0;
+    uint32_t current_pos = offset;
+
+    // 1. Écrire dans les blocs directs
+    for (int i = 0; i < 12 && bytes_written < size; i++) {
+        if (inode->blocks[i] == 0) {
+            continue; // Bloc non alloué
+        }
+
+        uint32_t block_offset = current_pos % block_size;
+        uint32_t bytes_in_block = block_size - block_offset;
+        uint32_t bytes_to_write = (size - bytes_written) < bytes_in_block ? 
+                                (size - bytes_written) : bytes_in_block;
+
+        if (!write_single_block(fs, inode->blocks[i], 
+                              buffer + bytes_written, 
+                              bytes_to_write, 
+                              block_offset)) {
+            return false;
+        }
+
+        bytes_written += bytes_to_write;
+        current_pos += bytes_to_write;
+    }
+
+    // 2. Si besoin, étendre avec des blocs indirects (non implémenté ici pour simplifier)
+    // ...
+
+    return bytes_written == size;
+}
+
+/**
+ * @brief Écrit des données dans un seul bloc
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param block_num Numéro du bloc
+ * @param buffer Données à écrire
+ * @param size Nombre d'octets à écrire
+ * @param offset Offset dans le bloc
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool write_single_block(FileSystem *fs, uint32_t block_num, uint8_t *buffer, 
+                       uint32_t size, uint32_t offset) {
+    if (!fs || !buffer || block_num >= fs->partition.total_blocks || 
+        offset + size > fs->partition.block_size) {
+        return false;
+    }
+
+    Block *block = &fs->partition.blocks[block_num];
+    if (!block || block->is_free) {
+        return false;
+    }
+
+    memcpy(block->data + offset, buffer, size);
+    return true;
 }

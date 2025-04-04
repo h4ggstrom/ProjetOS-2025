@@ -25,7 +25,7 @@ This file contains the functions that are used to read and write to files.
  * @param content The content to write to the file (can be NULL).
  * @return 0 on success, -1 on failure.
  */
-int create_file(const char *path, const char *content) {
+/*int create_file(const char *path, const char *content) {
     FILE *file = fopen(path, "w");
     if (!file) {
         fprintf(stderr, "Error creating file: %s\n", strerror(errno));
@@ -37,7 +37,7 @@ int create_file(const char *path, const char *content) {
     fclose(file);
     printf("File created successfully: %s\n", path);
     return 0;
-}
+}*/
 
 /**
  * Delete a file.

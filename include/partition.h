@@ -1,6 +1,7 @@
 #ifndef PARTITION_H
 #define PARTITION_H
 
+#include <constantes.h>
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -20,8 +21,6 @@
  * - Alexandre Ledard (%)
  * - Killian Treuil (%)
  */
-
-#define MAX_FILES 1024 ///< Maximum number of files in the inode table
 
 /**
  * @struct Block
@@ -108,6 +107,21 @@ typedef struct Partition {
 } Partition;
 
 /**
+ * @struct FileDescriptor
+ * @brief Represents an open file in the file system.
+ * 
+ * @details This structure tracks the state of an open file, including its current
+ *          position, the associated inode, and other metadata.
+ */
+typedef struct FileDescriptor {
+    uint32_t fd_id;          ///< Unique file descriptor ID
+    uint32_t inode_id;       ///< Inode of the opened file
+    uint32_t current_pos;    ///< Current read/write position (offset in bytes)
+    uint16_t mode;           ///< Opening mode (e.g., read-only, write-only, read-write)
+    bool is_used;            ///< Indicates if the descriptor is currently in use
+} FileDescriptor;
+
+/**
  * @struct FileSystem
  * @brief Represents the global file system structure.
  * 
@@ -118,6 +132,8 @@ typedef struct FileSystem {
     Superblock superblock;    ///< Superblock of the partition
     Inode *inode_table;       ///< Table of inodes
     Partition partition;      ///< Raw partition
+    FileDescriptor *open_files_table; ///< Table of open file descriptors
+    uint32_t max_open_files;  ///< Maximum number of files that can be opened simultaneously
 } FileSystem;
 
 /**
@@ -162,5 +178,118 @@ void free_block(FileSystem *fs, uint32_t block_index);
  * @return true if the block is free, false otherwise
  */
 bool is_block_free(FileSystem *fs, uint32_t block_index);
+
+/**
+ * @brief Crée un nouveau fichier dans le système de fichiers
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin complet du nouveau fichier
+ * @param mode Mode et permissions du fichier
+ * @return uint32_t Numéro d'inode du fichier créé, ou (uint32_t)-1 en cas d'erreur
+ */
+uint32_t create_file(FileSystem *fs, const char *path, uint16_t mode);
+/**
+ * @brief Sépare un chemin en répertoire parent et nom de fichier
+ * 
+ * @param full_path Chemin complet
+ * @param parent_path Buffer pour le chemin du parent
+ * @param filename Buffer pour le nom du fichier
+ * @return true si succès, false si échec
+ */
+bool split_path(const char *full_path, char *parent_path, char *filename);
+
+
+/**
+ * @brief Alloue un nouvel inode libre
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @return uint32_t Numéro d'inode alloué, ou (uint32_t)-1 si erreur
+ */
+uint32_t allocate_inode(FileSystem *fs);
+
+/**
+ * @brief Initialise un nouvel inode
+ * 
+ * @param inode Pointeur vers l'inode à initialiser
+ * @param id Numéro d'inode
+ * @param permissions Permissions du fichier
+ * @param is_directory Si true, crée un répertoire
+ */
+void init_inode(Inode *inode, uint32_t id, uint16_t permissions, bool is_directory);
+
+/**
+ * @brief Ajoute une entrée dans un répertoire
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param dir_inode Inode du répertoire
+ * @param entry_inode Inode à ajouter
+ * @param name Nom de l'entrée
+ * @return true si succès, false si échec
+ */
+bool add_directory_entry(FileSystem *fs, uint32_t dir_inode, uint32_t entry_inode, const char *name);
+
+/**
+ * @brief Libère un inode
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode_num Numéro d'inode à libérer
+ */
+void free_inode(FileSystem *fs, uint32_t inode_num);
+
+/**
+ * @brief Trouve un fichier dans un répertoire
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param dir_inode Inode du répertoire
+ * @param name Nom du fichier à trouver
+ * @return uint32_t Inode du fichier trouvé, ou (uint32_t)-1 si non trouvé
+ */
+uint32_t find_file_in_directory(FileSystem *fs, uint32_t dir_inode, const char *name);
+
+int truncate_file(FileSystem *fs, uint32_t id);
+
+/**
+ * @brief Écrit le contenu d'un répertoire dans les blocs de l'inode
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param dir_inode Inode du répertoire à écrire
+ * @param dir Pointeur vers la structure Directory à écrire
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool write_directory(FileSystem *fs, uint32_t dir_inode, Directory *dir);
+
+/**
+ * @brief Garantit que l'inode a assez de blocs alloués
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode Pointeur vers l'inode
+ * @param blocks_needed Nombre de blocs nécessaires
+ * @return true si les blocs sont disponibles, false sinon
+ */
+bool ensure_inode_blocks(FileSystem *fs, Inode *inode, uint32_t blocks_needed);
+
+/**
+ * @brief Écrit des données dans les blocs d'un inode
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode Pointeur vers l'inode
+ * @param buffer Données à écrire
+ * @param size Taille des données
+ * @param offset Offset dans le fichier
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool write_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t size, uint32_t offset);
+/**
+ * @brief Écrit des données dans un seul bloc
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param block_num Numéro du bloc
+ * @param buffer Données à écrire
+ * @param size Nombre d'octets à écrire
+ * @param offset Offset dans le bloc
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool write_single_block(FileSystem *fs, uint32_t block_num, uint8_t *buffer, 
+    uint32_t size, uint32_t offset);
 
 #endif // PARTITION_H

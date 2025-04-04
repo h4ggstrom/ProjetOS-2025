@@ -3,23 +3,15 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
+#include <partition.h>
+#include <constantes.h>
 #include <asm-generic/fcntl.h>
 
-#define MAX_FILES 100
-#define MAX_NAME_LENGTH 256
-#define MAX_OPEN_FILES 20
-#define SUCCESS 0
-#define ERR_FILE_NOT_FOUND -1
-#define ERR_NO_SPACE_LEFT -2
-#define ERR_PERMISSION_DENIED -3
-#define ERR_INVALID_FD -4
-#define ERR_EOF -5
-
+/*
 typedef struct {
     uint32_t first_block;   // Premier bloc du fichier
     uint32_t size;          // Taille en octets
-    char name[MAX_NAME_LENGTH]; // Nom du fichier
+    char name[MAX_FILENAME_LEN]; // Nom du fichier
     bool is_used ;           // Si l'entrée est utilisée
 } FileEntry;
 
@@ -34,7 +26,7 @@ typedef struct {
     FileEntry files[MAX_FILES];
     FileDescriptor open_files[MAX_OPEN_FILES];
     uint32_t next_fd;       // Prochain FD disponible
-} VirtualFS;
+} VirtualFS; 
 
 int vfs_open(VirtualFS *vfs, const char *pathname, int flags) {
     // 1. Trouver le fichier dans la table
@@ -118,12 +110,12 @@ int vfs_close(VirtualFS *vfs, int fd) {
     // Vérifications des paramètres
     if (vfs == NULL) {
         perror("Système de fichiers invalide (NULL)");
-        return ERR_INVALID_FD;
+        return E_INVAL;
     }
 
     if (fd < 0) {
         perror("Descripteur de fichier invalide (négatif)");
-        return ERR_INVALID_FD;
+        return E_FD;
     }
 
     // Recherche du descripteur
@@ -137,7 +129,7 @@ int vfs_close(VirtualFS *vfs, int fd) {
 
     if (desc == NULL) {
         perror("Descripteur de fichier non trouvé");
-        return ERR_INVALID_FD;
+        return E_FD;
     }
 
     // Si le fichier était ouvert en écriture, on pourrait vouloir
@@ -152,3 +144,4 @@ int vfs_close(VirtualFS *vfs, int fd) {
     return SUCCESS;
 }
 
+*/

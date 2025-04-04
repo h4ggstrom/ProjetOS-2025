@@ -5,7 +5,7 @@ This program uses the functions defined in the project to create
 directories, files, and links as specified in the requirements.
 The structure is created inside a "demo" directory at the root level of the project.
 
-@author 
+@author
 Robin de Angelis (%)
 Alexandre Ledard (%)
 Killian Treuil (%)
@@ -21,36 +21,35 @@ Killian Treuil (%)
 #include <sys/wait.h>
 #include <dirent.h>
 #include "../include/partition.h"
-#include "../include/file_operations.h"
 #include "../include/permissions.h"
 #include "../include/links.h"
-//Constantes
+// Constantes
 #define MAX_LINE 1024
 #define MAX_ARGS 64
 
-//Prototype
+// Prototype
 void display_menu();
+void build_partition(FileSystem *fs);
 void build_demo();
 void execute_cd(char **args);
 int is_string_numeric(const char *str);
 void display_help();
 
-
 /**
  * @brief Point d'entrée principal du shell interactif
- * 
+ *
  * @return int Code de sortie :
  *             - EXIT_SUCCESS (0) en cas de succès
  *             - EXIT_FAILURE (1) en cas d'erreur critique
- * 
+ *
  * @details Fonctionnement du shell :
- * 
+ *
  * ### Commandes internes :
  * - `exit` : Quitte le shell
  * - `cd [dir]` : Change le répertoire courant
  * - `display_menu` : Affiche le menu des options
  * - `build_demo` : Construit l'arborescence de démonstration
- * 
+ *
  * ### Options numériques (1-10) :
  * 1. Créer un fichier
  * 2. Supprimer un fichier
@@ -62,30 +61,34 @@ void display_help();
  * 8. Modifier les permissions
  * 9. Lister un répertoire
  * 10. Quitter
- * 
+ *
  * ### Commandes externes :
  * Exécute n'importe quelle commande système disponible dans $PATH
- * 
+ *
  * @note Le shell gère jusqu'à MAX_ARGS arguments par commande
  * @warning Les commandes externes sont exécutées dans un processus fils
- * 
+ *
  * @see execute_cd(), display_menu(), build_demo() pour les fonctions internes
  * @see create_file(), delete_file(), mycp() pour les opérations sur fichiers
  */
-int main() {
+int main()
+{
+    FileSystem fs;
     char line[MAX_LINE];
     char *args[MAX_ARGS];
     char *token;
     int status;
     pid_t pid;
 
-    while (1) {
+    while (1)
+    {
         // Afficher le prompt
         printf("Tapez \"help\" pour afficher l'aide\nmyshell> ");
         fflush(stdout);
 
         // Lire la ligne de commande
-        if (!fgets(line, MAX_LINE, stdin)) {
+        if (!fgets(line, MAX_LINE, stdin))
+        {
             break; // Sortir si EOF (Ctrl+D)
         }
 
@@ -95,79 +98,84 @@ int main() {
         // Tokenizer la ligne pour obtenir les arguments
         int i = 0;
         token = strtok(line, " ");
-        while (token != NULL && i < MAX_ARGS - 1) {
+        while (token != NULL && i < MAX_ARGS - 1)
+        {
             args[i++] = token;
             token = strtok(NULL, " ");
         }
         args[i] = NULL; // Terminer le tableau avec NULL
-        if (strcmp(args[0], "help") == 0) {
+
+        if (strcmp(args[0], "help") == 0)
+        {
             display_help();
             continue;
         }
-/*
-        // Forker un processus enfant
-        pid = fork();
-        if (pid == 0) {
-            // Processus enfant
-            execvp(args[0], args);
-            // Si execvp retourne, c'est qu'il y a eu une erreur
-            perror("execvp");
-            exit(EXIT_FAILURE);
-        } else if (pid < 0) {
-            // Erreur lors du fork
-            perror("fork");
-        } else {
-            // Processus parent - attendre la fin de l'enfant
-            waitpid(pid, &status, 0);
+        else if (strcmp(args[0], "test") == 0)
+        {
+            printf("test");
+            continue;
         }
-            */
+        else if (strcmp(args[0], "build") == 0)
+        {
+            printf("Début du Build de la partition\n");
+            init_partition(&fs, "image.img", 50000, 1024);
+            printf("Build de la partition terminé\n");
+            continue;
+        }
+        else if (strcmp(args[0], "load_partition") == 0)
+        {
+            printf("Test chargement de la partition\n");
+            load_partition(&fs, "image.img");
+            printf("Chargement de la partition terminé\n");
+            continue;
+        }
+        else if (strcmp(args[0], "create_file") == 0)
+        {
+            uint32_t new_file = create_file(&fs, "test.txt",
+                                            S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+            if (new_file != (uint32_t)-1)
+            {
+                printf("Fichier créé avec inode %u\n", new_file);
+            }
+            else
+            {
+                printf("Échec de la création du fichier\n");
+            };
+            continue;
+        }
+        /*
+                // Forker un processus enfant
+                pid = fork();
+                if (pid == 0) {
+                    // Processus enfant
+                    execvp(args[0], args);
+                    // Si execvp retourne, c'est qu'il y a eu une erreur
+                    perror("execvp");
+                    exit(EXIT_FAILURE);
+                } else if (pid < 0) {
+                    // Erreur lors du fork
+                    perror("fork");
+                } else {
+                    // Processus parent - attendre la fin de l'enfant
+                    waitpid(pid, &status, 0);
+                }
+                    */
     }
     return EXIT_SUCCESS;
 }
-
-// Fonction pour afficher le menu
-
-/*
-/**
- * @brief Creer l'ensemble des fichiers et répertoires nécéssaire à la demo.
- 
-void build_demo(){
-     // Création des répertoires
-     create_directories_recursively("demo/rep01/rep01_01");
-     create_directories_recursively("demo/rep01/rep01_02");
-     create_directories_recursively("demo/rep01/rep01_03");
-     create_directories_recursively("demo/rep02/rep02_01/rep02_01_01/rep02_01_01_01");
- 
-     // Création des fichiers
-     create_file("demo/rep01/file_test.txt", "Contenu de file_test.txt");
-     create_file("demo/rep01/rep01_01/file_test.txt", "Contenu de file_test.txt");
-     create_file("demo/rep01/rep01_02/file_test_link.txt", "Contenu de file_test_link.txt");
-     create_file("demo/rep01/rep01_03/file_test.txt", "Contenu de file_test.txt");
-     create_file("demo/rep02/file_test_lien_dur.txt", "Contenu de file_test_lien_dur.txt");
-     create_file("demo/rep02/rep02_01/file_test.txt", "Contenu de file_test.txt");
-     create_file("demo/rep02/rep02_01/rep02_01_01/rep02_01_01_01/file_test.txt", "Contenu de file_test.txt");
- 
-     // Création des liens symboliques et durs
-     create_soft_link("demo/rep01/rep01_02/file_test_link.txt", "demo/rep01/file_test_lien_symbolique.txt");
-     create_hard_link("demo/rep02/file_test_lien_dur.txt", "demo/rep02/rep02_01/file_test_lien_dur.txt");
- 
-     printf("Arborescence créée avec succès dans le dossier 'demo' !\n");
-}
-
-
-/**
- * @brief fonction qui gére la commande cd (déplacement de repertoire) pour notre shell.
- * @param args Le tableau d'arguments du shell
- */
 
 /**
  * @brief vérifie si la chaine de caractères est un nombre
  * @param str string à vérifier
  */
-int is_string_numeric(const char *str) {
-    if (str == NULL) return 0;
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (!isdigit(str[i])) {
+int is_string_numeric(const char *str)
+{
+    if (str == NULL)
+        return 0;
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        if (!isdigit(str[i]))
+        {
             return 0;
         }
     }
@@ -176,32 +184,24 @@ int is_string_numeric(const char *str) {
 
 /**
  * @brief Affiche l'aide pour toutes les commandes disponibles
- * 
+ *
  * @details Liste toutes les commandes internes et leur fonctionnalité
  */
-void display_help() {
+void display_help()
+{
     printf("\nAide du shell - Commandes disponibles:\n\n");
-    
     printf("Commandes internes:\n");
     printf("  %-20s %s\n", "exit", "Quitter le shell");
     printf("  %-20s %s\n", "cd [dir]", "Changer de répertoire");
     printf("  %-20s %s\n", "build_demo", "Construire l'arborescence de démo");
     printf("  %-20s %s\n", "help", "Afficher cette aide");
-    
-    printf("\nOptions numériques (1-10):\n");
-    printf("  %-20s %s\n", "1", "Créer un fichier");
-    printf("  %-20s %s\n", "2", "Supprimer un fichier");
-    printf("  %-20s %s\n", "3", "Copier un fichier");
-    printf("  %-20s %s\n", "4", "Déplacer un fichier");
-    printf("  %-20s %s\n", "5", "Créer un répertoire");
-    printf("  %-20s %s\n", "6", "Créer un lien symbolique");
-    printf("  %-20s %s\n", "7", "Créer un lien dur");
-    printf("  %-20s %s\n", "8", "Modifier les permissions");
-    printf("  %-20s %s\n", "9", "Lister un répertoire");
-    printf("  %-20s %s\n", "10", "Quitter");
-    
-    printf("\nCommandes externes:\n");
-    printf("  Toutes les commandes système disponibles dans $PATH\n");
+}
+
+void build_partition(FileSystem *fs)
+{
+    printf("Début du Build de la partition");
+    init_partition(fs, "image.img", 50000, 1024);
+    printf("Build de la partition terminé");
 }
 
 /*
