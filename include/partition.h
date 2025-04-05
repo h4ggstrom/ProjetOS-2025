@@ -1,9 +1,12 @@
 #ifndef PARTITION_H
 #define PARTITION_H
 
-#include <constantes.h>
-#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include <stdbool.h>
+#include <time.h>
+#include <constantes.h>
 
 /**
  * @file partition.h
@@ -181,6 +184,24 @@ void free_block(FileSystem *fs, uint32_t block_index);
 bool is_block_free(FileSystem *fs, uint32_t block_index);
 
 /**
+ * @brief Trouve l'inode correspondant à un chemin donné
+ *
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin du fichier (ex: "/dir1/file.txt")
+ * @return uint32_t Numéro de l'inode trouvé, ou (uint32_t)-1 si non trouvé
+ */
+uint32_t find_inode_by_path(FileSystem *fs, const char *path);
+
+/**
+ * @brief Lit le contenu d'un répertoire dans une structure Directory
+ *
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode_num Numéro de l'inode du répertoire
+ * @param dir Pointeur vers la structure Directory à remplir
+ * @return true en cas de succès, false en cas d'échec
+ */
+bool read_directory(FileSystem *fs, uint32_t inode_num, Directory *dir);
+/**
  * @brief Crée un nouveau fichier dans le système de fichiers
  * 
  * @param fs Pointeur vers le système de fichiers
@@ -293,4 +314,8 @@ bool write_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t si
 bool write_single_block(FileSystem *fs, uint32_t block_num, uint8_t *buffer, 
     uint32_t size, uint32_t offset);
 
+    int allocate_indirect_block(FileSystem *fs);
+    int allocate_block_for_inode(FileSystem *fs, Inode *inode, uint32_t logical_block);
+    uint32_t get_indirect_block(FileSystem *fs, uint32_t indirect_blk, uint32_t idx);
+    
 #endif // PARTITION_H

@@ -19,6 +19,7 @@ Killian Treuil (%)
 #include <ctype.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <vfs_function.h>
 #include <dirent.h>
 #include "../include/partition.h"
 #include "../include/permissions.h"
@@ -118,7 +119,7 @@ int main()
         else if (strcmp(args[0], "build") == 0)
         {
             printf("Début du Build de la partition\n");
-            init_partition(&fs, "image.img", 50000, 4096);
+            init_partition(&fs, "image.img", 524288, 16384);
             printf("Build de la partition terminé\n");
             continue;
         }
@@ -131,16 +132,27 @@ int main()
         }
         else if (strcmp(args[0], "create_file") == 0)
         {
-            uint32_t new_file = create_file(&fs,"/test.txt",
-                                            S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-            if (new_file != (uint32_t)-1)
+            if (args[1] == 0)
             {
-                printf("Fichier créé avec inode %u\n", new_file);
+                printf("Il faut indiquer un nom de fichier\n");
             }
             else
             {
-                printf("Échec de la création du fichier\n");
-            };
+                uint32_t new_file = create_file(&fs, args[1],
+                                                S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+                if (new_file != (uint32_t)-1)
+                {
+                    printf("Fichier créé avec inode %u\n", new_file);
+                }
+                else
+                {
+                    printf("Échec de la création du fichier\n");
+                };
+                continue;
+            }
+        }else if (strcmp(args[0], "ls") == 0)
+        {
+     list_directory(&fs,"/",1);
             continue;
         }
         /*
@@ -204,112 +216,3 @@ void build_partition(FileSystem *fs)
     printf("Build de la partition terminé");
 }
 
-/*
-    // Menu interactif
-    int choice;
-    char path[256], target[256], content[256];
-    while (1) {
-        display_menu();
-        scanf("%d", &choice);
-        getchar(); // Consommer le caractère '\n' restant
-
-        switch (choice) {
-            case 1: // Créer un fichier
-                printf("Entrez le chemin du fichier : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0'; // Supprimer le '\n'
-                printf("Entrez le contenu du fichier (laisser vide pour aucun contenu) : ");
-                fgets(content, sizeof(content), stdin);
-                content[strcspn(content, "\n")] = '\0';
-                create_file(path, strlen(content) > 0 ? content : NULL);
-                break;
-
-            case 2: // Supprimer un fichier
-                printf("Entrez le chemin du fichier à supprimer : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0';
-                delete_file(path);
-                break;
-
-            case 3: // Copier un fichier
-                printf("Entrez le chemin du fichier source : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0';
-                printf("Entrez le chemin du fichier destination : ");
-                fgets(target, sizeof(target), stdin);
-                target[strcspn(target, "\n")] = '\0';
-                mycp(path, target);
-                break;
-
-            case 4: // Déplacer un fichier
-                printf("Entrez le chemin du fichier source : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0';
-                printf("Entrez le répertoire de destination : ");
-                fgets(target, sizeof(target), stdin);
-                target[strcspn(target, "\n")] = '\0';
-                mymv(path, target);
-                break;
-
-            case 5: // Créer un répertoire
-                printf("Entrez le chemin du répertoire à créer : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0';
-                create_directory(path);
-                break;
-
-            case 6: // Créer un lien symbolique
-                printf("Entrez le chemin de la cible : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0';
-                printf("Entrez le chemin du lien symbolique : ");
-                fgets(target, sizeof(target), stdin);
-                target[strcspn(target, "\n")] = '\0';
-                create_soft_link(path, target);
-                break;
-
-            case 7: // Créer un lien dur
-                printf("Entrez le chemin de la cible : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0';
-                printf("Entrez le chemin du lien dur : ");
-                fgets(target, sizeof(target), stdin);
-                target[strcspn(target, "\n")] = '\0';
-                create_hard_link(path, target);
-                break;
-
-            case 8: // Modifier les droits d'accès d'un fichier
-                printf("Entrez le chemin du fichier ou répertoire : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0'; // Supprimer le '\n'
-                printf("Entrez les nouveaux droits (en octal, ex: 0644) : ");
-                unsigned int mode;
-                scanf("%o", &mode); // Lire les droits en octal
-                getchar(); // Consommer le caractère '\n' restant
-                if (change_permissions(path, mode) == 0) {
-                    printf("Droits modifiés avec succès pour : %s\n", path);
-                } else {
-                    printf("Échec de la modification des droits pour : %s\n", path);
-                }
-                break;
-
-            case 9: // Afficher le contenu d'un répertoire
-                printf("Entrez le chemin du répertoire (laisser vide pour le répertoire courant) : ");
-                fgets(path, sizeof(path), stdin);
-                path[strcspn(path, "\n")] = '\0'; // Supprimer le '\n'
-                if (print_directory_content(strlen(path) > 0 ? path : NULL) == -1) {
-                    printf("Erreur lors de l'affichage du contenu du répertoire.\n");
-                }
-                break;
-
-            case 10: // Quitter
-                printf("Au revoir !\n");
-                exit(0);
-
-            default:
-                printf("Option invalide. Veuillez réessayer.\n");
-        }
-    }
-
-    return 0;
-}*/
