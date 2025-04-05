@@ -1,0 +1,22 @@
+<map id="src/vfs_function.c" name="src/vfs_function.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="87,5,212,32"/>
+<area shape="rect" id="Node000002" href="$vfs__function_8h.html" title=" " alt="" coords="98,80,201,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,33,152,64,147,64,147,33"/>
+<area shape="rect" id="Node000003" href="$constantes_8h.html" title=" " alt="" coords="5,229,102,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,109,72,218,68,215,139,106"/>
+<area shape="rect" id="Node000005" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="206,155,285,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="168,105,218,143,215,147,165,109"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="21,304,86,331"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="56,257,56,288,51,288,51,257"/>
+<area shape="poly" id="edge10_Node000005_Node000003" title=" " alt="" coords="213,184,102,226,100,221,211,179"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="126,229,189,256"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="232,184,186,221,183,217,228,180"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="213,229,278,256"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="248,182,248,214,243,214,243,182"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="302,229,362,256"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="262,180,307,217,304,221,259,184"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="387,229,461,256"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="278,179,380,221,378,226,276,184"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="485,229,542,256"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="286,177,471,226,469,231,284,182"/>
+</map>

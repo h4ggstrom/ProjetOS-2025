@@ -1,0 +1,5 @@
+<map id="read_inode_data" name="read_inode_data">
+<area shape="rect" id="Node000001" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="5,5,122,32"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="170,5,295,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,16,154,16,154,21,122,21"/>
+</map>

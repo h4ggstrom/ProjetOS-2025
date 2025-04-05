@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['partition_2ec_0',['partition.c',['../partition_8c.html',1,'']]],
-  ['partition_2eh_1',['partition.h',['../partition_8h.html',1,'']]]
+  ['file_5foperations_2ec_0',['file_operations.c',['../file__operations_8c.html',1,'']]],
+  ['file_5foperations_2eh_1',['file_operations.h',['../file__operations_8h.html',1,'']]]
 ];

@@ -1,0 +1,21 @@
+<map id="include/constantes.h" name="include/constantes.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="128,5,269,32"/>
+<area shape="rect" id="Node000002" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="87,80,210,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,47,160,81,155,78,179,44"/>
+<area shape="rect" id="Node000006" href="$vfs__function_8h.html" title=" " alt="" coords="223,155,371,181"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="217,43,291,153,286,156,213,46"/>
+<area shape="rect" id="Node000003" href="$tree_8h.html" title=" " alt="" coords="51,229,150,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,118,101,135,89,156,85,175,86,194,97,228,92,230,81,195,79,174,84,154,97,132,115,115"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="106,304,189,331"/>
+<area shape="poly" id="edge9_Node000002_Node000004" title=" " alt="" coords="119,118,79,156,55,191,42,230,39,243,42,255,54,271,71,284,107,302,105,307,68,288,51,274,37,257,34,243,37,229,50,188,75,153,116,114"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="189,111,272,152,270,156,187,116"/>
+<area shape="rect" id="Node000008" href="$partition_8c.html" title="This file contains the functions to create and manage partitions." alt="" coords="99,155,199,181"/>
+<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="152,122,152,154,146,154,146,122"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="119,268,142,302,137,305,115,271"/>
+<area shape="rect" id="Node000005" href="$tree_8c.html" title="Partie du programme qui s&#39;occupe de l&#39;affichage de l&#39;arbre de repertoire." alt="" coords="5,304,82,331"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="84,270,55,305,51,302,79,267"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="249,190,136,231,134,226,248,185"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="269,193,224,231,187,271,159,305,155,302,183,267,220,227,266,189"/>
+<area shape="rect" id="Node000007" href="$vfs__function_8c.html" title=" " alt="" coords="234,229,360,256"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="300,197,300,229,294,229,294,197"/>
+</map>

@@ -1,0 +1,54 @@
+<map id="make_demo_directory" name="make_demo_directory">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,183,155,209"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="203,208,317,235"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,204,187,208,187,214,155,209"/>
+<area shape="rect" id="Node000020" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="219,157,300,184"/>
+<area shape="poly" id="edge25_Node000001_Node000020" title=" " alt="" coords="155,183,204,176,204,181,155,188"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="368,309,503,336"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="279,233,317,264,366,295,377,300,375,305,364,300,314,268,275,237"/>
+<area shape="rect" id="Node000009" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="1100,259,1205,285"/>
+<area shape="poly" id="edge15_Node000002_Node000009" title=" " alt="" coords="268,234,281,265,301,305,330,346,367,379,398,398,426,411,479,422,535,423,605,421,781,421,859,426,922,430,951,430,981,425,1014,414,1051,396,1079,376,1103,350,1136,298,1141,301,1107,353,1083,380,1054,401,1016,419,983,430,952,435,922,436,859,431,781,427,605,427,535,428,478,428,425,416,396,403,363,383,326,349,297,308,276,267,263,236"/>
+<area shape="rect" id="Node000010" href="$partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="935,360,1016,387"/>
+<area shape="poly" id="edge21_Node000002_Node000010" title=" " alt="" coords="270,234,284,260,305,291,333,322,366,346,412,361,474,371,548,377,629,380,791,379,920,374,920,379,791,385,629,386,548,383,474,376,410,366,364,350,329,326,301,294,279,262,265,237"/>
+<area shape="rect" id="Node000014" href="$partition_8c.html#a010b1b2eeac4e5444f921d9e124dbb7f" title="Alloue un nouvel inode libre." alt="" coords="383,5,487,32"/>
+<area shape="poly" id="edge16_Node000002_Node000014" title=" " alt="" coords="301,206,315,194,328,175,335,157,338,119,341,81,348,62,363,42,368,38,372,41,367,46,353,64,346,83,343,120,340,158,333,178,319,198,304,210"/>
+<area shape="rect" id="Node000015" href="$partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="365,56,505,83"/>
+<area shape="poly" id="edge17_Node000002_Node000015" title=" " alt="" coords="300,205,315,194,332,169,338,144,345,119,363,93,368,89,371,93,367,96,349,121,343,145,337,171,319,198,303,210"/>
+<area shape="rect" id="Node000016" href="$partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="368,259,502,285"/>
+<area shape="poly" id="edge19_Node000002_Node000016" title=" " alt="" coords="310,233,372,251,371,256,308,238"/>
+<area shape="rect" id="Node000017" href="$partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="394,107,476,133"/>
+<area shape="poly" id="edge22_Node000002_Node000017" title=" " alt="" coords="296,205,315,194,330,181,339,169,348,156,363,143,379,135,381,139,367,148,352,160,343,172,333,185,319,198,298,210"/>
+<area shape="rect" id="Node000018" href="$partition_8c.html#a20c958c16161bb01bd511032a94fc0b8" title="Initialise un nouvel inode." alt="" coords="397,157,473,184"/>
+<area shape="poly" id="edge23_Node000002_Node000018" title=" " alt="" coords="308,205,381,183,383,188,310,210"/>
+<area shape="rect" id="Node000019" href="$partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="396,208,474,235"/>
+<area shape="poly" id="edge24_Node000002_Node000019" title=" " alt="" coords="317,219,381,219,381,224,317,224"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="555,233,658,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="476,306,504,295,565,265,568,270,506,300,478,311"/>
+<area shape="rect" id="Node000007" href="$partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="553,309,660,336"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="503,320,538,320,538,325,503,325"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="721,145,838,172"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="634,230,737,177,739,182,636,235"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="913,107,1038,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="837,145,897,133,898,138,838,150"/>
+<area shape="rect" id="Node000008" href="$partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="708,309,851,336"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="660,320,692,320,692,325,660,325"/>
+<area shape="rect" id="Node000011" href="$partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="720,233,839,260"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="638,306,732,264,734,269,640,311"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="851,316,947,309,1052,295,1088,287,1089,292,1053,300,947,314,852,322"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="835,334,921,357,919,362,833,339"/>
+<area shape="poly" id="edge11_Node000011_Node000009" title=" " alt="" coords="839,240,939,237,1053,244,1093,252,1092,257,1052,249,939,243,839,245"/>
+<area shape="rect" id="Node000012" href="$partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="899,157,1052,184"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="815,230,924,187,926,192,817,235"/>
+<area shape="rect" id="Node000013" href="$partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="912,259,1040,285"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="840,252,896,259,896,264,839,257"/>
+<area shape="poly" id="edge13_Node000012_Node000009" title=" " alt="" coords="1015,182,1054,200,1123,247,1120,251,1051,205,1013,187"/>
+<area shape="poly" id="edge18_Node000015_Node000004" title=" " alt="" coords="488,81,507,93,537,122,562,155,596,218,591,220,557,158,533,125,504,97,485,86"/>
+<area shape="poly" id="edge20_Node000016_Node000004" title=" " alt="" coords="502,259,539,254,540,259,503,265"/>
+<area shape="poly" id="edge26_Node000020_Node000003" title=" " alt="" coords="302,182,319,194,337,221,343,247,349,271,367,296,371,299,368,303,363,299,345,273,338,248,332,223,315,198,299,186"/>
+<area shape="poly" id="edge27_Node000020_Node000014" title=" " alt="" coords="267,155,304,101,332,69,363,42,371,37,374,41,367,46,335,73,308,104,271,158"/>
+<area shape="poly" id="edge28_Node000020_Node000015" title=" " alt="" coords="275,155,314,124,364,92,375,87,377,92,366,97,317,128,279,159"/>
+<area shape="poly" id="edge29_Node000020_Node000016" title=" " alt="" coords="298,182,319,194,333,207,343,220,352,232,367,244,375,249,372,254,363,249,348,236,339,223,330,211,315,198,296,187"/>
+<area shape="poly" id="edge30_Node000020_Node000017" title=" " alt="" coords="300,156,379,133,381,138,302,162"/>
+<area shape="poly" id="edge31_Node000020_Node000018" title=" " alt="" coords="301,168,382,168,382,173,301,173"/>
+<area shape="poly" id="edge32_Node000020_Node000019" title=" " alt="" coords="302,180,382,203,381,209,300,185"/>
+</map>

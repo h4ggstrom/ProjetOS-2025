@@ -98,27 +98,88 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
-<tr class="memitem:a16612b05b5c29b0eb1c1e5601c86836a" id="r_a16612b05b5c29b0eb1c1e5601c86836a"><td class="memItemLeft" align="right" valign="top"><a id="a16612b05b5c29b0eb1c1e5601c86836a" name="a16612b05b5c29b0eb1c1e5601c86836a"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>parent_inode</b></td></tr>
-<tr class="memdesc:a16612b05b5c29b0eb1c1e5601c86836a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structInode.html" title="Represents an inode in the file system.">Inode</a> of the parent directory. <br /></td></tr>
+<tr class="memitem:a16612b05b5c29b0eb1c1e5601c86836a" id="r_a16612b05b5c29b0eb1c1e5601c86836a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16612b05b5c29b0eb1c1e5601c86836a">parent_inode</a></td></tr>
+<tr class="memdesc:a16612b05b5c29b0eb1c1e5601c86836a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structInode.html" title="Represents an inode in the file system.">Inode</a> of the parent directory.  <br /></td></tr>
 <tr class="separator:a16612b05b5c29b0eb1c1e5601c86836a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a127b316da6954d14dc3efbf73300f085" id="r_a127b316da6954d14dc3efbf73300f085"><td class="memItemLeft" align="right" valign="top"><a id="a127b316da6954d14dc3efbf73300f085" name="a127b316da6954d14dc3efbf73300f085"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>entries</b> [128]</td></tr>
-<tr class="memdesc:a127b316da6954d14dc3efbf73300f085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inodes of files or subdirectories. <br /></td></tr>
+<tr class="memitem:a127b316da6954d14dc3efbf73300f085" id="r_a127b316da6954d14dc3efbf73300f085"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a127b316da6954d14dc3efbf73300f085">entries</a> [128]</td></tr>
+<tr class="memdesc:a127b316da6954d14dc3efbf73300f085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inodes of files or subdirectories.  <br /></td></tr>
 <tr class="separator:a127b316da6954d14dc3efbf73300f085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3928002cf1e7b576ffc8d5263630262" id="r_ac3928002cf1e7b576ffc8d5263630262"><td class="memItemLeft" align="right" valign="top"><a id="ac3928002cf1e7b576ffc8d5263630262" name="ac3928002cf1e7b576ffc8d5263630262"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>names</b> [128][256]</td></tr>
-<tr class="memdesc:ac3928002cf1e7b576ffc8d5263630262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names of files or subdirectories. <br /></td></tr>
+<tr class="memitem:ac3928002cf1e7b576ffc8d5263630262" id="r_ac3928002cf1e7b576ffc8d5263630262"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3928002cf1e7b576ffc8d5263630262">names</a> [128][256]</td></tr>
+<tr class="memdesc:ac3928002cf1e7b576ffc8d5263630262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Names of files or subdirectories.  <br /></td></tr>
 <tr class="separator:ac3928002cf1e7b576ffc8d5263630262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcca25cd3abc832384867f1a0060591f" id="r_abcca25cd3abc832384867f1a0060591f"><td class="memItemLeft" align="right" valign="top"><a id="abcca25cd3abc832384867f1a0060591f" name="abcca25cd3abc832384867f1a0060591f"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>entry_count</b></td></tr>
-<tr class="memdesc:abcca25cd3abc832384867f1a0060591f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of entries in the directory. <br /></td></tr>
+<tr class="memitem:abcca25cd3abc832384867f1a0060591f" id="r_abcca25cd3abc832384867f1a0060591f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcca25cd3abc832384867f1a0060591f">entry_count</a></td></tr>
+<tr class="memdesc:abcca25cd3abc832384867f1a0060591f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of entries in the directory.  <br /></td></tr>
 <tr class="separator:abcca25cd3abc832384867f1a0060591f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Represents a directory in the file system. </p>
 <p>A directory contains entries for files and subdirectories, including their names and corresponding inode indices. </p>
-</div><hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+</div><h2 class="groupheader">Documentation des données membres</h2>
+<a id="a127b316da6954d14dc3efbf73300f085" name="a127b316da6954d14dc3efbf73300f085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127b316da6954d14dc3efbf73300f085">&#9670;&#160;</a></span>entries</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Directory::entries[128]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inodes of files or subdirectories. </p>
+
+</div>
+</div>
+<a id="abcca25cd3abc832384867f1a0060591f" name="abcca25cd3abc832384867f1a0060591f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcca25cd3abc832384867f1a0060591f">&#9670;&#160;</a></span>entry_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Directory::entry_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of entries in the directory. </p>
+
+</div>
+</div>
+<a id="ac3928002cf1e7b576ffc8d5263630262" name="ac3928002cf1e7b576ffc8d5263630262"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3928002cf1e7b576ffc8d5263630262">&#9670;&#160;</a></span>names</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Directory::names[128][256]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Names of files or subdirectories. </p>
+
+</div>
+</div>
+<a id="a16612b05b5c29b0eb1c1e5601c86836a" name="a16612b05b5c29b0eb1c1e5601c86836a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16612b05b5c29b0eb1c1e5601c86836a">&#9670;&#160;</a></span>parent_inode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Directory::parent_inode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structInode.html" title="Represents an inode in the file system.">Inode</a> of the parent directory. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
 <li>include/<a class="el" href="partition_8h_source.html">partition.h</a></li>
 </ul>
 </div><!-- contents -->

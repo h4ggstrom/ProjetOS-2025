@@ -1,0 +1,17 @@
+<map id="free_inode" name="free_inode">
+<area shape="rect" id="Node000001" title="Libère un inode." alt="" coords="462,79,544,106"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,28,414,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="447,76,397,58,399,53,449,71"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,79,398,106"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="447,95,398,95,398,90,447,90"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,130,238,156"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="448,112,415,120,322,134,238,142,238,137,322,129,414,115,447,107"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,54,55,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="300,26,256,16,206,10,154,9,104,19,72,35,47,55,43,51,69,31,102,14,154,4,207,4,257,11,301,21"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,28,252,55"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,44,253,44,253,39,285,39"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="88,60,55,66,54,60,87,55"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="301,91,55,72,55,66,301,86"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="301,79,226,58,228,53,302,74"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="126,125,101,113,51,83,53,79,104,109,129,121"/>
+</map>

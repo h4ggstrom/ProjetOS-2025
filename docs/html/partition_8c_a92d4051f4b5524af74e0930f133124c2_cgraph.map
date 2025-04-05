@@ -1,0 +1,11 @@
+<map id="allocate_block_for_inode" name="allocate_block_for_inode">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,16,132,58"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="381,24,485,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,17,179,9,256,3,333,9,373,17,372,22,333,14,256,8,180,14,133,23"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="180,24,333,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,34,164,34,164,40,132,40"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a75b615a241e5f4d9b104afb3263f1d19" title=" " alt="" coords="193,74,320,101"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="133,51,190,67,189,72,131,56"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="334,34,366,34,366,40,334,40"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="305,71,369,52,371,57,306,76"/>
+</map>

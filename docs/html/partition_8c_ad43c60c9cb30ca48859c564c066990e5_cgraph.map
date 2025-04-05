@@ -1,0 +1,10 @@
+<map id="write_inode_data" name="write_inode_data">
+<area shape="rect" id="Node000001" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="5,31,125,57"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="374,5,478,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,27,172,16,270,10,358,12,358,17,270,16,173,21,115,33"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="173,31,326,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,41,157,41,157,47,125,47"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="185,81,314,108"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="117,55,184,74,183,79,116,61"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="326,30,358,26,359,31,327,36"/>
+</map>

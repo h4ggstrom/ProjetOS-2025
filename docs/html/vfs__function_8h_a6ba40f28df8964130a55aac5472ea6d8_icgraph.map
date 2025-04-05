@@ -1,0 +1,9 @@
+<map id="simplify_path" name="simplify_path">
+<area shape="rect" id="Node000001" title="Simplifie un chemin en supprimant les . et .. inutiles." alt="" coords="295,31,393,57"/>
+<area shape="rect" id="Node000002" href="$vfs__function_8c.html#a71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="115,5,235,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="279,37,235,30,236,25,280,32"/>
+<area shape="rect" id="Node000004" href="$vfs__function_8c.html#aca5a29815408d61083bbbfe7697e9d0e" title="Convertit un chemin relatif en chemin absolu." alt="" coords="103,56,247,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="280,56,248,61,247,56,279,51"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,21,55,21,55,16,99,16"/>
+</map>

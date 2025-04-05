@@ -1,0 +1,17 @@
+<map id="write_directory" name="write_directory">
+<area shape="rect" id="Node000001" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="5,81,112,108"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="160,31,303,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,78,168,60,170,65,108,83"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="172,107,291,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="113,100,157,106,156,112,112,105"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="552,81,657,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,27,320,15,379,5,443,4,475,8,505,16,548,39,582,68,579,72,545,44,503,21,474,13,442,9,380,11,321,20,274,33"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="387,31,468,57"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="303,41,372,41,372,47,303,47"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="291,113,537,96,537,102,292,119"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="351,132,504,159"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="292,125,336,131,335,136,291,130"/>
+<area shape="rect" id="Node000007" href="$partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="364,183,492,209"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="264,131,352,168,370,175,368,180,350,173,262,136"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="476,129,540,110,542,115,478,134"/>
+</map>

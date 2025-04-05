@@ -1,0 +1,5 @@
+<map id="resolve_relative_path" name="resolve_relative_path">
+<area shape="rect" id="Node000001" title="Convertit un chemin relatif en chemin absolu." alt="" coords="5,5,150,32"/>
+<area shape="rect" id="Node000002" href="$vfs__function_8c.html#a6ba40f28df8964130a55aac5472ea6d8" title="Simplifie un chemin en supprimant les . et .. inutiles." alt="" coords="198,5,296,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,16,182,16,182,21,150,21"/>
+</map>

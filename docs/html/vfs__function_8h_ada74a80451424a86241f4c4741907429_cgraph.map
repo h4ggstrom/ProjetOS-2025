@@ -1,0 +1,12 @@
+<map id="list_directory" name="list_directory">
+<area shape="rect" id="Node000001" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="5,31,101,57"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="149,5,282,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,34,133,29,134,34,101,39"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="330,31,433,57"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="101,41,314,41,314,47,101,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,26,315,31,315,37,282,31"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="481,31,598,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="434,41,466,41,466,47,434,47"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="646,31,771,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="598,41,630,41,630,47,598,47"/>
+</map>

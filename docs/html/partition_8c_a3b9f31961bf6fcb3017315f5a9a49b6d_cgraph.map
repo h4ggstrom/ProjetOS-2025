@@ -1,0 +1,7 @@
+<map id="ensure_inode_blocks" name="ensure_inode_blocks">
+<area shape="rect" id="Node000001" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="5,31,149,57"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="197,5,301,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,31,181,26,181,31,149,36"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="208,56,290,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,52,193,59,192,64,149,57"/>
+</map>

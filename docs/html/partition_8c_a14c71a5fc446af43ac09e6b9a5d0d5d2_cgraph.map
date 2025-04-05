@@ -1,0 +1,9 @@
+<map id="find_file_in_directory" name="find_file_in_directory">
+<area shape="rect" id="Node000001" title="Trouve un fichier dans un répertoire." alt="" coords="5,5,146,32"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="194,5,297,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,16,178,16,178,21,146,21"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="345,5,461,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="297,16,329,16,329,21,297,21"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="509,5,635,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="462,16,494,16,494,21,462,21"/>
+</map>

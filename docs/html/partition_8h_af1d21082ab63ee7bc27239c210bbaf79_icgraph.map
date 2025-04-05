@@ -1,0 +1,20 @@
+<map id="split_path" name="split_path">
+<area shape="rect" id="Node000001" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="462,109,540,136"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,103,413,74,390,62,392,58,416,69,466,98"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="446,115,398,107,399,101,447,110"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="447,129,238,145,238,140,447,124"/>
+<area shape="rect" id="Node000007" href="$partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="133,185,222,212"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="448,138,415,146,223,191,222,186,414,141,446,133"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="118,184,101,175,65,144,39,112,43,109,69,140,104,171,120,179"/>
+</map>

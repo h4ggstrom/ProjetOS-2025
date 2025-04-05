@@ -98,23 +98,69 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
-<tr class="memitem:ab1517b391e2187212c9f20b78c8ac3ce" id="r_ab1517b391e2187212c9f20b78c8ac3ce"><td class="memItemLeft" align="right" valign="top"><a id="ab1517b391e2187212c9f20b78c8ac3ce" name="ab1517b391e2187212c9f20b78c8ac3ce"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>index</b></td></tr>
-<tr class="memdesc:ab1517b391e2187212c9f20b78c8ac3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the block in the partition. <br /></td></tr>
+<tr class="memitem:ab1517b391e2187212c9f20b78c8ac3ce" id="r_ab1517b391e2187212c9f20b78c8ac3ce"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1517b391e2187212c9f20b78c8ac3ce">index</a></td></tr>
+<tr class="memdesc:ab1517b391e2187212c9f20b78c8ac3ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the block in the partition.  <br /></td></tr>
 <tr class="separator:ab1517b391e2187212c9f20b78c8ac3ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fc1a404a6b8f4dc2326d853182aeb70" id="r_a2fc1a404a6b8f4dc2326d853182aeb70"><td class="memItemLeft" align="right" valign="top"><a id="a2fc1a404a6b8f4dc2326d853182aeb70" name="a2fc1a404a6b8f4dc2326d853182aeb70"></a>
-uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="memdesc:a2fc1a404a6b8f4dc2326d853182aeb70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the block's data. <br /></td></tr>
+<tr class="memitem:a2fc1a404a6b8f4dc2326d853182aeb70" id="r_a2fc1a404a6b8f4dc2326d853182aeb70"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2fc1a404a6b8f4dc2326d853182aeb70">data</a></td></tr>
+<tr class="memdesc:a2fc1a404a6b8f4dc2326d853182aeb70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the block's data.  <br /></td></tr>
 <tr class="separator:a2fc1a404a6b8f4dc2326d853182aeb70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62342d30309456fdceeb8af0222b9fde" id="r_a62342d30309456fdceeb8af0222b9fde"><td class="memItemLeft" align="right" valign="top"><a id="a62342d30309456fdceeb8af0222b9fde" name="a62342d30309456fdceeb8af0222b9fde"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_free</b></td></tr>
-<tr class="memdesc:a62342d30309456fdceeb8af0222b9fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the block is free or used. <br /></td></tr>
+<tr class="memitem:a62342d30309456fdceeb8af0222b9fde" id="r_a62342d30309456fdceeb8af0222b9fde"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62342d30309456fdceeb8af0222b9fde">is_free</a></td></tr>
+<tr class="memdesc:a62342d30309456fdceeb8af0222b9fde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the block is free or used.  <br /></td></tr>
 <tr class="separator:a62342d30309456fdceeb8af0222b9fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Represents a block in the partition. </p>
 <p>A block is a fixed-size unit of storage in the partition. Each block can store data and is tracked using a bitmap. </p>
-</div><hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+</div><h2 class="groupheader">Documentation des données membres</h2>
+<a id="a2fc1a404a6b8f4dc2326d853182aeb70" name="a2fc1a404a6b8f4dc2326d853182aeb70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fc1a404a6b8f4dc2326d853182aeb70">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* Block::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the block's data. </p>
+
+</div>
+</div>
+<a id="ab1517b391e2187212c9f20b78c8ac3ce" name="ab1517b391e2187212c9f20b78c8ac3ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1517b391e2187212c9f20b78c8ac3ce">&#9670;&#160;</a></span>index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t Block::index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Index of the block in the partition. </p>
+
+</div>
+</div>
+<a id="a62342d30309456fdceeb8af0222b9fde" name="a62342d30309456fdceeb8af0222b9fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62342d30309456fdceeb8af0222b9fde">&#9670;&#160;</a></span>is_free</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Block::is_free</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether the block is free or used. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
 <li>include/<a class="el" href="partition_8h_source.html">partition.h</a></li>
 </ul>
 </div><!-- contents -->

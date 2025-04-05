@@ -1,0 +1,13 @@
+<map id="change_directory" name="change_directory">
+<area shape="rect" id="Node000001" title="Change le répertoire courant." alt="" coords="5,31,126,57"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="174,5,307,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,33,158,28,158,33,126,38"/>
+<area shape="rect" id="Node000006" href="$vfs__function_8c.html#a6ba40f28df8964130a55aac5472ea6d8" title="Simplifie un chemin en supprimant les . et .. inutiles." alt="" coords="191,56,290,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="126,50,176,57,175,63,126,55"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="355,5,458,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="307,16,340,16,340,21,307,21"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="506,5,623,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="459,16,491,16,491,21,459,21"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="671,5,796,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="623,16,655,16,655,21,623,21"/>
+</map>

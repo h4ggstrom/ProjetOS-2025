@@ -1,0 +1,11 @@
+<map id="fs_open_file" name="fs_open_file">
+<area shape="rect" id="Node000001" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="5,5,97,32"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="145,5,278,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,16,129,16,129,21,97,21"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="326,5,429,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="278,16,311,16,311,21,278,21"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="477,5,594,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="430,16,462,16,462,21,430,21"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="642,5,767,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="594,16,626,16,626,21,594,21"/>
+</map>
