@@ -1,3 +1,23 @@
+/**
+ * @file partition.h
+ * @brief Header file for the partition management library.
+ * 
+ * @details This file declares the structures and functions used to manage
+ *          a file system partition, including block management, inode handling,
+ *          and directory operations. It provides the core data structures and
+ *          APIs for file system operations such as file creation, deletion,
+ *          and directory manipulation.
+ *
+ * @version 0.3
+ * @date 04/04/2025
+ * 
+ * @authors
+ * @author Robin de Angelis
+ * @author Alexandre Ledard
+ * @author Killian Treuil
+ * 
+ */
+
 #ifndef PARTITION_H
 #define PARTITION_H
 

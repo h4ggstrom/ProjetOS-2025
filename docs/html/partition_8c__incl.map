@@ -1,0 +1,19 @@
+<map id="src/partition.c" name="src/partition.c">
+<area shape="rect" id="Node000001" title="This file contains the functions to create and manage partitions." alt="" coords="207,5,307,32"/>
+<area shape="rect" id="Node000002" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="218,80,296,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,33,260,64,254,64,254,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,69,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,110,84,154,83,149,218,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="93,155,157,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="235,110,162,149,160,145,233,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="182,155,242,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="251,109,230,143,225,140,247,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="266,155,341,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="267,106,290,140,285,143,263,109"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="364,155,422,181"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="282,105,357,145,355,149,279,110"/>
+<area shape="rect" id="Node000008" href="$constantes_8h_source.html" title=" " alt="" coords="446,155,542,181"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="297,104,439,147,437,152,296,109"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="462,229,526,256"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="497,182,497,214,492,214,492,182"/>
+</map>

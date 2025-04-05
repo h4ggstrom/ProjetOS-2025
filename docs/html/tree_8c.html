@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet 0S 2025: Référence du fichier src/tree.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet 0S 2025<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier tree.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Partie du programme qui s'occupe de l'affichage de l'arbre de repertoire.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;tree.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de tree.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="tree_8c__incl.png" border="0" usemap="#asrc_2tree_8c" alt=""/></div>
+<map name="asrc_2tree_8c" id="asrc_2tree_8c">
+<area shape="rect" title="Partie du programme qui s&#39;occupe de l&#39;affichage de l&#39;arbre de repertoire." alt="" coords="310,5,386,32"/>
+<area shape="rect" href="tree_8h_source.html" title=" " alt="" coords="320,80,375,107"/>
+<area shape="poly" title=" " alt="" coords="350,33,350,64,345,64,345,33"/>
+<area shape="rect" href="partition_8h.html" title="Header file for the partition management library." alt="" coords="264,229,343,256"/>
+<area shape="poly" title=" " alt="" coords="346,108,332,155,314,215,309,214,326,154,341,106"/>
+<area shape="rect" href="vfs__function_8h_source.html" title=" " alt="" coords="341,155,445,181"/>
+<area shape="poly" title=" " alt="" coords="358,106,379,140,375,143,353,109"/>
+<area shape="rect" title=" " alt="" coords="5,304,69,331"/>
+<area shape="poly" title=" " alt="" coords="265,257,85,306,83,301,263,252"/>
+<area shape="rect" title=" " alt="" coords="93,304,157,331"/>
+<area shape="poly" title=" " alt="" coords="274,259,171,300,169,295,272,254"/>
+<area shape="rect" title=" " alt="" coords="182,304,242,331"/>
+<area shape="poly" title=" " alt="" coords="289,259,241,297,238,292,286,254"/>
+<area shape="rect" title=" " alt="" coords="266,304,341,331"/>
+<area shape="poly" title=" " alt="" coords="306,257,306,288,301,288,301,257"/>
+<area shape="rect" title=" " alt="" coords="364,304,422,331"/>
+<area shape="poly" title=" " alt="" coords="321,254,367,292,364,296,318,259"/>
+<area shape="rect" href="constantes_8h_source.html" title=" " alt="" coords="446,304,542,331"/>
+<area shape="poly" title=" " alt="" coords="338,254,448,296,446,301,336,259"/>
+<area shape="rect" title=" " alt="" coords="462,379,526,405"/>
+<area shape="poly" title=" " alt="" coords="497,331,497,363,492,363,492,331"/>
+<area shape="poly" title=" " alt="" coords="379,184,333,221,329,217,376,180"/>
+<area shape="poly" title=" " alt="" coords="404,180,479,290,475,293,399,183"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:accccf7c88162324fe8b2d2ed38ea735a" id="r_accccf7c88162324fe8b2d2ed38ea735a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accccf7c88162324fe8b2d2ed38ea735a">tree</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *path, int max_depth)</td></tr>
+<tr class="memdesc:accccf7c88162324fe8b2d2ed38ea735a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'arborescence du système de fichiers.  <br /></td></tr>
+<tr class="separator:accccf7c88162324fe8b2d2ed38ea735a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Partie du programme qui s'occupe de l'affichage de l'arbre de repertoire. </p>
+<p>Partie du programme qui regroupe les commandes du terminales pour intéragir avec le File System.</p>
+<dl class="section version"><dt>Version</dt><dd>0.3 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>04/04/2025</dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd><ul>
+<li>Robin de Angelis (%)</li>
+<li>Alexandre Ledard (%)</li>
+<li>Killian Treuil (%) </li>
+</ul>
+</dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="accccf7c88162324fe8b2d2ed38ea735a" name="accccf7c88162324fe8b2d2ed38ea735a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accccf7c88162324fe8b2d2ed38ea735a">&#9670;&#160;</a></span>tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max_depth</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'arborescence du système de fichiers. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">path</td><td>Chemin de départ (si NULL, commence à la racine) </td></tr>
+    <tr><td class="paramname">max_depth</td><td>Profondeur maximale à afficher (0 pour illimité) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

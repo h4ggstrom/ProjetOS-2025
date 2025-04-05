@@ -1,12 +1,16 @@
 /**
-This file contains the functions that are used to manage the permissions and access to the files.
-
-@author Robin de Angelis (%)
-@author Alexandre Ledard (%)
-@author Killian Treuil (%)
-
-@version 0.1 01/04/2025
-*/
+ * @file permission.c
+ * @brief  This file contains the functions that are used to manage the permissions and access to the files.
+ *
+ *
+ * @version 0.3
+ * @date 04/04/2025
+ *
+ * @authors
+ * - Robin de Angelis (%)
+ * - Alexandre Ledard (%)
+ * - Killian Treuil (%)
+ */
 
 #include <sys/stat.h>
 #include <errno.h>

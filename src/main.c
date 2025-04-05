@@ -1,17 +1,20 @@
 /**
-Main program for creating the required directory structure and files.
-
-This program uses the functions defined in the project to create
+ * @file main.c
+ * @brief Main program for creating the required directory structure and files.
+ *
+ * @details This program uses the functions defined in the project to create
 directories, files, and links as specified in the requirements.
 The structure is created inside a "demo" directory at the root level of the project.
+ *
+ * @version 0.3
+ * @date 04/04/2025
+ *
+ * @authors
+ * - Robin de Angelis (%)
+ * - Alexandre Ledard (%)
+ * - Killian Treuil (%)
+ */
 
-@author
-Robin de Angelis (%)
-Alexandre Ledard (%)
-Killian Treuil (%)
-
-@version 0.1 01/04/2025
-*/
 
 #include <stdio.h>
 #include <stdlib.h>

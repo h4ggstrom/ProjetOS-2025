@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet 0S 2025: Référence du fichier src/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet 0S 2025<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier main.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Main program for creating the required directory structure and files.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;sys/wait.h&gt;</code><br />
+<code>#include &lt;vfs_function.h&gt;</code><br />
+<code>#include &lt;dirent.h&gt;</code><br />
+<code>#include &lt;tree.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="partition_8h_source.html">../include/partition.h</a>&quot;</code><br />
+<code>#include &quot;../include/permissions.h&quot;</code><br />
+<code>#include &quot;../include/links.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c__incl.png" border="0" usemap="#asrc_2main_8c" alt=""/></div>
+<map name="asrc_2main_8c" id="asrc_2main_8c">
+<area shape="rect" title="Main program for creating the required directory structure and files." alt="" coords="368,5,450,32"/>
+<area shape="rect" title=" " alt="" coords="5,304,66,331"/>
+<area shape="poly" title=" " alt="" coords="368,26,270,42,215,59,162,82,136,98,118,113,87,156,70,190,57,226,42,289,37,288,52,224,65,188,83,153,115,109,133,93,160,78,213,54,269,37,367,21"/>
+<area shape="rect" title=" " alt="" coords="477,304,540,331"/>
+<area shape="poly" title=" " alt="" coords="398,34,381,55,367,81,365,93,367,106,391,162,423,213,457,257,487,291,483,294,453,261,419,216,386,164,362,107,359,93,362,79,376,52,394,31"/>
+<area shape="rect" title=" " alt="" coords="377,80,441,107"/>
+<area shape="poly" title=" " alt="" coords="412,33,412,64,406,64,406,33"/>
+<area shape="rect" title=" " alt="" coords="464,80,532,107"/>
+<area shape="poly" title=" " alt="" coords="426,30,473,68,469,72,423,35"/>
+<area shape="rect" title=" " alt="" coords="556,80,638,107"/>
+<area shape="poly" title=" " alt="" coords="443,30,551,71,549,76,441,35"/>
+<area shape="rect" href="vfs__function_8h_source.html" title=" " alt="" coords="97,155,200,181"/>
+<area shape="poly" title=" " alt="" coords="368,23,326,28,278,37,230,55,188,82,168,110,156,140,151,139,163,107,184,78,228,50,277,32,325,22,367,18"/>
+<area shape="rect" href="partition_8h.html" title="Header file for the partition management library." alt="" coords="203,229,281,256"/>
+<area shape="poly" title=" " alt="" coords="385,35,353,55,323,82,299,115,279,151,253,215,248,213,274,148,294,112,319,78,350,51,382,30"/>
+<area shape="rect" title=" " alt="" coords="662,80,726,107"/>
+<area shape="poly" title=" " alt="" coords="451,27,647,77,646,82,450,33"/>
+<area shape="rect" href="tree_8h_source.html" title=" " alt="" coords="198,80,252,107"/>
+<area shape="poly" title=" " alt="" coords="378,35,267,78,265,73,376,30"/>
+<area shape="rect" href="permissions_8h_source.html" title=" " alt="" coords="750,80,910,107"/>
+<area shape="poly" title=" " alt="" coords="451,24,742,74,741,79,450,30"/>
+<area shape="rect" href="links_8h_source.html" title=" " alt="" coords="933,80,1050,107"/>
+<area shape="poly" title=" " alt="" coords="451,21,648,43,919,77,918,82,648,48,450,27"/>
+<area shape="rect" href="constantes_8h_source.html" title=" " alt="" coords="90,304,186,331"/>
+<area shape="poly" title=" " alt="" coords="151,182,143,289,138,288,145,182"/>
+<area shape="poly" title=" " alt="" coords="167,180,216,218,213,222,163,184"/>
+<area shape="rect" title=" " alt="" coords="106,379,170,405"/>
+<area shape="poly" title=" " alt="" coords="141,331,141,363,136,363,136,331"/>
+<area shape="poly" title=" " alt="" coords="207,259,81,303,79,298,205,254"/>
+<area shape="poly" title=" " alt="" coords="283,252,463,301,461,306,281,257"/>
+<area shape="poly" title=" " alt="" coords="226,259,170,297,167,293,223,254"/>
+<area shape="rect" title=" " alt="" coords="210,304,274,331"/>
+<area shape="poly" title=" " alt="" coords="245,257,245,288,240,288,240,257"/>
+<area shape="rect" title=" " alt="" coords="298,304,373,331"/>
+<area shape="poly" title=" " alt="" coords="260,254,309,292,306,297,257,259"/>
+<area shape="rect" title=" " alt="" coords="396,304,454,331"/>
+<area shape="poly" title=" " alt="" coords="275,254,383,296,381,301,273,259"/>
+<area shape="poly" title=" " alt="" coords="213,109,175,146,171,142,210,105"/>
+<area shape="poly" title=" " alt="" coords="229,107,242,213,236,214,224,107"/>
+<area shape="rect" title=" " alt="" coords="786,155,875,181"/>
+<area shape="poly" title=" " alt="" coords="833,107,833,139,828,139,828,107"/>
+<area shape="rect" title=" " alt="" coords="957,155,1026,181"/>
+<area shape="poly" title=" " alt="" coords="994,107,994,139,989,139,989,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a842ed03f27719bc87666bfd1f75415b8" id="r_a842ed03f27719bc87666bfd1f75415b8"><td class="memItemLeft" align="right" valign="top"><a id="a842ed03f27719bc87666bfd1f75415b8" name="a842ed03f27719bc87666bfd1f75415b8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_LINE</b>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a842ed03f27719bc87666bfd1f75415b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b7451465deac204c5f7cb1f9c6e1fc" id="r_a29b7451465deac204c5f7cb1f9c6e1fc"><td class="memItemLeft" align="right" valign="top"><a id="a29b7451465deac204c5f7cb1f9c6e1fc" name="a29b7451465deac204c5f7cb1f9c6e1fc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_ARGS</b>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:a29b7451465deac204c5f7cb1f9c6e1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a39f5190c4bbb94c4d470854781e91105" id="r_a39f5190c4bbb94c4d470854781e91105"><td class="memItemLeft" align="right" valign="top"><a id="a39f5190c4bbb94c4d470854781e91105" name="a39f5190c4bbb94c4d470854781e91105"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>display_menu</b> ()</td></tr>
+<tr class="separator:a39f5190c4bbb94c4d470854781e91105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a449e6c5d62a6286cf5faf43d3eb301" id="r_a6a449e6c5d62a6286cf5faf43d3eb301"><td class="memItemLeft" align="right" valign="top"><a id="a6a449e6c5d62a6286cf5faf43d3eb301" name="a6a449e6c5d62a6286cf5faf43d3eb301"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>build_partition</b> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs)</td></tr>
+<tr class="separator:a6a449e6c5d62a6286cf5faf43d3eb301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f3fb177239bacaba969954a942f190" id="r_a64f3fb177239bacaba969954a942f190"><td class="memItemLeft" align="right" valign="top"><a id="a64f3fb177239bacaba969954a942f190" name="a64f3fb177239bacaba969954a942f190"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>build_demo</b> ()</td></tr>
+<tr class="separator:a64f3fb177239bacaba969954a942f190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df91205ef0176b28a13e9714271c34c" id="r_a2df91205ef0176b28a13e9714271c34c"><td class="memItemLeft" align="right" valign="top"><a id="a2df91205ef0176b28a13e9714271c34c" name="a2df91205ef0176b28a13e9714271c34c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>execute_cd</b> (char **args)</td></tr>
+<tr class="separator:a2df91205ef0176b28a13e9714271c34c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36864fe07aaf6282a3fbc6d56a6e6323" id="r_a36864fe07aaf6282a3fbc6d56a6e6323"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36864fe07aaf6282a3fbc6d56a6e6323">is_string_numeric</a> (const char *str)</td></tr>
+<tr class="memdesc:a36864fe07aaf6282a3fbc6d56a6e6323"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie si la chaine de caractères est un nombre  <br /></td></tr>
+<tr class="separator:a36864fe07aaf6282a3fbc6d56a6e6323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f0b63bf650a5ceefc36d7e3bcb02f63" id="r_a8f0b63bf650a5ceefc36d7e3bcb02f63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f0b63bf650a5ceefc36d7e3bcb02f63">display_help</a> ()</td></tr>
+<tr class="memdesc:a8f0b63bf650a5ceefc36d7e3bcb02f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'aide pour toutes les commandes disponibles.  <br /></td></tr>
+<tr class="separator:a8f0b63bf650a5ceefc36d7e3bcb02f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a784957ab86b45802aa173d5e53f3af8b" id="r_a784957ab86b45802aa173d5e53f3af8b"><td class="memItemLeft" align="right" valign="top"><a id="a784957ab86b45802aa173d5e53f3af8b" name="a784957ab86b45802aa173d5e53f3af8b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>make_demo_directory</b> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs)</td></tr>
+<tr class="separator:a784957ab86b45802aa173d5e53f3af8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point d'entrée principal du shell interactif.  <br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Main program for creating the required directory structure and files. </p>
+<p>This program uses the functions defined in the project to create directories, files, and links as specified in the requirements. The structure is created inside a "demo" directory at the root level of the project.</p>
+<dl class="section version"><dt>Version</dt><dd>0.3 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>04/04/2025</dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd><ul>
+<li>Robin de Angelis (%)</li>
+<li>Alexandre Ledard (%)</li>
+<li>Killian Treuil (%) </li>
+</ul>
+</dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a8f0b63bf650a5ceefc36d7e3bcb02f63" name="a8f0b63bf650a5ceefc36d7e3bcb02f63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f0b63bf650a5ceefc36d7e3bcb02f63">&#9670;&#160;</a></span>display_help()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_help </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'aide pour toutes les commandes disponibles. </p>
+<p>Liste toutes les commandes internes et leur fonctionnalité </p>
+
+</div>
+</div>
+<a id="a36864fe07aaf6282a3fbc6d56a6e6323" name="a36864fe07aaf6282a3fbc6d56a6e6323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36864fe07aaf6282a3fbc6d56a6e6323">&#9670;&#160;</a></span>is_string_numeric()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_string_numeric </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vérifie si la chaine de caractères est un nombre </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>string à vérifier </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Point d'entrée principal du shell interactif. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int Code de sortie :<ul>
+<li>EXIT_SUCCESS (0) en cas de succès</li>
+<li>EXIT_FAILURE (1) en cas d'erreur critique</li>
+</ul>
+</dd></dl>
+<p>Fonctionnement du shell :</p>
+<h3><a class="anchor" id="autotoc_md0"></a>
+Commandes internes :</h3>
+<ul>
+<li><code>exit</code> : Quitte le shell</li>
+<li><code>cd [dir]</code> : Change le répertoire courant</li>
+<li><code>display_menu</code> : Affiche le menu des options</li>
+<li><code>build_demo</code> : Construit l'arborescence de démonstration</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md1"></a>
+Options numériques (1-10) :</h3>
+<ol type="1">
+<li>Créer un fichier</li>
+<li>Supprimer un fichier</li>
+<li>Copier un fichier</li>
+<li>Déplacer un fichier</li>
+<li>Créer un répertoire</li>
+<li>Créer un lien symbolique</li>
+<li>Créer un lien dur</li>
+<li>Modifier les permissions</li>
+<li>Lister un répertoire</li>
+<li>Quitter</li>
+</ol>
+<h3><a class="anchor" id="autotoc_md2"></a>
+Commandes externes :</h3>
+<p>Exécute n'importe quelle commande système disponible dans $PATH</p>
+<dl class="section note"><dt>Note</dt><dd>Le shell gère jusqu'à MAX_ARGS arguments par commande </dd></dl>
+<dl class="section warning"><dt>Avertissement</dt><dd>Les commandes externes sont exécutées dans un processus fils</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd>execute_cd(), display_menu(), build_demo() pour les fonctions internes </dd>
+<dd>
+<a class="el" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers.">create_file()</a>, delete_file(), mycp() pour les opérations sur fichiers </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet 0S 2025: Référence de la structure Inode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet 0S 2025<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Attributs publics</a> &#124;
+<a href="structInode-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle"><div class="title">Référence de la structure Inode</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Represents an inode in the file system.  
+ <a href="#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="partition_8h_source.html">partition.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Attributs publics</h2></td></tr>
+<tr class="memitem:a725506fc69a296baeeb4ee7dc3951649" id="r_a725506fc69a296baeeb4ee7dc3951649"><td class="memItemLeft" align="right" valign="top"><a id="a725506fc69a296baeeb4ee7dc3951649" name="a725506fc69a296baeeb4ee7dc3951649"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="memdesc:a725506fc69a296baeeb4ee7dc3951649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique identifier for the inode. <br /></td></tr>
+<tr class="separator:a725506fc69a296baeeb4ee7dc3951649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ca5befd9af1bd6d529682a244b5262" id="r_aa0ca5befd9af1bd6d529682a244b5262"><td class="memItemLeft" align="right" valign="top"><a id="aa0ca5befd9af1bd6d529682a244b5262" name="aa0ca5befd9af1bd6d529682a244b5262"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
+<tr class="memdesc:aa0ca5befd9af1bd6d529682a244b5262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the file (in bytes) <br /></td></tr>
+<tr class="separator:aa0ca5befd9af1bd6d529682a244b5262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa7d95dbd5839eaaf17481ae3bb8d59f" id="r_aaa7d95dbd5839eaaf17481ae3bb8d59f"><td class="memItemLeft" align="right" valign="top"><a id="aaa7d95dbd5839eaaf17481ae3bb8d59f" name="aaa7d95dbd5839eaaf17481ae3bb8d59f"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>blocks</b> [12]</td></tr>
+<tr class="memdesc:aaa7d95dbd5839eaaf17481ae3bb8d59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct pointers to data blocks. <br /></td></tr>
+<tr class="separator:aaa7d95dbd5839eaaf17481ae3bb8d59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb773de06e009c8b93835e7560243879" id="r_adb773de06e009c8b93835e7560243879"><td class="memItemLeft" align="right" valign="top"><a id="adb773de06e009c8b93835e7560243879" name="adb773de06e009c8b93835e7560243879"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>indirect_block</b></td></tr>
+<tr class="memdesc:adb773de06e009c8b93835e7560243879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to an indirect block (if needed) <br /></td></tr>
+<tr class="separator:adb773de06e009c8b93835e7560243879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2caa63a4785f66b02e70ab6c7a13aeae" id="r_a2caa63a4785f66b02e70ab6c7a13aeae"><td class="memItemLeft" align="right" valign="top"><a id="a2caa63a4785f66b02e70ab6c7a13aeae" name="a2caa63a4785f66b02e70ab6c7a13aeae"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>double_indirect</b></td></tr>
+<tr class="memdesc:a2caa63a4785f66b02e70ab6c7a13aeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a double-indirect block (if needed) <br /></td></tr>
+<tr class="separator:a2caa63a4785f66b02e70ab6c7a13aeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0691fc59384e27a06533abb1cd5c9cda" id="r_a0691fc59384e27a06533abb1cd5c9cda"><td class="memItemLeft" align="right" valign="top"><a id="a0691fc59384e27a06533abb1cd5c9cda" name="a0691fc59384e27a06533abb1cd5c9cda"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>permissions</b></td></tr>
+<tr class="memdesc:a0691fc59384e27a06533abb1cd5c9cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">File permissions (UNIX style: rwxrwxrwx) <br /></td></tr>
+<tr class="separator:a0691fc59384e27a06533abb1cd5c9cda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c5c7bd6e0929f8928ced51379efbfe" id="r_a82c5c7bd6e0929f8928ced51379efbfe"><td class="memItemLeft" align="right" valign="top"><a id="a82c5c7bd6e0929f8928ced51379efbfe" name="a82c5c7bd6e0929f8928ced51379efbfe"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>links_count</b></td></tr>
+<tr class="memdesc:a82c5c7bd6e0929f8928ced51379efbfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of links pointing to this inode. <br /></td></tr>
+<tr class="separator:a82c5c7bd6e0929f8928ced51379efbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a864d867b77bec0c2b8cad28762c6b6a1" id="r_a864d867b77bec0c2b8cad28762c6b6a1"><td class="memItemLeft" align="right" valign="top"><a id="a864d867b77bec0c2b8cad28762c6b6a1" name="a864d867b77bec0c2b8cad28762c6b6a1"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>owner_id</b></td></tr>
+<tr class="memdesc:a864d867b77bec0c2b8cad28762c6b6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Owner ID. <br /></td></tr>
+<tr class="separator:a864d867b77bec0c2b8cad28762c6b6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065a27b1bb09624458044bf09716ed5d" id="r_a065a27b1bb09624458044bf09716ed5d"><td class="memItemLeft" align="right" valign="top"><a id="a065a27b1bb09624458044bf09716ed5d" name="a065a27b1bb09624458044bf09716ed5d"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>group_id</b></td></tr>
+<tr class="memdesc:a065a27b1bb09624458044bf09716ed5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Group ID. <br /></td></tr>
+<tr class="separator:a065a27b1bb09624458044bf09716ed5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96644abdddd0847a6331c630fb6f5ce5" id="r_a96644abdddd0847a6331c630fb6f5ce5"><td class="memItemLeft" align="right" valign="top"><a id="a96644abdddd0847a6331c630fb6f5ce5" name="a96644abdddd0847a6331c630fb6f5ce5"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>created_at</b></td></tr>
+<tr class="memdesc:a96644abdddd0847a6331c630fb6f5ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creation timestamp. <br /></td></tr>
+<tr class="separator:a96644abdddd0847a6331c630fb6f5ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcd987172b9f9b22adf59befb5fcade6" id="r_afcd987172b9f9b22adf59befb5fcade6"><td class="memItemLeft" align="right" valign="top"><a id="afcd987172b9f9b22adf59befb5fcade6" name="afcd987172b9f9b22adf59befb5fcade6"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>modified_at</b></td></tr>
+<tr class="memdesc:afcd987172b9f9b22adf59befb5fcade6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last modification timestamp. <br /></td></tr>
+<tr class="separator:afcd987172b9f9b22adf59befb5fcade6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fa37c5e3a10f2ba77310baa09afa7cf" id="r_a3fa37c5e3a10f2ba77310baa09afa7cf"><td class="memItemLeft" align="right" valign="top"><a id="a3fa37c5e3a10f2ba77310baa09afa7cf" name="a3fa37c5e3a10f2ba77310baa09afa7cf"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>accessed_at</b></td></tr>
+<tr class="memdesc:a3fa37c5e3a10f2ba77310baa09afa7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last access timestamp. <br /></td></tr>
+<tr class="separator:a3fa37c5e3a10f2ba77310baa09afa7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c25fefc65971007ad4526d32ba64256" id="r_a6c25fefc65971007ad4526d32ba64256"><td class="memItemLeft" align="right" valign="top"><a id="a6c25fefc65971007ad4526d32ba64256" name="a6c25fefc65971007ad4526d32ba64256"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_directory</b></td></tr>
+<tr class="memdesc:a6c25fefc65971007ad4526d32ba64256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the inode represents a directory. <br /></td></tr>
+<tr class="separator:a6c25fefc65971007ad4526d32ba64256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5f284226a4c7b304b2987d05497c8d" id="r_a0d5f284226a4c7b304b2987d05497c8d"><td class="memItemLeft" align="right" valign="top"><a id="a0d5f284226a4c7b304b2987d05497c8d" name="a0d5f284226a4c7b304b2987d05497c8d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_used</b></td></tr>
+<tr class="memdesc:a0d5f284226a4c7b304b2987d05497c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the inode is allocated/used. <br /></td></tr>
+<tr class="separator:a0d5f284226a4c7b304b2987d05497c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Represents an inode in the file system. </p>
+<p>An inode contains metadata about a file or directory, such as its size, permissions, and pointers to the data blocks. </p>
+</div><hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
+<li>include/<a class="el" href="partition_8h_source.html">partition.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

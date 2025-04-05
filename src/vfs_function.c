@@ -1,3 +1,17 @@
+/**
+ * @file tree.c
+ * @brief Partie du programme qui regroupe les commandes du terminales pour intéragir avec le File System.
+ *
+ *
+ * @version 0.3
+ * @date 04/04/2025
+ *
+ * @authors
+ * - Robin de Angelis (%)
+ * - Alexandre Ledard (%)
+ * - Killian Treuil (%)
+ */
+
 #include <vfs_function.h>
 /**
  * @brief Liste le contenu d'un répertoire (équivalent à ls)

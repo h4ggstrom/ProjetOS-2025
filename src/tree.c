@@ -1,3 +1,17 @@
+/**
+ * @file tree.c
+ * @brief Partie du programme qui s'occupe de l'affichage de l'arbre de repertoire.
+ *
+ *
+ * @version 0.3
+ * @date 04/04/2025
+ *
+ * @authors
+ * - Robin de Angelis (%)
+ * - Alexandre Ledard (%)
+ * - Killian Treuil (%)
+ */
+
 #include <tree.h>
 /**
  * @brief Affiche l'arborescence du système de fichiers
