@@ -1362,3 +1362,125 @@ int remove_directory(FileSystem *fs, const char *path) {
 
     return 0;
 }
+
+/**
+ * @brief Supprime un fichier du système de fichiers
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin du fichier à supprimer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int remove_file(FileSystem *fs, const char *path) {
+    // 1. Vérifications de base
+    if (!fs || !path) {
+        fprintf(stderr, "Paramètres invalides\n");
+        return -1;
+    }
+
+    // 2. Trouver l'inode du fichier
+    uint32_t file_inode = find_inode_by_path(fs, path);
+    if (file_inode == (uint32_t)-1 || file_inode >= MAX_FILES) {
+        fprintf(stderr, "Fichier non trouvé: %s\n", path);
+        return -1;
+    }
+
+    // 3. Vérifier que ce n'est pas un répertoire
+    Inode *inode = &fs->inode_table[file_inode];
+    if (inode->is_directory) {
+        fprintf(stderr, "Impossible de supprimer un répertoire avec unlink: %s\n", path);
+        return -1;
+    }
+
+    // 4. Trouver le répertoire parent et le nom du fichier
+    char parent_path[MAX_PATH_LEN];
+    char filename[MAX_FILENAME_LEN];
+    if (!split_path(path, parent_path, filename)) {
+        fprintf(stderr, "Erreur d'analyse du chemin: %s\n", path);
+        return -1;
+    }
+
+    uint32_t parent_inode = find_inode_by_path(fs, parent_path);
+    if (parent_inode == (uint32_t)-1) {
+        fprintf(stderr, "Répertoire parent non trouvé pour: %s\n", path);
+        return -1;
+    }
+
+    // 5. Vérifier les permissions du parent
+    Inode *parent = &fs->inode_table[parent_inode];
+    if (!(parent->permissions & 0222)) { // Vérifier permission écriture
+        fprintf(stderr, "Permission refusée pour: %s\n", path);
+        return -1;
+    }
+
+    // 6. Supprimer l'entrée du répertoire parent
+    Directory dir;
+    if (!read_directory(fs, parent_inode, &dir)) {
+        fprintf(stderr, "Erreur de lecture du répertoire parent\n");
+        return -1;
+    }
+
+    bool found = false;
+    for (uint32_t i = 0; i < dir.entry_count; i++) {
+        if (strcmp(dir.names[i], filename) == 0 && dir.entries[i] == file_inode) {
+            // Décaler les entrées suivantes
+            for (uint32_t j = i; j < dir.entry_count - 1; j++) {
+                dir.entries[j] = dir.entries[j+1];
+                strcpy(dir.names[j], dir.names[j+1]);
+            }
+            dir.entry_count--;
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        fprintf(stderr, "Entrée non trouvée dans le répertoire parent\n");
+        return -1;
+    }
+
+    // 7. Sauvegarder le répertoire parent modifié
+    if (!write_directory(fs, parent_inode, &dir)) {
+        fprintf(stderr, "Erreur d'écriture du répertoire parent\n");
+        return -1;
+    }
+
+    // 8. Décrémenter le compteur de liens de l'inode
+    if (inode->links_count > 0) {
+        inode->links_count--;
+    }
+
+    // 9. Si plus de liens, libérer les ressources
+    if (inode->links_count == 0) {
+        // Libérer les blocs de données
+        for (int i = 0; i < 12; i++) {
+            if (inode->blocks[i] != 0) {
+                free_block(fs, inode->blocks[i]);
+                inode->blocks[i] = 0;
+            }
+        }
+
+        // Libérer le bloc indirect si existant
+        if (inode->indirect_block != 0) {
+            // Libérer d'abord les blocs pointés
+            uint32_t *indirect_blocks = (uint32_t *)fs->partition.blocks[inode->indirect_block].data;
+            for (uint32_t i = 0; i < fs->superblock.block_size / sizeof(uint32_t); i++) {
+                if (indirect_blocks[i] != 0) {
+                    free_block(fs, indirect_blocks[i]);
+                }
+            }
+            // Puis libérer le bloc indirect lui-même
+            free_block(fs, inode->indirect_block);
+            inode->indirect_block = 0;
+        }
+
+        // Réinitialiser l'inode
+        inode->size = 0;
+        inode->is_used = false;
+        inode->modified_at = time(NULL);
+    }
+
+    // 10. Mettre à jour les métadonnées du parent
+    parent->modified_at = time(NULL);
+
+    return 0;
+}

@@ -229,11 +229,29 @@ int main()
             {
                 if (remove_directory(&fs, args[1]) == 0)
                 {
-                    printf("Répertoire \"%c\" supprimé avec succès\n", args[1]);
+                    printf("Répertoire \"%s\" supprimé avec succès\n", args[1]);
                 }
                 else
                 {
                     printf("Échec de la suppression du répertoire\n");
+                }
+            }
+        }
+        else if (strcmp(args[0], "remove_file") == 0)
+        {
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un fichier à supprimer\n");
+            }
+            else
+            {
+                if (remove_file(&fs, args[1]) == 0)
+                {
+                    printf("Fichier \"%s\" supprimé avec succès\n", args[1]);
+                }
+                else
+                {
+                    printf("Échec de la suppression du fichier\n");
                 }
             }
         }

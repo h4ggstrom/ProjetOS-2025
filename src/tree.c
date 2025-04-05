@@ -74,7 +74,7 @@ static void print_tree_recursive(FileSystem *fs, uint32_t dir_inode,
             printf("├── ");
         }
         
-        printf("%s", dir.names[i]);
+        printf("%s [inode:%u]", dir.names[i], dir.entries[i]);
 
         // Vérifier si c'est un répertoire
         Inode *entry_inode = &fs->inode_table[dir.entries[i]];
