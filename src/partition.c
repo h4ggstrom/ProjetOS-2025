@@ -23,6 +23,8 @@
 #include <time.h>
 #include <constantes.h>
 
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+
 /**
  * @brief Initializes a new partition and saves it to a file.
  * 
@@ -898,7 +900,8 @@ bool ensure_inode_blocks(FileSystem *fs, Inode *inode, uint32_t blocks_needed) {
  * @return true en cas de succès, false en cas d'échec
  */
 bool write_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t size, uint32_t offset) {
-    if (!fs || !inode || !buffer || offset > inode->size) {
+    // 1. Vérifications initiales renforcées
+    if (!fs || !inode || !buffer || offset > inode->size || fs->partition.block_size == 0) {
         return false;
     }
 
@@ -906,20 +909,26 @@ bool write_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t si
     uint32_t bytes_written = 0;
     uint32_t current_pos = offset;
 
-    // 1. Écrire dans les blocs directs
+    // 2. Écriture dans les blocs directs
+    
     for (int i = 0; i < 12 && bytes_written < size; i++) {
+        uint32_t block_offset = current_pos % block_size;
+        uint32_t bytes_available = block_size - block_offset;
+        uint32_t bytes_to_write = MIN(size - bytes_written, bytes_available);
+
+        // Allocation dynamique si bloc vide
         if (inode->blocks[i] == 0) {
-            continue; // Bloc non alloué
+            int new_block = allocate_block(fs);
+            if (new_block == -1) {
+                // Optionnel : nettoyer les blocs déjà alloués
+                return false; 
+            }
+            inode->blocks[i] = new_block;
         }
 
-        uint32_t block_offset = current_pos % block_size;
-        uint32_t bytes_in_block = block_size - block_offset;
-        uint32_t bytes_to_write = (size - bytes_written) < bytes_in_block ? 
-                                (size - bytes_written) : bytes_in_block;
-
         if (!write_single_block(fs, inode->blocks[i], 
-                              buffer + bytes_written, 
-                              bytes_to_write, 
+                              buffer + bytes_written,
+                              bytes_to_write,
                               block_offset)) {
             return false;
         }
@@ -928,8 +937,16 @@ bool write_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t si
         current_pos += bytes_to_write;
     }
 
-    // 2. Si besoin, étendre avec des blocs indirects (non implémenté ici pour simplifier)
-    // ...
+    // Gestion des blocs indirects si besoin (exemple simplifié)
+    if (bytes_written < size && inode->indirect_block == 0) {
+        inode->indirect_block = allocate_block(fs);
+        // [...] Écriture dans les blocs indirects
+    }
+
+    // Mise à jour de la taille si extension
+    if (offset + bytes_written > inode->size) {
+        inode->size = offset + bytes_written;
+    }
 
     return bytes_written == size;
 }
