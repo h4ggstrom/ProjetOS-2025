@@ -74,3 +74,141 @@ int list_directory(FileSystem *fs, const char *path, bool long_format) {
 
     return 0;
 }
+
+/**
+ * @brief Change le répertoire courant
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin du nouveau répertoire courant
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int change_directory(FileSystem *fs, const char *path) {
+    if (!fs || !path) {
+        fprintf(stderr, "Paramètres invalides\n");
+        return -1;
+    }
+
+    // Trouver l'inode cible
+    uint32_t target_inode = find_inode_by_path(fs, path);
+    if (target_inode == (uint32_t)-1 || target_inode >= MAX_FILES) {
+        fprintf(stderr, "Répertoire non trouvé: %s\n", path);
+        return -1;
+    }
+
+    // Vérifier que c'est un répertoire
+    Inode *inode = &fs->inode_table[target_inode];
+    if (!inode->is_directory) {
+        fprintf(stderr, "N'est pas un répertoire: %s\n", path);
+        return -1;
+    }
+
+    // Mettre à jour le répertoire courant
+    fs->current_directory = target_inode;
+
+    // Mettre à jour le chemin courant
+    if (path[0] == '/') {
+        // Chemin absolu - utiliser directement
+        strncpy(fs->current_path, path, MAX_PATH_LEN);
+    } else {
+        // Chemin relatif - construire le nouveau chemin
+        if (strcmp(path, "..") == 0) {
+            // Cas spécial: remonter d'un niveau
+            char *last_slash = strrchr(fs->current_path, '/');
+            if (last_slash) {
+                if (last_slash == fs->current_path) {
+                    // Cas racine
+                    fs->current_path[1] = '\0';
+                } else {
+                    *last_slash = '\0';
+                }
+            }
+        } else if (strcmp(path, ".") != 0) {
+            // Ajouter le nouveau segment
+            if (strcmp(fs->current_path, "/") != 0) {
+                strncat(fs->current_path, "/", MAX_PATH_LEN - strlen(fs->current_path) - 1);
+            }
+            strncat(fs->current_path, path, MAX_PATH_LEN - strlen(fs->current_path) - 1);
+        }
+    }
+
+    // Simplifier le chemin (supprimer les doublons de '/', etc.)
+    simplify_path(fs->current_path);
+    
+    // Assurer que le chemin se termine par '\0'
+    fs->current_path[MAX_PATH_LEN - 1] = '\0';
+
+    return 0;
+}
+
+/**
+ * @brief Obtient le chemin absolu du répertoire courant
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @return const char* Chemin absolu du répertoire courant
+ */
+const char* get_current_directory(FileSystem *fs) {
+    if (!fs) return NULL;
+    return fs->current_path;
+}
+
+/**
+ * @brief Convertit un chemin relatif en chemin absolu
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param rel_path Chemin relatif
+ * @param abs_path Buffer pour le chemin absolu
+ * @param size Taille du buffer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int resolve_relative_path(FileSystem *fs, const char *rel_path, char *abs_path, size_t size) {
+    if (!fs || !rel_path || !abs_path || size < 2) {
+        return -1;
+    }
+
+    if (rel_path[0] == '/') {
+        // C'est déjà un chemin absolu
+        strncpy(abs_path, rel_path, size);
+        return 0;
+    }
+
+    // Construire le chemin absolu
+    if (snprintf(abs_path, size, "%s/%s", fs->current_path, rel_path) >= (int)size) {
+        return -1; // Buffer trop petit
+    }
+
+    // Simplifier le chemin (enlever les ./ et ../ inutiles)
+    simplify_path(abs_path);
+    
+    return 0;
+}
+
+/**
+ * @brief Simplifie un chemin en supprimant les . et .. inutiles
+ * 
+ * @param path Chemin à simplifier (modifié sur place)
+ */
+void simplify_path(char *path) {
+    char *p = path;
+    char *out = path;
+    int after_sep = 1; // Éviter les doublons de '/'
+
+    while (*p) {
+        if (*p == '/') {
+            if (!after_sep) {
+                *out++ = '/';
+                after_sep = 1;
+            }
+            p++;
+        } else {
+            *out++ = *p++;
+            after_sep = 0;
+        }
+    }
+    
+    // Supprimer le slash final sauf pour la racine
+    if (out > path + 1 && *(out-1) == '/') {
+        out--;
+    }
+    
+    *out = '\0';
+}

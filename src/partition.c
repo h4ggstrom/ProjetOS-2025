@@ -32,6 +32,7 @@ void init_partition(FileSystem *fs, const char *img_path, uint32_t total_size, u
     // Calculer le nombre total de blocs
     uint32_t total_blocks = total_size / block_size;
 
+
     // Initialiser le superblock
     strncpy(fs->superblock.magic, "MYFS", 8);
     fs->superblock.total_size = total_size;
@@ -67,10 +68,13 @@ void init_partition(FileSystem *fs, const char *img_path, uint32_t total_size, u
     fs->inode_table[0].accessed_at = time(NULL);
     fs->inode_table[0].is_used = 1;
 
+
     // Initialiser la structure Directory pour le répertoire racine
     Directory *root_dir = malloc(sizeof(Directory));
     root_dir->parent_inode = 0; // Le parent du répertoire racine est lui-même
     root_dir->entry_count = 0;
+    fs->current_directory = 0;
+    strncpy(fs->current_path, "/", MAX_PATH_LEN);
     memset(root_dir->entries, 0, sizeof(root_dir->entries));
     memset(root_dir->names, 0, sizeof(root_dir->names));
 

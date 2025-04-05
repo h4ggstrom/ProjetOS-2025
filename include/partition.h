@@ -138,6 +138,8 @@ typedef struct FileSystem {
     Partition partition;      ///< Raw partition
     FileDescriptor *open_files_table; ///< Table of open file descriptors
     uint32_t max_open_files;  ///< Maximum number of files that can be opened simultaneously
+    uint32_t current_directory; // Inode du répertoire courant (0 pour la racine)
+    char current_path[MAX_PATH_LEN]; // Chemin absolu courant (cache)
 } FileSystem;
 
 /**

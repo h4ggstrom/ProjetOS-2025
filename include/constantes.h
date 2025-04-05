@@ -20,6 +20,7 @@
 #define MAX_PATH_LEN 1024       // Longueur maximale d'un chemin
 #define MAX_BLOCKS_PTR 12       // Nombre de pointeurs directs dans un inode
 #define DIR_ENTRIES_LIMIT 128   // Nombre maximal d'entrées dans un répertoire
+#define MAX_PATH_DEPTH 32   // Profondeur maximale des répertoires
 
 /**********************************************
  *          TAILLES DES STRUCTURES            *
