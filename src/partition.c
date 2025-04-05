@@ -1147,3 +1147,102 @@ uint32_t get_indirect_block(FileSystem *fs, uint32_t indirect_blk, uint32_t idx)
     }
     return ptrs[idx];
 }
+
+/**
+ * @brief Crée un nouveau répertoire dans le système de fichiers
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin complet du nouveau répertoire
+ * @param mode Permissions du répertoire
+ * @return uint32_t Numéro d'inode du répertoire créé, ou (uint32_t)-1 en cas d'erreur
+ */
+uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
+    // 1. Vérifier les paramètres
+    if (!fs || !path || path[0] != '/') {
+        fprintf(stderr, "Chemin invalide\n");
+        return (uint32_t)-1;
+    }
+
+    // 2. Extraire le répertoire parent et le nom du répertoire
+    char parent_path[MAX_PATH_LEN];
+    char dirname[MAX_FILENAME_LEN];
+    if (!split_path(path, parent_path, dirname)) {
+        fprintf(stderr, "Impossible de diviser le chemin\n");
+        return (uint32_t)-1;
+    }
+
+    // 3. Trouver l'inode du répertoire parent
+    uint32_t parent_inode = find_inode_by_path(fs, parent_path);
+    if (parent_inode == (uint32_t)-1) {
+        fprintf(stderr, "Répertoire parent non trouvé\n");
+        return (uint32_t)-1;
+    }
+
+    // 4. Vérifier les permissions du répertoire parent
+    Inode *parent = &fs->inode_table[parent_inode];
+    if (!(parent->permissions & 0222)) {
+        fprintf(stderr, "Permission refusée\n");
+        return (uint32_t)-1;
+    }
+
+    // 5. Vérifier que le répertoire n'existe pas déjà
+    if (find_file_in_directory(fs, parent_inode, dirname) != (uint32_t)-1) {
+        fprintf(stderr, "Le répertoire existe déjà\n");
+        return (uint32_t)-1;
+    }
+
+    // 6. Allouer un nouvel inode pour le répertoire
+    uint32_t new_inode = allocate_inode(fs);
+    if (new_inode == (uint32_t)-1) {
+        fprintf(stderr, "Plus d'inodes disponibles\n");
+        return (uint32_t)-1;
+    }
+
+    // 7. Initialiser le nouvel inode comme répertoire
+    Inode *dir_inode = &fs->inode_table[new_inode];
+    init_inode(dir_inode, new_inode, (mode & ~S_IFMT) | 0755, true);
+    dir_inode->is_used = true;
+
+    // 8. Créer la structure Directory pour le nouveau répertoire
+    Directory *new_dir = malloc(sizeof(Directory));
+    if (!new_dir) {
+        free_inode(fs, new_inode);
+        return (uint32_t)-1;
+    }
+
+    memset(new_dir, 0, sizeof(Directory));
+    new_dir->parent_inode = parent_inode;
+    new_dir->entry_count = 2; // '.' et '..'
+
+    // Ajouter les entrées '.' et '..'
+    new_dir->entries[0] = new_inode;       // '.' pointe vers ce répertoire
+    strcpy(new_dir->names[0], ".");
+    new_dir->entries[1] = parent_inode;    // '..' pointe vers le parent
+    strcpy(new_dir->names[1], "..");
+
+    // 9. Allouer un bloc pour stocker la structure Directory
+    int block_num = allocate_block(fs);
+    if (block_num == -1) {
+        free(new_dir);
+        free_inode(fs, new_inode);
+        return (uint32_t)-1;
+    }
+
+    // 10. Associer le bloc à l'inode
+    dir_inode->blocks[0] = block_num;
+    fs->partition.blocks[block_num].data = (uint8_t*)new_dir;
+    fs->partition.blocks[block_num].is_free = false;
+
+    // 11. Ajouter le répertoire dans le parent
+    if (!add_directory_entry(fs, parent_inode, new_inode, dirname)) {
+        free_block(fs, block_num);
+        free_inode(fs, new_inode);
+        return (uint32_t)-1;
+    }
+
+    // 12. Mettre à jour les métadonnées du parent
+    parent->modified_at = time(NULL);
+    parent->accessed_at = time(NULL);
+
+    return new_inode;
+}

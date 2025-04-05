@@ -15,7 +15,6 @@ Killian Treuil (%)
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -24,6 +23,7 @@ Killian Treuil (%)
 #include "../include/partition.h"
 #include "../include/permissions.h"
 #include "../include/links.h"
+
 // Constantes
 #define MAX_LINE 1024
 #define MAX_ARGS 64
@@ -106,7 +106,17 @@ int main()
         }
         args[i] = NULL; // Terminer le tableau avec NULL
 
-        if (strcmp(args[0], "help") == 0)
+        for (int j = 0; args[j] != NULL; j++)
+        {
+            printf("args[%d] = %s\t", j, args[j]);
+        }
+        printf("\n");
+
+        if (args[0] == NULL)
+        {
+            continue;
+        }
+        else if (strcmp(args[0], "help") == 0)
         {
             display_help();
             continue;
@@ -150,9 +160,52 @@ int main()
                 };
                 continue;
             }
-        }else if (strcmp(args[0], "ls") == 0)
+        }
+        else if (strcmp(args[0], "create_directory") == 0)
         {
-     list_directory(&fs,"/",1);
+            if (args[1] == 0)
+            {
+                printf("Il faut indiquer un nom de repertoire\n");
+            }
+            else
+            {
+                // Créer un répertoire avec les permissions par défaut (0755)
+                char *path_copy = strdup(args[1]);
+                uint32_t dir_inode = create_directory(&fs, path_copy, 0755);
+                if (dir_inode == (uint32_t)-1)
+                {
+                    printf("Échec de la création du répertoire\n");
+                }
+                else
+                {
+                    printf("Répertoire créé avec succès (inode %u)\n", dir_inode);
+                }
+                continue;
+            }
+        }
+        else if (strcmp(args[0], "ls") == 0)
+        {
+            bool longList;
+            if (!args[2] == NULL)
+            {
+                char *joker = strdup(args[2]);
+                if (strcmp(joker, "-l") == 0)
+                { // Si joker == "-l"
+                    longList = true;
+                }
+                else
+                {
+                    printf("\"%s\" n'est pas une option valide (essayez -l)\n", joker);
+                }
+            }
+            if (args[1] == 0)
+            {
+                list_directory(&fs, "/", 0);
+            }
+            else
+            {
+                list_directory(&fs, args[1], longList);
+            }
             continue;
         }
         /*
@@ -215,4 +268,3 @@ void build_partition(FileSystem *fs)
     init_partition(fs, "image.img", 5000000, 1024);
     printf("Build de la partition terminé");
 }
-

@@ -210,6 +210,17 @@ bool read_directory(FileSystem *fs, uint32_t inode_num, Directory *dir);
  * @return uint32_t Numéro d'inode du fichier créé, ou (uint32_t)-1 en cas d'erreur
  */
 uint32_t create_file(FileSystem *fs, const char *path, uint16_t mode);
+
+/**
+ * @brief Crée un nouveau répertoire dans le système de fichiers
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin complet du nouveau répertoire
+ * @param mode Permissions du répertoire
+ * @return uint32_t Numéro d'inode du répertoire créé, ou (uint32_t)-1 en cas d'erreur
+ */
+uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode);
+
 /**
  * @brief Sépare un chemin en répertoire parent et nom de fichier
  * 
