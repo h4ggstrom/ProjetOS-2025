@@ -173,6 +173,37 @@ int main()
                 continue;
             }
         }
+        else if (strcmp(args[0], "open_file") == 0)
+        {
+            if (args[1] == 0)
+            {
+                printf("Il faut indiquer un nom de fichier\n");
+            }
+            else
+            {
+               int fd = fs_open_file(&fs,args[1],O_RDWR);
+               printf("Descripteur de fichier:%d\n",fd);
+               if (fd == -1) {
+                perror("open_file failed\n");
+            }
+            else{printf("Fichier ouvert avec succees\n");}
+            continue;}
+        }
+        else if (strcmp(args[0], "close_file") == 0)
+        {
+            if (args[1] == 0)
+            {
+                printf("Il faut indiquer un nom de fichier\n");
+            }
+            else
+            {
+               int fd = fs_close_file(&fs,fd);
+               printf("Descripteur de fichier:%d\n",fd);
+               if (fd == -1) {
+                perror("close_file failed\n");
+            }else{printf("Fichier ferme avec succee\n");}
+            continue;}
+        }
         else if (strcmp(args[0], "tree") == 0)
         {
             char path[MAX_PATH_LEN];
@@ -236,6 +267,7 @@ int main()
                     printf("Échec de la suppression du répertoire\n");
                 }
             }
+            continue;
         }
         else if (strcmp(args[0], "remove_file") == 0)
         {
@@ -254,8 +286,10 @@ int main()
                     printf("Échec de la suppression du fichier\n");
                 }
             }
+            continue;
         }
-        else if (strcmp(args[0], "cd") == 0)
+        
+        else if (strcmp(args[0], "chdir") == 0)
         {
             if (args[1] == NULL)
             {

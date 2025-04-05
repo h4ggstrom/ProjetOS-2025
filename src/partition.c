@@ -68,6 +68,23 @@ void init_partition(FileSystem *fs, const char *img_path, uint32_t total_size, u
     fs->inode_table[0].accessed_at = time(NULL);
     fs->inode_table[0].is_used = 1;
 
+     // Initialisation de la table des fichiers ouverts
+     fs->max_open_files = MAX_OPEN_FILES; 
+     fs->open_files_table = malloc(fs->max_open_files * sizeof(FileDescriptor));
+     if (!fs->open_files_table) {
+         perror("Erreur d'allocation pour open_files_table");
+         exit(EXIT_FAILURE);
+     }
+ 
+     // Initialiser tous les descripteurs comme non utilisés
+     for (uint32_t i = 0; i < fs->max_open_files; i++) {
+         fs->open_files_table[i].is_used = false;  // ou = 0
+         fs->open_files_table[i].fd_id = -1;
+         fs->open_files_table[i].inode_id = (uint32_t)-1;
+         fs->open_files_table[i].current_pos = 0;
+         fs->open_files_table[i].mode = 0;
+     }
+
 
     // Initialiser la structure Directory pour le répertoire racine
     Directory *root_dir = malloc(sizeof(Directory));
@@ -543,7 +560,7 @@ uint32_t find_inode_by_path(FileSystem *fs, const char *path)
  * @param mode       Mode d'ouverture (O_RDONLY, O_WRONLY, etc.)
  * @return int       Descripteur de fichier (≥0) en cas de succès, -1 en cas d'erreur
  */
-int open_file(FileSystem *fs, const char *path, int mode)
+int fs_open_file(FileSystem *fs, const char *path, int mode)
 {
     // 1. Trouver l'inode correspondant au chemin
     uint32_t inode_id = find_inode_by_path(fs, path);
@@ -605,6 +622,47 @@ int open_file(FileSystem *fs, const char *path, int mode)
     inode->accessed_at = (uint64_t)time(NULL);
 
     return fd;
+}
+
+/**
+ * @brief Ferme un fichier précédemment ouvert
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param fd Descripteur de fichier à fermer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_close_file(FileSystem *fs, int fd) {
+    // 1. Vérifications de base
+    if (!fs || fd < 0 || fd >= fs->max_open_files) {
+        fprintf(stderr, "Descripteur de fichier invalide\n");
+        return -1;
+    }
+
+    // 2. Vérifier que le fichier est bien ouvert
+    if (!fs->open_files_table[fd].is_used) {
+        fprintf(stderr, "Le fichier n'est pas ouvert\n");
+        return -1;
+    }
+
+    // 3. Mettre à jour le timestamp de modification si le fichier était ouvert en écriture
+    uint32_t inode_id = fs->open_files_table[fd].inode_id;
+    if (inode_id < MAX_FILES) {
+        Inode *inode = &fs->inode_table[inode_id];
+        
+        // Si le fichier était ouvert en mode écriture
+        if (fs->open_files_table[fd].mode & (O_WRONLY | O_RDWR)) {
+            inode->modified_at = (uint64_t)time(NULL);
+        }
+    }
+
+    // 4. Libérer le descripteur de fichier
+    fs->open_files_table[fd].is_used = false;
+    fs->open_files_table[fd].fd_id = -1;
+    fs->open_files_table[fd].inode_id = (uint32_t)-1;
+    fs->open_files_table[fd].current_pos = 0;
+    fs->open_files_table[fd].mode = 0;
+
+    return 0;
 }
 
 /**

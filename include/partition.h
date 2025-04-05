@@ -167,6 +167,8 @@ void init_partition(FileSystem *fs, const char *img_path, uint32_t total_size, u
  */
 void load_partition(FileSystem *fs, const char *img_path);
 
+
+
 /**
  * @brief Allocates a free block in the partition.
  *
@@ -231,6 +233,25 @@ uint32_t create_file(FileSystem *fs, const char *path, uint16_t mode);
 uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode);
 
 /**
+ * @brief Ouvre un fichier et retourne un descripteur de fichier
+ *
+ * @param fs         Pointeur vers le système de fichiers
+ * @param path       Chemin du fichier à ouvrir
+ * @param mode       Mode d'ouverture (O_RDONLY, O_WRONLY, etc.)
+ * @return int       Descripteur de fichier (≥0) en cas de succès, -1 en cas d'erreur
+ */
+int fs_open_file(FileSystem *fs, const char *path, int mode);
+
+/**
+ * @brief Ferme un fichier précédemment ouvert
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param fd Descripteur de fichier à fermer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_close_file(FileSystem *fs, int fd);
+
+/**
  * @brief Sépare un chemin en répertoire parent et nom de fichier
  *
  * @param full_path Chemin complet
@@ -248,6 +269,7 @@ bool split_path(const char *full_path, char *parent_path, char *filename);
  * @return int 0 en cas de succès, -1 en cas d'échec
  */
 int remove_directory(FileSystem *fs, const char *path);
+
 
 /**
  * @brief Alloue un nouvel inode libre
