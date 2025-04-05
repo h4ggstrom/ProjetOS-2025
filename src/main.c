@@ -36,6 +36,7 @@ void build_demo();
 void execute_cd(char **args);
 int is_string_numeric(const char *str);
 void display_help();
+int make_demo_directory(FileSystem *fs);
 
 /**
  * @brief Point d'entrée principal du shell interactif
@@ -120,6 +121,11 @@ int main()
         else if (strcmp(args[0], "help") == 0)
         {
             display_help();
+            continue;
+        }
+        else if (strcmp(args[0], "make_demo") == 0)
+        {
+            make_demo_directory(&fs);
             continue;
         }
         else if (strcmp(args[0], "test") == 0)
@@ -241,7 +247,7 @@ int main()
             {
                 if (change_directory(&fs, args[1]) == 0)
                 {
-                    printf("Déplacement dans le repertoire \"%c\"\n", args[1]);
+                    printf("Déplacement dans le repertoire \"%s\"\n", args[1]);
                 }
                 else
                 {
@@ -346,4 +352,29 @@ void build_partition(FileSystem *fs)
     printf("Début du Build de la partition");
     init_partition(fs, "image.img", 5000000, 1024);
     printf("Build de la partition terminé");
+}
+
+int make_demo_directory(FileSystem *fs){
+
+    if (!fs) return -1;
+    // Création des répertoires avec permissions 0755
+    if (create_directory(fs, "/home", 0755) == (uint32_t)-1) return -1;
+    if (create_directory(fs, "/home/user", 0755) == (uint32_t)-1) return -1;
+    if (create_directory(fs, "/home/guest", 0755) == (uint32_t)-1) return -1;
+    if (create_directory(fs, "/home/user/documents", 0755) == (uint32_t)-1) return -1;
+    if (create_directory(fs, "/home/user/photos", 0755) == (uint32_t)-1) return -1;
+    if (create_directory(fs, "/bin", 0755) == (uint32_t)-1) return -1;
+    if (create_directory(fs, "/etc", 0755) == (uint32_t)-1) return -1;
+
+    // Création des fichiers exécutables avec permissions 0755
+    if (create_file(fs, "/bin/ls", 0755) == (uint32_t)-1) return -1;
+    if (create_file(fs, "/bin/sh", 0755) == (uint32_t)-1) return -1;
+
+    // Création des fichiers de configuration avec permissions 0644
+    if (create_file(fs, "/etc/config", 0644) == (uint32_t)-1) return -1;
+
+    // Création du fichier passwd avec permissions restreintes 0600
+    if (create_file(fs, "/etc/passwd", 0600) == (uint32_t)-1) return -1;
+
+    return 0;
 }
