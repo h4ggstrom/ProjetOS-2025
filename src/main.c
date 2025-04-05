@@ -20,6 +20,7 @@ Killian Treuil (%)
 #include <sys/wait.h>
 #include <vfs_function.h>
 #include <dirent.h>
+#include <tree.h>
 #include "../include/partition.h"
 #include "../include/permissions.h"
 #include "../include/links.h"
@@ -166,6 +167,30 @@ int main()
                 continue;
             }
         }
+        else if (strcmp(args[0], "tree") == 0)
+        {
+            char path[MAX_PATH_LEN];
+            if (args[1] == NULL)
+            {
+                const char *current_dir = get_current_directory(&fs);
+                // Évite les doublons de "/"
+                if (current_dir[0] == '/')
+                {
+                    snprintf(path, sizeof(path), "%s", current_dir); // Garde le chemin tel quel (déjà absolu)
+                }
+                else
+                {
+                    snprintf(path, sizeof(path), "/%s", current_dir); // Ajoute un "/" seulement si nécessaire
+                }
+                tree(&fs, path,MAX_PATH_DEPTH);
+            }
+            else if(!args[1] == NULL)
+            {
+                tree(&fs,args[1],MAX_PATH_DEPTH);
+            }
+            continue;
+        }
+
         else if (strcmp(args[0], "create_directory") == 0)
         {
             if (args[1] == 0)
@@ -185,36 +210,47 @@ int main()
                 {
                     printf("Répertoire créé avec succès (inode %u)\n", dir_inode);
                 }
-            } 
+            }
             continue;
         }
         else if (strcmp(args[0], "remove_directory") == 0)
         {
-    if(args[1]==NULL){
-        printf("Il faut indiquer un répertoire à supprimer\n");
-    }
-    else{
-        if (remove_directory(&fs, args[1]) == 0) {
-            printf("Répertoire \"%c\" supprimé avec succès\n",args[1]);
-        } else {
-            printf("Échec de la suppression du répertoire\n");
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un répertoire à supprimer\n");
+            }
+            else
+            {
+                if (remove_directory(&fs, args[1]) == 0)
+                {
+                    printf("Répertoire \"%c\" supprimé avec succès\n", args[1]);
+                }
+                else
+                {
+                    printf("Échec de la suppression du répertoire\n");
+                }
+            }
         }
-    }
-        }else if (strcmp(args[0], "cd") == 0)
+        else if (strcmp(args[0], "cd") == 0)
         {
-            if(args[1]==NULL){
+            if (args[1] == NULL)
+            {
                 printf("Il faut indiquer un répertoire \n");
             }
-            else{
-                if (change_directory(&fs, args[1]) == 0) {
-                    printf("Déplacement dans le repertoire \"%c\"\n",args[1]);
-                } else {
+            else
+            {
+                if (change_directory(&fs, args[1]) == 0)
+                {
+                    printf("Déplacement dans le repertoire \"%c\"\n", args[1]);
+                }
+                else
+                {
                     printf("Échec du déplacement dans le répertoire\n");
                 }
+            }
+            continue;
         }
-    continue;
-    }
-    else if (strcmp(args[0], "ls") == 0)
+        else if (strcmp(args[0], "ls") == 0)
         {
             bool longList;
             if (!args[2] == NULL)
@@ -232,15 +268,18 @@ int main()
             if (args[1] == 0)
             {
                 char path[MAX_PATH_LEN];
-const char *current_dir = get_current_directory(&fs);
+                const char *current_dir = get_current_directory(&fs);
 
-// Évite les doublons de "/"
-if (current_dir[0] == '/') {
-    snprintf(path, sizeof(path), "%s", current_dir);  // Garde le chemin tel quel (déjà absolu)
-} else {
-    snprintf(path, sizeof(path), "/%s", current_dir);  // Ajoute un "/" seulement si nécessaire
-}
-list_directory(&fs, path, 0);
+                // Évite les doublons de "/"
+                if (current_dir[0] == '/')
+                {
+                    snprintf(path, sizeof(path), "%s", current_dir); // Garde le chemin tel quel (déjà absolu)
+                }
+                else
+                {
+                    snprintf(path, sizeof(path), "/%s", current_dir); // Ajoute un "/" seulement si nécessaire
+                }
+                list_directory(&fs, path, 0);
             }
             else
             {
