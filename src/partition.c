@@ -848,6 +848,7 @@ void free_inode(FileSystem *fs, uint32_t inode_num)
     memset(inode->blocks, 0, sizeof(inode->blocks));
     inode->indirect_block = 0;
     inode->double_indirect = 0;
+    inode->id = 0;
 
     // Optionnel : conserver certaines infos pour le débogage
     inode->modified_at = (uint64_t)time(NULL);
@@ -1245,4 +1246,115 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
     parent->accessed_at = time(NULL);
 
     return new_inode;
+}
+
+/**
+ * @brief Supprime un répertoire vide
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin du répertoire à supprimer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int remove_directory(FileSystem *fs, const char *path) {
+    // 1. Vérifications de base
+    if (!fs || !path || path[0] != '/') {
+        fprintf(stderr, "Chemin invalide\n");
+        return -1;
+    }
+
+    // 2. Trouver l'inode du répertoire
+    uint32_t dir_inode = find_inode_by_path(fs, path);
+    if (dir_inode == (uint32_t)-1) {
+        fprintf(stderr, "Répertoire non trouvé\n");
+        return -1;
+    }
+
+    // 3. Vérifier que c'est bien un répertoire
+    Inode *inode = &fs->inode_table[dir_inode];
+    if (!inode->is_directory) {
+        fprintf(stderr, "Ce n'est pas un répertoire\n");
+        return -1;
+    }
+
+    // 4. Lire le contenu du répertoire
+    Directory dir;
+    if (!read_directory(fs, dir_inode, &dir)) {
+        fprintf(stderr, "Erreur de lecture du répertoire\n");
+        return -1;
+    }
+
+    // 5. Vérifier que le répertoire est vide (seulement '.' et '..')
+    if (dir.entry_count > 2) {
+        fprintf(stderr, "Répertoire non vide\n");
+        return -1;
+    }
+
+    // 6. Trouver le répertoire parent
+    uint32_t parent_inode = dir.entries[1]; // '..' pointe vers le parent
+    if (parent_inode >= MAX_FILES) {
+        fprintf(stderr, "Répertoire parent invalide\n");
+        return -1;
+    }
+
+    // 7. Vérifier les permissions du parent
+    Inode *parent = &fs->inode_table[parent_inode];
+    if (!(parent->permissions & 0222)) {
+        fprintf(stderr, "Permission refusée\n");
+        return -1;
+    }
+
+    // 8. Extraire le nom du répertoire à supprimer
+    char parent_path[MAX_PATH_LEN];
+    char dirname[MAX_FILENAME_LEN];
+    if (!split_path(path, parent_path, dirname)) {
+        fprintf(stderr, "Impossible d'extraire le nom du répertoire\n");
+        return -1;
+    }
+
+    // 9. Supprimer l'entrée du répertoire parent
+    Directory parent_dir;
+    if (!read_directory(fs, parent_inode, &parent_dir)) {
+        fprintf(stderr, "Erreur de lecture du répertoire parent\n");
+        return -1;
+    }
+
+    bool found = false;
+    for (uint32_t i = 0; i < parent_dir.entry_count; i++) {
+        if (strcmp(parent_dir.names[i], dirname) == 0 && parent_dir.entries[i] == dir_inode) {
+            // Décaler les entrées suivantes
+            for (uint32_t j = i; j < parent_dir.entry_count - 1; j++) {
+                parent_dir.entries[j] = parent_dir.entries[j+1];
+                strcpy(parent_dir.names[j], parent_dir.names[j+1]);
+            }
+            parent_dir.entry_count--;
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        fprintf(stderr, "Entrée non trouvée dans le répertoire parent\n");
+        return -1;
+    }
+
+    // 10. Sauvegarder le répertoire parent modifié
+    if (!write_directory(fs, parent_inode, &parent_dir)) {
+        fprintf(stderr, "Erreur d'écriture du répertoire parent\n");
+        return -1;
+    }
+
+    // 11. Libérer les ressources du répertoire
+    // Libérer le bloc contenant la structure Directory
+    if (inode->blocks[0] != 0) {
+        free_block(fs, inode->blocks[0]);
+    }
+
+    // Libérer l'inode
+    free_inode(fs, dir_inode);
+
+    // 12. Mettre à jour les métadonnées du parent
+    parent->modified_at = time(NULL);
+    parent->accessed_at = time(NULL);
+
+    return 0;
 }

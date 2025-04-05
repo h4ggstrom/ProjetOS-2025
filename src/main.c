@@ -180,8 +180,21 @@ int main()
                 {
                     printf("Répertoire créé avec succès (inode %u)\n", dir_inode);
                 }
-                continue;
-            }
+            } 
+            continue;
+        }
+        else if (strcmp(args[0], "remove_directory") == 0)
+        {
+    if(args[1]==NULL){
+        printf("Il faut indiquer un répertoire à supprimer\n");
+    }
+    else{
+        if (remove_directory(&fs, args[1]) == 0) {
+            printf("Répertoire \"%c\" supprimé avec succès\n",args[1]);
+        } else {
+            printf("Échec de la suppression du répertoire\n");
+        }
+    }
         }
         else if (strcmp(args[0], "ls") == 0)
         {

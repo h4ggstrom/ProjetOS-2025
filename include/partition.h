@@ -231,6 +231,14 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode);
  */
 bool split_path(const char *full_path, char *parent_path, char *filename);
 
+/**
+ * @brief Supprime un répertoire vide
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param path Chemin du répertoire à supprimer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int remove_directory(FileSystem *fs, const char *path);
 
 /**
  * @brief Alloue un nouvel inode libre
