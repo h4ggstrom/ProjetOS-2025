@@ -211,39 +211,36 @@ int main()
             else
             {
                 int fd = fs_open_file(&fs, args[1], O_RDWR);
-                printf("Descripteur de fichier:%d\n", fd);
                 if (fd == -1)
                 {
                     perror("open_file failed\n");
                 }
                 else
                 {
-                    printf("Fichier ouvert avec succees\n");
+                    printf("Fichier ouvert avec le descripteur de fichier:%d\n", fd);
                 }
                 continue;
             }
         }
         else if (strcmp(args[0], "close_file") == 0)
         {
-            if (args[1] == 0)
+            if (args[1] == NULL)
             {
-                printf("Il faut indiquer un nom de fichier\n");
+                printf("Il faut indiquer un descripteur\n");
             }
             else
             {
-                int fd = fs_close_file(&fs, fd);
-                printf("Descripteur de fichier:%d\n", fd);
-                if (fd == -1)
+                int fd = atoi(args[1]);
+                if(fs_close_file(&fs,fd)==0)
                 {
-                    perror("close_file failed\n");
+                printf("Fichier fermé de descripteur:%d\n", fd);
                 }
-                else
-                {
-                    printf("Fichier ferme avec succee\n");
+                else{
+                    perror("Erreur lors de la fermeture du fichier\n");
                 }
-                continue;
+                    continue;
             }
-        }
+    }
         else if (strcmp(args[0], "tree") == 0)
         {
             char path[MAX_PATH_LEN];
@@ -437,120 +434,269 @@ int main()
             }
             continue;
         }
-        else if (strcmp(args[0], "add_user") == 0) {
-            if (args[1] == NULL || args[2] == NULL || args[3] == NULL) {
+        else if (strcmp(args[0], "add_user") == 0)
+        {
+            if (args[1] == NULL || args[2] == NULL || args[3] == NULL)
+            {
                 printf("Usage : add_user <username> <group_id> <user_type>\n");
                 printf("user_type : admin, user, guest\n");
-            } else {
+            }
+            else
+            {
                 uint32_t group_id = atoi(args[2]);
                 UserType user_type;
 
-                if (strcmp(args[3], "admin") == 0) {
+                if (strcmp(args[3], "admin") == 0)
+                {
                     user_type = USER_TYPE_ADMIN;
-                } else if (strcmp(args[3], "user") == 0) {
+                }
+                else if (strcmp(args[3], "user") == 0)
+                {
                     user_type = USER_TYPE_USER;
-                } else if (strcmp(args[3], "guest") == 0) {
+                }
+                else if (strcmp(args[3], "guest") == 0)
+                {
                     user_type = USER_TYPE_GUEST;
-                } else {
+                }
+                else
+                {
                     printf("Type d'utilisateur invalide. Utilisez : admin, user, guest\n");
                     continue;
                 }
 
                 uint32_t user_id = add_user(args[1], group_id, user_type);
-                if (user_id == (uint32_t)-1) {
+                if (user_id == (uint32_t)-1)
+                {
                     printf("Erreur : impossible d'ajouter l'utilisateur. Table pleine.\n");
-                } else {
+                }
+                else
+                {
                     printf("Utilisateur ajouté avec succès : ID=%u, Nom=%s, Groupe=%u, Type=%s\n",
                            user_id, args[1], group_id, args[3]);
                 }
             }
             continue;
         }
-        else if (strcmp(args[0], "remove_user") == 0) {
-            if (args[1] == NULL) {
+        else if (strcmp(args[0], "remove_user") == 0)
+        {
+            if (args[1] == NULL)
+            {
                 printf("Usage : rm_user <user_id>\n");
-            } else {
+            }
+            else
+            {
                 uint32_t user_id = atoi(args[1]);
-                if (remove_user(user_id)) {
+                if (remove_user(user_id))
+                {
                     printf("Utilisateur avec ID=%u supprimé avec succès.\n", user_id);
-                } else {
+                }
+                else
+                {
                     printf("Erreur : impossible de supprimer l'utilisateur avec ID=%u.\n", user_id);
                 }
             }
             continue;
         }
-        else if (strcmp(args[0], "list_users") == 0) {
+        else if (strcmp(args[0], "list_users") == 0)
+        {
             display_users();
             continue;
         }
-        else if (strcmp(args[0], "chmod") == 0) {
-            if (args[1] == NULL || args[2] == NULL) {
+        else if (strcmp(args[0], "chmod") == 0)
+        {
+            if (args[1] == NULL || args[2] == NULL)
+            {
                 printf("Usage : chmod <path> <permissions>\n");
-            } else {
+            }
+            else
+            {
                 uint16_t permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
-                Inode *inode = get_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
-                if (inode == NULL) {
+                Inode *inode = get_inode_by_path(&fs, args[1]);  // Fonction pour récupérer l'inode par chemin
+                if (inode == NULL)
+                {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
-                } else if (set_permissions(inode, permissions)) {
+                }
+                else if (set_permissions(inode, permissions))
+                {
                     printf("Permissions modifiées avec succès pour %s.\n", args[1]);
-                } else {
+                }
+                else
+                {
                     printf("Erreur : impossible de modifier les permissions pour %s.\n", args[1]);
                 }
             }
             continue;
         }
-        else if (strcmp(args[0], "check_permissions") == 0) {
-            if (args[1] == NULL || args[2] == NULL) {
+        else if (strcmp(args[0], "check_permissions") == 0)
+        {
+            if (args[1] == NULL || args[2] == NULL)
+            {
                 printf("Usage : check_permissions <path> <required_permissions>\n");
-            } else {
+            }
+            else
+            {
                 uint16_t required_permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
                 Inode *inode = get_inode_by_path(&fs, args[1]);
                 if (inode == NULL)
                 {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
-                } else if (check_permissions(inode, required_permissions, get_current_user())) {
+                }
+                else if (check_permissions(inode, required_permissions, get_current_user()))
+                {
                     printf("L'utilisateur courant a les permissions nécessaires pour %s.\n", args[1]);
-                } else {
+                }
+                else
+                {
                     printf("L'utilisateur courant n'a pas les permissions nécessaires pour %s.\n", args[1]);
                 }
             }
             continue;
         }
-        else if (strcmp(args[0], "chown") == 0) {
-            if (args[1] == NULL || args[2] == NULL || args[3] == NULL) {
+        else if (strcmp(args[0], "chown") == 0)
+        {
+            if (args[1] == NULL || args[2] == NULL || args[3] == NULL)
+            {
                 printf("Usage : chown <path> <new_owner_id> <new_group_id>\n");
-            } else {
+            }
+            else
+            {
                 uint32_t new_owner_id = atoi(args[2]);
                 uint32_t new_group_id = atoi(args[3]);
                 Inode *inode = get_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
-                if (inode == NULL) {
+                if (inode == NULL)
+                {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
-                } else if (chown_inode(inode, new_owner_id, new_group_id)) {
+                }
+                else if (chown_inode(inode, new_owner_id, new_group_id))
+                {
                     printf("Propriétaire et groupe modifiés avec succès pour %s.\n", args[1]);
-                } else {
+                }
+                else
+                {
                     printf("Erreur : impossible de modifier le propriétaire et le groupe pour %s.\n", args[1]);
                 }
             }
             continue;
         }
-        else if (strcmp(args[0], "switch_user") == 0) {
-            if (args[1] == NULL) {
+        else if (strcmp(args[0], "switch_user") == 0)
+        {
+            if (args[1] == NULL)
+            {
                 printf("Usage : switch_user <user_id>\n");
-            } else {
+            }
+            else
+            {
                 uint32_t user_id = atoi(args[1]);
-                if (set_current_user(user_id)) {
+                if (set_current_user(user_id))
+                {
                     printf("Utilisateur courant changé avec succès : %s\n", get_current_user()->username);
-                } else {
+                }
+                else
+                {
                     printf("Erreur : impossible de changer l'utilisateur courant à ID=%u.\n", user_id);
                 }
             }
             continue;
         }
-        else if (strcmp(args[0], "clear") == 0) {
+        else if (strcmp(args[0], "link") == 0)
+        {
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un fichier source\n");
+            }
+            if (args[2] == NULL)
+            {
+                printf("Il faut indiquer un chemin à créer\n");
+            }
+            if ((args[1] != NULL) && (args[2] != NULL))
+            {
+                /*
+                char old_path[MAX_PATH_LEN];
+                char new_path[MAX_PATH_LEN];
+                const char *current_dir = get_current_directory(&fs);
+                if ((args[1][0] != "/")&&(args[2][0] != "/"))
+                {
+                    if (current_dir[0] == '/')
+                    {
+                        snprintf(old_path, sizeof(old_path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
+                        snprintf(new_path, sizeof(new_path), "%s%s", current_dir, args[1]);
+                    }
+                    else
+                    {
+                        snprintf(old_path, sizeof(old_path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
+                        snprintf(old_path, sizeof(old_path), "/%s/%s", current_dir, args[1]);
+                    }
+                }
+                else if ((args[1][0] == "/")&&(args[2][0] != "/"))
+                {
+                    if (current_dir[0] == '/')
+                    {
+                        snprintf(old_path, sizeof(old_path), "%s", args[1]); // Garde le chemin tel quel (déjà absolu)
+                        snprintf(new_path, sizeof(new_path), "%s%s", current_dir, args[1]);
+                    }
+                    else
+                    {
+                        snprintf(old_path, sizeof(old_path), "%s", args[1]);
+                        snprintf(old_path, sizeof(old_path), "/%s%s", current_dir, args[1]);// Ajoute un "/" seulement si nécessaire
+                    }
+                }*/
+                if (fs_link(&fs, args[1], args[2]) == 0)
+                {
+                    printf("Fichiers liée avec succées: %s -> %s\n", args[1], args[2]);
+                }
+                else
+                {
+                    perror("Echecs lors de l'opération\n");
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "symlink") == 0)
+        {
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un fichier source\n");
+            }
+            if (args[2] == NULL)
+            {
+                printf("Il faut indiquer un chemin à créer\n");
+            }
+            if ((args[1] != NULL) && (args[2] != NULL))
+            {
+                if (fs_symlink(&fs, args[1], args[2]) == 0)
+                {
+                    printf("Fichiers liée symboliquement avec succées: %s -> %s\n", args[1], args[2]);
+                }
+                else
+                {
+                    perror("Échec de la création du lien symbolique");
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "read_symlink") == 0)
+        {
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un lien à lire\n");
+            }
+            if (args[1] != NULL)
+            {
+                char resolved_path[MAX_PATH_LEN];
+                if (fs_readlink(&fs,find_inode_by_path(&fs,args[1]),resolved_path, MAX_PATH_LEN) == 0)
+                {
+                    printf("Le lien pointe vers: %s\n", resolved_path);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "clear") == 0)
+        {
             system("clear");
             continue;
         }
-        else if (strcmp(args[0], "exit") == 0) {
+        else if (strcmp(args[0], "exit") == 0)
+        {
             printf("Fermeture du shell. Au revoir !\n");
             exit(EXIT_SUCCESS);
         }
@@ -649,20 +795,26 @@ int make_demo_directory(FileSystem *fs)
 /**
  * @brief Initialise un utilisateur standard au démarrage.
  */
-void initialize_default_user() {
+void initialize_default_user()
+{
     // Ajouter un utilisateur standard (si la table est vide)
-    if (get_user_count() == 0) {
+    if (get_user_count() == 0)
+    {
         uint32_t default_user_id = add_user("default_user", 1, USER_TYPE_USER);
-        if (default_user_id == (uint32_t)-1) {
+        if (default_user_id == (uint32_t)-1)
+        {
             fprintf(stderr, "Erreur : impossible de créer l'utilisateur par défaut.\n");
             return;
         }
     }
 
     // Définir l'utilisateur standard comme utilisateur courant
-    if (!set_current_user(0)) {
+    if (!set_current_user(0))
+    {
         fprintf(stderr, "Erreur : impossible de définir l'utilisateur par défaut comme utilisateur courant.\n");
-    } else {
+    }
+    else
+    {
         printf("Utilisateur par défaut connecté : %s\n", get_current_user()->username);
     }
 }
