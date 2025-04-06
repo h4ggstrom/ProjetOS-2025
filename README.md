@@ -74,24 +74,19 @@ Le fichier exécutable est généré dans /bin | The executable file is generate
 ```
 ProjetOS-2025/
 ├── src/                  # Fichiers d'en-tête / Header files
-|   ├── config.h
-|   ├── constantes.g
-|   ├── file_operations.h
+|   ├── constantes.h
 │   ├── links.h
 │   ├── partition.h
 |   ├── permissions.h
 |   ├── tree.h
 |   ├── user.h
-|   ├── utils.h
 │   └── vfs_function.h
 ├── src/                  # Fichiers source C / C source file
-|   ├── file_operations.c
 |   ├── main.c
 |   ├── partition.c
 │   ├── permissions.c
 │   ├── tree.c
 |   ├── user.c
-|   ├── utils.c
 │   └── vfs_function.c
 ├── tests/               # Fichiers tests / Tests files
 │   ├── test_file_operations.c

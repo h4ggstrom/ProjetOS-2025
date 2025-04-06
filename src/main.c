@@ -153,19 +153,25 @@ int main()
             {
                 printf("Il faut indiquer un nom de fichier\n");
             }
-            else {
+            else
+            {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
-                
+
                 uint32_t new_file = create_file(&fs, path, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-                if (new_file != (uint32_t)-1) {
+                if (new_file != (uint32_t)-1)
+                {
                     printf("Fichier créé avec inode %u\n", new_file);
-                } else {
+                }
+                else
+                {
                     printf("Échec de la création du fichier\n");
                 }
                 continue;
@@ -177,17 +183,23 @@ int main()
             {
                 printf("Il faut indiquer un nom de fichier\n");
             }
-            else {
+            else
+            {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
-                if (remove_file(&fs,path)==0) {
+                if (remove_file(&fs, path) == 0)
+                {
                     printf("Fichier \"%s\"suprimmé avec succés %u\n", path);
-                } else {
+                }
+                else
+                {
                     printf("Échec de la suppression du fichier\n");
                 }
                 continue;
@@ -202,13 +214,15 @@ int main()
             else
             {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
-                int fd = fs_open_file(&fs,path, O_RDWR);
+                int fd = fs_open_file(&fs, path, O_RDWR);
                 if (fd == -1)
                 {
                     perror("open_file failed\n");
@@ -350,21 +364,23 @@ int main()
             else
             {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
-                    uint32_t new_directory = create_directory(&fs, path, 0755);
-                    if (new_directory != (uint32_t)-1)
-                    {
-                        printf("Repertoire créé avec l'inode %u\n", new_directory);
-                    }
-                    else
-                    {
-                        printf("Échec de la création du repertoire\n");
-                    }
+                uint32_t new_directory = create_directory(&fs, path, 0755);
+                if (new_directory != (uint32_t)-1)
+                {
+                    printf("Repertoire créé avec l'inode %u\n", new_directory);
+                }
+                else
+                {
+                    printf("Échec de la création du repertoire\n");
+                }
             }
             continue;
         }
@@ -377,21 +393,23 @@ int main()
             else
             {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
-                    if (remove_directory(&fs, path) == 0)
-                    {
-                        printf("Répertoire \"%s\" supprimé avec succès\n", path);
-                    }
-                    else
-                    {
-                        printf("Échec de la suppression du répertoire: %s\n", path);
-                    }
+                if (remove_directory(&fs, path) == 0)
+                {
+                    printf("Répertoire \"%s\" supprimé avec succès\n", path);
                 }
+                else
+                {
+                    printf("Échec de la suppression du répertoire: %s\n", path);
+                }
+            }
             continue;
         }
 
@@ -404,21 +422,23 @@ int main()
             else
             {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
-                    if (change_directory(&fs, path) == 0)
-                    {
-                        printf("Déplacement dans le répertoire \"%s\"\n", path);
-                    }
-                    else
-                    {
-                        printf("Échec du déplacement dans le répertoire: %s\n", path);
-                    }
+                if (change_directory(&fs, path) == 0)
+                {
+                    printf("Déplacement dans le répertoire \"%s\"\n", path);
                 }
+                else
+                {
+                    printf("Échec du déplacement dans le répertoire: %s\n", path);
+                }
+            }
             continue;
         }
         else if (strcmp(args[0], "ls") == 0)
@@ -535,14 +555,16 @@ int main()
             else
             {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
                 uint16_t permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
-                Inode *inode = get_inode_by_path(&fs, path);  // Fonction pour récupérer l'inode par chemin
+                Inode *inode = get_inode_by_path(&fs, path);     // Fonction pour récupérer l'inode par chemin
                 if (inode == NULL)
                 {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
@@ -592,10 +614,12 @@ int main()
             else
             {
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
                 uint32_t new_owner_id = atoi(args[2]);
@@ -649,17 +673,21 @@ int main()
             if ((args[1] != NULL) && (args[2] != NULL))
             {
                 char old_path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], old_path, sizeof(old_path));
                 }
-                else {
+                else
+                {
                     strncpy(old_path, args[1], sizeof(old_path));
                 }
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[2])) {
+                if (is_relative_path(args[2]))
+                {
                     resolve_relative_path(&fs, args[2], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[2], sizeof(path));
                 }
 
@@ -687,17 +715,21 @@ int main()
             if ((args[1] != NULL) && (args[2] != NULL))
             {
                 char old_path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], old_path, sizeof(old_path));
                 }
-                else {
+                else
+                {
                     strncpy(old_path, args[1], sizeof(old_path));
                 }
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[2])) {
+                if (is_relative_path(args[2]))
+                {
                     resolve_relative_path(&fs, args[2], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[2], sizeof(path));
                 }
                 if (fs_symlink(&fs, old_path, path) == 0)
@@ -721,10 +753,12 @@ int main()
             {
                 char resolved_path[MAX_PATH_LEN];
                 char path[MAX_PATH_LEN];
-                if (is_relative_path(args[1])) {
+                if (is_relative_path(args[1]))
+                {
                     resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else {
+                else
+                {
                     strncpy(path, args[1], sizeof(path));
                 }
                 if (fs_readlink(&fs, find_inode_by_path(&fs, args[1]), resolved_path, MAX_PATH_LEN) == 0)
@@ -743,6 +777,11 @@ int main()
         {
             printf("Fermeture du shell. Au revoir !\n");
             exit(EXIT_SUCCESS);
+        }
+        else
+        {
+            printf("Commande inconnue : %s\n", args[0]);
+            printf("Entrez help pour afficher les commandes disponibles.\n");
         }
         /*
         // Forker un processus enfant
