@@ -308,7 +308,7 @@ int remove_directory(FileSystem *fs, const char *path);
  * @param fs Pointeur vers le système de fichiers
  * @return uint32_t Numéro d'inode alloué, ou (uint32_t)-1 si erreur
  */
-uint32_t allocate_inode(FileSystem *fs);
+uint32_t allocate_inode(FileSystem *fs,FileType type);
 
 /**
  * @brief Initialise un nouvel inode
@@ -407,5 +407,34 @@ uint32_t get_indirect_block(FileSystem *fs, uint32_t indirect_blk, uint32_t idx)
  * @return int 0 en cas de succès, -1 en cas d'échec
  */
 int remove_file(FileSystem *fs, const char *path);
+/**
+ * @brief Crée un lien symbolique (soft link)
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param target Chemin cible du lien
+ * @param linkpath Chemin du lien à créer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_symlink(FileSystem *fs, const char *target, const char *linkpath) ;
+
+/**
+ * @brief Lit la cible d'un lien symbolique
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode_id Inode du lien symbolique
+ * @param buffer Buffer de sortie
+ * @param size Taille du buffer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_readlink(FileSystem *fs, uint32_t inode_id, char *buffer, size_t size);
+
+/**
+ * @brief Trouve l'inode correspondant à un chemin donné.
+ *
+ * @param fs Pointeur vers le système de fichiers.
+ * @param path Chemin du fichier ou répertoire (ex: "/dir1/file.txt").
+ * @return Inode* Pointeur vers l'inode correspondant, ou NULL si non trouvé.
+ */
+Inode *get_inode_by_path(FileSystem *fs, const char *path);
 
 #endif // PARTITION_H

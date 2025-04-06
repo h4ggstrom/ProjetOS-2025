@@ -488,7 +488,7 @@ int main()
                 printf("Usage : chmod <path> <permissions>\n");
             } else {
                 uint16_t permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
-                Inode *inode = find_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
+                Inode *inode = get_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
                 if (inode == NULL) {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
                 } else if (set_permissions(inode, permissions)) {
@@ -504,8 +504,9 @@ int main()
                 printf("Usage : check_permissions <path> <required_permissions>\n");
             } else {
                 uint16_t required_permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
-                Inode *inode = find_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
-                if (inode == NULL) {
+                Inode *inode = get_inode_by_path(&fs, args[1]);
+                if (inode == NULL)
+                {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
                 } else if (check_permissions(inode, required_permissions, get_current_user())) {
                     printf("L'utilisateur courant a les permissions nécessaires pour %s.\n", args[1]);
@@ -521,7 +522,7 @@ int main()
             } else {
                 uint32_t new_owner_id = atoi(args[2]);
                 uint32_t new_group_id = atoi(args[3]);
-                Inode *inode = find_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
+                Inode *inode = get_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
                 if (inode == NULL) {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
                 } else if (chown_inode(inode, new_owner_id, new_group_id)) {

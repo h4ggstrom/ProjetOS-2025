@@ -69,6 +69,7 @@ void init_partition(FileSystem *fs, const char *img_path, uint32_t total_size, u
     fs->inode_table[0].modified_at = time(NULL);
     fs->inode_table[0].accessed_at = time(NULL);
     fs->inode_table[0].is_used = 1;
+    fs->inode_table[0].type = FILE_DIRECTORY;
 
      // Initialisation de la table des fichiers ouverts
      fs->max_open_files = MAX_OPEN_FILES; 
@@ -472,86 +473,111 @@ bool read_directory(FileSystem *fs, uint32_t inode_num, Directory *dir)
 
 /**
  * @brief Trouve l'inode correspondant à un chemin donné
- *
+ * 
  * @param fs Pointeur vers le système de fichiers
- * @param path Chemin du fichier (ex: "/dir1/file.txt")
- * @return uint32_t Numéro de l'inode trouvé, ou (uint32_t)-1 si non trouvé
+ * @param path Chemin à résoudre (absolu ou relatif)
+ * @return uint32_t Numéro d'inode trouvé, ou (uint32_t)-1 si non trouvé
  */
-uint32_t find_inode_by_path(FileSystem *fs, const char *path)
-{
-    // Vérification des paramètres
-    if (!fs || !path || path[0] != '/')
-    {
+uint32_t find_inode_by_path(FileSystem *fs, const char *path) {
+    // 1. Vérifications de base
+    if (!fs || !path) {
+        fprintf(stderr, "Paramètres invalides\n");
         return (uint32_t)-1;
     }
 
-    // Cas spécial pour la racine
-    if (strcmp(path, "/") == 0)
-    {
-        return 0; // On suppose que l'inode 0 est le répertoire racine
+    // 2. Gestion spéciale du chemin racine
+    if (strcmp(path, "/") == 0) {
+        return 0; // Convention: inode 0 est la racine
     }
 
-    // Copie du chemin pour éviter de modifier l'original
+    // 3. Préparation des variables
     char *path_copy = strdup(path);
-    if (!path_copy)
-    {
+    if (!path_copy) {
+        fprintf(stderr, "Erreur d'allocation mémoire\n");
         return (uint32_t)-1;
     }
 
-    uint32_t current_inode = 0; // On commence à la racine (inode 0)
-    char *token = strtok(path_copy, "/");
-    char *next_token = NULL;
+    uint32_t current_inode;
+    char *saveptr;
+    int symlink_depth = 0;
+    const int MAX_SYMLINK_DEPTH = 10; // Pour éviter les boucles infinies
 
-    while (token != NULL)
-    {
-        // Vérifier que current_inode est un répertoire
-        if (current_inode >= MAX_FILES || !fs->inode_table[current_inode].is_directory)
-        {
+    // 4. Déterminer le point de départ (absolu ou relatif)
+    if (path[0] == '/') {
+        current_inode = 0; // Commencer à la racine
+    } else {
+        current_inode = fs->current_directory; // Répertoire courant
+    }
+
+    // 5. Traitement de chaque composante du chemin
+    char *component = strtok_r(path_copy, "/", &saveptr);
+    while (component != NULL) {
+        // 5.1 Vérifier que current_inode est un répertoire ou un lien symbolique
+        if (current_inode >= MAX_FILES) {
             free(path_copy);
             return (uint32_t)-1;
         }
 
-        // Lire le répertoire
+        Inode *inode = &fs->inode_table[current_inode];
+        
+        // 5.2 Résolution des liens symboliques
+        if (inode->type == FILE_SYMLINK) {
+            if (++symlink_depth > MAX_SYMLINK_DEPTH) {
+                fprintf(stderr, "Trop de niveaux de liens symboliques (possible boucle)\n");
+                free(path_copy);
+                return (uint32_t)-1;
+            }
+
+            char link_target[MAX_PATH_LEN];
+            if (fs_readlink(fs, current_inode, link_target, MAX_PATH_LEN) != 0) {
+                free(path_copy);
+                return (uint32_t)-1;
+            }
+
+            // Si le lien est absolu, recommencer depuis la racine
+            if (link_target[0] == '/') {
+                current_inode = 0;
+            }
+
+            // Réinsérer le reste du chemin original
+            char *remaining_path = saveptr ? strcat(strcat(link_target, "/"), saveptr) : link_target;
+            free(path_copy);
+            return find_inode_by_path(fs, remaining_path);
+        }
+
+        if (inode->type != FILE_DIRECTORY) {
+            fprintf(stderr, "'%s' n'est pas un répertoire\n", component);
+            free(path_copy);
+            return (uint32_t)-1;
+        }
+
+        // 5.3 Lire le répertoire courant
         Directory dir;
-        if (!read_directory(fs, current_inode, &dir))
-        {
+        if (!read_directory(fs, current_inode, &dir)) {
             free(path_copy);
             return (uint32_t)-1;
         }
 
-        // Vérifier si le token existe dans le répertoire
+        // 5.4 Chercher la composante dans le répertoire
         uint32_t found_inode = (uint32_t)-1;
-        for (uint32_t i = 0; i < dir.entry_count; i++)
-        {
-            if (strcmp(dir.names[i], token) == 0)
-            {
+        for (uint32_t i = 0; i < dir.entry_count; i++) {
+            if (strcmp(dir.names[i], component) == 0) {
                 found_inode = dir.entries[i];
                 break;
             }
         }
 
-        if (found_inode == (uint32_t)-1)
-        {
+        if (found_inode == (uint32_t)-1) {
             free(path_copy);
             return (uint32_t)-1;
         }
 
-        // Préparer la prochaine itération
         current_inode = found_inode;
-        next_token = strtok(NULL, "/");
-
-        // Si c'est le dernier token et qu'on a trouvé, on retourne l'inode
-        if (next_token == NULL)
-        {
-            free(path_copy);
-            return current_inode;
-        }
-
-        token = next_token;
+        component = strtok_r(NULL, "/", &saveptr);
     }
 
     free(path_copy);
-    return (uint32_t)-1;
+    return current_inode;
 }
 
 /**
@@ -781,6 +807,7 @@ uint32_t allocate_inode(FileSystem *fs, FileType type) {
         if (!fs->inode_table[i].is_used && fs->inode_table[i].id == 0) {
             // Initialisation complète de l'inode
             fs->inode_table[i].is_used = true;
+            fs->inode_table[i].type = type;
             fs->inode_table[i].id = i;
             fs->inode_table[i].type = type;
             fs->inode_table[i].links_count = 1; // 1 lien par défaut
@@ -1273,7 +1300,7 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
     }
 
     // 6. Allouer un nouvel inode pour le répertoire
-    uint32_t new_inode = allocate_inode(fs);
+    uint32_t new_inode = allocate_inode(fs,FILE_DIRECTORY);
     if (new_inode == (uint32_t)-1) {
         fprintf(stderr, "Plus d'inodes disponibles\n");
         return (uint32_t)-1;
@@ -1283,6 +1310,8 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
     Inode *dir_inode = &fs->inode_table[new_inode];
     init_inode(dir_inode, new_inode, (mode & ~S_IFMT) | 0755, true);
     dir_inode->is_used = true;
+    dir_inode->is_directory =true;
+    dir_inode->type=FILE_DIRECTORY;
 
     // 8. Créer la structure Directory pour le nouveau répertoire
     Directory *new_dir = malloc(sizeof(Directory));
@@ -1618,4 +1647,176 @@ Inode *get_inode_by_path(FileSystem *fs, const char *path) {
     }
 
     return current_inode;
+}
+
+#include <links.h>
+
+/**
+ * @brief Crée un lien physique (hard link) vers un fichier existant
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param oldpath Chemin existant du fichier
+ * @param newpath Nouveau chemin à créer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_link(FileSystem *fs, const char *oldpath, const char *newpath) {
+    // 1. Vérifications de base
+    if (!fs || !oldpath || !newpath) {
+        fprintf(stderr, "Paramètres invalides\n");
+        return -1;
+    }
+
+    // 2. Trouver l'inode du fichier existant
+    uint32_t target_inode = find_inode_by_path(fs, oldpath);
+    if (target_inode == (uint32_t)-1) {
+        fprintf(stderr, "Fichier source non trouvé: %s\n", oldpath);
+        return -1;
+    }
+
+    // 3. Vérifier que ce n'est pas un répertoire
+    Inode *inode = &fs->inode_table[target_inode];
+    if (inode->is_directory) {
+        fprintf(stderr, "Impossible de créer un lien sur un répertoire\n");
+        return -1;
+    }
+
+    // 4. Extraire le répertoire parent et le nom du nouveau lien
+    char parent_path[MAX_PATH_LEN];
+    char newname[MAX_FILENAME_LEN];
+    if (!split_path(newpath, parent_path, newname)) {
+        fprintf(stderr, "Chemin invalide: %s\n", newpath);
+        return -1;
+    }
+
+    // 5. Vérifier que le parent existe et est un répertoire
+    uint32_t parent_inode = find_inode_by_path(fs, parent_path);
+    if (parent_inode == (uint32_t)-1) {
+        fprintf(stderr, "Répertoire parent non trouvé: %s\n", parent_path);
+        return -1;
+    }
+
+    Inode *parent = &fs->inode_table[parent_inode];
+    if (!parent->is_directory) {
+        fprintf(stderr, "Le parent n'est pas un répertoire: %s\n", parent_path);
+        return -1;
+    }
+
+    // 6. Vérifier que le nouveau nom n'existe pas déjà
+    if (find_file_in_directory(fs, parent_inode, newname) != (uint32_t)-1) {
+        fprintf(stderr, "Le nom existe déjà: %s\n", newname);
+        return -1;
+    }
+
+    // 7. Ajouter l'entrée dans le répertoire parent
+    if (!add_directory_entry(fs, parent_inode, target_inode, newname)) {
+        fprintf(stderr, "Échec de l'ajout au répertoire\n");
+        return -1;
+    }
+
+    // 8. Incrémenter le compteur de liens
+    inode->links_count++;
+    inode->modified_at = (uint64_t)time(NULL);
+
+    return 0;
+}
+
+/**
+ * @brief Crée un lien symbolique (soft link)
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param target Chemin cible du lien
+ * @param linkpath Chemin du lien à créer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_symlink(FileSystem *fs, const char *target, const char *linkpath) {
+    // 1. Vérifications de base
+    if (!fs || !target || !linkpath) {
+        fprintf(stderr, "Paramètres invalides\n");
+        return -1;
+    }
+
+    // 2. Extraire le répertoire parent et le nom du lien
+    char parent_path[MAX_PATH_LEN];
+    char linkname[MAX_FILENAME_LEN];
+    if (!split_path(linkpath, parent_path, linkname)) {
+        fprintf(stderr, "Chemin invalide: %s\n", linkpath);
+        return -1;
+    }
+
+    // 3. Vérifier que le parent existe et est un répertoire
+    uint32_t parent_inode = find_inode_by_path(fs, parent_path);
+    if (parent_inode == (uint32_t)-1) {
+        fprintf(stderr, "Répertoire parent non trouvé: %s\n", parent_path);
+        return -1;
+    }
+
+    Inode *parent = &fs->inode_table[parent_inode];
+    if (parent->type != FILE_DIRECTORY) {
+        fprintf(stderr, "Le parent n'est pas un répertoire: %s\n", parent_path);
+        return -1;
+    }
+
+    // 4. Vérifier que le lien n'existe pas déjà
+    if (find_file_in_directory(fs, parent_inode, linkname) != (uint32_t)-1) {
+        fprintf(stderr, "Le nom existe déjà: %s\n", linkname);
+        return -1;
+    }
+
+    // 5. Créer un nouvel inode pour le lien symbolique
+    uint32_t new_inode = allocate_inode(fs,FILE_SYMLINK);
+    if (new_inode == (uint32_t)-1) {
+        fprintf(stderr, "Plus d'inodes disponibles\n");
+        return -1;
+    }
+
+    Inode *inode = &fs->inode_table[new_inode];
+    inode->type = FILE_SYMLINK;
+    inode->links_count = 1;
+    inode->size = strlen(target);
+    inode->permissions = 0777; // lrwxrwxrwx
+
+    // 6. Allouer et copier la cible du lien
+    inode->symlink_target = malloc(strlen(target) + 1);
+    if (!inode->symlink_target) {
+        free_inode(fs, new_inode);
+        fprintf(stderr, "Erreur d'allocation mémoire\n");
+        return -1;
+    }
+    strcpy(inode->symlink_target, target);
+
+    // 7. Ajouter l'entrée dans le répertoire parent
+    if (!add_directory_entry(fs, parent_inode, new_inode, linkname)) {
+        free(inode->symlink_target);
+        free_inode(fs, new_inode);
+        fprintf(stderr, "Échec de l'ajout au répertoire\n");
+        return -1;
+    }
+
+    return 0;
+}
+
+/**
+ * @brief Lit la cible d'un lien symbolique
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param inode_id Inode du lien symbolique
+ * @param buffer Buffer de sortie
+ * @param size Taille du buffer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_readlink(FileSystem *fs, uint32_t inode_id, char *buffer, size_t size) {
+    if (!fs || inode_id >= MAX_FILES || !buffer) {
+        return -1;
+    }
+
+    Inode *inode = &fs->inode_table[inode_id];
+    if (inode->type != FILE_SYMLINK || !inode->symlink_target) {
+        return -1;
+    }
+
+    strncpy(buffer, inode->symlink_target, size);
+    buffer[size - 1] = '\0';
+    return 0;
+
+    
 }
