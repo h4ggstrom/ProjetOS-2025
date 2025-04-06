@@ -26,6 +26,7 @@ The structure is created inside a "demo" directory at the root level of the proj
 #include "../include/partition.h"
 #include "../include/permissions.h"
 #include "../include/links.h"
+#include "../include/user.h"
 
 // Constantes
 #define MAX_LINE 1024
@@ -38,6 +39,7 @@ void execute_cd(char **args);
 int is_string_numeric(const char *str);
 void display_help();
 int make_demo_directory(FileSystem *fs);
+void initialize_default_user();
 
 /**
  * @brief Point d'entrée principal du shell interactif
@@ -81,13 +83,16 @@ int main()
     char line[MAX_LINE];
     char *args[MAX_ARGS];
     char *token;
-    int status;
-    pid_t pid;
+    // int status;
+    // pid_t pid;        unused for now
+
+    initialize_default_user();
 
     while (1)
     {
         // Afficher le prompt
-        printf("myshell>");
+        User *current_user = get_current_user();
+        printf("\033[1;34m%s\033[0m $ ", current_user->username);
         fflush(stdout);
 
         // Lire la ligne de commande
@@ -316,7 +321,7 @@ int main()
             }
             else
             {
-                if (args[1][0] != "/")
+                if (args[1][0] != '/')
                 {
                     char path[MAX_PATH_LEN];
                     const char *current_dir = get_current_directory(&fs);
@@ -432,23 +437,139 @@ int main()
             }
             continue;
         }
-        /*
-                // Forker un processus enfant
-                pid = fork();
-                if (pid == 0) {
-                    // Processus enfant
-                    execvp(args[0], args);
-                    // Si execvp retourne, c'est qu'il y a eu une erreur
-                    perror("execvp");
-                    exit(EXIT_FAILURE);
-                } else if (pid < 0) {
-                    // Erreur lors du fork
-                    perror("fork");
+        else if (strcmp(args[0], "add_user") == 0) {
+            if (args[1] == NULL || args[2] == NULL || args[3] == NULL) {
+                printf("Usage : add_user <username> <group_id> <user_type>\n");
+                printf("user_type : admin, user, guest\n");
+            } else {
+                uint32_t group_id = atoi(args[2]);
+                UserType user_type;
+
+                if (strcmp(args[3], "admin") == 0) {
+                    user_type = USER_TYPE_ADMIN;
+                } else if (strcmp(args[3], "user") == 0) {
+                    user_type = USER_TYPE_USER;
+                } else if (strcmp(args[3], "guest") == 0) {
+                    user_type = USER_TYPE_GUEST;
                 } else {
-                    // Processus parent - attendre la fin de l'enfant
-                    waitpid(pid, &status, 0);
+                    printf("Type d'utilisateur invalide. Utilisez : admin, user, guest\n");
+                    continue;
                 }
-                    */
+
+                uint32_t user_id = add_user(args[1], group_id, user_type);
+                if (user_id == (uint32_t)-1) {
+                    printf("Erreur : impossible d'ajouter l'utilisateur. Table pleine.\n");
+                } else {
+                    printf("Utilisateur ajouté avec succès : ID=%u, Nom=%s, Groupe=%u, Type=%s\n",
+                           user_id, args[1], group_id, args[3]);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "remove_user") == 0) {
+            if (args[1] == NULL) {
+                printf("Usage : rm_user <user_id>\n");
+            } else {
+                uint32_t user_id = atoi(args[1]);
+                if (remove_user(user_id)) {
+                    printf("Utilisateur avec ID=%u supprimé avec succès.\n", user_id);
+                } else {
+                    printf("Erreur : impossible de supprimer l'utilisateur avec ID=%u.\n", user_id);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "list_users") == 0) {
+            display_users();
+            continue;
+        }
+        else if (strcmp(args[0], "chmod") == 0) {
+            if (args[1] == NULL || args[2] == NULL) {
+                printf("Usage : chmod <path> <permissions>\n");
+            } else {
+                uint16_t permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
+                Inode *inode = find_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
+                if (inode == NULL) {
+                    printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
+                } else if (set_permissions(inode, permissions)) {
+                    printf("Permissions modifiées avec succès pour %s.\n", args[1]);
+                } else {
+                    printf("Erreur : impossible de modifier les permissions pour %s.\n", args[1]);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "check_permissions") == 0) {
+            if (args[1] == NULL || args[2] == NULL) {
+                printf("Usage : check_permissions <path> <required_permissions>\n");
+            } else {
+                uint16_t required_permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
+                Inode *inode = find_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
+                if (inode == NULL) {
+                    printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
+                } else if (check_permissions(inode, required_permissions, get_current_user())) {
+                    printf("L'utilisateur courant a les permissions nécessaires pour %s.\n", args[1]);
+                } else {
+                    printf("L'utilisateur courant n'a pas les permissions nécessaires pour %s.\n", args[1]);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "chown") == 0) {
+            if (args[1] == NULL || args[2] == NULL || args[3] == NULL) {
+                printf("Usage : chown <path> <new_owner_id> <new_group_id>\n");
+            } else {
+                uint32_t new_owner_id = atoi(args[2]);
+                uint32_t new_group_id = atoi(args[3]);
+                Inode *inode = find_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
+                if (inode == NULL) {
+                    printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
+                } else if (chown_inode(inode, new_owner_id, new_group_id)) {
+                    printf("Propriétaire et groupe modifiés avec succès pour %s.\n", args[1]);
+                } else {
+                    printf("Erreur : impossible de modifier le propriétaire et le groupe pour %s.\n", args[1]);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "switch_user") == 0) {
+            if (args[1] == NULL) {
+                printf("Usage : switch_user <user_id>\n");
+            } else {
+                uint32_t user_id = atoi(args[1]);
+                if (set_current_user(user_id)) {
+                    printf("Utilisateur courant changé avec succès : %s\n", get_current_user()->username);
+                } else {
+                    printf("Erreur : impossible de changer l'utilisateur courant à ID=%u.\n", user_id);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "clear") == 0) {
+            system("clear");
+            continue;
+        }
+        else if (strcmp(args[0], "exit") == 0) {
+            printf("Fermeture du shell. Au revoir !\n");
+            exit(EXIT_SUCCESS);
+        }
+        /*
+        // Forker un processus enfant
+        pid = fork();
+        if (pid == 0) {
+            // Processus enfant
+            execvp(args[0], args);
+            // Si execvp retourne, c'est qu'il y a eu une erreur
+            perror("execvp");
+            exit(EXIT_FAILURE);
+        } else if (pid < 0) {
+            // Erreur lors du fork
+            perror("fork");
+        } else {
+            // Processus parent - attendre la fin de l'enfant
+            waitpid(pid, &status, 0);
+        }
+        */
     }
     return EXIT_SUCCESS;
 }
@@ -522,4 +643,25 @@ int make_demo_directory(FileSystem *fs)
         return -1;
 
     return 0;
+}
+
+/**
+ * @brief Initialise un utilisateur standard au démarrage.
+ */
+void initialize_default_user() {
+    // Ajouter un utilisateur standard (si la table est vide)
+    if (get_user_count() == 0) {
+        uint32_t default_user_id = add_user("default_user", 1, USER_TYPE_USER);
+        if (default_user_id == (uint32_t)-1) {
+            fprintf(stderr, "Erreur : impossible de créer l'utilisateur par défaut.\n");
+            return;
+        }
+    }
+
+    // Définir l'utilisateur standard comme utilisateur courant
+    if (!set_current_user(0)) {
+        fprintf(stderr, "Erreur : impossible de définir l'utilisateur par défaut comme utilisateur courant.\n");
+    } else {
+        printf("Utilisateur par défaut connecté : %s\n", get_current_user()->username);
+    }
 }

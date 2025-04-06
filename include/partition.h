@@ -280,7 +280,7 @@ int fs_open_file(FileSystem *fs, const char *path, int mode);
  * @param fd Descripteur de fichier à fermer
  * @return int 0 en cas de succès, -1 en cas d'échec
  */
-int fs_close_file(FileSystem *fs, int fd);
+int fs_close_file(FileSystem *fs, uint32_t fd);
 
 /**
  * @brief Sépare un chemin en répertoire parent et nom de fichier
