@@ -193,7 +193,7 @@ else{
     } else if (current_dir[strlen(current_dir) - 1] != '/' && relative_path[0] != '/') {
         snprintf(absolute_path, buffer_size, "/%s/%s", current_dir, relative_path);
     } else {
-        snprintf(absolute_path, buffer_size, "/%s%s", current_dir, relative_path);
+        snprintf(absolute_path, buffer_size, "%s%s", current_dir, relative_path);
 }
 }
     

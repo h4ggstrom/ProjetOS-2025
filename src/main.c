@@ -355,18 +355,13 @@ int main()
             }
             else
             {
-                if (args[1][0] != "/")
-                {
-                    char path[MAX_PATH_LEN];
-                    const char *current_dir = get_current_directory(&fs);
-                    if (current_dir[0] == '/')
-                    {
-                        snprintf(path, sizeof(path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
-                    }
-                    else
-                    {
-                        snprintf(path, sizeof(path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
-                    }
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
                     uint32_t new_directory = create_directory(&fs, path, 0755);
                     if (new_directory != (uint32_t)-1)
                     {
@@ -376,19 +371,6 @@ int main()
                     {
                         printf("Échec de la création du repertoire\n");
                     }
-                }
-                else
-                {
-                    uint32_t new_directory = create_directory(&fs, args[1], 0755);
-                    if (new_directory != (uint32_t)-1)
-                    {
-                        printf("Fichier créé avec inode %u\n", new_directory);
-                    }
-                    else
-                    {
-                        printf("Échec de la création du fichier\n");
-                    };
-                }
             }
             continue;
         }

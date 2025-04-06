@@ -1262,7 +1262,7 @@ uint32_t get_indirect_block(FileSystem *fs, uint32_t indirect_blk, uint32_t idx)
  * @param fs Pointeur vers le système de fichiers
  * @param path Chemin complet du nouveau répertoire
  * @param mode Permissions du répertoire
- * @return uint32_t Numéro d'inode du répertoire créé, ou (uint32_t)-1 en cas d'erreur
+ * @return uint32_t Numéro d'inode du répertoire créé, ou (uint32_t)-1 en cas d'échec
  */
 uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
     // 1. Vérifier les paramètres
@@ -1300,7 +1300,7 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
     }
 
     // 6. Allouer un nouvel inode pour le répertoire
-    uint32_t new_inode = allocate_inode(fs,FILE_DIRECTORY);
+    uint32_t new_inode = allocate_inode(fs, FILE_DIRECTORY);
     if (new_inode == (uint32_t)-1) {
         fprintf(stderr, "Plus d'inodes disponibles\n");
         return (uint32_t)-1;
@@ -1308,10 +1308,14 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
 
     // 7. Initialiser le nouvel inode comme répertoire
     Inode *dir_inode = &fs->inode_table[new_inode];
-    init_inode(dir_inode, new_inode, (mode & ~S_IFMT) | 0755, true);
     dir_inode->is_used = true;
-    dir_inode->is_directory =true;
-    dir_inode->type=FILE_DIRECTORY;
+    dir_inode->is_directory = true;
+    dir_inode->type = FILE_DIRECTORY;
+    dir_inode->permissions = (mode & ~S_IFMT) | 0755;
+    dir_inode->links_count = 2; // '.' et '..'
+    dir_inode->created_at = time(NULL);
+    dir_inode->modified_at = dir_inode->created_at;
+    dir_inode->accessed_at = dir_inode->created_at;
 
     // 8. Créer la structure Directory pour le nouveau répertoire
     Directory *new_dir = malloc(sizeof(Directory));
@@ -1343,7 +1347,7 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
     fs->partition.blocks[block_num].data = (uint8_t*)new_dir;
     fs->partition.blocks[block_num].is_free = false;
 
-    // 11. Ajouter le répertoire dans le parent
+    // 11. Ajouter le répertoire dans le parent (MISE À JOUR CRUCIALE)
     if (!add_directory_entry(fs, parent_inode, new_inode, dirname)) {
         free_block(fs, block_num);
         free_inode(fs, new_inode);
@@ -1353,6 +1357,7 @@ uint32_t create_directory(FileSystem *fs, const char *path, uint16_t mode) {
     // 12. Mettre à jour les métadonnées du parent
     parent->modified_at = time(NULL);
     parent->accessed_at = time(NULL);
+    parent->links_count++; // Incrémenter le compteur de liens du parent
 
     return new_inode;
 }
@@ -1399,7 +1404,7 @@ int remove_directory(FileSystem *fs, const char *path) {
     }
 
     // 6. Trouver le répertoire parent
-    uint32_t parent_inode = dir.entries[1]; // '..' pointe vers le parent
+    uint32_t parent_inode = dir.parent_inode; // '..' pointe vers le parent
     if (parent_inode >= MAX_FILES) {
         fprintf(stderr, "Répertoire parent invalide\n");
         return -1;
