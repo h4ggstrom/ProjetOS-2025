@@ -2,6 +2,7 @@
 #define VFS_FUNCTION_HANTES_H
 #include <constantes.h>
 #include <partition.h>
+#include <sys/types.h>
 /**
  * @brief Liste le contenu d'un répertoire (équivalent à ls)
  * 
@@ -47,4 +48,35 @@ int resolve_relative_path(FileSystem *fs, const char *rel_path, char *abs_path, 
  */
 void simplify_path(char *path);
 
+/**
+ * @brief Écrit des données dans un fichier
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param fd Descripteur de fichier
+ * @param buf Données à écrire
+ * @param count Nombre d'octets à écrire
+ * @return ssize_t Nombre d'octets écrits, ou -1 en cas d'erreur
+ */
+ssize_t fs_write(FileSystem *fs, int fd, const void *buf, size_t count);
+
+/**
+ * @brief Lit des données depuis un fichier
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param fd Descripteur de fichier
+ * @param buf Buffer de destination
+ * @param count Nombre d'octets à lire
+ * @return ssize_t Nombre d'octets lus, ou -1 en cas d'erreur
+ */
+ssize_t fs_read(FileSystem *fs, int fd, void *buf, size_t count);
+
+/**
+ * @brief Étend un fichier avec des zéros si nécessaire
+ */
+static int extend_file(FileSystem *fs, Inode *inode, uint32_t bytes_needed);
+
+/**
+ * @brief Obtient le bloc physique correspondant à un bloc logique
+ */
+uint32_t get_physical_block(FileSystem *fs, Inode *inode, uint32_t logical_block) ;
 #endif

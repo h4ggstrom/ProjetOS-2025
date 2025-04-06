@@ -396,7 +396,9 @@ bool write_single_block(FileSystem *fs, uint32_t block_num, uint8_t *buffer,
                         uint32_t size, uint32_t offset);
 
 int allocate_indirect_block(FileSystem *fs);
+
 int allocate_block_for_inode(FileSystem *fs, Inode *inode, uint32_t logical_block);
+
 uint32_t get_indirect_block(FileSystem *fs, uint32_t indirect_blk, uint32_t idx);
 
 /**
@@ -436,5 +438,8 @@ int fs_readlink(FileSystem *fs, uint32_t inode_id, char *buffer, size_t size);
  * @return Inode* Pointeur vers l'inode correspondant, ou NULL si non trouvé.
  */
 Inode *get_inode_by_path(FileSystem *fs, const char *path);
+
+uint32_t handle_indirect_block(FileSystem *fs, uint32_t *indirect_block_ptr, uint32_t index);
+
 
 #endif // PARTITION_H

@@ -1820,3 +1820,43 @@ int fs_readlink(FileSystem *fs, uint32_t inode_id, char *buffer, size_t size) {
 
     
 }
+
+/*
+uint32_t allocate_block_for_inode(FileSystem *fs, Inode *inode, uint32_t logical_block) {
+    // Blocs directs (0-11)
+    if (logical_block < 12) {
+        if (inode->blocks[logical_block] == 0) {
+            int blk = allocate_block(fs);
+            if (blk == -1) return (uint32_t)-1;
+            inode->blocks[logical_block] = blk;
+        }
+        return inode->blocks[logical_block];
+    }
+
+    // Bloc indirect simple (12-...)
+    logical_block -= 12;
+    if (logical_block < MAX_BLOCKS_PTR) {
+        return handle_indirect_block(fs, &inode->indirect_block, logical_block);
+    }
+    
+    return (uint32_t)-1;
+}
+
+uint32_t handle_indirect_block(FileSystem *fs, uint32_t *indirect_block_ptr, uint32_t index) {
+    if (*indirect_block_ptr == 0) {
+        *indirect_block_ptr = allocate_block(fs);
+        if (*indirect_block_ptr == (uint32_t)-1) return (uint32_t)-1;
+        
+        // Initialiser le nouveau bloc indirect
+        uint32_t *block = (uint32_t *)fs->partition.blocks[*indirect_block_ptr].data;
+        memset(block, 0, fs->superblock.block_size);
+    }
+    
+    uint32_t *block_pointers = (uint32_t *)fs->partition.blocks[*indirect_block_ptr].data;
+    if (block_pointers[index] == 0) {
+        block_pointers[index] = allocate_block(fs);
+        if (block_pointers[index] == (uint32_t)-1) return (uint32_t)-1;
+    }
+    
+    return block_pointers[index];
+}*/

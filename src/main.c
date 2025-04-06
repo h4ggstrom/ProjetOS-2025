@@ -231,16 +231,63 @@ int main()
             else
             {
                 int fd = atoi(args[1]);
-                if(fs_close_file(&fs,fd)==0)
+                if (fs_close_file(&fs, fd) == 0)
                 {
-                printf("Fichier fermé de descripteur:%d\n", fd);
+                    printf("Fichier fermé de descripteur:%d\n", fd);
                 }
-                else{
+                else
+                {
                     perror("Erreur lors de la fermeture du fichier\n");
                 }
-                    continue;
+                continue;
             }
-    }
+        }
+        else if (strcmp(args[0], "write") == 0)
+        {
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un descripteur\n");
+            }
+            if (args[2] == NULL)
+            {
+                printf("Indiquez un texte à écrire\n");
+            }
+            if ((args[1] != NULL) && (args[2] != NULL))
+            {
+                int fd = atoi(args[1]);
+                if (fs_write(&fs, fd, args[2], sizeof(args[2])) != -1)
+                {
+                    printf("Fichier écrit avec succés\n");
+                }
+                else
+                {
+                    perror("Echec lors de l'écriture");
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "read") == 0)
+        {
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un descripteur\n");
+            }
+            else
+            {
+                int fd = atoi(args[1]);
+                char *buffer[BLOCK_SIZE_DEFAULT*32];
+                ssize_t bytes_read = fs_read(&fs, fd, &buffer, sizeof(buffer));
+                if (bytes_read < 0)
+                {
+                    perror("Erreur de lecture");
+                }
+                else
+                {
+                    printf("Lu %zd octets: %.*s\n", bytes_read, (int)bytes_read, buffer);
+                }
+            }
+            continue;
+        }
         else if (strcmp(args[0], "tree") == 0)
         {
             char path[MAX_PATH_LEN];
@@ -683,7 +730,7 @@ int main()
             if (args[1] != NULL)
             {
                 char resolved_path[MAX_PATH_LEN];
-                if (fs_readlink(&fs,find_inode_by_path(&fs,args[1]),resolved_path, MAX_PATH_LEN) == 0)
+                if (fs_readlink(&fs, find_inode_by_path(&fs, args[1]), resolved_path, MAX_PATH_LEN) == 0)
                 {
                     printf("Le lien pointe vers: %s\n", resolved_path);
                 }
