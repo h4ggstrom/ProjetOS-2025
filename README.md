@@ -37,36 +37,37 @@ Le fichier exécutable est généré dans /bin | The executable file is generate
 
 ### Commandes disponibles | Available commands
 
-| Commande / Command | Syntaxe / Syntax                                  | Description                                                                             |
-| ------------------ | ------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| help               | help                                              | Affiche les commandes disponibles / Show the available commands.                        |
-| exit               | exit                                              | Quitter le terminal / Quit the terminal.                                                |
-| clear              | clear                                             | Vider le terminal / Clear the terminal.                                                 |
-| cd                 | cd \<dir_name>                                    | Changer de répertoire / Change directory.                                               |
-| ls                 | ls \<dir_name> -l (optionnal)                     | Liste le contenu d'un répertoire / List directory files. Add '-l' for permissions too.  |
-| make_demo          | make_demo                                         | Créée les fichiers pour la démonstration / Creates files for the demonstration.         |
-| build              | build                                             | Créée la partition / Build the partition.                                               |
-| load               | load                                              | Charge la partition / Load the partition.                                               |
-| getcwd             | getcwd                                            | Donne la position actuelle dans le répetoire / Give the actual position.                |
-| tree               | tree \<dir_name>                                  | Créée l'arborescense des fichiers / Create the file tree.                               |
-| create_file        | create_file \<file_name>                          | Créée un fichier / Create a file.                                                       |
-| remove_file        | remove_file \<file_name>                          | Supprime un fichier / Delete a file.                                                    |
-| open_file          | open_file \<file_name>                            | Ouvrir un fichier / Open a file.                                                        |
-| close_file         | close_file \<file_name>                           | Fermer un fichier / Close a file.                                                       |
-| create_directory   | create_directory \<dir_name>                      | Créée un répertoire / Create a directory.                                               |
-| remove_directory   | remove_directory \<dir_name>                      | Supprime un répertoire / Delete a directory.                                            |
-| load               | load                                              | Chargement de la partition / Load the partition.                                        |
-| chdir              | chdir \<dir_name>                                 | Changer de répertoire / Change directory.                                               |
-| add_user           | add_user \<username> \<groupid> \<user_type>      | Ajouter un nouvel utilisateur / Add a new user. User_types : "admin", "user", "guest".  |
-| remove_user        | remove_user \<user_id>                            | Supprimer un utilisateur / Delete a user.                                               |
-| list_users         | list_users                                        | Lister tout les utilisateurs / List all users.                                          |
-| chmod              | chmod \<path> \<permissions>                      | Modifier les droits d'accès d'un fichier / Modify file access.                          |
-| check_permissions  | check_permissions \<path> \<required_permissions> | Vérifier une permission pour un fichier / Check a permission for a file.                |
-| chown              | chown \<path> \<new_owner_id> \<new_group_id>     | Changer le propriétaire et le groupe d'un fichier / Change owner and group of a file.   |
-| switch_user        | switch_user \<user_id>                            | Changer d'utilisateur / Switch user.                                                    |
-| link               | link <source_file> <destination_file>             | Créée un hardlink entre deux fichiers / Creates a hard link between two files.          |
-| symlink            | symlink <source_file> <destination_file>          | Créée un lien symbolique entre deux fichiers / Creates a soft link between two files.   |
-| read_symlink       | read_symlink <file_name>                          | Renvoie où le fichier renseigné pointe / Gives where the given file is linked.          |
+| Commande / Command | Syntaxe / Syntax                                   | Description                                                                                                      |
+| ------------------ | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| help               | help                                               | Affiche les commandes disponibles / Show the available commands.                                                 |
+| exit               | exit                                               | Quitter le terminal / Quit the terminal.                                                                         |
+| clear              | clear                                              | Vider le terminal / Clear the terminal.                                                                          |
+| ls                 | ls \<dir_name> -l (optionnal)                      | Liste le contenu d'un répertoire / List directory files. Add '-l' for permissions too.                           |
+| make_demo          | make_demo                                          | Créée les fichiers pour la démonstration / Creates files for the demonstration.                                  |
+| build              | build                                              | Créée la partition / Build the partition.                                                                        |
+| load               | load                                               | Charge la partition / Load the partition.                                                                        |
+| getcwd             | getcwd                                             | Donne la position actuelle dans le répetoire / Give the actual position.                                         |
+| tree               | tree \<dir_name>                                   | Affiche l'arborescense du répertoire / Show the directory tree.                                                  |
+| create_file        | create_file \<file_name>                           | Créée un fichier / Create a file.                                                                                |
+| remove_file        | remove_file \<file_name>                           | Supprime un fichier / Delete a file.                                                                             |
+| open_file          | open_file \<file_name>                             | Ouvrir un fichier / Open a file.                                                                                 |
+| close_file         | close_file \<file_name>                            | Fermer un fichier / Close a file.                                                                                |
+| write              | write \<descripteur> \<message>                    | Ecrire un message dans un fichier ouvert / Write a message in a opened file.                                     |
+| read               | read \<descripteur>                                | Lire le contenu d'un fichier ouvert / Read the content of a opened file.                                         |
+| lseek              | lseek \<descripteur> \<décalage> \<positionnement> | Permet de se positionner dans un fichier / To position in a file. Positionnement : SEEK_SET, SEEk_CUR, SEEk_END. |
+| create_directory   | create_directory \<dir_name>                       | Créée un répertoire / Create a directory.                                                                        |
+| remove_directory   | remove_directory \<dir_name>                       | Supprime un répertoire / Delete a directory.                                                                     |
+| chdir              | chdir \<dir_name>                                  | Changer de répertoire / Change directory.                                                                        |
+| add_user           | add_user \<username> \<groupid> \<user_type>       | Ajouter un nouvel utilisateur / Add a new user. User_types : "admin", "user", "guest".                           |
+| remove_user        | remove_user \<user_id>                             | Supprimer un utilisateur / Delete a user.                                                                        |
+| list_users         | list_users                                         | Lister tout les utilisateurs / List all users.                                                                   |
+| chmod              | chmod \<path> \<permissions>                       | Modifier les droits d'accès d'un fichier / Modify file access.                                                   |
+| check_permissions  | check_permissions \<path> \<required_permissions>  | Vérifier une permission pour un fichier / Check a permission for a file.                                         |
+| chown              | chown \<path> \<new_owner_id> \<new_group_id>      | Changer le propriétaire et le groupe d'un fichier / Change owner and group of a file.                            |
+| switch_user        | switch_user \<user_id>                             | Changer d'utilisateur / Switch user.                                                                             |
+| link               | link <source_file> <destination_file>              | Créée un hardlink entre deux fichiers / Creates a hard link between two files.                                   |
+| symlink            | symlink <source_file> <destination_file>           | Créée un lien symbolique entre deux fichiers / Creates a soft link between two files.                            |
+| read_symlink       | read_symlink <file_name>                           | Renvoie où le fichier renseigné pointe / Gives where the given file is linked.                                   |
 
 ### Structure du projet | Project structure
 
