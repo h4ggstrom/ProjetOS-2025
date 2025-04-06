@@ -136,11 +136,6 @@ int main()
             make_demo_directory(&fs);
             continue;
         }
-        else if (strcmp(args[0], "test") == 0)
-        {
-            printf("test");
-            continue;
-        }
         else if (strcmp(args[0], "build") == 0)
         {
             printf("Début du Build de la partition\n");
@@ -276,7 +271,7 @@ int main()
             else
             {
                 int fd = atoi(args[1]);
-                char *buffer[BLOCK_SIZE_DEFAULT*32];
+                char *buffer[BLOCK_SIZE_DEFAULT * 32];
                 ssize_t bytes_read = fs_read(&fs, fd, &buffer, sizeof(buffer));
                 if (bytes_read < 0)
                 {
@@ -309,11 +304,13 @@ int main()
                 int offset = atoi(args[2]);
                 int wheel = parse_seek_mode(args[3]);
                 off_t pos = fs_lseek(&fs, fd, offset, wheel);
-                if (pos == -1) {
+                if (pos == -1)
+                {
                     perror("Erreur de positionnement");
                 }
-                else{
-                    printf("Votre position est l'octet: %zd",pos);
+                else
+                {
+                    printf("Votre position est l'octet: %zd", pos);
                 }
             }
             continue;
@@ -558,7 +555,7 @@ int main()
         {
             if (args[1] == NULL)
             {
-                printf("Usage : rm_user <user_id>\n");
+                printf("Usage : remove_user <user_id>\n");
             }
             else
             {
@@ -825,10 +822,35 @@ void display_help()
 {
     printf("\nAide du shell - Commandes disponibles:\n\n");
     printf("Commandes internes:\n");
-    printf("  %-20s %s\n", "exit", "Quitter le shell");
-    printf("  %-20s %s\n", "cd [dir]", "Changer de répertoire");
-    printf("  %-20s %s\n", "build_demo", "Construire l'arborescence de démo");
-    printf("  %-20s %s\n", "help", "Afficher cette aide");
+    printf("  %-50s %s\n", "help", "Afficher les commandes disponibles");
+    printf("  %-50s %s\n", "exit", "Quitter le shell");
+    printf("  %-50s %s\n", "clear", "Vider le terminal");
+    printf("  %-50s %s\n", "ls <dir_name> -l (optionnal)", "Lister le contenu d'un répertoire");
+    printf("  %-50s %s\n", "make_demo", "Créée les fichiers pour la démonstration");
+    printf("  %-50s %s\n", "build", "Créée la partition");
+    printf("  %-50s %s\n", "load", "Charge la partition");
+    printf("  %-50s %s\n", "getcwd", "Renvoie le réservoir courant");
+    printf("  %-50s %s\n", "tree <dir_name>", "Affiche l'arborescense du répertoire");
+    printf("  %-50s %s\n", "create_file <file_name>", "Créée un fichier");
+    printf("  %-50s %s\n", "remove_file <file_name>", "Supprime un fichier");
+    printf("  %-50s %s\n", "open_file <file_name>", "Ouvrir un fichier");
+    printf("  %-50s %s\n", "close_file <file_name>", "Fermer un fichier");
+    printf("  %-50s %s\n", "write <descripteur> <message>", "Ecrire un message dans un fichier ouvert");
+    printf("  %-50s %s\n", "read <descripteur>", "Lire le contenu d'un fichier ouvert");
+    printf("  %-50s %s\n", "lseek <descripteur> <décalage> <positionnement>", "Permet de se positionner dans un fichier. Positionnement : SEEK_END, SEEK_CUR, SEEK_SET");
+    printf("  %-50s %s\n", "create_directory <dir_name>", "Créée un répertoire");
+    printf("  %-50s %s\n", "remove_directory <dir_name>", "Supprime un répertoire");
+    printf("  %-50s %s\n", "chdir <dir_name>", "Changer de répertoire");
+    printf("  %-50s %s\n", "add_user <username> <groupid> <user_type>", "Ajouter un nouvel utilisateur. User_type: admin, user, guest");
+    printf("  %-50s %s\n", "remove_user <user_id>", "Supprimer un utilisateur");
+    printf("  %-50s %s\n", "list_users", "Lister tout les utilisateurs");
+    printf("  %-50s %s\n", "chmod <path> <permissions>", "Modifier les droits d'accès d'un fichier");
+    printf("  %-50s %s\n", "check_permissions <path> <required_permissions>", "Vérifier une permission pour un fichier");
+    printf("  %-50s %s\n", "chown <path> <new_owner_id> <new_group_id>", "Changer le propriétaire et le groupe d'un fichier");
+    printf("  %-50s %s\n", "switch_user <user_id>", "Changer d'utilisateur");
+    printf("  %-50s %s\n", "link <source_file> <destination_file>", "Créée un hardlink entre deux fichiers");
+    printf("  %-50s %s\n", "symlink <source_file> <destination_file>", "Créée un lien symoblique entre deux fichiers");
+    printf("  %-50s %s\n", "read_symlink <file_name>", "Renvoie où le fichier renseigné pointe");
 }
 
 int make_demo_directory(FileSystem *fs)
@@ -897,27 +919,39 @@ void initialize_default_user()
 }
 /**
  * @brief Convertit une chaîne SEEK_* en valeur numérique
- * 
+ *
  * @param seek_str Chaîne à convertir ("SEEK_SET", "SEEK_CUR", "SEEK_END")
  * @return int Valeur numérique ou -1 si invalide
  */
-int parse_seek_mode(const char *seek_str) {
-    if (!seek_str) return -1;
+int parse_seek_mode(const char *seek_str)
+{
+    if (!seek_str)
+        return -1;
 
-    if (strcmp(seek_str, "SEEK_SET") == 0) {
+    if (strcmp(seek_str, "SEEK_SET") == 0)
+    {
         return SEEK_SET;
-    } else if (strcmp(seek_str, "SEEK_CUR") == 0) {
+    }
+    else if (strcmp(seek_str, "SEEK_CUR") == 0)
+    {
         return SEEK_CUR;
-    } else if (strcmp(seek_str, "SEEK_END") == 0) {
+    }
+    else if (strcmp(seek_str, "SEEK_END") == 0)
+    {
         return SEEK_END;
     }
 
     // Gestion des versions courtes si besoin
-    if (strcmp(seek_str, "SET") == 0) {
+    if (strcmp(seek_str, "SET") == 0)
+    {
         return SEEK_SET;
-    } else if (strcmp(seek_str, "CUR") == 0) {
+    }
+    else if (strcmp(seek_str, "CUR") == 0)
+    {
         return SEEK_CUR;
-    } else if (strcmp(seek_str, "END") == 0) {
+    }
+    else if (strcmp(seek_str, "END") == 0)
+    {
         return SEEK_END;
     }
 
