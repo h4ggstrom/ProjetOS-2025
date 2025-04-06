@@ -1,0 +1,8 @@
+<map id="set_current_user" name="set_current_user">
+<area shape="rect" id="Node000001" title="Définit l&#39;utilisateur courant." alt="" coords="297,31,415,57"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#ac6db79aef8cae53c124f4a1561576e27" title="Initialise un utilisateur standard au démarrage." alt="" coords="103,5,249,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,36,249,32,250,26,282,31"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="282,47,55,47,55,41,282,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,37,56,42,55,37,87,32"/>
+</map>

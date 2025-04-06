@@ -91,6 +91,7 @@ $(function(){ initResizable(false); });
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle"><div class="title">Référence du fichier partition.h</div></div>
 </div><!--header-->
@@ -120,7 +121,7 @@ Graphe des dépendances par inclusion de partition.h:</div>
 <area shape="poly" title=" " alt="" coords="267,31,290,66,285,68,263,34"/>
 <area shape="rect" title=" " alt="" coords="364,80,422,107"/>
 <area shape="poly" title=" " alt="" coords="282,30,357,70,355,75,279,35"/>
-<area shape="rect" href="constantes_8h.html" title=" " alt="" coords="446,80,542,107"/>
+<area shape="rect" href="constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="446,80,542,107"/>
 <area shape="poly" title=" " alt="" coords="299,30,439,72,437,78,298,35"/>
 <area shape="rect" title=" " alt="" coords="462,155,526,181"/>
 <area shape="poly" title=" " alt="" coords="497,107,497,139,492,139,492,107"/>
@@ -131,22 +132,32 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="partition_8h__dep__incl.png" border="0" usemap="#ainclude_2partition_8hdep" alt=""/></div>
 <map name="ainclude_2partition_8hdep" id="ainclude_2partition_8hdep">
-<area shape="rect" title="Header file for the partition management library." alt="" coords="141,5,264,32"/>
-<area shape="rect" href="tree_8h.html" title=" " alt="" coords="233,155,332,181"/>
-<area shape="poly" title=" " alt="" coords="219,45,278,153,273,155,214,47"/>
-<area shape="rect" href="main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="5,229,88,256"/>
-<area shape="poly" title=" " alt="" coords="127,38,91,55,62,82,52,99,45,119,39,161,41,200,46,229,41,229,36,200,34,161,40,118,47,97,58,78,88,51,125,33"/>
-<area shape="rect" href="vfs__function_8h.html" title=" " alt="" coords="72,80,221,107"/>
-<area shape="poly" title=" " alt="" coords="186,46,158,81,154,78,181,43"/>
-<area shape="rect" href="partition_8c.html" title="This file contains the functions to create and manage partitions." alt="" coords="296,80,397,107"/>
-<area shape="poly" title=" " alt="" coords="242,37,322,77,320,82,240,42"/>
-<area shape="poly" title=" " alt="" coords="228,189,89,231,87,226,226,184"/>
-<area shape="rect" href="tree_8c.html" title="Partie du programme qui s&#39;occupe de l&#39;affichage de l&#39;arbre de repertoire." alt="" coords="244,229,321,256"/>
-<area shape="poly" title=" " alt="" coords="285,197,285,229,280,229,280,197"/>
-<area shape="poly" title=" " alt="" coords="185,112,260,152,257,156,182,117"/>
-<area shape="poly" title=" " alt="" coords="114,118,92,135,74,156,57,195,50,230,45,229,52,193,70,153,89,131,110,114"/>
-<area shape="rect" href="vfs__function_8c.html" title=" " alt="" coords="84,155,209,181"/>
-<area shape="poly" title=" " alt="" coords="149,122,149,154,144,154,144,122"/>
+<area shape="rect" title="Header file for the partition management library." alt="" coords="263,5,386,32"/>
+<area shape="rect" href="links_8h.html" title="Gestion des liens (hard links et symbolic links) dans le système de fichiers." alt="" coords="73,80,177,107"/>
+<area shape="poly" title=" " alt="" coords="277,40,161,82,159,77,275,35"/>
+<area shape="rect" href="main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="224,229,306,256"/>
+<area shape="poly" title=" " alt="" coords="282,42,259,59,242,81,235,100,232,121,236,162,248,200,260,228,256,230,243,202,231,163,227,120,230,99,237,79,256,55,279,38"/>
+<area shape="rect" href="partition_8c.html" title="This file contains the functions to create and manage partitions." alt="" coords="5,155,106,181"/>
+<area shape="poly" title=" " alt="" coords="248,30,138,49,91,64,74,72,63,82,54,99,51,118,55,154,49,155,46,118,49,97,59,78,71,68,89,59,137,44,247,25"/>
+<area shape="rect" href="permissions_8h.html" title="Gestion des permissions et propriétés des fichiers." alt="" coords="251,80,398,107"/>
+<area shape="poly" title=" " alt="" coords="328,48,328,80,322,80,322,48"/>
+<area shape="rect" href="permissions_8c.html" title="This file contains the functions that are used to manage the permissions and access to the files." alt="" coords="303,155,427,181"/>
+<area shape="poly" title=" " alt="" coords="370,38,394,55,413,79,416,101,409,122,396,141,381,156,377,152,392,138,404,120,411,100,408,81,390,59,367,42"/>
+<area shape="rect" href="tree_8h.html" title="Affichage de l&#39;arborescence du système de fichiers." alt="" coords="651,155,750,181"/>
+<area shape="poly" title=" " alt="" coords="403,25,539,45,602,60,645,78,664,95,680,115,699,153,694,156,675,118,660,98,642,82,600,65,538,50,402,30"/>
+<area shape="rect" href="vfs__function_8h.html" title="Fonctions du système de fichiers virtuel (VFS)" alt="" coords="483,80,631,107"/>
+<area shape="poly" title=" " alt="" coords="380,34,517,77,515,82,379,39"/>
+<area shape="poly" title=" " alt="" coords="145,117,197,179,250,227,247,231,194,183,141,121"/>
+<area shape="poly" title=" " alt="" coords="104,120,69,156,66,152,101,116"/>
+<area shape="poly" title=" " alt="" coords="311,121,293,156,279,196,270,230,265,229,274,194,288,154,306,119"/>
+<area shape="poly" title=" " alt="" coords="342,119,360,153,356,156,337,122"/>
+<area shape="poly" title=" " alt="" coords="636,185,307,238,306,233,635,179"/>
+<area shape="rect" href="tree_8c.html" title="Partie du programme qui s&#39;occupe de l&#39;affichage de l&#39;arbre de repertoire." alt="" coords="663,229,739,256"/>
+<area shape="poly" title=" " alt="" coords="704,197,704,229,698,229,698,197"/>
+<area shape="poly" title=" " alt="" coords="533,119,491,152,441,184,371,213,307,233,306,228,370,208,438,179,488,147,530,115"/>
+<area shape="poly" title=" " alt="" coords="597,112,677,152,674,156,594,116"/>
+<area shape="rect" href="vfs__function_8c.html" title="Partie du programme qui regroupe les commandes du terminales pour intéragir avec le File System." alt="" coords="502,155,628,181"/>
+<area shape="poly" title=" " alt="" coords="563,122,566,154,561,155,557,122"/>
 </map>
 </div>
 </div>
@@ -193,6 +204,15 @@ Définitions de type</h2></td></tr>
 <tr class="memitem:aa15446bba271846c31811b3442b6f463" id="r_aa15446bba271846c31811b3442b6f463"><td class="memItemLeft" align="right" valign="top">typedef struct FileSystem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa15446bba271846c31811b3442b6f463">FileSystem</a></td></tr>
 <tr class="separator:aa15446bba271846c31811b3442b6f463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a2c794c5c13ab4dd7e65bad031dbe41c3" id="r_a2c794c5c13ab4dd7e65bad031dbe41c3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c794c5c13ab4dd7e65bad031dbe41c3">FileType</a> { <a class="el" href="#a2c794c5c13ab4dd7e65bad031dbe41c3aa2a2d933a005816134ee11ad33143366">FILE_REGULAR</a>
+, <a class="el" href="#a2c794c5c13ab4dd7e65bad031dbe41c3a8eca42b79a25f753c72cb9ce685525c1">FILE_DIRECTORY</a>
+, <a class="el" href="#a2c794c5c13ab4dd7e65bad031dbe41c3ab494be86e30c8a171d5a23d76eb3ade8">FILE_SYMLINK</a>
+ }</td></tr>
+<tr class="memdesc:a2c794c5c13ab4dd7e65bad031dbe41c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type de inode possible.  <a href="#a2c794c5c13ab4dd7e65bad031dbe41c3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2c794c5c13ab4dd7e65bad031dbe41c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:a9e9167bfc4d677181c909d0772e40b07" id="r_a9e9167bfc4d677181c909d0772e40b07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e9167bfc4d677181c909d0772e40b07">init_partition</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *img_path, uint32_t total_size, uint32_t block_size)</td></tr>
@@ -225,18 +245,18 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a7e3bde988e14b04d26a63d543cee8642" id="r_a7e3bde988e14b04d26a63d543cee8642"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e3bde988e14b04d26a63d543cee8642">fs_open_file</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *path, int mode)</td></tr>
 <tr class="memdesc:a7e3bde988e14b04d26a63d543cee8642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouvre un fichier et retourne un descripteur de fichier.  <br /></td></tr>
 <tr class="separator:a7e3bde988e14b04d26a63d543cee8642"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c7a5dfb40fb024a3db304109d7c2b87" id="r_a6c7a5dfb40fb024a3db304109d7c2b87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c7a5dfb40fb024a3db304109d7c2b87">fs_close_file</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, int fd)</td></tr>
-<tr class="memdesc:a6c7a5dfb40fb024a3db304109d7c2b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ferme un fichier précédemment ouvert.  <br /></td></tr>
-<tr class="separator:a6c7a5dfb40fb024a3db304109d7c2b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2eb262e960129690f2dd3a336635c69" id="r_af2eb262e960129690f2dd3a336635c69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2eb262e960129690f2dd3a336635c69">fs_close_file</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, uint32_t fd)</td></tr>
+<tr class="memdesc:af2eb262e960129690f2dd3a336635c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ferme un fichier précédemment ouvert.  <br /></td></tr>
+<tr class="separator:af2eb262e960129690f2dd3a336635c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1d21082ab63ee7bc27239c210bbaf79" id="r_af1d21082ab63ee7bc27239c210bbaf79"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1d21082ab63ee7bc27239c210bbaf79">split_path</a> (const char *full_path, char *parent_path, char *filename)</td></tr>
 <tr class="memdesc:af1d21082ab63ee7bc27239c210bbaf79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sépare un chemin en répertoire parent et nom de fichier.  <br /></td></tr>
 <tr class="separator:af1d21082ab63ee7bc27239c210bbaf79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06734098ed3c80ccff8ce130d0f443e4" id="r_a06734098ed3c80ccff8ce130d0f443e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06734098ed3c80ccff8ce130d0f443e4">remove_directory</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *path)</td></tr>
 <tr class="memdesc:a06734098ed3c80ccff8ce130d0f443e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un répertoire vide.  <br /></td></tr>
 <tr class="separator:a06734098ed3c80ccff8ce130d0f443e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a010b1b2eeac4e5444f921d9e124dbb7f" id="r_a010b1b2eeac4e5444f921d9e124dbb7f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a010b1b2eeac4e5444f921d9e124dbb7f">allocate_inode</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs)</td></tr>
-<tr class="memdesc:a010b1b2eeac4e5444f921d9e124dbb7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alloue un nouvel inode libre.  <br /></td></tr>
-<tr class="separator:a010b1b2eeac4e5444f921d9e124dbb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead3f3e2f43bbe7333cb36561c0922eb" id="r_aead3f3e2f43bbe7333cb36561c0922eb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aead3f3e2f43bbe7333cb36561c0922eb">allocate_inode</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, <a class="el" href="#a2c794c5c13ab4dd7e65bad031dbe41c3">FileType</a> type)</td></tr>
+<tr class="memdesc:aead3f3e2f43bbe7333cb36561c0922eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alloue un nouvel inode libre.  <br /></td></tr>
+<tr class="separator:aead3f3e2f43bbe7333cb36561c0922eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20c958c16161bb01bd511032a94fc0b8" id="r_a20c958c16161bb01bd511032a94fc0b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20c958c16161bb01bd511032a94fc0b8">init_inode</a> (<a class="el" href="structInode.html">Inode</a> *inode, uint32_t id, uint16_t permissions, bool is_directory)</td></tr>
 <tr class="memdesc:a20c958c16161bb01bd511032a94fc0b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise un nouvel inode.  <br /></td></tr>
 <tr class="separator:a20c958c16161bb01bd511032a94fc0b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,18 +292,29 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a2e34ff6a91cdbce8a425e88982a72059" id="r_a2e34ff6a91cdbce8a425e88982a72059"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e34ff6a91cdbce8a425e88982a72059">remove_file</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *path)</td></tr>
 <tr class="memdesc:a2e34ff6a91cdbce8a425e88982a72059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un fichier du système de fichiers.  <br /></td></tr>
 <tr class="separator:a2e34ff6a91cdbce8a425e88982a72059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d82db1abf2ca97a5b809a26bfa44690" id="r_a2d82db1abf2ca97a5b809a26bfa44690"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d82db1abf2ca97a5b809a26bfa44690">fs_symlink</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *target, const char *linkpath)</td></tr>
+<tr class="memdesc:a2d82db1abf2ca97a5b809a26bfa44690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un lien symbolique (soft link)  <br /></td></tr>
+<tr class="separator:a2d82db1abf2ca97a5b809a26bfa44690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6dfaed9a58f6cd361e692e341e20b4f" id="r_ab6dfaed9a58f6cd361e692e341e20b4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6dfaed9a58f6cd361e692e341e20b4f">fs_readlink</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, uint32_t inode_id, char *buffer, size_t size)</td></tr>
+<tr class="memdesc:ab6dfaed9a58f6cd361e692e341e20b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit la cible d'un lien symbolique.  <br /></td></tr>
+<tr class="separator:ab6dfaed9a58f6cd361e692e341e20b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e29a7864e7f551a1c884cbf3e1404c" id="r_a81e29a7864e7f551a1c884cbf3e1404c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structInode.html">Inode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81e29a7864e7f551a1c884cbf3e1404c">get_inode_by_path</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *path)</td></tr>
+<tr class="memdesc:a81e29a7864e7f551a1c884cbf3e1404c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trouve l'inode correspondant à un chemin donné.  <br /></td></tr>
+<tr class="separator:a81e29a7864e7f551a1c884cbf3e1404c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50664fa786c8fbbc57c3bb56b8aa2de9" id="r_a50664fa786c8fbbc57c3bb56b8aa2de9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50664fa786c8fbbc57c3bb56b8aa2de9">handle_indirect_block</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, uint32_t *indirect_block_ptr, uint32_t index)</td></tr>
+<tr class="separator:a50664fa786c8fbbc57c3bb56b8aa2de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Header file for the partition management library. </p>
 <p>This file declares the structures and functions used to manage a file system partition, including block management, inode handling, and directory operations. It provides the core data structures and APIs for file system operations such as file creation, deletion, and directory manipulation.</p>
-<dl class="section version"><dt>Version</dt><dd>0.3 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>04/04/2025</dd></dl>
 <dl class="section author"><dt>Auteurs</dt><dd></dd></dl>
-<dl class="section author"><dt>Auteur</dt><dd>Robin de Angelis </dd>
+<dl class="section author"><dt>Auteur</dt><dd>Robin de Angelis 35(%) </dd>
 <dd>
-Alexandre Ledard </dd>
+Alexandre Ledard 50(%) </dd>
 <dd>
-Killian Treuil</dd></dl>
+Killian Treuil 15(%)</dd></dl>
 <p>This file declares the structures and functions used to manage a file system partition, including block management, inode handling, and directory operations.</p>
 <dl class="section version"><dt>Version</dt><dd>0.3 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>04/04/2025</dd></dl>
@@ -392,6 +423,28 @@ Killian Treuil</dd></dl>
 
 </div>
 </div>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="a2c794c5c13ab4dd7e65bad031dbe41c3" name="a2c794c5c13ab4dd7e65bad031dbe41c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c794c5c13ab4dd7e65bad031dbe41c3">&#9670;&#160;</a></span>FileType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a2c794c5c13ab4dd7e65bad031dbe41c3">FileType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type de inode possible. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a2c794c5c13ab4dd7e65bad031dbe41c3aa2a2d933a005816134ee11ad33143366" name="a2c794c5c13ab4dd7e65bad031dbe41c3aa2a2d933a005816134ee11ad33143366"></a>FILE_REGULAR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c794c5c13ab4dd7e65bad031dbe41c3a8eca42b79a25f753c72cb9ce685525c1" name="a2c794c5c13ab4dd7e65bad031dbe41c3a8eca42b79a25f753c72cb9ce685525c1"></a>FILE_DIRECTORY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2c794c5c13ab4dd7e65bad031dbe41c3ab494be86e30c8a171d5a23d76eb3ade8" name="a2c794c5c13ab4dd7e65bad031dbe41c3ab494be86e30c8a171d5a23d76eb3ade8"></a>FILE_SYMLINK&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Documentation des fonctions</h2>
 <a id="ab0c8e3ef484d10290e18112478f8e49a" name="ab0c8e3ef484d10290e18112478f8e49a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab0c8e3ef484d10290e18112478f8e49a">&#9670;&#160;</a></span>add_directory_entry()</h2>
@@ -468,18 +521,24 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_ab0c8e3ef484d10290e18112478f8e49a_icgraph.png" border="0" usemap="#apartition_8h_ab0c8e3ef484d10290e18112478f8e49a_icgraph" alt=""/></div>
 <map name="apartition_8h_ab0c8e3ef484d10290e18112478f8e49a_icgraph" id="apartition_8h_ab0c8e3ef484d10290e18112478f8e49a_icgraph">
-<area shape="rect" title="Ajoute une entrée dans un répertoire." alt="" coords="462,31,598,57"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,5,414,32"/>
-<area shape="poly" title=" " alt="" coords="447,34,414,30,415,24,447,29"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,56,398,83"/>
-<area shape="poly" title=" " alt="" coords="447,59,398,66,398,61,447,54"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,31,55,57"/>
-<area shape="poly" title=" " alt="" coords="284,15,197,13,103,21,56,36,54,31,102,16,197,8,284,10"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,31,252,57"/>
-<area shape="poly" title=" " alt="" coords="285,31,253,36,252,31,284,26"/>
-<area shape="poly" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
-<area shape="poly" title=" " alt="" coords="301,77,208,80,155,78,102,72,54,57,56,52,103,67,155,73,208,75,301,72"/>
-<area shape="poly" title=" " alt="" coords="301,64,252,57,253,52,302,59"/>
+<area shape="rect" title="Ajoute une entrée dans un répertoire." alt="" coords="462,109,598,136"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
+<area shape="poly" title=" " alt="" coords="483,105,388,62,391,58,485,100"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
+<area shape="poly" title=" " alt="" coords="447,113,398,105,398,100,447,107"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,134,207,161"/>
+<area shape="poly" title=" " alt="" coords="447,131,208,148,207,143,447,125"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,185,220,212"/>
+<area shape="poly" title=" " alt="" coords="450,142,221,192,219,187,449,137"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
+<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
+<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
+<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
+<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
+<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
+<area shape="poly" title=" " alt="" coords="132,135,54,108,56,103,134,130"/>
+<area shape="poly" title=" " alt="" coords="120,185,101,175,65,144,39,112,43,109,69,140,104,171,122,180"/>
 </map>
 </div>
 
@@ -518,37 +577,46 @@ Voici le graphe des appelants de cette fonction :</div>
 <area shape="poly" title=" " alt="" coords="1225,98,1191,57,1169,38,1144,24,1118,16,1091,11,1035,9,982,16,935,28,934,23,981,11,1035,4,1091,5,1119,10,1146,19,1172,34,1195,54,1229,95"/>
 <area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="991,84,1145,111"/>
 <area shape="poly" title=" " alt="" coords="1177,116,1144,111,1145,106,1177,111"/>
-<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="812,186,931,212"/>
-<area shape="poly" title=" " alt="" coords="1205,146,1145,170,1089,182,1033,191,932,200,932,195,1032,186,1088,177,1144,165,1204,141"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,135,414,162"/>
-<area shape="poly" title=" " alt="" coords="1177,133,1037,145,873,151,698,151,415,151,415,146,698,146,873,146,1037,140,1177,128"/>
-<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="800,236,943,263"/>
-<area shape="poly" title=" " alt="" coords="1220,149,1186,176,1146,200,1095,219,1042,233,944,248,943,242,1041,227,1093,214,1144,195,1183,172,1217,145"/>
+<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="812,135,931,162"/>
+<area shape="poly" title=" " alt="" coords="1177,130,932,147,931,142,1177,125"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,338,414,364"/>
+<area shape="poly" title=" " alt="" coords="1221,150,1164,200,1082,259,1034,286,982,308,928,323,873,328,698,328,544,335,415,347,415,342,544,330,697,323,873,323,927,318,980,303,1031,281,1079,255,1161,196,1218,146"/>
+<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="800,186,943,212"/>
+<area shape="poly" title=" " alt="" coords="1178,141,1145,148,944,188,943,183,1144,143,1177,136"/>
 <area shape="rect" href="partition_8c.html#a75b615a241e5f4d9b104afb3263f1d19" title=" " alt="" coords="1005,34,1131,60"/>
 <area shape="poly" title=" " alt="" coords="1205,104,1144,75,1113,63,1115,58,1146,70,1207,100"/>
+<area shape="rect" href="group__vfs__functions.html#gabafd732c4c89442c2e7ee525a00c5895" title="Écrit des données dans un fichier." alt="" coords="144,34,211,60"/>
+<area shape="poly" title=" " alt="" coords="793,50,211,50,211,44,793,44"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,211,55,238"/>
+<area shape="poly" title=" " alt="" coords="130,60,104,74,77,108,57,146,44,183,37,211,31,210,39,181,52,144,73,105,101,70,127,55"/>
 <area shape="poly" title=" " alt="" coords="998,83,934,66,936,61,999,77"/>
-<area shape="poly" title=" " alt="" coords="1028,121,900,188,898,183,1026,116"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,236,752,263"/>
-<area shape="poly" title=" " alt="" coords="810,220,748,238,746,233,808,215"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,186,598,212"/>
-<area shape="poly" title=" " alt="" coords="637,234,576,216,578,210,638,229"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,236,238,263"/>
-<area shape="poly" title=" " alt="" coords="630,252,238,252,238,247,630,247"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,287,574,314"/>
-<area shape="poly" title=" " alt="" coords="638,271,576,290,574,285,636,266"/>
-<area shape="poly" title=" " alt="" coords="467,183,405,165,406,160,468,178"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,186,398,212"/>
-<area shape="poly" title=" " alt="" coords="447,202,398,202,398,196,447,196"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,186,55,212"/>
-<area shape="poly" title=" " alt="" coords="306,132,261,120,210,112,155,112,129,117,104,125,84,138,66,154,41,187,37,184,62,150,80,133,102,121,128,112,155,107,210,107,263,115,307,127"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,135,252,162"/>
-<area shape="poly" title=" " alt="" coords="285,151,253,151,253,146,285,146"/>
-<area shape="poly" title=" " alt="" coords="123,170,56,193,54,188,121,165"/>
-<area shape="poly" title=" " alt="" coords="301,202,55,202,55,196,301,196"/>
-<area shape="poly" title=" " alt="" coords="301,186,226,165,228,160,302,181"/>
-<area shape="poly" title=" " alt="" coords="121,233,54,210,56,205,123,228"/>
-<area shape="poly" title=" " alt="" coords="471,313,394,320,300,321,249,317,199,309,149,296,101,277,81,264,63,247,37,214,42,211,67,244,84,260,104,273,151,291,200,303,250,311,300,315,394,315,470,307"/>
-<area shape="poly" title=" " alt="" coords="785,252,752,252,752,247,785,247"/>
+<area shape="poly" title=" " alt="" coords="999,118,927,137,926,132,998,113"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,135,752,162"/>
+<area shape="poly" title=" " alt="" coords="797,151,753,151,753,146,797,146"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,236,598,263"/>
+<area shape="poly" title=" " alt="" coords="663,173,555,238,552,234,660,168"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,84,238,111"/>
+<area shape="poly" title=" " alt="" coords="635,133,597,126,499,114,401,106,238,100,238,95,401,101,500,108,598,120,636,128"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,135,574,162"/>
+<area shape="poly" title=" " alt="" coords="631,151,574,151,574,146,631,146"/>
+<area shape="poly" title=" " alt="" coords="499,275,416,328,393,340,390,335,413,323,496,270"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,287,398,314"/>
+<area shape="poly" title=" " alt="" coords="468,271,399,291,398,286,466,266"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,186,207,212"/>
+<area shape="poly" title=" " alt="" coords="456,235,414,227,300,212,207,204,208,198,300,207,415,222,457,230"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="315,236,399,263"/>
+<area shape="poly" title=" " alt="" coords="447,252,400,252,400,247,447,247"/>
+<area shape="poly" title=" " alt="" coords="313,373,267,389,212,399,183,401,154,398,127,391,101,379,84,365,69,347,48,308,36,269,30,239,36,238,41,268,53,306,74,344,88,361,104,374,129,386,155,393,183,395,211,394,265,384,312,368"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,338,252,364"/>
+<area shape="poly" title=" " alt="" coords="285,354,253,354,253,348,285,348"/>
+<area shape="poly" title=" " alt="" coords="119,333,101,321,80,301,62,279,36,240,41,237,66,276,84,298,104,317,122,328"/>
+<area shape="poly" title=" " alt="" coords="300,293,207,274,102,250,54,235,56,230,103,244,208,269,302,288"/>
+<area shape="poly" title=" " alt="" coords="302,319,228,340,226,335,301,313"/>
+<area shape="poly" title=" " alt="" coords="133,209,55,223,54,218,132,204"/>
+<area shape="poly" title=" " alt="" coords="300,248,55,229,55,224,300,243"/>
+<area shape="poly" title=" " alt="" coords="122,121,104,132,84,151,66,173,41,212,36,209,62,170,80,147,101,128,119,116"/>
+<area shape="poly" title=" " alt="" coords="470,145,395,140,302,141,201,152,152,162,104,176,72,193,47,213,44,209,69,188,102,171,150,157,201,147,302,136,395,135,470,139"/>
+<area shape="poly" title=" " alt="" coords="808,183,746,165,748,160,810,178"/>
 <area shape="poly" title=" " alt="" coords="989,50,935,50,935,44,989,44"/>
 </map>
 </div>
@@ -594,6 +662,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="poly" title=" " alt="" coords="305,71,369,52,371,57,306,76"/>
 </map>
 </div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="partition_8h_a92d4051f4b5524af74e0930f133124c2_icgraph.png" border="0" usemap="#apartition_8h_a92d4051f4b5524af74e0930f133124c2_icgraph" alt=""/></div>
+<map name="apartition_8h_a92d4051f4b5524af74e0930f133124c2_icgraph" id="apartition_8h_a92d4051f4b5524af74e0930f133124c2_icgraph">
+<area shape="rect" title=" " alt="" coords="218,5,344,48"/>
+<area shape="rect" href="group__vfs__functions.html#gabafd732c4c89442c2e7ee525a00c5895" title="Écrit des données dans un fichier." alt="" coords="103,13,170,40"/>
+<area shape="poly" title=" " alt="" coords="202,29,170,29,170,24,202,24"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -626,39 +706,48 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_abef1d8ce728124ca0a8cee0e877b18f5_icgraph.png" border="0" usemap="#apartition_8h_abef1d8ce728124ca0a8cee0e877b18f5_icgraph" alt=""/></div>
 <map name="apartition_8h_abef1d8ce728124ca0a8cee0e877b18f5_icgraph" id="apartition_8h_abef1d8ce728124ca0a8cee0e877b18f5_icgraph">
-<area shape="rect" title=" " alt="" coords="974,105,1128,132"/>
-<area shape="rect" href="partition_8c.html#a92d4051f4b5524af74e0930f133124c2" title=" " alt="" coords="800,68,926,110"/>
-<area shape="poly" title=" " alt="" coords="958,106,927,101,927,96,959,101"/>
-<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="804,134,923,161"/>
-<area shape="poly" title=" " alt="" coords="959,135,923,141,923,136,959,130"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,134,752,161"/>
-<area shape="poly" title=" " alt="" coords="788,150,752,150,752,145,788,145"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,84,598,110"/>
-<area shape="poly" title=" " alt="" coords="637,132,576,113,578,108,638,127"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
-<area shape="poly" title=" " alt="" coords="630,150,238,150,238,145,630,145"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,185,574,212"/>
-<area shape="poly" title=" " alt="" coords="638,169,576,188,574,182,636,163"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" title=" " alt="" coords="467,81,405,63,406,58,468,76"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" title=" " alt="" coords="447,100,398,100,398,94,447,94"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
-<area shape="poly" title=" " alt="" coords="471,210,394,218,300,218,249,214,199,206,149,194,101,175,81,162,63,145,37,112,42,109,67,142,84,158,104,170,151,189,200,201,250,209,300,213,394,212,470,205"/>
+<area shape="rect" title=" " alt="" coords="974,195,1128,221"/>
+<area shape="rect" href="partition_8c.html#a92d4051f4b5524af74e0930f133124c2" title=" " alt="" coords="800,60,926,103"/>
+<area shape="poly" title=" " alt="" coords="1016,188,895,105,898,101,1019,183"/>
+<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="804,224,923,251"/>
+<area shape="poly" title=" " alt="" coords="959,225,923,231,923,225,959,220"/>
+<area shape="rect" href="group__vfs__functions.html#gabafd732c4c89442c2e7ee525a00c5895" title="Écrit des données dans un fichier." alt="" coords="144,5,211,32"/>
+<area shape="poly" title=" " alt="" coords="784,77,211,24,212,19,784,72"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,183,55,209"/>
+<area shape="poly" title=" " alt="" coords="131,35,104,53,79,85,59,121,37,183,32,181,54,119,74,82,101,49,128,31"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,261,752,288"/>
+<area shape="poly" title=" " alt="" coords="789,257,753,265,752,260,788,252"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,208,598,235"/>
+<area shape="poly" title=" " alt="" coords="639,259,574,238,576,233,641,254"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,309,238,336"/>
+<area shape="poly" title=" " alt="" coords="631,284,239,320,238,314,630,278"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,360,574,387"/>
+<area shape="poly" title=" " alt="" coords="668,299,599,344,564,362,561,357,596,339,665,295"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,107,414,133"/>
+<area shape="poly" title=" " alt="" coords="496,201,413,148,390,136,393,131,416,143,499,197"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,157,398,184"/>
+<area shape="poly" title=" " alt="" coords="466,206,398,185,399,180,468,200"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,208,207,235"/>
+<area shape="poly" title=" " alt="" coords="447,224,207,224,207,219,447,219"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="315,259,399,285"/>
+<area shape="poly" title=" " alt="" coords="468,242,400,262,399,257,467,237"/>
+<area shape="poly" title=" " alt="" coords="309,103,263,90,211,81,155,81,129,87,104,97,80,115,62,138,39,184,34,181,57,135,77,111,101,92,127,82,155,76,211,75,265,84,310,98"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,107,252,133"/>
+<area shape="poly" title=" " alt="" coords="285,123,253,123,253,117,285,117"/>
+<area shape="poly" title=" " alt="" coords="129,142,104,154,53,184,51,180,101,150,126,138"/>
+<area shape="poly" title=" " alt="" coords="301,178,55,197,55,191,301,172"/>
+<area shape="poly" title=" " alt="" coords="301,158,226,136,228,131,302,153"/>
+<area shape="poly" title=" " alt="" coords="132,216,54,203,55,198,133,211"/>
+<area shape="poly" title=" " alt="" coords="299,277,205,272,153,264,102,249,70,232,44,212,47,208,73,227,104,244,154,259,206,267,300,272"/>
+<area shape="poly" title=" " alt="" coords="119,304,101,293,80,273,62,251,36,211,41,208,66,248,84,269,104,289,122,300"/>
+<area shape="poly" title=" " alt="" coords="471,390,392,402,295,405,245,401,194,391,146,375,101,350,84,336,70,318,49,279,37,241,31,210,36,209,42,239,54,277,74,316,88,332,104,346,148,370,196,386,245,396,296,400,391,396,470,385"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a010b1b2eeac4e5444f921d9e124dbb7f" name="a010b1b2eeac4e5444f921d9e124dbb7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a010b1b2eeac4e5444f921d9e124dbb7f">&#9670;&#160;</a></span>allocate_inode()</h2>
+<a id="aead3f3e2f43bbe7333cb36561c0922eb" name="aead3f3e2f43bbe7333cb36561c0922eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aead3f3e2f43bbe7333cb36561c0922eb">&#9670;&#160;</a></span>allocate_inode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -666,8 +755,12 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="memname">uint32_t allocate_inode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="#a2c794c5c13ab4dd7e65bad031dbe41c3">FileType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -679,24 +772,36 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro d'inode alloué, ou (uint32_t)-1 si erreur</dd></dl>
+<p>Alloue un nouvel inode libre.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">type</td><td>Type de fichier (FILE_REGULAR, FILE_DIRECTORY, FILE_SYMLINK) </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro d'inode alloué, ou (uint32_t)-1 si erreur </dd></dl>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="partition_8h_a010b1b2eeac4e5444f921d9e124dbb7f_icgraph.png" border="0" usemap="#apartition_8h_a010b1b2eeac4e5444f921d9e124dbb7f_icgraph" alt=""/></div>
-<map name="apartition_8h_a010b1b2eeac4e5444f921d9e124dbb7f_icgraph" id="apartition_8h_a010b1b2eeac4e5444f921d9e124dbb7f_icgraph">
-<area shape="rect" title="Alloue un nouvel inode libre." alt="" coords="462,31,567,57"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,5,414,32"/>
-<area shape="poly" title=" " alt="" coords="447,36,414,31,415,25,448,31"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,56,398,83"/>
-<area shape="poly" title=" " alt="" coords="448,57,399,65,398,60,447,52"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,31,55,57"/>
-<area shape="poly" title=" " alt="" coords="284,15,197,13,103,21,56,36,54,31,102,16,197,8,284,10"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,31,252,57"/>
-<area shape="poly" title=" " alt="" coords="285,31,253,36,252,31,284,26"/>
-<area shape="poly" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
-<area shape="poly" title=" " alt="" coords="301,77,208,80,155,78,102,72,54,57,56,52,103,67,155,73,208,75,301,72"/>
-<area shape="poly" title=" " alt="" coords="301,64,252,57,253,52,302,59"/>
+<div class="center"><img src="partition_8h_aead3f3e2f43bbe7333cb36561c0922eb_icgraph.png" border="0" usemap="#apartition_8h_aead3f3e2f43bbe7333cb36561c0922eb_icgraph" alt=""/></div>
+<map name="apartition_8h_aead3f3e2f43bbe7333cb36561c0922eb_icgraph" id="apartition_8h_aead3f3e2f43bbe7333cb36561c0922eb_icgraph">
+<area shape="rect" title="Alloue un nouvel inode libre." alt="" coords="462,79,567,106"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,28,414,55"/>
+<area shape="poly" title=" " alt="" coords="455,76,400,58,402,53,457,71"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,79,398,106"/>
+<area shape="poly" title=" " alt="" coords="447,95,398,95,398,90,447,90"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,130,220,156"/>
+<area shape="poly" title=" " alt="" coords="451,113,415,120,310,135,220,143,220,138,309,130,414,115,450,107"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,54,55,80"/>
+<area shape="poly" title=" " alt="" coords="300,26,256,16,206,10,154,9,104,19,72,35,47,55,43,51,69,31,102,14,154,4,207,4,257,11,301,21"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,28,252,55"/>
+<area shape="poly" title=" " alt="" coords="285,44,253,44,253,39,285,39"/>
+<area shape="poly" title=" " alt="" coords="88,60,55,66,54,60,87,55"/>
+<area shape="poly" title=" " alt="" coords="301,91,55,72,55,66,301,86"/>
+<area shape="poly" title=" " alt="" coords="301,79,226,58,228,53,302,74"/>
+<area shape="poly" title=" " alt="" coords="126,125,101,113,51,83,53,79,104,109,129,121"/>
 </map>
 </div>
 
@@ -735,37 +840,44 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro d'inode du répertoire créé, ou (uint32_t)-1 en cas d'erreur </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro d'inode du répertoire créé, ou (uint32_t)-1 en cas d'erreur</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">path</td><td>Chemin complet du nouveau répertoire </td></tr>
+    <tr><td class="paramname">mode</td><td>Permissions du répertoire </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro d'inode du répertoire créé, ou (uint32_t)-1 en cas d'échec </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a7d352181413e68deca22594ee7779a73_cgraph.png" border="0" usemap="#apartition_8h_a7d352181413e68deca22594ee7779a73_cgraph" alt=""/></div>
 <map name="apartition_8h_a7d352181413e68deca22594ee7779a73_cgraph" id="apartition_8h_a7d352181413e68deca22594ee7779a73_cgraph">
-<area shape="rect" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="5,309,120,336"/>
+<area shape="rect" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="5,284,120,311"/>
 <area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="170,208,306,235"/>
-<area shape="poly" title=" " alt="" coords="81,306,166,251,189,239,192,244,169,256,84,311"/>
+<area shape="poly" title=" " alt="" coords="94,281,190,239,192,244,97,286"/>
 <area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="903,183,1007,209"/>
-<area shape="poly" title=" " alt="" coords="120,320,408,320,583,320,662,323,724,327,783,321,816,311,854,295,878,280,900,261,935,221,939,224,904,264,882,284,856,300,818,316,784,326,724,332,661,329,583,325,408,325,120,325"/>
+<area shape="poly" title=" " alt="" coords="120,301,251,313,408,320,583,320,662,323,724,327,783,321,816,311,854,295,878,280,900,261,935,221,939,224,904,264,882,284,856,300,818,316,784,326,724,332,661,329,583,325,408,325,251,319,120,307"/>
 <area shape="rect" href="partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="738,259,819,285"/>
-<area shape="poly" title=" " alt="" coords="120,309,167,301,325,287,481,277,722,270,723,275,482,283,326,292,168,307,121,314"/>
-<area shape="rect" href="partition_8c.html#a010b1b2eeac4e5444f921d9e124dbb7f" title="Alloue un nouvel inode libre." alt="" coords="186,360,290,387"/>
-<area shape="poly" title=" " alt="" coords="112,334,175,353,174,358,111,339"/>
+<area shape="poly" title=" " alt="" coords="120,293,722,271,722,277,120,298"/>
+<area shape="rect" href="partition_8c.html#aead3f3e2f43bbe7333cb36561c0922eb" title="Alloue un nouvel inode." alt="" coords="186,360,290,387"/>
+<area shape="poly" title=" " alt="" coords="97,309,192,351,190,356,94,314"/>
 <area shape="rect" href="partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="168,157,308,184"/>
-<area shape="poly" title=" " alt="" coords="70,307,107,253,134,221,166,194,174,189,177,193,169,198,138,225,111,256,74,310"/>
+<area shape="poly" title=" " alt="" coords="73,282,111,239,137,215,166,194,175,189,178,193,169,198,141,219,115,243,77,285"/>
 <area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="171,107,304,133"/>
-<area shape="poly" title=" " alt="" coords="66,308,78,275,99,231,128,184,166,143,171,139,175,143,169,147,132,188,104,234,83,277,71,310"/>
+<area shape="poly" title=" " alt="" coords="67,282,103,216,131,177,166,143,172,139,175,143,169,147,135,181,107,219,72,285"/>
 <area shape="rect" href="partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="197,411,278,437"/>
-<area shape="poly" title=" " alt="" coords="81,334,120,365,169,396,184,404,182,408,166,401,117,369,78,339"/>
-<area shape="rect" href="partition_8c.html#a20c958c16161bb01bd511032a94fc0b8" title="Initialise un nouvel inode." alt="" coords="200,461,276,488"/>
-<area shape="poly" title=" " alt="" coords="74,335,111,389,138,420,169,447,187,457,184,462,166,452,134,424,107,392,70,338"/>
-<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="199,512,276,539"/>
-<area shape="poly" title=" " alt="" coords="71,335,83,368,104,412,132,458,169,498,186,509,183,513,166,502,128,461,99,414,78,370,66,337"/>
-<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="358,132,461,159"/>
-<area shape="poly" title=" " alt="" coords="279,205,307,194,368,164,370,169,309,198,281,210"/>
+<area shape="poly" title=" " alt="" coords="77,309,115,352,141,375,169,396,184,404,181,409,166,401,137,380,111,355,73,313"/>
+<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="199,461,276,488"/>
+<area shape="poly" title=" " alt="" coords="72,310,107,375,135,414,169,447,186,457,183,462,166,451,131,417,103,378,67,312"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="358,157,461,184"/>
+<area shape="poly" title=" " alt="" coords="285,205,346,186,348,191,286,210"/>
 <area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="356,208,462,235"/>
 <area shape="poly" title=" " alt="" coords="306,219,340,219,340,224,306,224"/>
 <area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="524,44,640,71"/>
-<area shape="poly" title=" " alt="" coords="436,129,539,76,542,80,439,134"/>
+<area shape="poly" title=" " alt="" coords="440,155,461,143,509,110,551,79,554,83,512,115,464,148,442,159"/>
 <area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="716,5,841,32"/>
 <area shape="poly" title=" " alt="" coords="640,43,700,31,701,37,641,49"/>
 <area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="510,208,654,235"/>
@@ -780,8 +892,11 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="rect" href="partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="714,56,842,83"/>
 <area shape="poly" title=" " alt="" coords="613,129,701,92,719,86,721,91,703,97,615,134"/>
 <area shape="poly" title=" " alt="" coords="814,131,856,150,911,174,909,179,854,154,812,136"/>
-<area shape="poly" title=" " alt="" coords="308,158,342,153,343,158,309,163"/>
-<area shape="poly" title=" " alt="" coords="305,127,342,133,342,138,304,133"/>
+<area shape="poly" title=" " alt="" coords="308,168,342,168,342,173,308,173"/>
+<area shape="poly" title=" " alt="" coords="286,131,348,150,346,155,285,137"/>
+<area shape="poly" title=" " alt="" coords="208,108,203,98,207,88,219,82,238,80,258,83,269,89,267,94,257,88,238,85,220,87,211,92,208,97,213,105"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="367,107,451,133"/>
+<area shape="poly" title=" " alt="" coords="305,117,351,117,351,123,305,123"/>
 </map>
 </div>
 <div class="dynheader">
@@ -839,21 +954,21 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a340b93ed15aff9cf0dbc759ac4a926db_cgraph.png" border="0" usemap="#apartition_8h_a340b93ed15aff9cf0dbc759ac4a926db_cgraph" alt=""/></div>
 <map name="apartition_8h_a340b93ed15aff9cf0dbc759ac4a926db_cgraph" id="apartition_8h_a340b93ed15aff9cf0dbc759ac4a926db_cgraph">
-<area shape="rect" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="5,279,87,306"/>
+<area shape="rect" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="5,303,87,330"/>
 <area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="137,127,272,154"/>
-<area shape="poly" title=" " alt="" coords="51,277,81,223,105,191,133,164,139,159,142,164,136,168,109,195,86,226,56,280"/>
-<area shape="rect" href="partition_8c.html#a010b1b2eeac4e5444f921d9e124dbb7f" title="Alloue un nouvel inode libre." alt="" coords="153,178,257,205"/>
-<area shape="poly" title=" " alt="" coords="58,277,90,246,133,214,143,209,146,214,136,219,94,250,62,281"/>
+<area shape="poly" title=" " alt="" coords="49,302,77,237,102,198,133,164,138,160,142,164,136,168,106,201,82,239,54,304"/>
+<area shape="rect" href="partition_8c.html#aead3f3e2f43bbe7333cb36561c0922eb" title="Alloue un nouvel inode." alt="" coords="153,178,257,205"/>
+<area shape="poly" title=" " alt="" coords="54,301,86,259,108,235,133,214,141,210,144,214,136,219,112,239,90,262,58,304"/>
 <area shape="rect" href="partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="135,229,275,255"/>
-<area shape="poly" title=" " alt="" coords="86,277,145,258,147,263,88,282"/>
-<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="138,279,272,306"/>
-<area shape="poly" title=" " alt="" coords="87,290,123,290,123,295,87,295"/>
-<area shape="rect" href="partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="164,330,246,357"/>
-<area shape="poly" title=" " alt="" coords="88,303,150,323,149,328,86,308"/>
-<area shape="rect" href="partition_8c.html#a20c958c16161bb01bd511032a94fc0b8" title="Initialise un nouvel inode." alt="" coords="167,381,243,407"/>
-<area shape="poly" title=" " alt="" coords="62,304,94,335,136,366,153,375,151,380,133,371,90,339,58,308"/>
-<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="166,431,244,458"/>
-<area shape="poly" title=" " alt="" coords="56,305,86,359,109,390,136,417,153,427,150,432,133,421,105,394,81,362,51,308"/>
+<area shape="poly" title=" " alt="" coords="68,301,133,265,147,259,149,264,136,270,71,305"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="138,303,272,330"/>
+<area shape="poly" title=" " alt="" coords="87,314,123,314,123,319,87,319"/>
+<area shape="rect" href="partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="164,354,246,381"/>
+<area shape="poly" title=" " alt="" coords="88,327,150,347,149,352,86,332"/>
+<area shape="rect" href="partition_8c.html#a20c958c16161bb01bd511032a94fc0b8" title="Initialise un nouvel inode." alt="" coords="167,405,243,431"/>
+<area shape="poly" title=" " alt="" coords="62,328,94,359,136,390,153,399,151,404,133,395,90,363,58,332"/>
+<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="166,455,244,482"/>
+<area shape="poly" title=" " alt="" coords="56,329,86,383,109,414,136,441,153,451,150,456,133,445,105,418,81,386,51,332"/>
 <area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="324,229,428,255"/>
 <area shape="poly" title=" " alt="" coords="251,152,276,164,316,189,350,216,347,220,313,194,274,168,249,157"/>
 <area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="323,127,429,154"/>
@@ -877,7 +992,10 @@ Voici le graphe d'appel pour cette fonction :</div>
 <area shape="poly" title=" " alt="" coords="609,70,666,77,665,82,609,75"/>
 <area shape="poly" title=" " alt="" coords="823,37,855,37,855,42,823,42"/>
 <area shape="poly" title=" " alt="" coords="275,239,309,239,309,245,275,245"/>
-<area shape="poly" title=" " alt="" coords="252,276,313,258,315,263,253,281"/>
+<area shape="poly" title=" " alt="" coords="236,300,329,260,331,264,239,305"/>
+<area shape="poly" title=" " alt="" coords="177,304,172,295,176,285,187,279,205,277,224,279,234,286,231,290,222,284,205,282,189,284,180,289,178,294,182,302"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="334,303,418,330"/>
+<area shape="poly" title=" " alt="" coords="272,314,318,314,318,319,272,319"/>
 </map>
 </div>
 <div class="dynheader">
@@ -947,28 +1065,34 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a3b9f31961bf6fcb3017315f5a9a49b6d_icgraph.png" border="0" usemap="#apartition_8h_a3b9f31961bf6fcb3017315f5a9a49b6d_icgraph" alt=""/></div>
 <map name="apartition_8h_a3b9f31961bf6fcb3017315f5a9a49b6d_icgraph" id="apartition_8h_a3b9f31961bf6fcb3017315f5a9a49b6d_icgraph">
-<area shape="rect" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="800,134,943,161"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,134,752,161"/>
-<area shape="poly" title=" " alt="" coords="785,150,752,150,752,145,785,145"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,84,598,110"/>
-<area shape="poly" title=" " alt="" coords="637,132,576,113,578,108,638,127"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
-<area shape="poly" title=" " alt="" coords="630,150,238,150,238,145,630,145"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,185,574,212"/>
-<area shape="poly" title=" " alt="" coords="638,169,576,188,574,182,636,163"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" title=" " alt="" coords="467,81,405,63,406,58,468,76"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" title=" " alt="" coords="447,100,398,100,398,94,447,94"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
-<area shape="poly" title=" " alt="" coords="471,210,394,218,300,218,249,214,199,206,149,194,101,175,81,162,63,145,37,112,42,109,67,142,84,158,104,170,151,189,200,201,250,209,300,213,394,212,470,205"/>
+<area shape="rect" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="800,241,943,267"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,241,752,267"/>
+<area shape="poly" title=" " alt="" coords="785,257,752,257,752,251,785,251"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,139,598,166"/>
+<area shape="poly" title=" " alt="" coords="660,234,552,169,555,164,663,230"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,241,238,267"/>
+<area shape="poly" title=" " alt="" coords="630,257,238,257,238,251,630,251"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,291,574,318"/>
+<area shape="poly" title=" " alt="" coords="638,275,576,294,574,289,636,270"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,38,414,65"/>
+<area shape="poly" title=" " alt="" coords="496,132,413,79,390,68,393,63,416,74,499,128"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,89,398,115"/>
+<area shape="poly" title=" " alt="" coords="466,137,398,116,399,111,468,132"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,139,207,166"/>
+<area shape="poly" title=" " alt="" coords="447,155,207,155,207,150,447,150"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="315,190,399,217"/>
+<area shape="poly" title=" " alt="" coords="468,174,400,194,399,189,467,168"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,139,55,166"/>
+<area shape="poly" title=" " alt="" coords="310,34,265,20,211,10,155,11,129,17,104,28,77,52,57,83,44,114,37,140,32,138,39,112,53,80,73,49,101,24,127,12,155,5,211,5,266,15,312,29"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,38,252,65"/>
+<area shape="poly" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+<area shape="poly" title=" " alt="" coords="125,74,104,86,71,113,45,141,41,137,67,110,101,81,122,69"/>
+<area shape="poly" title=" " alt="" coords="301,106,208,113,103,130,56,145,54,140,102,125,207,108,301,101"/>
+<area shape="poly" title=" " alt="" coords="301,89,226,68,228,63,302,84"/>
+<area shape="poly" title=" " alt="" coords="132,155,55,155,55,150,132,150"/>
+<area shape="poly" title=" " alt="" coords="299,204,206,197,102,181,54,165,56,160,103,175,207,192,300,199"/>
+<area shape="poly" title=" " alt="" coords="122,236,101,224,67,196,41,168,45,165,71,192,104,220,125,231"/>
+<area shape="poly" title=" " alt="" coords="471,320,393,331,297,334,246,330,195,320,147,305,101,282,73,256,53,224,40,193,32,167,37,166,45,191,58,222,77,253,104,277,149,300,197,315,247,324,297,329,392,326,470,315"/>
 </map>
 </div>
 
@@ -1027,18 +1151,24 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a14c71a5fc446af43ac09e6b9a5d0d5d2_icgraph.png" border="0" usemap="#apartition_8h_a14c71a5fc446af43ac09e6b9a5d0d5d2_icgraph" alt=""/></div>
 <map name="apartition_8h_a14c71a5fc446af43ac09e6b9a5d0d5d2_icgraph" id="apartition_8h_a14c71a5fc446af43ac09e6b9a5d0d5d2_icgraph">
-<area shape="rect" title="Trouve un fichier dans un répertoire." alt="" coords="462,31,603,57"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,5,414,32"/>
-<area shape="poly" title=" " alt="" coords="447,34,414,30,415,24,447,29"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,56,398,83"/>
-<area shape="poly" title=" " alt="" coords="447,59,399,66,398,61,447,54"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,31,55,57"/>
-<area shape="poly" title=" " alt="" coords="284,15,197,13,103,21,56,36,54,31,102,16,197,8,284,10"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,31,252,57"/>
-<area shape="poly" title=" " alt="" coords="285,31,253,36,252,31,284,26"/>
-<area shape="poly" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
-<area shape="poly" title=" " alt="" coords="301,77,208,80,155,78,102,72,54,57,56,52,103,67,155,73,208,75,301,72"/>
-<area shape="poly" title=" " alt="" coords="301,64,252,57,253,52,302,59"/>
+<area shape="rect" title="Trouve un fichier dans un répertoire." alt="" coords="462,109,603,136"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
+<area shape="poly" title=" " alt="" coords="484,105,389,62,391,58,487,100"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
+<area shape="poly" title=" " alt="" coords="447,112,398,105,399,100,447,107"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,134,207,161"/>
+<area shape="poly" title=" " alt="" coords="447,131,208,148,207,143,447,126"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,185,220,212"/>
+<area shape="poly" title=" " alt="" coords="452,142,220,192,219,187,451,137"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
+<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
+<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
+<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
+<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
+<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
+<area shape="poly" title=" " alt="" coords="132,135,54,108,56,103,134,130"/>
+<area shape="poly" title=" " alt="" coords="120,185,101,175,65,144,39,112,43,109,69,140,104,171,122,180"/>
 </map>
 </div>
 
@@ -1071,19 +1201,30 @@ Voici le graphe des appelants de cette fonction :</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro de l'inode trouvé, ou (uint32_t)-1 si non trouvé </dd></dl>
+<dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro de l'inode trouvé, ou (uint32_t)-1 si non trouvé</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">path</td><td>Chemin à résoudre (absolu ou relatif) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>uint32_t Numéro d'inode trouvé, ou (uint32_t)-1 si non trouvé </dd></dl>
 <div class="dynheader">
 Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a4a49bb6c6005509f8399caba46350afe_cgraph.png" border="0" usemap="#apartition_8h_a4a49bb6c6005509f8399caba46350afe_cgraph" alt=""/></div>
 <map name="apartition_8h_a4a49bb6c6005509f8399caba46350afe_cgraph" id="apartition_8h_a4a49bb6c6005509f8399caba46350afe_cgraph">
-<area shape="rect" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="5,5,139,32"/>
-<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="187,5,290,32"/>
-<area shape="poly" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
-<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="338,5,454,32"/>
-<area shape="poly" title=" " alt="" coords="290,16,322,16,322,21,290,21"/>
-<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="502,5,628,32"/>
-<area shape="poly" title=" " alt="" coords="455,16,487,16,487,21,455,21"/>
+<area shape="rect" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="5,31,139,57"/>
+<area shape="poly" title=" " alt="" coords="43,32,38,22,42,12,53,6,72,4,92,7,103,13,100,18,90,12,72,9,55,11,46,16,44,21,48,29"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="196,5,280,32"/>
+<area shape="poly" title=" " alt="" coords="139,31,181,25,181,30,139,36"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="187,56,290,83"/>
+<area shape="poly" title=" " alt="" coords="139,52,172,57,171,62,139,57"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="338,56,454,83"/>
+<area shape="poly" title=" " alt="" coords="290,67,322,67,322,72,290,72"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="502,56,628,83"/>
+<area shape="poly" title=" " alt="" coords="455,67,487,67,487,72,455,72"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1091,36 +1232,44 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a4a49bb6c6005509f8399caba46350afe_icgraph.png" border="0" usemap="#apartition_8h_a4a49bb6c6005509f8399caba46350afe_icgraph" alt=""/></div>
 <map name="apartition_8h_a4a49bb6c6005509f8399caba46350afe_icgraph" id="apartition_8h_a4a49bb6c6005509f8399caba46350afe_icgraph">
-<area shape="rect" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="462,233,596,260"/>
-<area shape="rect" href="vfs__function_8c.html#a71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="117,5,238,32"/>
-<area shape="poly" title=" " alt="" coords="512,221,473,158,445,125,413,97,370,72,324,53,237,30,239,25,326,48,373,67,416,93,449,122,477,155,517,218"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,107,414,133"/>
-<area shape="poly" title=" " alt="" coords="503,224,462,186,413,148,392,136,395,132,416,143,466,182,506,220"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,157,398,184"/>
-<area shape="poly" title=" " alt="" coords="482,229,388,187,390,182,484,224"/>
-<area shape="rect" href="partition_8c.html#a7e3bde988e14b04d26a63d543cee8642" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="132,208,223,235"/>
-<area shape="poly" title=" " alt="" coords="447,243,223,227,224,222,447,238"/>
-<area shape="rect" href="vfs__function_8c.html#ada74a80451424a86241f4c4741907429" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="130,259,225,285"/>
-<area shape="poly" title=" " alt="" coords="447,255,226,271,225,266,447,250"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,309,238,336"/>
-<area shape="poly" title=" " alt="" coords="449,266,239,312,238,307,448,261"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="313,360,401,387"/>
-<area shape="poly" title=" " alt="" coords="504,273,463,307,416,344,386,362,383,357,413,339,460,303,500,269"/>
-<area shape="rect" href="tree_8c.html#accccf7c88162324fe8b2d2ed38ea735a" title="Affiche l&#39;arborescence du système de fichiers." alt="" coords="336,411,379,437"/>
-<area shape="poly" title=" " alt="" coords="516,275,476,337,448,371,416,401,380,420,378,415,413,397,444,367,471,333,511,272"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,208,55,235"/>
-<area shape="poly" title=" " alt="" coords="118,42,105,53,76,91,56,135,43,177,36,208,31,207,38,175,51,133,71,89,101,49,114,38"/>
-<area shape="poly" title=" " alt="" coords="310,103,265,88,211,78,155,79,129,86,104,97,77,121,57,151,44,183,37,208,32,207,39,181,53,149,73,117,101,92,127,81,155,74,211,73,266,83,312,98"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,107,252,133"/>
-<area shape="poly" title=" " alt="" coords="285,123,253,123,253,117,285,117"/>
-<area shape="poly" title=" " alt="" coords="125,143,104,154,71,182,45,209,41,206,67,178,101,150,122,138"/>
-<area shape="poly" title=" " alt="" coords="301,175,208,182,103,199,56,214,54,209,102,193,207,177,301,170"/>
-<area shape="poly" title=" " alt="" coords="301,158,226,136,228,131,302,153"/>
-<area shape="poly" title=" " alt="" coords="116,224,55,224,55,219,116,219"/>
-<area shape="poly" title=" " alt="" coords="120,256,102,249,54,232,56,227,104,244,122,251"/>
-<area shape="poly" title=" " alt="" coords="110,305,101,300,65,268,39,237,43,233,69,264,104,295,113,300"/>
-<area shape="poly" title=" " alt="" coords="298,385,252,387,201,384,149,373,101,350,74,325,54,293,40,261,32,236,37,235,45,260,58,290,78,321,104,346,151,367,202,378,252,381,297,379"/>
-<area shape="poly" title=" " alt="" coords="320,432,272,435,215,432,155,420,127,408,101,391,83,375,68,355,48,311,35,268,30,235,35,234,41,267,52,309,73,352,87,371,104,387,129,403,157,414,215,427,272,430,320,427"/>
+<area shape="rect" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="469,309,603,336"/>
+<area shape="poly" title=" " alt="" coords="566,296,555,290,536,288,518,290,508,295,506,300,510,308,506,310,501,301,504,291,516,285,536,283,557,285,568,292"/>
+<area shape="rect" href="group__vfs__functions.html#ga71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="117,5,238,32"/>
+<area shape="poly" title=" " alt="" coords="529,294,520,241,501,175,487,140,469,108,447,78,420,53,377,30,329,17,282,13,238,14,238,8,282,7,330,12,379,25,423,49,451,74,473,105,492,138,506,173,525,240,535,293"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,284,55,311"/>
+<area shape="poly" title=" " alt="" coords="523,296,508,261,486,220,457,180,420,148,378,126,341,120,302,120,252,119,208,111,173,103,140,102,123,107,104,118,85,135,70,155,49,202,38,249,34,284,29,283,33,248,44,201,65,152,81,131,101,114,121,103,139,97,173,97,209,106,252,113,302,115,342,115,380,121,423,143,461,177,490,217,513,258,528,294"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="304,157,418,184"/>
+<area shape="poly" title=" " alt="" coords="514,298,474,248,448,222,420,198,400,187,402,182,423,194,452,218,478,244,519,295"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="320,208,401,235"/>
+<area shape="poly" title=" " alt="" coords="499,303,420,256,387,237,389,233,423,251,501,298"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,259,207,285"/>
+<area shape="poly" title=" " alt="" coords="454,312,421,307,207,278,208,273,422,301,454,306"/>
+<area shape="rect" href="partition_8c.html#a7e3bde988e14b04d26a63d543cee8642" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="132,309,223,336"/>
+<area shape="poly" title=" " alt="" coords="454,325,223,325,223,320,454,320"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,360,220,387"/>
+<area shape="poly" title=" " alt="" coords="454,337,220,370,220,365,454,332"/>
+<area shape="rect" href="group__vfs__functions.html#gada74a80451424a86241f4c4741907429" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="130,411,225,437"/>
+<area shape="poly" title=" " alt="" coords="483,344,422,364,226,416,225,410,421,359,481,339"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="300,461,421,488"/>
+<area shape="poly" title=" " alt="" coords="516,350,476,397,423,445,394,463,391,459,420,441,472,393,512,347"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="316,512,405,539"/>
+<area shape="poly" title=" " alt="" coords="526,352,487,425,458,466,423,502,405,514,402,509,420,498,454,463,482,423,521,349"/>
+<area shape="rect" href="group__tree__visualisation.html#gaccccf7c88162324fe8b2d2ed38ea735a" title="Affiche l&#39;arborescence du système de fichiers." alt="" coords="339,563,382,589"/>
+<area shape="poly" title=" " alt="" coords="530,352,516,395,494,449,464,504,423,553,404,566,384,574,382,569,401,561,420,549,459,501,490,446,511,393,525,350"/>
+<area shape="poly" title=" " alt="" coords="116,42,105,52,84,81,68,112,47,179,37,240,34,284,29,284,32,240,42,178,63,110,80,78,101,49,113,38"/>
+<area shape="poly" title=" " alt="" coords="315,154,268,138,213,127,184,126,156,128,129,135,104,148,88,161,74,177,53,216,41,254,36,284,30,283,36,253,48,214,69,174,84,157,101,143,127,130,155,123,184,121,214,122,269,133,317,148"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,157,252,184"/>
+<area shape="poly" title=" " alt="" coords="288,173,252,173,252,168,288,168"/>
+<area shape="poly" title=" " alt="" coords="122,194,104,205,84,224,66,246,41,285,36,282,62,243,80,220,101,201,119,189"/>
+<area shape="poly" title=" " alt="" coords="305,221,209,226,155,234,104,249,73,266,47,286,44,281,70,261,102,244,154,229,208,220,304,216"/>
+<area shape="poly" title=" " alt="" coords="304,209,228,187,229,182,306,204"/>
+<area shape="poly" title=" " alt="" coords="133,282,55,296,54,291,132,277"/>
+<area shape="poly" title=" " alt="" coords="116,315,55,304,56,299,117,310"/>
+<area shape="poly" title=" " alt="" coords="119,359,101,350,47,313,50,309,104,346,122,354"/>
+<area shape="poly" title=" " alt="" coords="114,409,101,401,79,380,60,356,35,313,40,310,64,353,83,376,104,397,117,404"/>
+<area shape="poly" title=" " alt="" coords="285,488,240,490,192,486,145,474,101,452,84,437,70,419,50,380,37,342,31,312,36,311,42,340,54,378,75,416,88,433,104,447,146,469,193,480,240,484,285,483"/>
+<area shape="poly" title=" " alt="" coords="301,536,254,538,201,534,148,521,124,509,101,494,81,474,65,450,44,398,33,348,29,311,34,311,38,347,49,397,70,448,85,471,104,490,126,504,150,516,202,529,254,533,301,531"/>
+<area shape="poly" title=" " alt="" coords="324,585,275,589,216,587,155,574,126,561,101,543,77,517,59,487,46,454,37,420,29,356,28,311,33,311,34,356,42,419,51,452,64,484,81,514,104,539,129,556,157,569,216,582,275,584,323,580"/>
 </map>
 </div>
 
@@ -1158,33 +1307,39 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a4c183efe422b7bd7ca0a0d5ee02a6ae6_icgraph.png" border="0" usemap="#apartition_8h_a4c183efe422b7bd7ca0a0d5ee02a6ae6_icgraph" alt=""/></div>
 <map name="apartition_8h_a4c183efe422b7bd7ca0a0d5ee02a6ae6_icgraph" id="apartition_8h_a4c183efe422b7bd7ca0a0d5ee02a6ae6_icgraph">
-<area shape="rect" title="Frees a block in the partition." alt="" coords="991,109,1073,136"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" title=" " alt="" coords="999,102,972,86,943,74,871,57,796,45,722,37,649,34,516,36,415,43,415,37,516,30,649,29,722,32,797,39,872,51,944,69,975,82,1002,98"/>
-<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="800,84,943,110"/>
-<area shape="poly" title=" " alt="" coords="976,116,943,111,944,106,976,111"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="469,134,591,161"/>
-<area shape="poly" title=" " alt="" coords="976,128,591,147,591,142,976,122"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,185,574,212"/>
-<area shape="poly" title=" " alt="" coords="976,136,944,142,737,174,575,195,574,190,737,169,943,137,975,131"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,84,752,110"/>
-<area shape="poly" title=" " alt="" coords="785,100,752,100,752,94,785,94"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,84,598,110"/>
-<area shape="poly" title=" " alt="" coords="630,100,598,100,598,94,630,94"/>
-<area shape="poly" title=" " alt="" coords="638,118,578,136,576,131,637,113"/>
-<area shape="poly" title=" " alt="" coords="672,123,638,149,599,175,574,187,572,182,596,171,635,145,669,118"/>
-<area shape="poly" title=" " alt="" coords="467,81,405,63,406,58,468,76"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" title=" " alt="" coords="447,100,398,100,398,94,447,94"/>
-<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" title=" " alt="" coords="453,143,55,102,55,97,454,137"/>
-<area shape="poly" title=" " alt="" coords="470,195,304,171,202,152,102,127,54,110,56,105,103,122,204,147,304,166,471,189"/>
+<area shape="rect" title="Frees a block in the partition." alt="" coords="991,190,1073,217"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,38,414,65"/>
+<area shape="poly" title=" " alt="" coords="998,184,942,155,871,132,797,112,649,84,516,66,414,57,415,52,516,61,649,78,798,107,872,127,944,150,1000,179"/>
+<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="800,165,943,191"/>
+<area shape="poly" title=" " alt="" coords="976,197,943,192,944,187,976,192"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="469,215,591,242"/>
+<area shape="poly" title=" " alt="" coords="976,209,591,228,591,223,976,203"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,266,574,293"/>
+<area shape="poly" title=" " alt="" coords="976,217,944,223,737,255,575,277,574,271,737,250,943,218,975,212"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,139,55,166"/>
+<area shape="poly" title=" " alt="" coords="310,34,265,20,211,10,155,11,129,17,104,28,77,52,57,83,44,114,37,140,32,138,39,112,53,80,73,49,101,24,127,12,155,5,211,5,266,15,312,29"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,38,252,65"/>
+<area shape="poly" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+<area shape="poly" title=" " alt="" coords="125,74,104,86,71,113,45,141,41,137,67,110,101,81,122,69"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,165,752,191"/>
+<area shape="poly" title=" " alt="" coords="785,181,752,181,752,175,785,175"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,139,598,166"/>
+<area shape="poly" title=" " alt="" coords="630,170,598,165,598,160,631,165"/>
+<area shape="poly" title=" " alt="" coords="638,199,578,217,576,212,637,194"/>
+<area shape="poly" title=" " alt="" coords="672,204,638,231,599,256,574,268,572,263,596,252,635,226,669,200"/>
+<area shape="poly" title=" " alt="" coords="496,132,413,79,390,68,393,63,416,74,499,128"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,89,398,115"/>
+<area shape="poly" title=" " alt="" coords="466,137,398,116,399,111,468,132"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,139,207,166"/>
+<area shape="poly" title=" " alt="" coords="447,155,207,155,207,150,447,150"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,190,220,217"/>
+<area shape="poly" title=" " alt="" coords="447,167,220,200,219,195,446,162"/>
+<area shape="poly" title=" " alt="" coords="301,106,208,113,103,130,56,145,54,140,102,125,207,108,301,101"/>
+<area shape="poly" title=" " alt="" coords="301,89,226,68,228,63,302,84"/>
+<area shape="poly" title=" " alt="" coords="132,155,55,155,55,150,132,150"/>
+<area shape="poly" title=" " alt="" coords="120,187,102,181,54,164,56,159,104,176,122,182"/>
+<area shape="poly" title=" " alt="" coords="456,248,380,260,290,265,242,263,194,257,147,247,102,231,80,218,62,202,37,168,41,165,66,198,84,214,104,226,148,242,195,252,242,258,290,259,380,254,456,243"/>
+<area shape="poly" title=" " alt="" coords="471,296,393,309,298,314,247,311,196,304,147,290,101,268,75,247,55,219,33,168,38,166,60,216,79,243,104,264,149,285,198,298,248,306,298,309,393,304,470,291"/>
 </map>
 </div>
 
@@ -1222,28 +1377,31 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a9ae32cbb8926e46177187c97fdaa21e6_icgraph.png" border="0" usemap="#apartition_8h_a9ae32cbb8926e46177187c97fdaa21e6_icgraph" alt=""/></div>
 <map name="apartition_8h_a9ae32cbb8926e46177187c97fdaa21e6_icgraph" id="apartition_8h_a9ae32cbb8926e46177187c97fdaa21e6_icgraph">
-<area shape="rect" title="Libère un inode." alt="" coords="462,79,544,106"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,28,414,55"/>
-<area shape="poly" title=" " alt="" coords="447,76,397,58,399,53,449,71"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,79,398,106"/>
-<area shape="poly" title=" " alt="" coords="447,95,398,95,398,90,447,90"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,130,238,156"/>
-<area shape="poly" title=" " alt="" coords="448,112,415,120,322,134,238,142,238,137,322,129,414,115,447,107"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,54,55,80"/>
-<area shape="poly" title=" " alt="" coords="300,26,256,16,206,10,154,9,104,19,72,35,47,55,43,51,69,31,102,14,154,4,207,4,257,11,301,21"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,28,252,55"/>
-<area shape="poly" title=" " alt="" coords="285,44,253,44,253,39,285,39"/>
-<area shape="poly" title=" " alt="" coords="88,60,55,66,54,60,87,55"/>
-<area shape="poly" title=" " alt="" coords="301,91,55,72,55,66,301,86"/>
-<area shape="poly" title=" " alt="" coords="301,79,226,58,228,53,302,74"/>
-<area shape="poly" title=" " alt="" coords="126,125,101,113,51,83,53,79,104,109,129,121"/>
+<area shape="rect" title="Libère un inode." alt="" coords="462,109,544,136"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
+<area shape="poly" title=" " alt="" coords="465,103,413,74,389,63,392,58,416,69,467,98"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
+<area shape="poly" title=" " alt="" coords="446,115,398,107,399,101,447,110"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,134,220,161"/>
+<area shape="poly" title=" " alt="" coords="447,129,220,147,220,142,447,124"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,185,238,212"/>
+<area shape="poly" title=" " alt="" coords="447,138,415,146,239,187,238,182,414,141,446,133"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
+<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
+<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
+<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
+<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
+<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
+<area shape="poly" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
+<area shape="poly" title=" " alt="" coords="110,180,101,175,65,144,39,112,43,109,69,140,104,171,113,176"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6c7a5dfb40fb024a3db304109d7c2b87" name="a6c7a5dfb40fb024a3db304109d7c2b87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c7a5dfb40fb024a3db304109d7c2b87">&#9670;&#160;</a></span>fs_close_file()</h2>
+<a id="af2eb262e960129690f2dd3a336635c69" name="af2eb262e960129690f2dd3a336635c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2eb262e960129690f2dd3a336635c69">&#9670;&#160;</a></span>fs_close_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1256,7 +1414,7 @@ Voici le graphe des appelants de cette fonction :</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fd</em></span>&#160;)</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>fd</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1273,8 +1431,8 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dynheader">
 Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
-<div class="center"><img src="partition_8h_a6c7a5dfb40fb024a3db304109d7c2b87_icgraph.png" border="0" usemap="#apartition_8h_a6c7a5dfb40fb024a3db304109d7c2b87_icgraph" alt=""/></div>
-<map name="apartition_8h_a6c7a5dfb40fb024a3db304109d7c2b87_icgraph" id="apartition_8h_a6c7a5dfb40fb024a3db304109d7c2b87_icgraph">
+<div class="center"><img src="partition_8h_af2eb262e960129690f2dd3a336635c69_icgraph.png" border="0" usemap="#apartition_8h_af2eb262e960129690f2dd3a336635c69_icgraph" alt=""/></div>
+<map name="apartition_8h_af2eb262e960129690f2dd3a336635c69_icgraph" id="apartition_8h_af2eb262e960129690f2dd3a336635c69_icgraph">
 <area shape="rect" title="Ferme un fichier précédemment ouvert." alt="" coords="103,5,197,32"/>
 <area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
@@ -1322,15 +1480,18 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a7e3bde988e14b04d26a63d543cee8642_cgraph.png" border="0" usemap="#apartition_8h_a7e3bde988e14b04d26a63d543cee8642_cgraph" alt=""/></div>
 <map name="apartition_8h_a7e3bde988e14b04d26a63d543cee8642_cgraph" id="apartition_8h_a7e3bde988e14b04d26a63d543cee8642_cgraph">
-<area shape="rect" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="5,5,97,32"/>
-<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="145,5,278,32"/>
-<area shape="poly" title=" " alt="" coords="97,16,129,16,129,21,97,21"/>
-<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="326,5,429,32"/>
-<area shape="poly" title=" " alt="" coords="278,16,311,16,311,21,278,21"/>
-<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="477,5,594,32"/>
-<area shape="poly" title=" " alt="" coords="430,16,462,16,462,21,430,21"/>
-<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="642,5,767,32"/>
-<area shape="poly" title=" " alt="" coords="594,16,626,16,626,21,594,21"/>
+<area shape="rect" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="5,31,97,57"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="145,31,278,57"/>
+<area shape="poly" title=" " alt="" coords="97,41,129,41,129,47,97,47"/>
+<area shape="poly" title=" " alt="" coords="184,31,179,22,182,12,193,6,211,4,231,7,241,13,238,18,229,12,211,9,195,11,186,16,184,21,188,29"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="336,5,420,32"/>
+<area shape="poly" title=" " alt="" coords="278,31,320,25,321,30,279,36"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="326,56,429,83"/>
+<area shape="poly" title=" " alt="" coords="279,52,311,57,311,62,278,57"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="477,56,594,83"/>
+<area shape="poly" title=" " alt="" coords="430,67,462,67,462,72,430,72"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="642,56,767,83"/>
+<area shape="poly" title=" " alt="" coords="594,67,626,67,626,72,594,72"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1339,6 +1500,191 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="center"><img src="partition_8h_a7e3bde988e14b04d26a63d543cee8642_icgraph.png" border="0" usemap="#apartition_8h_a7e3bde988e14b04d26a63d543cee8642_icgraph" alt=""/></div>
 <map name="apartition_8h_a7e3bde988e14b04d26a63d543cee8642_icgraph" id="apartition_8h_a7e3bde988e14b04d26a63d543cee8642_icgraph">
 <area shape="rect" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="103,5,194,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab6dfaed9a58f6cd361e692e341e20b4f" name="ab6dfaed9a58f6cd361e692e341e20b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6dfaed9a58f6cd361e692e341e20b4f">&#9670;&#160;</a></span>fs_readlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fs_readlink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>inode_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lit la cible d'un lien symbolique. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">inode_id</td><td><a class="el" href="structInode.html" title="Represents an inode in the file system.">Inode</a> du lien symbolique </td></tr>
+    <tr><td class="paramname">buffer</td><td>Buffer de sortie </td></tr>
+    <tr><td class="paramname">size</td><td>Taille du buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 en cas de succès, -1 en cas d'échec </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="partition_8h_ab6dfaed9a58f6cd361e692e341e20b4f_icgraph.png" border="0" usemap="#apartition_8h_ab6dfaed9a58f6cd361e692e341e20b4f_icgraph" alt=""/></div>
+<map name="apartition_8h_ab6dfaed9a58f6cd361e692e341e20b4f_icgraph" id="apartition_8h_ab6dfaed9a58f6cd361e692e341e20b4f_icgraph">
+<area shape="rect" title="Lit la cible d&#39;un lien symbolique." alt="" coords="651,487,735,513"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="469,335,603,361"/>
+<area shape="poly" title=" " alt="" coords="665,478,549,364,553,360,669,474"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,309,55,336"/>
+<area shape="poly" title=" " alt="" coords="658,524,554,578,484,607,407,632,326,647,286,650,246,648,207,643,170,632,134,615,101,593,86,574,73,545,52,471,38,393,30,337,36,336,43,392,57,469,78,543,90,571,104,589,137,611,172,627,208,637,247,643,286,644,326,641,405,626,482,602,551,573,656,519"/>
+<area shape="poly" title=" " alt="" coords="562,322,553,316,536,313,520,315,511,320,509,325,513,333,509,335,504,326,507,316,518,310,536,308,555,311,565,317"/>
+<area shape="rect" href="group__vfs__functions.html#ga71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="117,5,238,32"/>
+<area shape="poly" title=" " alt="" coords="530,320,523,262,505,189,491,151,472,114,449,81,420,53,377,29,330,16,282,12,238,13,238,8,282,7,331,11,379,24,423,49,453,77,477,111,495,149,510,187,528,261,536,319"/>
+<area shape="poly" title=" " alt="" coords="525,321,511,281,490,234,460,186,441,165,420,148,378,125,342,119,302,119,252,117,208,109,172,101,140,100,123,106,104,117,83,136,66,160,54,187,45,215,36,269,34,309,28,309,31,269,40,214,49,185,62,158,79,133,101,113,121,101,139,95,173,95,209,104,252,112,302,113,342,113,380,120,423,143,445,162,464,183,495,231,516,279,530,319"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="304,157,418,184"/>
+<area shape="poly" title=" " alt="" coords="518,323,479,261,451,228,420,198,401,187,404,182,423,194,455,224,483,258,523,320"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="320,208,401,235"/>
+<area shape="poly" title=" " alt="" coords="507,326,467,291,420,256,389,237,392,233,423,251,470,287,511,322"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,259,207,285"/>
+<area shape="poly" title=" " alt="" coords="471,333,421,320,302,296,207,279,208,274,303,291,422,315,472,327"/>
+<area shape="rect" href="partition_8c.html#a7e3bde988e14b04d26a63d543cee8642" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="132,309,223,336"/>
+<area shape="poly" title=" " alt="" coords="454,345,223,328,223,323,454,340"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,360,220,387"/>
+<area shape="poly" title=" " alt="" coords="454,356,220,373,220,368,454,351"/>
+<area shape="rect" href="group__vfs__functions.html#gada74a80451424a86241f4c4741907429" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="130,411,225,437"/>
+<area shape="poly" title=" " alt="" coords="455,368,226,417,225,411,454,362"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="300,461,421,488"/>
+<area shape="poly" title=" " alt="" coords="511,374,470,409,423,445,392,463,389,459,420,440,467,405,507,370"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="316,512,405,539"/>
+<area shape="poly" title=" " alt="" coords="523,376,483,438,455,472,423,502,404,514,401,509,420,498,451,468,479,435,518,373"/>
+<area shape="rect" href="group__tree__visualisation.html#gaccccf7c88162324fe8b2d2ed38ea735a" title="Affiche l&#39;arborescence du système de fichiers." alt="" coords="339,563,382,589"/>
+<area shape="poly" title=" " alt="" coords="528,377,513,416,491,462,461,510,423,553,404,565,384,573,382,568,401,561,420,549,456,507,486,460,508,414,523,375"/>
+<area shape="poly" title=" " alt="" coords="116,42,105,52,82,84,65,119,53,156,44,194,35,262,34,309,28,309,30,261,39,193,48,155,60,117,78,81,101,49,113,38"/>
+<area shape="poly" title=" " alt="" coords="316,153,269,137,213,126,184,125,156,127,129,135,104,148,85,164,70,183,50,229,39,275,35,309,29,309,34,274,45,228,66,181,82,160,101,143,127,130,155,122,184,120,214,121,270,132,318,148"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,157,252,184"/>
+<area shape="poly" title=" " alt="" coords="288,173,252,173,252,168,288,168"/>
+<area shape="poly" title=" " alt="" coords="120,194,104,205,81,230,62,259,39,310,34,308,58,257,77,227,101,201,117,189"/>
+<area shape="poly" title=" " alt="" coords="304,219,259,218,208,221,154,231,104,249,84,262,67,278,42,311,37,308,63,275,81,258,101,244,153,226,207,216,259,212,305,213"/>
+<area shape="poly" title=" " alt="" coords="304,209,228,187,229,182,306,204"/>
+<area shape="poly" title=" " alt="" coords="134,289,104,300,56,317,54,312,102,295,132,284"/>
+<area shape="poly" title=" " alt="" coords="116,325,55,325,55,320,116,320"/>
+<area shape="poly" title=" " alt="" coords="120,357,102,351,54,334,56,329,104,345,122,352"/>
+<area shape="poly" title=" " alt="" coords="114,408,101,401,65,369,39,338,43,335,69,366,104,396,116,403"/>
+<area shape="poly" title=" " alt="" coords="285,487,240,488,193,484,145,473,101,452,74,426,54,394,40,363,32,337,37,336,45,361,58,392,78,423,104,447,147,468,194,479,241,483,284,482"/>
+<area shape="poly" title=" " alt="" coords="301,536,254,537,201,532,149,519,124,507,101,493,83,476,68,456,47,412,35,369,30,337,35,336,41,368,52,410,73,453,87,472,104,489,126,503,150,514,202,527,254,531,301,530"/>
+<area shape="poly" title=" " alt="" coords="323,584,275,588,216,585,155,571,127,558,101,541,79,518,63,491,41,433,31,377,29,337,34,336,36,377,46,432,67,489,84,515,104,537,129,554,157,566,216,580,275,582,323,579"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2d82db1abf2ca97a5b809a26bfa44690" name="a2d82db1abf2ca97a5b809a26bfa44690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d82db1abf2ca97a5b809a26bfa44690">&#9670;&#160;</a></span>fs_symlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fs_symlink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>linkpath</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un lien symbolique (soft link) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">target</td><td>Chemin cible du lien </td></tr>
+    <tr><td class="paramname">linkpath</td><td>Chemin du lien à créer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 en cas de succès, -1 en cas d'échec </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="partition_8h_a2d82db1abf2ca97a5b809a26bfa44690_cgraph.png" border="0" usemap="#apartition_8h_a2d82db1abf2ca97a5b809a26bfa44690_cgraph" alt=""/></div>
+<map name="apartition_8h_a2d82db1abf2ca97a5b809a26bfa44690_cgraph" id="apartition_8h_a2d82db1abf2ca97a5b809a26bfa44690_cgraph">
+<area shape="rect" title="Crée un lien symbolique (soft link)" alt="" coords="5,266,90,293"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="140,127,276,154"/>
+<area shape="poly" title=" " alt="" coords="54,264,86,216,109,188,136,164,143,159,146,163,139,168,113,192,90,219,58,267"/>
+<area shape="rect" href="partition_8c.html#aead3f3e2f43bbe7333cb36561c0922eb" title="Alloue un nouvel inode." alt="" coords="156,178,260,205"/>
+<area shape="poly" title=" " alt="" coords="64,263,97,239,136,214,148,209,151,213,139,219,100,243,67,268"/>
+<area shape="rect" href="partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="138,229,278,255"/>
+<area shape="poly" title=" " alt="" coords="90,267,132,257,134,262,91,272"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="141,303,274,330"/>
+<area shape="poly" title=" " alt="" coords="91,287,134,297,132,302,90,292"/>
+<area shape="rect" href="partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="167,354,248,381"/>
+<area shape="poly" title=" " alt="" coords="67,291,100,315,139,340,154,347,152,352,136,344,97,320,64,295"/>
+<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="169,405,246,431"/>
+<area shape="poly" title=" " alt="" coords="58,292,90,340,113,367,139,390,156,400,153,405,136,395,109,371,86,343,54,295"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="328,229,431,255"/>
+<area shape="poly" title=" " alt="" coords="254,152,279,164,319,189,353,216,350,220,316,194,277,168,252,157"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="326,127,432,154"/>
+<area shape="poly" title=" " alt="" coords="276,138,310,138,310,143,276,143"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="494,229,610,255"/>
+<area shape="poly" title=" " alt="" coords="431,239,478,239,478,245,431,245"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="686,229,811,255"/>
+<area shape="poly" title=" " alt="" coords="610,239,670,239,670,245,610,245"/>
+<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="480,127,624,154"/>
+<area shape="poly" title=" " alt="" coords="433,138,465,138,465,143,433,143"/>
+<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="492,51,612,78"/>
+<area shape="poly" title=" " alt="" coords="411,124,505,82,507,87,413,129"/>
+<area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="873,26,977,53"/>
+<area shape="poly" title=" " alt="" coords="588,152,637,168,697,179,762,180,794,175,824,164,852,144,876,119,909,65,914,68,880,122,856,148,826,168,795,180,763,186,696,185,635,173,586,157"/>
+<area shape="rect" href="partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="708,127,789,154"/>
+<area shape="poly" title=" " alt="" coords="624,138,692,138,692,143,624,143"/>
+<area shape="poly" title=" " alt="" coords="577,48,620,28,671,11,714,4,748,3,825,11,865,19,864,24,825,17,748,8,715,10,672,17,622,33,579,53"/>
+<area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="672,26,825,53"/>
+<area shape="poly" title=" " alt="" coords="612,54,656,49,656,54,612,60"/>
+<area shape="rect" href="partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="684,77,812,103"/>
+<area shape="poly" title=" " alt="" coords="612,70,669,77,668,82,612,75"/>
+<area shape="poly" title=" " alt="" coords="826,37,858,37,858,42,826,42"/>
+<area shape="poly" title=" " alt="" coords="278,239,312,239,312,245,278,245"/>
+<area shape="poly" title=" " alt="" coords="239,300,332,260,334,264,242,305"/>
+<area shape="poly" title=" " alt="" coords="180,304,175,295,179,285,190,279,208,277,227,279,238,286,235,290,225,284,208,282,191,284,183,289,180,294,185,302"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="337,303,421,330"/>
+<area shape="poly" title=" " alt="" coords="275,314,321,314,321,319,275,319"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="partition_8h_a2d82db1abf2ca97a5b809a26bfa44690_icgraph.png" border="0" usemap="#apartition_8h_a2d82db1abf2ca97a5b809a26bfa44690_icgraph" alt=""/></div>
+<map name="apartition_8h_a2d82db1abf2ca97a5b809a26bfa44690_icgraph" id="apartition_8h_a2d82db1abf2ca97a5b809a26bfa44690_icgraph">
+<area shape="rect" title="Crée un lien symbolique (soft link)" alt="" coords="103,5,187,32"/>
 <area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
@@ -1384,11 +1730,96 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a75b615a241e5f4d9b104afb3263f1d19_icgraph.png" border="0" usemap="#apartition_8h_a75b615a241e5f4d9b104afb3263f1d19_icgraph" alt=""/></div>
 <map name="apartition_8h_a75b615a241e5f4d9b104afb3263f1d19_icgraph" id="apartition_8h_a75b615a241e5f4d9b104afb3263f1d19_icgraph">
-<area shape="rect" title=" " alt="" coords="180,13,306,40"/>
-<area shape="rect" href="partition_8c.html#a92d4051f4b5524af74e0930f133124c2" title=" " alt="" coords="5,5,132,48"/>
-<area shape="poly" title=" " alt="" coords="164,29,132,29,132,24,164,24"/>
+<area shape="rect" title=" " alt="" coords="392,13,519,40"/>
+<area shape="rect" href="partition_8c.html#a92d4051f4b5524af74e0930f133124c2" title=" " alt="" coords="218,5,344,48"/>
+<area shape="poly" title=" " alt="" coords="377,29,345,29,345,24,377,24"/>
+<area shape="rect" href="group__vfs__functions.html#gabafd732c4c89442c2e7ee525a00c5895" title="Écrit des données dans un fichier." alt="" coords="103,13,170,40"/>
+<area shape="poly" title=" " alt="" coords="202,29,170,29,170,24,202,24"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,13,55,40"/>
+<area shape="poly" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a81e29a7864e7f551a1c884cbf3e1404c" name="a81e29a7864e7f551a1c884cbf3e1404c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e29a7864e7f551a1c884cbf3e1404c">&#9670;&#160;</a></span>get_inode_by_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structInode.html">Inode</a> * get_inode_by_path </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Trouve l'inode correspondant à un chemin donné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers. </td></tr>
+    <tr><td class="paramname">path</td><td>Chemin du fichier ou répertoire (ex: "/dir1/file.txt"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Inode* Pointeur vers l'inode correspondant, ou NULL si non trouvé. </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="partition_8h_a81e29a7864e7f551a1c884cbf3e1404c_cgraph.png" border="0" usemap="#apartition_8h_a81e29a7864e7f551a1c884cbf3e1404c_cgraph" alt=""/></div>
+<map name="apartition_8h_a81e29a7864e7f551a1c884cbf3e1404c_cgraph" id="apartition_8h_a81e29a7864e7f551a1c884cbf3e1404c_cgraph">
+<area shape="rect" title="Trouve l&#39;inode correspondant à un chemin donné." alt="" coords="5,5,136,32"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="184,5,287,32"/>
+<area shape="poly" title=" " alt="" coords="136,16,168,16,168,21,136,21"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="335,5,451,32"/>
+<area shape="poly" title=" " alt="" coords="287,16,319,16,319,21,287,21"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="499,5,625,32"/>
+<area shape="poly" title=" " alt="" coords="452,16,484,16,484,21,452,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="partition_8h_a81e29a7864e7f551a1c884cbf3e1404c_icgraph.png" border="0" usemap="#apartition_8h_a81e29a7864e7f551a1c884cbf3e1404c_icgraph" alt=""/></div>
+<map name="apartition_8h_a81e29a7864e7f551a1c884cbf3e1404c_icgraph" id="apartition_8h_a81e29a7864e7f551a1c884cbf3e1404c_icgraph">
+<area shape="rect" title="Trouve l&#39;inode correspondant à un chemin donné." alt="" coords="103,5,233,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a50664fa786c8fbbc57c3bb56b8aa2de9" name="a50664fa786c8fbbc57c3bb56b8aa2de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50664fa786c8fbbc57c3bb56b8aa2de9">&#9670;&#160;</a></span>handle_indirect_block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t handle_indirect_block </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>indirect_block_ptr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1436,18 +1867,14 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a20c958c16161bb01bd511032a94fc0b8_icgraph.png" border="0" usemap="#apartition_8h_a20c958c16161bb01bd511032a94fc0b8_icgraph" alt=""/></div>
 <map name="apartition_8h_a20c958c16161bb01bd511032a94fc0b8_icgraph" id="apartition_8h_a20c958c16161bb01bd511032a94fc0b8_icgraph">
-<area shape="rect" title="Initialise un nouvel inode." alt="" coords="462,31,539,57"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,5,414,32"/>
-<area shape="poly" title=" " alt="" coords="446,37,414,31,415,26,447,32"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,56,398,83"/>
-<area shape="poly" title=" " alt="" coords="447,56,399,65,398,60,447,51"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,31,55,57"/>
-<area shape="poly" title=" " alt="" coords="284,15,197,13,103,21,56,36,54,31,102,16,197,8,284,10"/>
+<area shape="rect" title="Initialise un nouvel inode." alt="" coords="429,5,506,32"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="300,5,381,32"/>
+<area shape="poly" title=" " alt="" coords="414,21,382,21,382,16,414,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="285,21,55,21,55,16,285,16"/>
 <area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,31,252,57"/>
-<area shape="poly" title=" " alt="" coords="285,31,253,36,252,31,284,26"/>
-<area shape="poly" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
-<area shape="poly" title=" " alt="" coords="301,77,208,80,155,78,102,72,54,57,56,52,103,67,155,73,208,75,301,72"/>
-<area shape="poly" title=" " alt="" coords="301,64,252,57,253,52,302,59"/>
+<area shape="poly" title=" " alt="" coords="285,30,253,35,252,30,284,25"/>
+<area shape="poly" title=" " alt="" coords="87,31,54,25,55,20,88,26"/>
 </map>
 </div>
 
@@ -1497,11 +1924,9 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a9e9167bfc4d677181c909d0772e40b07_icgraph.png" border="0" usemap="#apartition_8h_a9e9167bfc4d677181c909d0772e40b07_icgraph" alt=""/></div>
 <map name="apartition_8h_a9e9167bfc4d677181c909d0772e40b07_icgraph" id="apartition_8h_a9e9167bfc4d677181c909d0772e40b07_icgraph">
-<area shape="rect" title="Initializes a new partition and saves it to a file." alt="" coords="155,31,246,57"/>
-<area shape="rect" href="main_8c.html#a6a449e6c5d62a6286cf5faf43d3eb301" title=" " alt="" coords="5,5,107,32"/>
-<area shape="poly" title=" " alt="" coords="139,36,107,30,108,25,140,31"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="31,56,81,83"/>
-<area shape="poly" title=" " alt="" coords="140,57,82,68,81,62,139,52"/>
+<area shape="rect" title="Initializes a new partition and saves it to a file." alt="" coords="103,5,194,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
 </div>
 
@@ -1629,49 +2054,64 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a8807a1cc626bf65ac4dc0c35d71d9c52_icgraph.png" border="0" usemap="#apartition_8h_a8807a1cc626bf65ac4dc0c35d71d9c52_icgraph" alt=""/></div>
 <map name="apartition_8h_a8807a1cc626bf65ac4dc0c35d71d9c52_icgraph" id="apartition_8h_a8807a1cc626bf65ac4dc0c35d71d9c52_icgraph">
-<area shape="rect" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="658,269,761,295"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="472,66,607,93"/>
-<area shape="poly" title=" " alt="" coords="697,255,684,221,665,181,640,141,608,107,590,95,593,91,611,103,644,138,670,179,689,219,702,253"/>
-<area shape="rect" href="partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="469,117,610,143"/>
-<area shape="poly" title=" " alt="" coords="680,260,554,146,558,142,684,256"/>
-<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="473,243,606,270"/>
-<area shape="poly" title=" " alt="" coords="642,275,606,269,607,264,643,269"/>
-<area shape="rect" href="vfs__function_8c.html#ada74a80451424a86241f4c4741907429" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="313,294,408,321"/>
-<area shape="poly" title=" " alt="" coords="642,289,409,307,409,301,642,284"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="300,345,421,371"/>
-<area shape="poly" title=" " alt="" coords="643,300,610,307,422,348,421,343,609,302,642,295"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="316,395,405,422"/>
-<area shape="poly" title=" " alt="" coords="676,306,611,342,557,362,501,379,406,403,405,397,500,374,555,357,609,337,674,302"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="304,41,418,67"/>
-<area shape="poly" title=" " alt="" coords="456,70,418,65,419,59,457,65"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="320,91,401,118"/>
-<area shape="poly" title=" " alt="" coords="457,94,402,102,401,96,456,88"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,193,55,219"/>
-<area shape="poly" title=" " alt="" coords="316,37,269,21,213,10,184,8,156,11,129,18,104,31,85,47,70,67,50,113,39,158,35,192,29,192,34,157,45,111,66,64,82,43,101,26,127,13,155,5,184,3,214,4,270,15,318,32"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,41,252,67"/>
-<area shape="poly" title=" " alt="" coords="288,57,252,57,252,51,288,51"/>
-<area shape="poly" title=" " alt="" coords="120,77,104,88,81,114,62,143,39,193,34,191,58,140,77,110,101,84,117,73"/>
-<area shape="poly" title=" " alt="" coords="304,102,259,101,208,104,154,114,104,132,84,145,67,162,42,194,37,191,63,158,81,141,101,128,153,109,207,99,259,96,305,97"/>
-<area shape="poly" title=" " alt="" coords="304,92,228,71,229,65,306,87"/>
-<area shape="poly" title=" " alt="" coords="482,113,468,107,420,82,395,70,397,66,423,77,470,102,484,108"/>
-<area shape="poly" title=" " alt="" coords="454,120,402,113,402,108,454,115"/>
-<area shape="poly" title=" " alt="" coords="518,232,467,157,446,116,436,99,420,81,402,70,405,66,423,77,441,96,451,113,472,154,522,229"/>
-<area shape="poly" title=" " alt="" coords="516,233,473,187,420,139,391,121,393,116,423,134,477,183,519,229"/>
-<area shape="rect" href="vfs__function_8c.html#a71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="117,142,238,169"/>
-<area shape="poly" title=" " alt="" coords="491,239,421,214,325,188,238,169,239,164,326,183,422,209,493,234"/>
-<area shape="rect" href="partition_8c.html#a7e3bde988e14b04d26a63d543cee8642" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="132,193,223,219"/>
-<area shape="poly" title=" " alt="" coords="458,246,421,241,223,214,224,209,422,235,458,241"/>
-<area shape="poly" title=" " alt="" coords="476,277,409,296,408,291,474,272"/>
-<area shape="poly" title=" " alt="" coords="508,282,423,335,398,347,396,342,420,330,505,277"/>
-<area shape="poly" title=" " alt="" coords="521,285,479,335,452,362,423,385,402,397,400,392,420,381,449,358,475,331,517,281"/>
-<area shape="rect" href="tree_8c.html#accccf7c88162324fe8b2d2ed38ea735a" title="Affiche l&#39;arborescence du système de fichiers." alt="" coords="156,243,199,270"/>
-<area shape="poly" title=" " alt="" coords="457,259,199,259,199,254,457,254"/>
-<area shape="poly" title=" " alt="" coords="122,177,104,183,56,200,54,195,102,178,120,172"/>
-<area shape="poly" title=" " alt="" coords="116,209,55,209,55,203,116,203"/>
-<area shape="poly" title=" " alt="" coords="297,316,253,316,202,312,151,302,101,284,81,271,63,254,37,221,42,218,67,250,84,267,104,280,152,297,203,307,253,311,297,310"/>
-<area shape="poly" title=" " alt="" coords="284,365,240,363,193,357,145,343,101,321,76,299,56,271,33,221,38,219,61,268,80,295,104,317,147,338,194,351,241,358,284,360"/>
-<area shape="poly" title=" " alt="" coords="301,417,254,417,201,411,149,396,124,384,101,369,84,353,70,334,49,292,36,252,30,220,36,219,42,250,54,290,74,331,88,350,104,365,126,380,151,391,202,405,254,411,301,412"/>
-<area shape="poly" title=" " alt="" coords="140,247,102,234,54,217,56,212,104,229,142,242"/>
+<area shape="rect" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="658,449,761,475"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="472,170,607,197"/>
+<area shape="poly" title=" " alt="" coords="691,436,607,287,548,198,553,196,612,285,696,434"/>
+<area shape="rect" href="partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="469,119,610,146"/>
+<area shape="poly" title=" " alt="" coords="704,433,698,376,682,303,670,265,654,227,633,191,608,160,593,149,596,144,612,156,638,188,658,224,675,263,688,302,703,375,709,432"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="473,322,606,349"/>
+<area shape="poly" title=" " alt="" coords="676,441,557,351,561,347,680,437"/>
+<area shape="rect" href="group__vfs__functions.html#gada74a80451424a86241f4c4741907429" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="313,449,408,475"/>
+<area shape="poly" title=" " alt="" coords="642,465,409,465,409,459,642,459"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="300,499,421,526"/>
+<area shape="poly" title=" " alt="" coords="643,474,422,507,421,501,642,469"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="316,550,405,577"/>
+<area shape="poly" title=" " alt="" coords="664,484,610,504,501,535,406,557,405,552,499,530,609,499,662,479"/>
+<area shape="rect" href="partition_8c.html#a81e29a7864e7f551a1c884cbf3e1404c" title="Trouve l&#39;inode correspondant à un chemin donné." alt="" coords="112,601,242,627"/>
+<area shape="poly" title=" " alt="" coords="688,488,654,520,611,548,564,569,515,585,415,606,321,616,243,618,243,613,320,610,414,601,514,580,562,564,608,544,650,516,684,484"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="304,43,418,70"/>
+<area shape="poly" title=" " alt="" coords="473,164,468,160,451,141,443,121,435,103,420,84,402,73,405,68,423,80,440,100,448,119,455,138,471,156,476,160"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="320,94,401,121"/>
+<area shape="poly" title=" " alt="" coords="482,166,468,160,420,135,395,124,397,119,423,130,470,156,484,161"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="331,145,390,171"/>
+<area shape="poly" title=" " alt="" coords="456,174,391,165,391,159,457,169"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="318,195,403,222"/>
+<area shape="poly" title=" " alt="" coords="457,198,404,205,403,200,456,192"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,297,55,323"/>
+<area shape="poly" title=" " alt="" coords="317,39,269,22,213,10,184,8,155,11,129,19,104,33,90,52,77,80,56,158,42,238,35,297,30,296,37,238,51,157,72,79,85,49,101,29,127,14,154,6,184,3,214,4,271,17,319,34"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,43,252,70"/>
+<area shape="poly" title=" " alt="" coords="288,59,252,59,252,54,288,54"/>
+<area shape="poly" title=" " alt="" coords="117,80,105,90,86,115,71,143,50,202,39,257,35,296,29,296,34,256,45,201,66,141,81,112,101,87,113,76"/>
+<area shape="poly" title=" " alt="" coords="305,109,258,112,205,121,152,138,104,165,76,196,56,233,44,269,36,297,31,295,38,267,52,231,72,193,101,161,150,133,204,115,257,106,305,103"/>
+<area shape="poly" title=" " alt="" coords="304,95,228,73,229,68,306,90"/>
+<area shape="poly" title=" " alt="" coords="315,159,269,160,214,167,157,182,104,207,81,227,62,252,39,297,34,295,58,249,77,223,101,202,155,177,213,162,268,155,315,153"/>
+<area shape="poly" title=" " alt="" coords="303,208,258,209,207,214,154,225,104,243,85,254,68,269,43,298,39,294,65,265,82,250,102,238,153,220,206,209,258,204,303,203"/>
+<area shape="poly" title=" " alt="" coords="492,115,420,84,394,73,396,68,422,79,494,110"/>
+<area shape="poly" title=" " alt="" coords="454,123,402,116,402,110,454,118"/>
+<area shape="poly" title=" " alt="" coords="455,147,391,156,391,151,454,142"/>
+<area shape="poly" title=" " alt="" coords="484,155,470,160,423,186,397,197,395,192,420,181,468,156,482,150"/>
+<area shape="poly" title=" " alt="" coords="520,310,467,210,455,172,449,142,440,114,419,84,405,73,408,68,423,80,445,111,454,140,460,171,472,208,525,307"/>
+<area shape="poly" title=" " alt="" coords="479,320,421,306,332,288,262,278,192,276,103,287,56,302,54,297,102,282,192,271,262,272,333,283,422,301,480,315"/>
+<area shape="poly" title=" " alt="" coords="522,310,466,207,437,160,419,135,400,122,403,118,423,131,442,157,470,205,526,307"/>
+<area shape="poly" title=" " alt="" coords="521,310,480,248,452,215,420,185,390,169,392,164,423,181,456,211,484,245,526,307"/>
+<area shape="poly" title=" " alt="" coords="510,314,469,279,420,243,389,225,392,220,423,238,472,275,514,310"/>
+<area shape="poly" title=" " alt="" coords="568,309,558,303,539,301,522,303,513,307,510,313,515,320,510,323,505,313,509,304,520,297,540,295,560,298,571,304"/>
+<area shape="rect" href="group__vfs__functions.html#ga71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="117,297,238,323"/>
+<area shape="poly" title=" " alt="" coords="457,332,237,317,238,311,457,327"/>
+<area shape="rect" href="partition_8c.html#a7e3bde988e14b04d26a63d543cee8642" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="132,347,223,374"/>
+<area shape="poly" title=" " alt="" coords="457,344,223,360,223,355,457,338"/>
+<area shape="poly" title=" " alt="" coords="514,361,472,396,423,432,392,450,389,446,420,428,469,392,510,357"/>
+<area shape="poly" title=" " alt="" coords="526,364,484,426,456,459,423,489,404,501,401,496,420,485,452,456,480,422,521,361"/>
+<area shape="poly" title=" " alt="" coords="531,365,515,403,492,450,461,498,423,540,406,552,403,547,420,536,457,494,487,447,510,401,526,363"/>
+<area shape="rect" href="group__tree__visualisation.html#gaccccf7c88162324fe8b2d2ed38ea735a" title="Affiche l&#39;arborescence du système de fichiers." alt="" coords="156,398,199,425"/>
+<area shape="poly" title=" " alt="" coords="458,355,200,409,199,404,457,350"/>
+<area shape="poly" title=" " alt="" coords="101,313,55,313,55,307,101,307"/>
+<area shape="poly" title=" " alt="" coords="120,344,102,338,54,321,56,316,104,333,122,339"/>
+<area shape="poly" title=" " alt="" coords="298,474,252,476,201,472,149,461,101,439,74,413,54,382,40,350,32,325,37,323,45,348,58,379,78,410,104,434,151,456,201,467,252,470,297,468"/>
+<area shape="poly" title=" " alt="" coords="284,524,240,523,191,518,144,504,101,480,83,463,68,443,47,399,35,357,30,324,35,323,41,355,52,397,73,441,87,460,104,476,146,499,193,512,240,518,284,518"/>
+<area shape="poly" title=" " alt="" coords="301,574,253,575,201,570,148,556,123,544,101,528,79,505,63,479,41,420,31,365,29,324,34,324,36,364,46,419,67,476,84,502,104,524,126,539,150,551,201,565,254,570,301,568"/>
+<area shape="poly" title=" " alt="" coords="140,405,101,388,65,357,39,325,43,322,69,353,104,384,142,401"/>
+<area shape="poly" title=" " alt="" coords="113,594,101,584,78,551,60,515,48,478,39,440,30,371,28,324,34,324,35,371,44,439,53,476,65,513,82,549,105,580,116,591"/>
 </map>
 </div>
 
@@ -1710,37 +2150,40 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a06734098ed3c80ccff8ce130d0f443e4_cgraph.png" border="0" usemap="#apartition_8h_a06734098ed3c80ccff8ce130d0f443e4_cgraph" alt=""/></div>
 <map name="apartition_8h_a06734098ed3c80ccff8ce130d0f443e4_cgraph" id="apartition_8h_a06734098ed3c80ccff8ce130d0f443e4_cgraph">
-<area shape="rect" title="Supprime un répertoire vide." alt="" coords="5,132,127,159"/>
-<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="175,5,308,32"/>
-<area shape="poly" title=" " alt="" coords="78,130,119,91,173,48,192,37,195,42,176,53,122,95,82,134"/>
-<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="376,31,479,57"/>
-<area shape="poly" title=" " alt="" coords="96,129,174,99,271,72,360,53,362,58,273,78,176,104,98,134"/>
-<area shape="rect" href="partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="583,107,665,133"/>
-<area shape="poly" title=" " alt="" coords="127,140,568,120,568,125,127,145"/>
-<area shape="rect" href="partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="201,157,282,184"/>
-<area shape="poly" title=" " alt="" coords="128,151,186,160,185,165,127,157"/>
-<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="203,208,280,235"/>
-<area shape="poly" title=" " alt="" coords="96,157,176,194,190,199,188,204,174,198,94,162"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="188,259,294,285"/>
-<area shape="poly" title=" " alt="" coords="81,157,121,200,147,223,176,244,185,249,182,254,173,249,144,228,117,203,77,161"/>
-<area shape="poly" title=" " alt="" coords="309,25,361,32,360,38,308,30"/>
-<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="566,31,682,57"/>
-<area shape="poly" title=" " alt="" coords="480,41,550,41,550,47,480,47"/>
-<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="749,31,874,57"/>
-<area shape="poly" title=" " alt="" coords="683,41,733,41,733,47,683,47"/>
-<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="356,157,499,184"/>
-<area shape="poly" title=" " alt="" coords="281,256,307,244,353,218,393,191,396,196,356,222,309,249,283,261"/>
-<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="368,259,487,285"/>
-<area shape="poly" title=" " alt="" coords="295,269,352,269,352,275,295,275"/>
-<area shape="poly" title=" " alt="" coords="482,154,568,132,569,137,483,159"/>
-<area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="759,208,864,235"/>
-<area shape="poly" title=" " alt="" coords="500,175,701,200,744,207,743,212,700,205,499,181"/>
-<area shape="poly" title=" " alt="" coords="487,255,547,244,650,231,744,223,744,228,651,236,548,249,488,261"/>
-<area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="547,259,701,285"/>
-<area shape="poly" title=" " alt="" coords="488,269,532,269,532,275,488,275"/>
-<area shape="rect" href="partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="560,309,688,336"/>
-<area shape="poly" title=" " alt="" coords="483,283,555,302,554,307,482,289"/>
-<area shape="poly" title=" " alt="" coords="676,255,744,237,746,242,677,261"/>
+<area shape="rect" title="Supprime un répertoire vide." alt="" coords="5,156,127,183"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="175,29,308,56"/>
+<area shape="poly" title=" " alt="" coords="78,154,119,115,173,72,192,61,195,66,176,77,122,119,82,158"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="376,80,479,107"/>
+<area shape="poly" title=" " alt="" coords="94,153,132,137,174,123,271,104,360,94,361,100,272,109,175,128,133,142,96,158"/>
+<area shape="rect" href="partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="583,131,665,157"/>
+<area shape="poly" title=" " alt="" coords="127,164,568,144,568,149,127,169"/>
+<area shape="rect" href="partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="201,181,282,208"/>
+<area shape="poly" title=" " alt="" coords="128,175,186,184,185,189,127,181"/>
+<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="203,232,280,259"/>
+<area shape="poly" title=" " alt="" coords="96,181,176,218,190,223,188,228,174,222,94,186"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="188,283,294,309"/>
+<area shape="poly" title=" " alt="" coords="81,181,121,224,147,247,176,268,185,273,182,278,173,273,144,252,117,227,77,185"/>
+<area shape="poly" title=" " alt="" coords="211,30,206,21,210,11,222,5,241,3,262,5,274,12,271,16,261,10,241,8,223,10,213,15,211,20,216,28"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="386,29,470,56"/>
+<area shape="poly" title=" " alt="" coords="308,40,370,40,370,45,308,45"/>
+<area shape="poly" title=" " alt="" coords="294,54,362,73,361,78,293,59"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="566,80,682,107"/>
+<area shape="poly" title=" " alt="" coords="480,91,550,91,550,96,480,96"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="749,80,874,107"/>
+<area shape="poly" title=" " alt="" coords="683,91,733,91,733,96,683,96"/>
+<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="356,181,499,208"/>
+<area shape="poly" title=" " alt="" coords="281,280,307,268,353,242,393,215,396,220,356,246,309,273,283,285"/>
+<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="368,283,487,309"/>
+<area shape="poly" title=" " alt="" coords="295,293,352,293,352,299,295,299"/>
+<area shape="poly" title=" " alt="" coords="482,178,568,156,569,161,483,183"/>
+<area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="759,232,864,259"/>
+<area shape="poly" title=" " alt="" coords="500,199,701,224,744,231,743,236,700,229,499,205"/>
+<area shape="poly" title=" " alt="" coords="487,279,547,268,650,255,744,247,744,252,651,260,548,273,488,285"/>
+<area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="547,283,701,309"/>
+<area shape="poly" title=" " alt="" coords="488,293,532,293,532,299,488,299"/>
+<area shape="rect" href="partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="560,333,688,360"/>
+<area shape="poly" title=" " alt="" coords="483,307,555,326,554,331,482,313"/>
+<area shape="poly" title=" " alt="" coords="676,279,744,261,746,266,677,285"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1789,35 +2232,38 @@ Voici le graphe d'appel pour cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a2e34ff6a91cdbce8a425e88982a72059_cgraph.png" border="0" usemap="#apartition_8h_a2e34ff6a91cdbce8a425e88982a72059_cgraph" alt=""/></div>
 <map name="apartition_8h_a2e34ff6a91cdbce8a425e88982a72059_cgraph" id="apartition_8h_a2e34ff6a91cdbce8a425e88982a72059_cgraph">
-<area shape="rect" title="Supprime un fichier du système de fichiers." alt="" coords="5,107,94,133"/>
-<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="142,5,275,32"/>
-<area shape="poly" title=" " alt="" coords="65,104,99,77,140,48,161,37,164,41,143,53,102,81,69,108"/>
-<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="343,31,446,57"/>
-<area shape="poly" title=" " alt="" coords="94,108,327,56,328,61,95,113"/>
-<area shape="rect" href="partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="550,107,632,133"/>
-<area shape="poly" title=" " alt="" coords="94,117,535,117,535,123,94,123"/>
-<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="170,157,247,184"/>
-<area shape="poly" title=" " alt="" coords="95,131,156,151,154,156,93,137"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="155,208,262,235"/>
-<area shape="poly" title=" " alt="" coords="66,132,100,162,143,194,152,199,150,203,140,198,96,167,63,136"/>
-<area shape="poly" title=" " alt="" coords="276,25,328,32,327,38,275,30"/>
-<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="533,31,649,57"/>
-<area shape="poly" title=" " alt="" coords="447,41,517,41,517,47,447,47"/>
-<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="716,31,841,57"/>
-<area shape="poly" title=" " alt="" coords="650,41,700,41,700,47,650,47"/>
-<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="323,157,466,184"/>
-<area shape="poly" title=" " alt="" coords="260,205,328,186,329,191,261,210"/>
-<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="335,233,454,260"/>
-<area shape="poly" title=" " alt="" coords="262,226,320,234,319,239,261,231"/>
-<area shape="poly" title=" " alt="" coords="449,154,535,132,536,137,450,159"/>
-<area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="726,208,830,235"/>
-<area shape="poly" title=" " alt="" coords="467,177,711,210,710,215,466,183"/>
-<area shape="poly" title=" " alt="" coords="455,240,710,223,711,228,455,245"/>
-<area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="514,259,668,285"/>
-<area shape="poly" title=" " alt="" coords="455,252,499,257,498,263,454,257"/>
-<area shape="rect" href="partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="527,309,655,336"/>
-<area shape="poly" title=" " alt="" coords="427,258,515,295,533,301,531,306,513,300,425,263"/>
-<area shape="poly" title=" " alt="" coords="643,255,711,237,713,242,644,261"/>
+<area shape="rect" title="Supprime un fichier du système de fichiers." alt="" coords="5,131,94,157"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="142,29,275,56"/>
+<area shape="poly" title=" " alt="" coords="65,128,99,101,140,72,161,61,164,65,143,77,102,105,69,132"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="343,80,446,107"/>
+<area shape="poly" title=" " alt="" coords="94,132,141,123,327,98,328,103,142,128,95,137"/>
+<area shape="rect" href="partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="550,131,632,157"/>
+<area shape="poly" title=" " alt="" coords="94,141,535,141,535,147,94,147"/>
+<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="170,181,247,208"/>
+<area shape="poly" title=" " alt="" coords="95,155,156,175,154,180,93,161"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="155,232,262,259"/>
+<area shape="poly" title=" " alt="" coords="66,156,100,186,143,218,152,223,150,227,140,222,96,191,63,160"/>
+<area shape="poly" title=" " alt="" coords="181,30,176,21,179,11,190,5,208,3,228,5,238,12,235,16,226,10,208,8,192,10,183,15,181,20,185,28"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="352,29,437,56"/>
+<area shape="poly" title=" " alt="" coords="275,40,337,40,337,45,275,45"/>
+<area shape="poly" title=" " alt="" coords="261,54,329,73,328,78,260,59"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="533,80,649,107"/>
+<area shape="poly" title=" " alt="" coords="447,91,517,91,517,96,447,96"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="716,80,841,107"/>
+<area shape="poly" title=" " alt="" coords="650,91,700,91,700,96,650,96"/>
+<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="323,181,466,208"/>
+<area shape="poly" title=" " alt="" coords="260,229,328,210,329,215,261,234"/>
+<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="335,257,454,284"/>
+<area shape="poly" title=" " alt="" coords="262,250,320,258,319,263,261,255"/>
+<area shape="poly" title=" " alt="" coords="449,178,535,156,536,161,450,183"/>
+<area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="726,232,830,259"/>
+<area shape="poly" title=" " alt="" coords="467,201,711,234,710,239,466,207"/>
+<area shape="poly" title=" " alt="" coords="455,264,710,247,711,252,455,269"/>
+<area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="514,283,668,309"/>
+<area shape="poly" title=" " alt="" coords="455,276,499,281,498,287,454,281"/>
+<area shape="rect" href="partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="527,333,655,360"/>
+<area shape="poly" title=" " alt="" coords="427,282,515,319,533,325,531,330,513,324,425,287"/>
+<area shape="poly" title=" " alt="" coords="643,279,711,261,713,266,644,285"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1872,24 +2318,30 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_af1d21082ab63ee7bc27239c210bbaf79_icgraph.png" border="0" usemap="#apartition_8h_af1d21082ab63ee7bc27239c210bbaf79_icgraph" alt=""/></div>
 <map name="apartition_8h_af1d21082ab63ee7bc27239c210bbaf79_icgraph" id="apartition_8h_af1d21082ab63ee7bc27239c210bbaf79_icgraph">
-<area shape="rect" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="462,109,540,136"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" title=" " alt="" coords="464,103,413,74,390,62,392,58,416,69,466,98"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" title=" " alt="" coords="446,115,398,107,399,101,447,110"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
-<area shape="poly" title=" " alt="" coords="447,129,238,145,238,140,447,124"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="133,185,222,212"/>
-<area shape="poly" title=" " alt="" coords="448,138,415,146,223,191,222,186,414,141,446,133"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
-<area shape="poly" title=" " alt="" coords="118,184,101,175,65,144,39,112,43,109,69,140,104,171,120,179"/>
+<area shape="rect" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="462,165,540,191"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,38,414,65"/>
+<area shape="poly" title=" " alt="" coords="480,153,451,116,413,79,394,68,397,63,416,75,455,112,485,150"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,89,398,115"/>
+<area shape="poly" title=" " alt="" coords="459,159,383,118,385,114,462,154"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,139,207,166"/>
+<area shape="poly" title=" " alt="" coords="447,177,207,158,208,152,447,171"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,190,220,217"/>
+<area shape="poly" title=" " alt="" coords="447,185,220,203,220,197,447,180"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,241,238,267"/>
+<area shape="poly" title=" " alt="" coords="448,194,415,202,239,243,238,238,414,197,446,189"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="313,291,401,318"/>
+<area shape="poly" title=" " alt="" coords="482,205,453,240,416,275,388,293,385,288,413,271,449,236,478,202"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,139,55,166"/>
+<area shape="poly" title=" " alt="" coords="310,34,265,20,211,10,155,11,129,17,104,28,77,52,57,83,44,114,37,140,32,138,39,112,53,80,73,49,101,24,127,12,155,5,211,5,266,15,312,29"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,38,252,65"/>
+<area shape="poly" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+<area shape="poly" title=" " alt="" coords="125,74,104,86,71,113,45,141,41,137,67,110,101,81,122,69"/>
+<area shape="poly" title=" " alt="" coords="301,106,208,113,103,130,56,145,54,140,102,125,207,108,301,101"/>
+<area shape="poly" title=" " alt="" coords="301,89,226,68,228,63,302,84"/>
+<area shape="poly" title=" " alt="" coords="132,155,55,155,55,150,132,150"/>
+<area shape="poly" title=" " alt="" coords="120,187,102,181,54,164,56,159,104,176,122,182"/>
+<area shape="poly" title=" " alt="" coords="110,236,101,231,65,199,39,168,43,165,69,196,104,227,113,232"/>
+<area shape="poly" title=" " alt="" coords="298,316,252,318,201,315,149,304,101,282,74,256,54,224,40,193,32,167,37,166,45,191,58,222,78,253,104,277,151,299,202,310,252,313,297,311"/>
 </map>
 </div>
 
@@ -1977,26 +2429,32 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a2a7b6cb87b4359db6682050ab28e6fe9_icgraph.png" border="0" usemap="#apartition_8h_a2a7b6cb87b4359db6682050ab28e6fe9_icgraph" alt=""/></div>
 <map name="apartition_8h_a2a7b6cb87b4359db6682050ab28e6fe9_icgraph" id="apartition_8h_a2a7b6cb87b4359db6682050ab28e6fe9_icgraph">
-<area shape="rect" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,134,752,161"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,84,598,110"/>
-<area shape="poly" title=" " alt="" coords="637,132,576,113,578,108,638,127"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
-<area shape="poly" title=" " alt="" coords="630,150,238,150,238,145,630,145"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,185,574,212"/>
-<area shape="poly" title=" " alt="" coords="638,169,576,188,574,182,636,163"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" title=" " alt="" coords="467,81,405,63,406,58,468,76"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" title=" " alt="" coords="447,100,398,100,398,94,447,94"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
-<area shape="poly" title=" " alt="" coords="471,210,394,218,300,218,249,214,199,206,149,194,101,175,81,162,63,145,37,112,42,109,67,142,84,158,104,170,151,189,200,201,250,209,300,213,394,212,470,205"/>
+<area shape="rect" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,241,752,267"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,139,598,166"/>
+<area shape="poly" title=" " alt="" coords="660,234,552,169,555,164,663,230"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,241,238,267"/>
+<area shape="poly" title=" " alt="" coords="630,257,238,257,238,251,630,251"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,291,574,318"/>
+<area shape="poly" title=" " alt="" coords="638,275,576,294,574,289,636,270"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,38,414,65"/>
+<area shape="poly" title=" " alt="" coords="496,132,413,79,390,68,393,63,416,74,499,128"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,89,398,115"/>
+<area shape="poly" title=" " alt="" coords="466,137,398,116,399,111,468,132"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,139,207,166"/>
+<area shape="poly" title=" " alt="" coords="447,155,207,155,207,150,447,150"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="315,190,399,217"/>
+<area shape="poly" title=" " alt="" coords="468,174,400,194,399,189,467,168"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,139,55,166"/>
+<area shape="poly" title=" " alt="" coords="310,34,265,20,211,10,155,11,129,17,104,28,77,52,57,83,44,114,37,140,32,138,39,112,53,80,73,49,101,24,127,12,155,5,211,5,266,15,312,29"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,38,252,65"/>
+<area shape="poly" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+<area shape="poly" title=" " alt="" coords="125,74,104,86,71,113,45,141,41,137,67,110,101,81,122,69"/>
+<area shape="poly" title=" " alt="" coords="301,106,208,113,103,130,56,145,54,140,102,125,207,108,301,101"/>
+<area shape="poly" title=" " alt="" coords="301,89,226,68,228,63,302,84"/>
+<area shape="poly" title=" " alt="" coords="132,155,55,155,55,150,132,150"/>
+<area shape="poly" title=" " alt="" coords="299,204,206,197,102,181,54,165,56,160,103,175,207,192,300,199"/>
+<area shape="poly" title=" " alt="" coords="122,236,101,224,67,196,41,168,45,165,71,192,104,220,125,231"/>
+<area shape="poly" title=" " alt="" coords="471,320,393,331,297,334,246,330,195,320,147,305,101,282,73,256,53,224,40,193,32,167,37,166,45,191,58,222,77,253,104,277,149,300,197,315,247,324,297,329,392,326,470,315"/>
 </map>
 </div>
 
@@ -2068,28 +2526,34 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_ad43c60c9cb30ca48859c564c066990e5_icgraph.png" border="0" usemap="#apartition_8h_ad43c60c9cb30ca48859c564c066990e5_icgraph" alt=""/></div>
 <map name="apartition_8h_ad43c60c9cb30ca48859c564c066990e5_icgraph" id="apartition_8h_ad43c60c9cb30ca48859c564c066990e5_icgraph">
-<area shape="rect" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="800,134,919,161"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,134,752,161"/>
-<area shape="poly" title=" " alt="" coords="784,150,752,150,752,145,784,145"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,84,598,110"/>
-<area shape="poly" title=" " alt="" coords="637,132,576,113,578,108,638,127"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
-<area shape="poly" title=" " alt="" coords="630,150,238,150,238,145,630,145"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,185,574,212"/>
-<area shape="poly" title=" " alt="" coords="638,169,576,188,574,182,636,163"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" title=" " alt="" coords="467,81,405,63,406,58,468,76"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" title=" " alt="" coords="447,100,398,100,398,94,447,94"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
-<area shape="poly" title=" " alt="" coords="471,210,394,218,300,218,249,214,199,206,149,194,101,175,81,162,63,145,37,112,42,109,67,142,84,158,104,170,151,189,200,201,250,209,300,213,394,212,470,205"/>
+<area shape="rect" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="800,241,919,267"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,241,752,267"/>
+<area shape="poly" title=" " alt="" coords="784,257,752,257,752,251,784,251"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,139,598,166"/>
+<area shape="poly" title=" " alt="" coords="660,234,552,169,555,164,663,230"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,241,238,267"/>
+<area shape="poly" title=" " alt="" coords="630,257,238,257,238,251,630,251"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,291,574,318"/>
+<area shape="poly" title=" " alt="" coords="638,275,576,294,574,289,636,270"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,38,414,65"/>
+<area shape="poly" title=" " alt="" coords="496,132,413,79,390,68,393,63,416,74,499,128"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,89,398,115"/>
+<area shape="poly" title=" " alt="" coords="466,137,398,116,399,111,468,132"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,139,207,166"/>
+<area shape="poly" title=" " alt="" coords="447,155,207,155,207,150,447,150"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="315,190,399,217"/>
+<area shape="poly" title=" " alt="" coords="468,174,400,194,399,189,467,168"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,139,55,166"/>
+<area shape="poly" title=" " alt="" coords="310,34,265,20,211,10,155,11,129,17,104,28,77,52,57,83,44,114,37,140,32,138,39,112,53,80,73,49,101,24,127,12,155,5,211,5,266,15,312,29"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,38,252,65"/>
+<area shape="poly" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+<area shape="poly" title=" " alt="" coords="125,74,104,86,71,113,45,141,41,137,67,110,101,81,122,69"/>
+<area shape="poly" title=" " alt="" coords="301,106,208,113,103,130,56,145,54,140,102,125,207,108,301,101"/>
+<area shape="poly" title=" " alt="" coords="301,89,226,68,228,63,302,84"/>
+<area shape="poly" title=" " alt="" coords="132,155,55,155,55,150,132,150"/>
+<area shape="poly" title=" " alt="" coords="299,204,206,197,102,181,54,165,56,160,103,175,207,192,300,199"/>
+<area shape="poly" title=" " alt="" coords="122,236,101,224,67,196,41,168,45,165,71,192,104,220,125,231"/>
+<area shape="poly" title=" " alt="" coords="471,320,393,331,297,334,246,330,195,320,147,305,101,282,73,256,53,224,40,193,32,167,37,166,45,191,58,222,77,253,104,277,149,300,197,315,247,324,297,329,392,326,470,315"/>
 </map>
 </div>
 
@@ -2146,30 +2610,36 @@ Voici le graphe des appelants de cette fonction :</div>
 <div class="dyncontent">
 <div class="center"><img src="partition_8h_a0cd1521fe9fd47ac9a6d1fcd3716dd95_icgraph.png" border="0" usemap="#apartition_8h_a0cd1521fe9fd47ac9a6d1fcd3716dd95_icgraph" alt=""/></div>
 <map name="apartition_8h_a0cd1521fe9fd47ac9a6d1fcd3716dd95_icgraph" id="apartition_8h_a0cd1521fe9fd47ac9a6d1fcd3716dd95_icgraph">
-<area shape="rect" title="Écrit des données dans un seul bloc." alt="" coords="967,134,1096,161"/>
-<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="800,134,919,161"/>
-<area shape="poly" title=" " alt="" coords="952,150,920,150,920,145,952,145"/>
-<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,134,752,161"/>
-<area shape="poly" title=" " alt="" coords="784,150,752,150,752,145,784,145"/>
-<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,84,598,110"/>
-<area shape="poly" title=" " alt="" coords="637,132,576,113,578,108,638,127"/>
-<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
-<area shape="poly" title=" " alt="" coords="630,150,238,150,238,145,630,145"/>
-<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,185,574,212"/>
-<area shape="poly" title=" " alt="" coords="638,169,576,188,574,182,636,163"/>
-<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" title=" " alt="" coords="467,81,405,63,406,58,468,76"/>
-<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" title=" " alt="" coords="447,100,398,100,398,94,447,94"/>
-<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="poly" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
-<area shape="poly" title=" " alt="" coords="471,210,394,218,300,218,249,214,199,206,149,194,101,175,81,162,63,145,37,112,42,109,67,142,84,158,104,170,151,189,200,201,250,209,300,213,394,212,470,205"/>
+<area shape="rect" title="Écrit des données dans un seul bloc." alt="" coords="967,241,1096,267"/>
+<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="800,241,919,267"/>
+<area shape="poly" title=" " alt="" coords="952,257,920,257,920,251,952,251"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="646,241,752,267"/>
+<area shape="poly" title=" " alt="" coords="784,257,752,257,752,251,784,251"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="462,139,598,166"/>
+<area shape="poly" title=" " alt="" coords="660,234,552,169,555,164,663,230"/>
+<area shape="rect" href="partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,241,238,267"/>
+<area shape="poly" title=" " alt="" coords="630,257,238,257,238,251,630,251"/>
+<area shape="rect" href="partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="486,291,574,318"/>
+<area shape="poly" title=" " alt="" coords="638,275,576,294,574,289,636,270"/>
+<area shape="rect" href="partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,38,414,65"/>
+<area shape="poly" title=" " alt="" coords="496,132,413,79,390,68,393,63,416,74,499,128"/>
+<area shape="rect" href="partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,89,398,115"/>
+<area shape="poly" title=" " alt="" coords="466,137,398,116,399,111,468,132"/>
+<area shape="rect" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,139,207,166"/>
+<area shape="poly" title=" " alt="" coords="447,155,207,155,207,150,447,150"/>
+<area shape="rect" href="partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="315,190,399,217"/>
+<area shape="poly" title=" " alt="" coords="468,174,400,194,399,189,467,168"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,139,55,166"/>
+<area shape="poly" title=" " alt="" coords="310,34,265,20,211,10,155,11,129,17,104,28,77,52,57,83,44,114,37,140,32,138,39,112,53,80,73,49,101,24,127,12,155,5,211,5,266,15,312,29"/>
+<area shape="rect" href="main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,38,252,65"/>
+<area shape="poly" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+<area shape="poly" title=" " alt="" coords="125,74,104,86,71,113,45,141,41,137,67,110,101,81,122,69"/>
+<area shape="poly" title=" " alt="" coords="301,106,208,113,103,130,56,145,54,140,102,125,207,108,301,101"/>
+<area shape="poly" title=" " alt="" coords="301,89,226,68,228,63,302,84"/>
+<area shape="poly" title=" " alt="" coords="132,155,55,155,55,150,132,150"/>
+<area shape="poly" title=" " alt="" coords="299,204,206,197,102,181,54,165,56,160,103,175,207,192,300,199"/>
+<area shape="poly" title=" " alt="" coords="122,236,101,224,67,196,41,168,45,165,71,192,104,220,125,231"/>
+<area shape="poly" title=" " alt="" coords="471,320,393,331,297,334,246,330,195,320,147,305,101,282,73,256,53,224,40,193,32,167,37,166,45,191,58,222,77,253,104,277,149,300,197,315,247,324,297,329,392,326,470,315"/>
 </map>
 </div>
 

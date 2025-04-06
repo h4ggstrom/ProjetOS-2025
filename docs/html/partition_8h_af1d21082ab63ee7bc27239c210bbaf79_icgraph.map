@@ -1,20 +1,26 @@
 <map id="split_path" name="split_path">
-<area shape="rect" id="Node000001" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="462,109,540,136"/>
-<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,103,413,74,390,62,392,58,416,69,466,98"/>
-<area shape="rect" id="Node000005" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="446,115,398,107,399,101,447,110"/>
-<area shape="rect" id="Node000006" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,134,238,161"/>
-<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="447,129,238,145,238,140,447,124"/>
-<area shape="rect" id="Node000007" href="$partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="133,185,222,212"/>
-<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="448,138,415,146,223,191,222,186,414,141,446,133"/>
-<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
-<area shape="rect" id="Node000004" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
-<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
-<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
-<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="118,184,101,175,65,144,39,112,43,109,69,140,104,171,120,179"/>
+<area shape="rect" id="Node000001" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="462,165,540,191"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,38,414,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="480,153,451,116,413,79,394,68,397,63,416,75,455,112,485,150"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,89,398,115"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="459,159,383,118,385,114,462,154"/>
+<area shape="rect" id="Node000006" href="$group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="148,139,207,166"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="447,177,207,158,208,152,447,171"/>
+<area shape="rect" id="Node000007" href="$partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,190,220,217"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="447,185,220,203,220,197,447,180"/>
+<area shape="rect" id="Node000008" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,241,238,267"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="448,194,415,202,239,243,238,238,414,197,446,189"/>
+<area shape="rect" id="Node000009" href="$partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="313,291,401,318"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="482,205,453,240,416,275,388,293,385,288,413,271,449,236,478,202"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,139,55,166"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,34,265,20,211,10,155,11,129,17,104,28,77,52,57,83,44,114,37,140,32,138,39,112,53,80,73,49,101,24,127,12,155,5,211,5,266,15,312,29"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,38,252,65"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,54,253,54,253,49,285,49"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="125,74,104,86,71,113,45,141,41,137,67,110,101,81,122,69"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="301,106,208,113,103,130,56,145,54,140,102,125,207,108,301,101"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="301,89,226,68,228,63,302,84"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="132,155,55,155,55,150,132,150"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="120,187,102,181,54,164,56,159,104,176,122,182"/>
+<area shape="poly" id="edge13_Node000008_Node000003" title=" " alt="" coords="110,236,101,231,65,199,39,168,43,165,69,196,104,227,113,232"/>
+<area shape="poly" id="edge15_Node000009_Node000003" title=" " alt="" coords="298,316,252,318,201,315,149,304,101,282,74,256,54,224,40,193,32,167,37,166,45,191,58,222,78,253,104,277,151,299,202,310,252,313,297,311"/>
 </map>

@@ -3,13 +3,13 @@
  * @brief Partie du programme qui regroupe les commandes du terminales pour intéragir avec le File System.
  *
  *
- * @version 0.3
- * @date 04/04/2025
+ * @version 1.0
+ * @date 06/04/2025
  *
  * @authors
- * - Robin de Angelis (%)
- * - Alexandre Ledard (%)
- * - Killian Treuil (%)
+ * - Robin de Angelis 30(%)
+ * - Alexandre Ledard 50(%)
+ * - Killian Treuil 20(%)
  */
 
 #include <vfs_function.h>

@@ -72,6 +72,58 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>User</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>User</Scope>
+    </TokenIdentifier>
+    <Path>structUser.html</Path>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constantes</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__constantes.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>link_management</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__link__management.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>permission_management</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__permission__management.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>tree_visualisation</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__tree__visualisation.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>user_management</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>vfs_functions</Name>
+      <APILanguage>c</APILanguage>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>accessed_at</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -282,6 +334,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>group_id</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>User</Scope>
+    </TokenIdentifier>
+    <Path>structUser.html</Path>
+    <Anchor>a63795b3803ea2ef33cdb1e034d63316d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>id</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -482,6 +544,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>permissions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>User</Scope>
+    </TokenIdentifier>
+    <Path>structUser.html</Path>
+    <Anchor>a7d72d40e10d1e103f22c28d5b73cf559</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>size</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -499,6 +571,16 @@
     </TokenIdentifier>
     <Path>structFileSystem.html</Path>
     <Anchor>ac62fe7b969d5b46012a153044c43870f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>symlink_target</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Inode</Scope>
+    </TokenIdentifier>
+    <Path>structInode.html</Path>
+    <Anchor>afc01ce234a2790fa85e34306bc4be897</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -542,6 +624,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>type</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>Inode</Scope>
+    </TokenIdentifier>
+    <Path>structInode.html</Path>
+    <Anchor>aa8a25e8de112992423f9021dac792b27</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>user_id</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>User</Scope>
+    </TokenIdentifier>
+    <Path>structUser.html</Path>
+    <Anchor>a32adf6a1d0bb8d2ade4139e396612df7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>username</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>User</Scope>
+    </TokenIdentifier>
+    <Path>structUser.html</Path>
+    <Anchor>a9f83d87e6e823657696f55f42c508bb3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>add_directory_entry</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -559,6 +671,26 @@
     <Path>partition_8h.html</Path>
     <Anchor>ab0c8e3ef484d10290e18112478f8e49a</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>add_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gaf7e248432c320d6a4db3b0d9700689dd</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>add_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gaf7e248432c320d6a4db3b0d9700689dd</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -627,7 +759,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>partition_8c.html</Path>
-    <Anchor>a010b1b2eeac4e5444f921d9e124dbb7f</Anchor>
+    <Anchor>aead3f3e2f43bbe7333cb36561c0922eb</Anchor>
     <DeclaredIn>partition.c</DeclaredIn>
   </Token>
   <Token>
@@ -637,7 +769,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>partition_8h.html</Path>
-    <Anchor>a010b1b2eeac4e5444f921d9e124dbb7f</Anchor>
+    <Anchor>aead3f3e2f43bbe7333cb36561c0922eb</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
   </Token>
   <Token>
@@ -656,8 +788,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ab9b6f109a6de8a02776f531652006296</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gab9b6f109a6de8a02776f531652006296</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -666,8 +798,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a02008179c65a73b2ef03b3120463b8af</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga02008179c65a73b2ef03b3120463b8af</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -682,22 +814,12 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>build_partition</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>main_8c.html</Path>
-    <Anchor>a6a449e6c5d62a6286cf5faf43d3eb301</Anchor>
-    <DeclaredIn>main.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>change_directory</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8c.html</Path>
-    <Anchor>a71c6e3b3b5dfc4397a3897968b86b239</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga71c6e3b3b5dfc4397a3897968b86b239</Anchor>
     <DeclaredIn>vfs_function.c</DeclaredIn>
   </Token>
   <Token>
@@ -706,48 +828,48 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8h.html</Path>
-    <Anchor>a71c6e3b3b5dfc4397a3897968b86b239</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga71c6e3b3b5dfc4397a3897968b86b239</Anchor>
     <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>change_permissions</Name>
+      <Name>check_permissions</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>permissions_8c.html</Path>
-    <Anchor>a572ccf7ddfdfd477e7c69ad2b9a36147</Anchor>
+    <Path>group__permission__management.html</Path>
+    <Anchor>gac53e911f10c3da2d449dd417aa81bf92</Anchor>
     <DeclaredIn>permissions.c</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>change_permissions</Name>
+      <Name>check_permissions</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>permissions_8h.html</Path>
-    <Anchor>a572ccf7ddfdfd477e7c69ad2b9a36147</Anchor>
+    <Path>group__permission__management.html</Path>
+    <Anchor>gac53e911f10c3da2d449dd417aa81bf92</Anchor>
     <DeclaredIn>permissions.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>check_access</Name>
+      <Name>chown_inode</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>permissions_8c.html</Path>
-    <Anchor>a39770f42f06ffed509e6c6c63fe50001</Anchor>
+    <Path>group__permission__management.html</Path>
+    <Anchor>ga3f2b9b76c3267b4ad451e83f377b07f0</Anchor>
     <DeclaredIn>permissions.c</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>check_access</Name>
+      <Name>chown_inode</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>permissions_8h.html</Path>
-    <Anchor>a39770f42f06ffed509e6c6c63fe50001</Anchor>
+    <Path>group__permission__management.html</Path>
+    <Anchor>ga3f2b9b76c3267b4ad451e83f377b07f0</Anchor>
     <DeclaredIn>permissions.h</DeclaredIn>
   </Token>
   <Token>
@@ -786,16 +908,6 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>file__operations_8h.html</Path>
-    <Anchor>aaea333fb93f037479d66a618708eec2f</Anchor>
-    <DeclaredIn>file_operations.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>create_file</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
     <Path>partition_8h.html</Path>
     <Anchor>a340b93ed15aff9cf0dbc759ac4a926db</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
@@ -806,18 +918,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>links_8c.html</Path>
-    <Anchor>a6de27918294daad88762f3e47eaaa5a3</Anchor>
-    <DeclaredIn>links.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>create_hard_link</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>links_8h.html</Path>
-    <Anchor>a6de27918294daad88762f3e47eaaa5a3</Anchor>
+    <Path>group__link__management.html</Path>
+    <Anchor>ga6de27918294daad88762f3e47eaaa5a3</Anchor>
     <DeclaredIn>links.h</DeclaredIn>
   </Token>
   <Token>
@@ -826,18 +928,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>links_8c.html</Path>
-    <Anchor>a27e6adf5116e3f1b7b72ac730f69c8d3</Anchor>
-    <DeclaredIn>links.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>create_soft_link</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>links_8h.html</Path>
-    <Anchor>a27e6adf5116e3f1b7b72ac730f69c8d3</Anchor>
+    <Path>group__link__management.html</Path>
+    <Anchor>ga27e6adf5116e3f1b7b72ac730f69c8d3</Anchor>
     <DeclaredIn>links.h</DeclaredIn>
   </Token>
   <Token>
@@ -846,29 +938,9 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a6a4bc429928537956bef270e1505de40</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga6a4bc429928537956bef270e1505de40</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>delete_file</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>file__operations_8c.html</Path>
-    <Anchor>ac0daef4f09b7330b4dc70425fbcc3d53</Anchor>
-    <DeclaredIn>file_operations.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>delete_file</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>file__operations_8h.html</Path>
-    <Anchor>ac0daef4f09b7330b4dc70425fbcc3d53</Anchor>
-    <DeclaredIn>file_operations.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -876,8 +948,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a8626418160ea337a214a7e21d7ff2372</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga8626418160ea337a214a7e21d7ff2372</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -886,8 +958,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a708effadc6982b89faaf84eab0d56d76</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga708effadc6982b89faaf84eab0d56d76</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -926,19 +998,29 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>links_8c.html</Path>
-    <Anchor>a429164ee1c82fc8db05788d710c1f92e</Anchor>
-    <DeclaredIn>links.c</DeclaredIn>
+    <Path>group__link__management.html</Path>
+    <Anchor>ga429164ee1c82fc8db05788d710c1f92e</Anchor>
+    <DeclaredIn>links.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>display_soft_link_target</Name>
+      <Name>display_users</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>links_8h.html</Path>
-    <Anchor>a429164ee1c82fc8db05788d710c1f92e</Anchor>
-    <DeclaredIn>links.h</DeclaredIn>
+    <Path>group__user__management.html</Path>
+    <Anchor>gad47cb0106d6f756714576cffabbf5b5b</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>display_users</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gad47cb0106d6f756714576cffabbf5b5b</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -946,8 +1028,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>af48d333c144fdec9fd5049ce3c77a392</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gaf48d333c144fdec9fd5049ce3c77a392</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -956,8 +1038,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a80e6b7c952c0dc1bf590c9fa5f5d762e</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga80e6b7c952c0dc1bf590c9fa5f5d762e</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -966,8 +1048,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ae40ab627615d211f3f276ce105b03eae</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gae40ab627615d211f3f276ce105b03eae</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -976,8 +1058,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a7bc8ad5836a0f238e9525e90e9b816dc</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga7bc8ad5836a0f238e9525e90e9b816dc</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -986,8 +1068,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a3f6298f93399476b2701dbf731a95c3c</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga3f6298f93399476b2701dbf731a95c3c</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -996,8 +1078,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a984fb395609ef49b289c437a18fc1d97</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga984fb395609ef49b289c437a18fc1d97</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1006,8 +1088,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a2c08bce13e2f5280d96f8d8e39a5ff35</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga2c08bce13e2f5280d96f8d8e39a5ff35</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1016,8 +1098,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ac4f7f3d82f9993ad27b7d25b5edd42ff</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gac4f7f3d82f9993ad27b7d25b5edd42ff</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1026,8 +1108,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ab17b5bc389c695e27bfa4b9763a20877</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gab17b5bc389c695e27bfa4b9763a20877</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1036,8 +1118,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>aaa1771c30a9d47c05446a786ae261814</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gaaa1771c30a9d47c05446a786ae261814</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1046,8 +1128,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a03c9d534ad6cebb0c80b7e0dcff09394</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga03c9d534ad6cebb0c80b7e0dcff09394</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1082,6 +1164,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FILE_DIRECTORY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3a8eca42b79a25f753c72cb9ce685525c1</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FILE_REGULAR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3aa2a2d933a005816134ee11ad33143366</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FILE_SYMLINK</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3ab494be86e30c8a171d5a23d76eb3ade8</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>FileDescriptor</Name>
       <APILanguage>c</APILanguage>
       <Type>tdef</Type>
@@ -1102,6 +1214,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>FileType</Name>
+      <APILanguage>c</APILanguage>
+      <Type>enum</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FILE_REGULAR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3aa2a2d933a005816134ee11ad33143366</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FILE_DIRECTORY</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3a8eca42b79a25f753c72cb9ce685525c1</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FILE_SYMLINK</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3ab494be86e30c8a171d5a23d76eb3ade8</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>find_file_in_directory</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -1187,7 +1339,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>partition_8c.html</Path>
-    <Anchor>a6c7a5dfb40fb024a3db304109d7c2b87</Anchor>
+    <Anchor>af2eb262e960129690f2dd3a336635c69</Anchor>
     <DeclaredIn>partition.c</DeclaredIn>
   </Token>
   <Token>
@@ -1197,8 +1349,48 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>partition_8h.html</Path>
-    <Anchor>a6c7a5dfb40fb024a3db304109d7c2b87</Anchor>
+    <Anchor>af2eb262e960129690f2dd3a336635c69</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_link</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__link__management.html</Path>
+    <Anchor>ga6b1db705bcdbaad9b6362d95b92f69ad</Anchor>
+    <DeclaredIn>partition.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_link</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__link__management.html</Path>
+    <Anchor>ga6b1db705bcdbaad9b6362d95b92f69ad</Anchor>
+    <DeclaredIn>links.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_lseek</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga51b658807c748db2ca12ac3af986fa96</Anchor>
+    <DeclaredIn>vfs_function.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_lseek</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga51b658807c748db2ca12ac3af986fa96</Anchor>
+    <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1219,6 +1411,86 @@
     <Path>partition_8h.html</Path>
     <Anchor>a7e3bde988e14b04d26a63d543cee8642</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_read</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga15b6b10188015572381ac9bb4437a7e1</Anchor>
+    <DeclaredIn>vfs_function.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_read</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga15b6b10188015572381ac9bb4437a7e1</Anchor>
+    <DeclaredIn>vfs_function.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_readlink</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>partition_8c.html</Path>
+    <Anchor>ab6dfaed9a58f6cd361e692e341e20b4f</Anchor>
+    <DeclaredIn>partition.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_readlink</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>ab6dfaed9a58f6cd361e692e341e20b4f</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_symlink</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>partition_8c.html</Path>
+    <Anchor>a2d82db1abf2ca97a5b809a26bfa44690</Anchor>
+    <DeclaredIn>partition.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_symlink</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a2d82db1abf2ca97a5b809a26bfa44690</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_write</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gabafd732c4c89442c2e7ee525a00c5895</Anchor>
+    <DeclaredIn>vfs_function.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fs_write</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gabafd732c4c89442c2e7ee525a00c5895</Anchor>
+    <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1226,8 +1498,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8c.html</Path>
-    <Anchor>ae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
     <DeclaredIn>vfs_function.c</DeclaredIn>
   </Token>
   <Token>
@@ -1236,12 +1508,32 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8h.html</Path>
-    <Anchor>ae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
     <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>get_current_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga4db0c9bfbc4d58f62ec3f76bafef1290</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_current_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga4db0c9bfbc4d58f62ec3f76bafef1290</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>get_indirect_block</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -1258,6 +1550,96 @@
     </TokenIdentifier>
     <Path>partition_8h.html</Path>
     <Anchor>a75b615a241e5f4d9b104afb3263f1d19</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_inode_by_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>partition_8c.html</Path>
+    <Anchor>a81e29a7864e7f551a1c884cbf3e1404c</Anchor>
+    <DeclaredIn>partition.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_inode_by_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a81e29a7864e7f551a1c884cbf3e1404c</Anchor>
+    <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_physical_block</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga009267d18ee7ae829643c2b8e1f17d69</Anchor>
+    <DeclaredIn>vfs_function.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_physical_block</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga009267d18ee7ae829643c2b8e1f17d69</Anchor>
+    <DeclaredIn>vfs_function.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga9021966bc232c76feb9c2fea36c1eba2</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga9021966bc232c76feb9c2fea36c1eba2</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_user_count</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga5afd363aea1ac3c120659883107eb00b</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>get_user_count</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga5afd363aea1ac3c120659883107eb00b</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>handle_indirect_block</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>partition_8h.html</Path>
+    <Anchor>a50664fa786c8fbbc57c3bb56b8aa2de9</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
   </Token>
   <Token>
@@ -1299,6 +1681,16 @@
     <Path>partition_8h.html</Path>
     <Anchor>a9e9167bfc4d677181c909d0772e40b07</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialize_default_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>main_8c.html</Path>
+    <Anchor>ac6db79aef8cae53c124f4a1561576e27</Anchor>
+    <DeclaredIn>main.c</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1316,8 +1708,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a34a3a3e2e3a4bd30b993bce5b19f3d73</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga34a3a3e2e3a4bd30b993bce5b19f3d73</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1326,8 +1718,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a02e5a8e1c9a1a7726d359b42d02aff1c</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga02e5a8e1c9a1a7726d359b42d02aff1c</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1352,6 +1744,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>is_relative_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga485c455ca22bf60aada827b8e14bfbbb</Anchor>
+    <DeclaredIn>vfs_function.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>is_relative_path</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga485c455ca22bf60aada827b8e14bfbbb</Anchor>
+    <DeclaredIn>vfs_function.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>is_string_numeric</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -1366,8 +1778,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8c.html</Path>
-    <Anchor>ada74a80451424a86241f4c4741907429</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gada74a80451424a86241f4c4741907429</Anchor>
     <DeclaredIn>vfs_function.c</DeclaredIn>
   </Token>
   <Token>
@@ -1376,8 +1788,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8h.html</Path>
-    <Anchor>ada74a80451424a86241f4c4741907429</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gada74a80451424a86241f4c4741907429</Anchor>
     <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>
@@ -1406,8 +1818,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a54061e5993a5517320d425f44408cc86</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga54061e5993a5517320d425f44408cc86</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1446,8 +1858,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>aa37fa0f324021ed61d6d26e948202f3b</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gaa37fa0f324021ed61d6d26e948202f3b</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1456,8 +1868,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>acc9794f655f61a3246ba3fd5c9c67e14</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gacc9794f655f61a3246ba3fd5c9c67e14</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1466,8 +1878,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a2c5eecb22513a88c24ae5831a3265e54</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga2c5eecb22513a88c24ae5831a3265e54</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1486,8 +1898,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ae4777ede3ed2173c78fab7798ad6eddb</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gae4777ede3ed2173c78fab7798ad6eddb</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1496,8 +1908,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>aa6817068c86820d11391ab6fd439190c</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gaa6817068c86820d11391ab6fd439190c</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1506,9 +1918,19 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>abdd33f362ae3bbdacb5de76473aa8a2f</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gabdd33f362ae3bbdacb5de76473aa8a2f</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MAX_USERS</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>user_8c.html</Path>
+    <Anchor>a2c2a303621f66761529e598758d7ef34</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1522,43 +1944,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>mycp</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
+      <Name>MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
     </TokenIdentifier>
-    <Path>file__operations_8c.html</Path>
-    <Anchor>adf4b1cf00c440b09b0760b9ea0cb07df</Anchor>
-    <DeclaredIn>file_operations.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mycp</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>file__operations_8h.html</Path>
-    <Anchor>adf4b1cf00c440b09b0760b9ea0cb07df</Anchor>
-    <DeclaredIn>file_operations.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mymv</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>file__operations_8c.html</Path>
-    <Anchor>ab840828b3ad045ea77d3537d948fef96</Anchor>
-    <DeclaredIn>file_operations.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>mymv</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>file__operations_8h.html</Path>
-    <Anchor>a30a3ead9c3f2da14b94d57771ca79085</Anchor>
-    <DeclaredIn>file_operations.h</DeclaredIn>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga3acffbd305ee72dcd4593c0d8af64a4f</Anchor>
+    <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1566,8 +1958,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ae036f789407d21f07b211552d67b3214</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gae036f789407d21f07b211552d67b3214</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1576,8 +1968,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a1cf6b1de1fffedaa1d26b189e9a8d2cc</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga1cf6b1de1fffedaa1d26b189e9a8d2cc</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1586,8 +1978,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a9f5acfe79fafe14b6694447bd0e9f10b</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga9f5acfe79fafe14b6694447bd0e9f10b</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1596,8 +1988,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a7a68c9ffaac7dbcd652225dd7c06a54b</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga7a68c9ffaac7dbcd652225dd7c06a54b</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1606,8 +1998,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>abb0586253488ee61072b73557eeb873b</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gabb0586253488ee61072b73557eeb873b</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1616,8 +2008,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ad1d67e453fb3031f40f8cd3403773813</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gad1d67e453fb3031f40f8cd3403773813</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1626,9 +2018,19 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a11b644a8526139c4cc1850dac1271ced</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga11b644a8526139c4cc1850dac1271ced</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>parse_seek_mode</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>main_8c.html</Path>
+    <Anchor>ac785d2a728aba876f922d9c1593ee416</Anchor>
+    <DeclaredIn>main.c</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1639,26 +2041,6 @@
     <Path>partition_8h.html</Path>
     <Anchor>a96dcdea8b42e47d4600bd9ace954a11d</Anchor>
     <DeclaredIn>partition.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>print_directory_content</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>file__operations_8c.html</Path>
-    <Anchor>a5f29bd86efa1a5ff44e14c7980f5650b</Anchor>
-    <DeclaredIn>file_operations.c</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>print_directory_content</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>file__operations_8h.html</Path>
-    <Anchor>a5f29bd86efa1a5ff44e14c7980f5650b</Anchor>
-    <DeclaredIn>file_operations.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1742,12 +2124,32 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>remove_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga1a8b21830bd87936ad644b67a7630fa6</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>remove_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga1a8b21830bd87936ad644b67a7630fa6</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>resolve_relative_path</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8c.html</Path>
-    <Anchor>aca5a29815408d61083bbbfe7697e9d0e</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gaca5a29815408d61083bbbfe7697e9d0e</Anchor>
     <DeclaredIn>vfs_function.c</DeclaredIn>
   </Token>
   <Token>
@@ -1756,8 +2158,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8h.html</Path>
-    <Anchor>aca5a29815408d61083bbbfe7697e9d0e</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>gaca5a29815408d61083bbbfe7697e9d0e</Anchor>
     <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>
@@ -1766,8 +2168,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a11fb0652b963a735f3377eb1c9239f2d</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga11fb0652b963a735f3377eb1c9239f2d</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1776,8 +2178,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ab5bee51e9ee68b83ab11d4b340f7200b</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gab5bee51e9ee68b83ab11d4b340f7200b</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1786,8 +2188,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a1aaa48b192a5dd3b6d7ee91fc98cd17d</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga1aaa48b192a5dd3b6d7ee91fc98cd17d</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1796,8 +2198,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a4f5f280b929768113739fb34d6f7be8a</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga4f5f280b929768113739fb34d6f7be8a</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1806,8 +2208,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a071147a0cb995036967c80f64b1f74b9</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga071147a0cb995036967c80f64b1f74b9</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1816,8 +2218,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a84c7dbf5cf2fdfb690f76348b60a8cb7</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga84c7dbf5cf2fdfb690f76348b60a8cb7</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1826,8 +2228,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ae6774871a90d9442f00abe18b87fee6e</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gae6774871a90d9442f00abe18b87fee6e</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1836,8 +2238,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a5303f49f26293acdb9533756c78322fb</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga5303f49f26293acdb9533756c78322fb</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1846,8 +2248,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ad70001754261c15a1bdc8e876c6d09d7</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gad70001754261c15a1bdc8e876c6d09d7</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1856,8 +2258,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a042e69ac0e7dd56e5cfcd9e97d010323</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga042e69ac0e7dd56e5cfcd9e97d010323</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1866,8 +2268,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a40223db1b95a04f5b28cceb3c34cfebd</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga40223db1b95a04f5b28cceb3c34cfebd</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1876,9 +2278,79 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>af10a35e3950795d6ee4e07157d000131</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gaf10a35e3950795d6ee4e07157d000131</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SEEK_CUR</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga4c8d0b76b470ba65a43ca46a88320f39</Anchor>
+    <DeclaredIn>constantes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SEEK_END</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>group__constantes.html</Path>
+    <Anchor>gad2a2e6c114780c3071efd24f16c7f7d8</Anchor>
+    <DeclaredIn>constantes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SEEK_SET</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga0d112bae8fd35be772185b6ec6bcbe64</Anchor>
+    <DeclaredIn>constantes.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>set_current_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga1262a0a40053af259446ef68f5bd176f</Anchor>
+    <DeclaredIn>user.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>set_current_user</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga1262a0a40053af259446ef68f5bd176f</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>set_permissions</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__permission__management.html</Path>
+    <Anchor>gaf7b2a8cafb308992f9c9821b33195dff</Anchor>
+    <DeclaredIn>permissions.c</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>set_permissions</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>group__permission__management.html</Path>
+    <Anchor>gaf7b2a8cafb308992f9c9821b33195dff</Anchor>
+    <DeclaredIn>permissions.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1886,8 +2358,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8c.html</Path>
-    <Anchor>a6ba40f28df8964130a55aac5472ea6d8</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga6ba40f28df8964130a55aac5472ea6d8</Anchor>
     <DeclaredIn>vfs_function.c</DeclaredIn>
   </Token>
   <Token>
@@ -1896,8 +2368,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8h.html</Path>
-    <Anchor>a6ba40f28df8964130a55aac5472ea6d8</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga6ba40f28df8964130a55aac5472ea6d8</Anchor>
     <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>
@@ -1926,8 +2398,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>aa90cac659d18e8ef6294c7ae337f6b58</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gaa90cac659d18e8ef6294c7ae337f6b58</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1946,8 +2418,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>ae9e5bed110d8e9128d5d07f8cbe9896b</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>gae9e5bed110d8e9128d5d07f8cbe9896b</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1956,8 +2428,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a8394ddfc34b82667f24d6a5944cb00ec</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga8394ddfc34b82667f24d6a5944cb00ec</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -1966,8 +2438,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>tree_8c.html</Path>
-    <Anchor>accccf7c88162324fe8b2d2ed38ea735a</Anchor>
+    <Path>group__tree__visualisation.html</Path>
+    <Anchor>gaccccf7c88162324fe8b2d2ed38ea735a</Anchor>
     <DeclaredIn>tree.c</DeclaredIn>
   </Token>
   <Token>
@@ -1976,8 +2448,8 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>tree_8h.html</Path>
-    <Anchor>accccf7c88162324fe8b2d2ed38ea735a</Anchor>
+    <Path>group__tree__visualisation.html</Path>
+    <Anchor>gaccccf7c88162324fe8b2d2ed38ea735a</Anchor>
     <DeclaredIn>tree.h</DeclaredIn>
   </Token>
   <Token>
@@ -1992,12 +2464,92 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>User</Name>
+      <APILanguage>c</APILanguage>
+      <Type>tdef</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gaebb0f8a8bd00b8afba0e5abcf5b559c7</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_TYPE_ADMIN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_TYPE_GUEST</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_TYPE_USER</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>UserType</Name>
+      <APILanguage>c</APILanguage>
+      <Type>enum</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>ga196c5ae3c192f069339f2966656f6fe9</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_TYPE_ADMIN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_TYPE_USER</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>USER_TYPE_GUEST</Name>
+      <APILanguage>c</APILanguage>
+      <Type>econst</Type>
+    </TokenIdentifier>
+    <Path>group__user__management.html</Path>
+    <Anchor>gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8</Anchor>
+    <DeclaredIn>user.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>VERSION</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>constantes_8h.html</Path>
-    <Anchor>a1c6d5de492ac61ad29aec7aa9a436bbf</Anchor>
+    <Path>group__constantes.html</Path>
+    <Anchor>ga1c6d5de492ac61ad29aec7aa9a436bbf</Anchor>
     <DeclaredIn>constantes.h</DeclaredIn>
   </Token>
   <Token>
@@ -2006,8 +2558,8 @@
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
-    <Path>vfs__function_8h.html</Path>
-    <Anchor>a5445cdb3533a4f28180e2748993bbcf2</Anchor>
+    <Path>group__vfs__functions.html</Path>
+    <Anchor>ga5445cdb3533a4f28180e2748993bbcf2</Anchor>
     <DeclaredIn>vfs_function.h</DeclaredIn>
   </Token>
   <Token>

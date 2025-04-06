@@ -1,98 +1,148 @@
 <map id="main" name="main">
-<area shape="rect" id="Node000001" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,392,55,419"/>
-<area shape="rect" id="Node000002" href="$vfs__function_8c.html#a71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="117,316,238,343"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,389,101,352,114,347,116,351,104,357,50,394"/>
-<area shape="rect" id="Node000008" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="304,164,418,191"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="47,417,72,437,104,454,146,468,182,477,215,474,232,467,250,454,274,426,284,398,284,367,280,336,274,303,272,269,278,235,298,201,299,199,303,203,302,204,283,237,277,270,279,302,285,335,290,367,289,399,279,429,254,458,235,471,217,479,182,482,145,473,102,458,69,442,43,421"/>
-<area shape="rect" id="Node000022" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="320,215,401,241"/>
-<area shape="poly" id="edge28_Node000001_Node000022" title=" " alt="" coords="28,392,28,347,36,286,45,253,58,222,77,193,101,170,139,150,174,148,210,156,253,169,268,176,278,183,301,200,312,206,309,210,299,205,275,188,265,180,251,174,209,161,173,153,140,155,104,174,81,197,63,224,50,255,42,287,34,348,33,392"/>
-<area shape="rect" id="Node000023" href="$main_8c.html#a8f0b63bf650a5ceefc36d7e3bcb02f63" title="Affiche l&#39;aide pour toutes les commandes disponibles." alt="" coords="131,215,224,241"/>
-<area shape="poly" id="edge36_Node000001_Node000023" title=" " alt="" coords="31,391,39,362,52,325,73,286,101,251,115,241,118,246,104,255,77,288,57,327,44,363,37,392"/>
-<area shape="rect" id="Node000024" href="$partition_8c.html#a6c7a5dfb40fb024a3db304109d7c2b87" title="Ferme un fichier précédemment ouvert." alt="" coords="130,265,224,292"/>
-<area shape="poly" id="edge37_Node000001_Node000024" title=" " alt="" coords="35,390,60,347,79,323,101,302,114,294,117,298,104,306,83,326,64,350,40,393"/>
-<area shape="rect" id="Node000025" href="$partition_8c.html#a7e3bde988e14b04d26a63d543cee8642" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="315,417,406,444"/>
-<area shape="poly" id="edge38_Node000001_Node000025" title=" " alt="" coords="36,418,41,449,53,487,74,525,88,542,104,555,143,575,177,581,212,575,251,555,263,545,270,534,276,509,281,482,287,468,298,454,302,451,305,455,302,458,292,471,286,483,281,510,275,536,267,548,253,560,214,580,177,587,141,580,101,560,84,546,69,528,48,489,36,450,30,419"/>
-<area shape="rect" id="Node000026" href="$vfs__function_8c.html#ae0ff391eb9b18e5a0dc8a463c2704553" title="Obtient le chemin absolu du répertoire courant." alt="" coords="106,367,249,393"/>
-<area shape="poly" id="edge40_Node000001_Node000026" title=" " alt="" coords="55,398,90,392,91,398,56,404"/>
-<area shape="rect" id="Node000027" href="$partition_8c.html#a9e9167bfc4d677181c909d0772e40b07" title="Initializes a new partition and saves it to a file." alt="" coords="132,417,223,444"/>
-<area shape="poly" id="edge41_Node000001_Node000027" title=" " alt="" coords="56,407,117,418,116,423,55,412"/>
-<area shape="rect" id="Node000028" href="$vfs__function_8c.html#ada74a80451424a86241f4c4741907429" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="313,468,408,495"/>
-<area shape="poly" id="edge42_Node000001_Node000028" title=" " alt="" coords="34,419,38,455,49,502,70,550,85,570,104,587,142,607,176,613,211,606,250,587,268,570,275,550,282,527,298,505,303,501,306,505,302,508,287,530,280,551,273,573,254,591,213,611,176,618,140,612,101,591,81,574,65,552,44,503,33,455,29,419"/>
-<area shape="rect" id="Node000029" href="$partition_8c.html#a3ad3344eab759f24efde2ff355898977" title="Loads an existing partition from a file." alt="" coords="128,519,226,545"/>
-<area shape="poly" id="edge45_Node000001_Node000029" title=" " alt="" coords="41,418,66,457,84,479,104,498,122,509,119,514,101,502,80,482,62,460,36,420"/>
-<area shape="rect" id="Node000030" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,63,252,89"/>
-<area shape="poly" id="edge46_Node000001_Node000030" title=" " alt="" coords="28,392,28,340,36,265,45,223,58,182,76,142,101,106,112,96,116,100,105,110,81,145,63,184,50,225,41,266,33,340,33,392"/>
-<area shape="rect" id="Node000031" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="300,519,421,545"/>
-<area shape="poly" id="edge49_Node000001_Node000031" title=" " alt="" coords="34,419,35,460,44,516,53,545,65,573,82,599,104,619,141,638,174,642,209,634,251,619,276,607,299,590,337,555,341,559,303,595,279,611,253,624,211,639,174,647,139,643,101,623,78,602,61,576,48,547,39,517,30,461,28,419"/>
-<area shape="rect" id="Node000032" href="$partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="316,645,405,672"/>
-<area shape="poly" id="edge56_Node000001_Node000032" title=" " alt="" coords="36,419,59,541,79,608,91,633,104,649,126,662,150,672,202,681,254,679,301,672,302,677,254,685,202,686,149,677,124,667,101,653,87,636,74,610,54,542,31,420"/>
-<area shape="rect" id="Node000033" href="$tree_8c.html#accccf7c88162324fe8b2d2ed38ea735a" title="Affiche l&#39;arborescence du système de fichiers." alt="" coords="339,265,382,292"/>
-<area shape="poly" id="edge62_Node000001_Node000033" title=" " alt="" coords="29,391,31,352,41,299,50,271,63,244,79,220,101,200,139,180,175,176,211,184,253,200,270,211,279,224,288,238,302,251,326,264,324,269,298,255,284,241,275,227,266,215,251,205,210,189,175,181,141,185,104,205,83,224,67,247,55,273,46,300,36,352,34,391"/>
-<area shape="rect" id="Node000003" href="$partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="473,417,606,444"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,341,475,410,474,415,228,346"/>
-<area shape="rect" id="Node000007" href="$vfs__function_8c.html#a6ba40f28df8964130a55aac5472ea6d8" title="Simplifie un chemin en supprimant les . et .. inutiles." alt="" coords="312,316,410,343"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="238,327,296,327,296,332,238,332"/>
-<area shape="rect" id="Node000004" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="659,417,762,444"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="607,428,644,428,644,433,607,433"/>
-<area shape="rect" id="Node000005" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="826,63,942,89"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="716,416,867,102,872,105,721,418"/>
-<area shape="rect" id="Node000006" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="1017,63,1143,89"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="942,73,1002,73,1002,79,942,79"/>
-<area shape="poly" id="edge23_Node000008_Node000003" title=" " alt="" coords="409,189,423,201,440,228,448,254,449,280,447,305,446,329,447,354,454,378,471,404,474,406,470,410,467,407,450,381,442,355,440,329,442,304,444,280,443,255,436,230,419,204,406,193"/>
-<area shape="rect" id="Node000009" href="$partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="472,265,607,292"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="402,189,423,200,438,214,447,227,456,239,471,251,479,256,476,260,468,255,453,243,443,230,434,217,420,205,400,194"/>
-<area shape="rect" id="Node000012" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="1205,696,1309,723"/>
-<area shape="poly" id="edge19_Node000008_Node000012" title=" " alt="" coords="370,162,409,117,437,93,468,72,531,43,584,28,639,23,709,23,885,23,928,20,966,15,1033,4,1064,3,1095,9,1126,23,1159,49,1175,69,1190,97,1214,169,1231,257,1244,355,1256,545,1258,680,1253,680,1251,545,1238,355,1226,258,1209,170,1185,99,1171,72,1155,53,1123,28,1093,14,1064,9,1034,9,967,20,928,26,885,28,710,28,640,29,585,34,533,48,471,77,440,97,413,121,374,165"/>
-<area shape="rect" id="Node000013" href="$partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="1039,595,1121,621"/>
-<area shape="poly" id="edge24_Node000008_Node000013" title=" " alt="" coords="373,162,413,128,440,111,468,99,508,87,540,82,573,86,611,99,654,120,697,146,775,205,847,273,910,345,964,416,1009,482,1067,580,1062,582,1004,484,959,419,905,348,843,277,772,209,694,150,652,125,609,104,571,91,540,88,509,92,470,104,442,116,416,132,377,166"/>
-<area shape="rect" id="Node000017" href="$partition_8c.html#a010b1b2eeac4e5444f921d9e124dbb7f" title="Alloue un nouvel inode libre." alt="" coords="487,113,592,140"/>
-<area shape="poly" id="edge20_Node000008_Node000017" title=" " alt="" coords="410,161,475,142,476,147,411,166"/>
-<area shape="rect" id="Node000018" href="$partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="469,215,610,241"/>
-<area shape="poly" id="edge21_Node000008_Node000018" title=" " alt="" coords="411,189,476,207,475,212,410,194"/>
-<area shape="rect" id="Node000019" href="$partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="499,316,580,343"/>
-<area shape="poly" id="edge25_Node000008_Node000019" title=" " alt="" coords="407,189,423,201,441,227,448,253,454,278,471,302,486,312,483,317,467,306,449,280,442,254,436,229,419,205,404,193"/>
-<area shape="rect" id="Node000020" href="$partition_8c.html#a20c958c16161bb01bd511032a94fc0b8" title="Initialise un nouvel inode." alt="" coords="501,164,578,191"/>
-<area shape="poly" id="edge26_Node000008_Node000020" title=" " alt="" coords="418,175,486,175,486,180,418,180"/>
-<area shape="rect" id="Node000021" href="$partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="501,367,578,393"/>
-<area shape="poly" id="edge27_Node000008_Node000021" title=" " alt="" coords="408,189,423,201,437,221,445,241,447,279,450,316,458,334,471,353,488,365,485,369,467,357,453,337,445,317,442,279,439,242,433,223,419,204,405,193"/>
-<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="591,290,611,302,638,325,662,352,697,402,692,405,657,355,634,329,608,306,588,295"/>
-<area shape="rect" id="Node000010" href="$partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="658,721,764,748"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="597,290,612,302,623,325,636,366,664,482,707,706,702,707,659,483,631,368,618,327,608,306,594,295"/>
-<area shape="rect" id="Node000011" href="$partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="812,721,955,748"/>
-<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="765,732,796,732,796,737,765,737"/>
-<area shape="rect" id="Node000014" href="$partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="824,772,943,799"/>
-<area shape="poly" id="edge14_Node000010_Node000014" title=" " alt="" coords="760,746,822,765,820,770,758,751"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="938,718,1003,707,1101,701,1189,703,1189,708,1101,707,1004,712,939,723"/>
-<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="919,718,954,700,978,683,1002,663,1047,628,1050,633,1005,667,982,687,957,705,921,723"/>
-<area shape="poly" id="edge15_Node000014_Node000012" title=" " alt="" coords="944,784,1044,778,1101,770,1156,757,1190,744,1220,728,1223,733,1192,749,1157,763,1102,775,1045,783,944,789"/>
-<area shape="rect" id="Node000015" href="$partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="1003,721,1157,748"/>
-<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="938,769,1010,750,1011,755,939,774"/>
-<area shape="rect" id="Node000016" href="$partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="1016,823,1144,849"/>
-<area shape="poly" id="edge18_Node000014_Node000016" title=" " alt="" coords="939,797,1011,816,1010,821,938,802"/>
-<area shape="poly" id="edge17_Node000015_Node000012" title=" " alt="" coords="1157,721,1189,716,1190,722,1158,726"/>
-<area shape="poly" id="edge22_Node000018_Node000004" title=" " alt="" coords="593,240,611,251,644,287,670,328,690,368,703,402,698,404,685,370,666,330,640,290,608,255,590,244"/>
-<area shape="poly" id="edge32_Node000022_Node000003" title=" " alt="" coords="403,237,423,251,437,272,445,291,447,330,450,367,458,385,471,404,474,406,470,410,467,407,453,387,445,368,442,330,439,293,433,274,419,255,400,241"/>
-<area shape="poly" id="edge29_Node000022_Node000009" title=" " alt="" coords="403,237,476,258,474,263,401,242"/>
-<area shape="poly" id="edge30_Node000022_Node000017" title=" " alt="" coords="400,212,420,200,434,188,443,175,453,163,468,150,476,145,479,149,471,154,456,166,447,179,438,191,423,205,402,216"/>
-<area shape="poly" id="edge31_Node000022_Node000018" title=" " alt="" coords="402,225,454,225,454,231,402,231"/>
-<area shape="poly" id="edge33_Node000022_Node000019" title=" " alt="" coords="402,240,423,251,438,264,447,277,456,290,471,302,486,310,483,315,468,306,453,293,443,280,434,268,420,255,400,244"/>
-<area shape="poly" id="edge34_Node000022_Node000020" title=" " alt="" coords="401,214,485,190,487,195,403,219"/>
-<area shape="poly" id="edge35_Node000022_Node000021" title=" " alt="" coords="403,238,423,251,441,278,448,304,454,328,471,353,488,364,485,368,467,357,449,331,442,305,436,280,419,255,400,242"/>
-<area shape="poly" id="edge39_Node000025_Node000003" title=" " alt="" coords="407,428,457,428,457,433,407,433"/>
-<area shape="poly" id="edge43_Node000028_Node000003" title=" " alt="" coords="408,465,474,446,476,451,409,470"/>
-<area shape="poly" id="edge44_Node000028_Node000004" title=" " alt="" coords="409,476,502,468,609,453,645,446,646,451,610,459,502,473,409,481"/>
-<area shape="poly" id="edge47_Node000030_Node000008" title=" " alt="" coords="215,87,253,106,329,153,326,157,251,110,212,92"/>
-<area shape="poly" id="edge48_Node000030_Node000022" title=" " alt="" coords="225,88,254,106,272,131,279,155,285,178,302,201,309,206,305,210,298,204,280,180,273,156,267,133,250,110,222,92"/>
-<area shape="poly" id="edge50_Node000031_Node000003" title=" " alt="" coords="396,516,420,504,505,451,508,456,423,509,398,521"/>
-<area shape="poly" id="edge53_Node000031_Node000004" title=" " alt="" coords="421,521,511,503,609,476,671,449,673,454,611,481,512,508,422,526"/>
-<area shape="poly" id="edge55_Node000031_Node000010" title=" " alt="" coords="384,544,471,599,671,711,669,716,468,604,381,548"/>
-<area shape="poly" id="edge51_Node000031_Node000013" title=" " alt="" coords="422,536,1024,600,1024,605,422,541"/>
-<area shape="poly" id="edge52_Node000031_Node000019" title=" " alt="" coords="405,516,419,505,433,486,439,467,442,430,445,392,453,372,467,353,483,341,486,345,471,357,458,375,450,393,447,430,445,469,437,488,423,508,408,520"/>
-<area shape="poly" id="edge54_Node000031_Node000021" title=" " alt="" coords="404,516,419,505,436,480,442,455,449,429,467,403,485,392,488,396,471,407,454,432,448,456,441,482,423,509,407,520"/>
-<area shape="poly" id="edge57_Node000032_Node000003" title=" " alt="" coords="371,643,516,455,520,458,375,646"/>
-<area shape="poly" id="edge59_Node000032_Node000004" title=" " alt="" coords="390,642,489,591,550,556,608,518,649,485,683,453,687,457,652,489,611,522,552,561,492,596,393,647"/>
-<area shape="poly" id="edge61_Node000032_Node000010" title=" " alt="" coords="374,671,413,713,440,735,470,751,516,762,564,763,611,758,652,750,653,755,612,764,565,769,516,767,468,756,437,739,409,717,370,674"/>
-<area shape="poly" id="edge58_Node000032_Node000013" title=" " alt="" coords="405,653,1023,609,1024,615,405,658"/>
-<area shape="poly" id="edge60_Node000032_Node000021" title=" " alt="" coords="369,643,393,605,419,556,431,513,435,476,443,441,452,422,467,403,485,391,488,395,471,407,457,425,448,442,440,477,437,514,424,558,398,608,374,646"/>
-<area shape="poly" id="edge63_Node000033_Node000003" title=" " alt="" coords="384,281,404,289,423,302,441,329,448,354,454,379,471,403,475,407,472,411,467,407,449,381,442,356,436,331,419,306,401,294,382,286"/>
+<area shape="rect" id="Node000001" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,849,55,875"/>
+<area shape="rect" id="Node000002" href="$group__user__management.html#gaf7e248432c320d6a4db3b0d9700689dd" title="Ajoute un nouvel utilisateur." alt="" coords="334,13,409,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="29,848,32,689,43,434,52,303,64,186,80,98,90,68,101,50,124,31,151,18,179,9,209,5,268,4,319,11,319,16,267,10,209,10,180,14,153,23,127,35,105,53,95,70,85,99,70,187,57,303,48,434,38,689,34,849"/>
+<area shape="rect" id="Node000003" href="$group__vfs__functions.html#ga71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="117,519,238,546"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="28,848,28,797,36,722,45,680,58,639,76,599,101,563,112,553,116,557,105,567,81,602,63,641,50,682,41,723,33,797,33,848"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="495,519,628,546"/>
+<area shape="poly" id="edge32_Node000001_Node000004" title=" " alt="" coords="29,848,34,776,45,672,55,618,67,570,82,531,101,505,130,491,170,483,216,482,267,484,367,495,444,505,493,513,492,518,443,510,366,500,267,489,216,487,170,489,132,496,104,509,87,534,72,572,60,619,51,672,39,776,35,848"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="691,393,775,419"/>
+<area shape="poly" id="edge44_Node000001_Node000005" title=" " alt="" coords="28,848,28,745,35,588,44,507,57,431,75,370,87,346,101,328,134,301,170,281,209,267,249,258,291,255,334,257,421,271,505,295,582,325,647,356,697,382,694,387,645,361,579,330,503,300,420,276,334,262,291,261,250,264,210,272,172,285,137,305,105,332,92,349,80,372,62,433,49,507,41,589,34,746,34,848"/>
+<area shape="rect" id="Node000010" href="$group__permission__management.html#gac53e911f10c3da2d449dd417aa81bf92" title="Vérifie si un inode a les permissions nécessaires pour un utilisateur donné." alt="" coords="111,1026,244,1053"/>
+<area shape="poly" id="edge8_Node000001_Node000010" title=" " alt="" coords="37,875,59,937,79,973,105,1006,119,1016,116,1021,101,1009,74,976,54,939,32,877"/>
+<area shape="rect" id="Node000011" href="$group__permission__management.html#ga3f2b9b76c3267b4ad451e83f377b07f0" title="Change le propriétaire et le groupe d&#39;un inode." alt="" coords="129,1077,226,1103"/>
+<area shape="poly" id="edge9_Node000001_Node000011" title=" " alt="" coords="35,876,39,913,51,963,71,1016,86,1041,105,1063,116,1072,113,1076,101,1067,82,1044,67,1019,46,965,34,914,30,876"/>
+<area shape="rect" id="Node000012" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="314,773,429,799"/>
+<area shape="poly" id="edge10_Node000001_Node000012" title=" " alt="" coords="54,848,102,830,204,807,299,792,299,797,205,812,103,835,56,853"/>
+<area shape="rect" id="Node000025" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="331,621,412,647"/>
+<area shape="poly" id="edge22_Node000001_Node000025" title=" " alt="" coords="28,848,29,805,37,745,46,714,59,684,77,656,101,633,126,619,153,609,210,601,267,605,316,615,315,620,266,610,211,606,154,614,128,623,104,638,81,659,64,686,51,716,43,747,34,805,33,848"/>
+<area shape="rect" id="Node000027" href="$main_8c.html#a8f0b63bf650a5ceefc36d7e3bcb02f63" title="Affiche l&#39;aide pour toutes les commandes disponibles." alt="" coords="131,1127,224,1154"/>
+<area shape="poly" id="edge30_Node000001_Node000027" title=" " alt="" coords="34,876,35,921,44,984,53,1019,66,1053,83,1085,105,1114,118,1124,115,1128,101,1117,78,1088,61,1055,48,1020,39,985,30,921,28,876"/>
+<area shape="rect" id="Node000028" href="$group__user__management.html#gad47cb0106d6f756714576cffabbf5b5b" title="Affiche tous les utilisateurs disponibles." alt="" coords="127,1178,228,1205"/>
+<area shape="poly" id="edge31_Node000001_Node000028" title=" " alt="" coords="35,875,43,937,58,1024,78,1109,91,1142,105,1164,114,1173,111,1177,101,1168,86,1144,73,1110,52,1025,38,938,30,876"/>
+<area shape="rect" id="Node000029" href="$partition_8c.html#af2eb262e960129690f2dd3a336635c69" title="Ferme un fichier précédemment ouvert." alt="" coords="130,1229,224,1255"/>
+<area shape="poly" id="edge33_Node000001_Node000029" title=" " alt="" coords="35,876,41,947,55,1048,75,1149,89,1188,105,1215,118,1226,114,1230,101,1219,84,1191,70,1150,49,1049,36,947,30,876"/>
+<area shape="rect" id="Node000030" href="$group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="342,722,401,749"/>
+<area shape="poly" id="edge34_Node000001_Node000030" title=" " alt="" coords="41,846,67,820,101,796,160,771,221,754,326,736,327,742,222,759,161,776,104,800,70,824,45,850"/>
+<area shape="rect" id="Node000031" href="$group__vfs__functions.html#ga51b658807c748db2ca12ac3af986fa96" title="Repositionne l&#39;offset de lecture/écriture d&#39;un fichier." alt="" coords="142,1279,212,1306"/>
+<area shape="poly" id="edge39_Node000001_Node000031" title=" " alt="" coords="35,876,40,955,52,1072,73,1189,87,1235,105,1266,116,1275,129,1282,127,1287,113,1280,101,1269,82,1237,67,1190,46,1073,34,955,29,876"/>
+<area shape="rect" id="Node000032" href="$partition_8c.html#a7e3bde988e14b04d26a63d543cee8642" title="Ouvre un fichier et retourne un descripteur de fichier." alt="" coords="326,367,417,394"/>
+<area shape="poly" id="edge40_Node000001_Node000032" title=" " alt="" coords="29,848,32,761,41,632,50,565,63,503,79,453,101,419,123,401,148,387,203,371,260,366,310,369,310,374,260,372,204,376,150,392,126,405,105,423,84,455,68,505,56,566,47,633,37,762,34,848"/>
+<area shape="rect" id="Node000033" href="$group__vfs__functions.html#ga15b6b10188015572381ac9bb4437a7e1" title="Lit des données depuis un fichier." alt="" coords="145,1330,210,1357"/>
+<area shape="poly" id="edge42_Node000001_Node000033" title=" " alt="" coords="34,876,38,964,49,1097,58,1165,70,1229,85,1281,105,1316,117,1327,131,1334,129,1338,114,1331,101,1320,81,1283,65,1230,52,1166,43,1097,33,965,29,876"/>
+<area shape="rect" id="Node000035" href="$partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="330,671,414,698"/>
+<area shape="poly" id="edge45_Node000001_Node000035" title=" " alt="" coords="29,848,31,809,41,756,50,728,63,701,79,677,101,657,118,650,140,647,196,648,258,657,315,669,314,674,257,662,195,653,140,652,119,655,104,662,83,681,67,704,55,730,46,757,36,809,34,848"/>
+<area shape="rect" id="Node000036" href="$group__vfs__functions.html#gabafd732c4c89442c2e7ee525a00c5895" title="Écrit des données dans un fichier." alt="" coords="144,925,211,951"/>
+<area shape="poly" id="edge52_Node000001_Node000036" title=" " alt="" coords="53,874,104,904,130,917,128,921,101,908,51,878"/>
+<area shape="rect" id="Node000039" href="$group__vfs__functions.html#gae0ff391eb9b18e5a0dc8a463c2704553" title="Obtient le chemin absolu du répertoire courant." alt="" coords="300,1406,443,1433"/>
+<area shape="poly" id="edge55_Node000001_Node000039" title=" " alt="" coords="34,876,35,973,43,1122,52,1200,64,1270,82,1329,93,1351,104,1367,133,1383,178,1396,285,1411,284,1417,177,1401,131,1388,101,1371,88,1353,77,1330,59,1272,47,1200,38,1123,30,974,29,876"/>
+<area shape="rect" id="Node000040" href="$group__user__management.html#ga4db0c9bfbc4d58f62ec3f76bafef1290" title="Récupère l&#39;utilisateur courant." alt="" coords="312,165,431,191"/>
+<area shape="poly" id="edge56_Node000001_Node000040" title=" " alt="" coords="29,848,35,716,48,509,69,311,83,240,92,216,101,202,121,185,145,173,196,159,248,156,297,160,297,165,248,161,196,164,147,177,124,189,105,205,96,219,89,242,75,312,53,510,40,716,34,848"/>
+<area shape="rect" id="Node000041" href="$partition_8c.html#a81e29a7864e7f551a1c884cbf3e1404c" title="Trouve l&#39;inode correspondant à un chemin donné." alt="" coords="496,1127,627,1154"/>
+<area shape="poly" id="edge57_Node000001_Node000041" title=" " alt="" coords="40,875,64,918,83,941,104,961,142,983,174,993,209,999,253,1012,397,1069,515,1118,513,1123,395,1074,251,1017,208,1004,173,998,139,988,101,966,79,945,60,920,35,877"/>
+<area shape="rect" id="Node000042" href="$partition_8c.html#a9e9167bfc4d677181c909d0772e40b07" title="Initializes a new partition and saves it to a file." alt="" coords="132,1482,223,1509"/>
+<area shape="poly" id="edge59_Node000001_Node000042" title=" " alt="" coords="34,876,33,989,40,1167,48,1261,61,1348,80,1420,92,1447,105,1468,119,1480,116,1484,101,1472,87,1450,75,1421,56,1349,43,1262,35,1167,28,989,28,876"/>
+<area shape="rect" id="Node000043" href="$main_8c.html#ac6db79aef8cae53c124f4a1561576e27" title="Initialise un utilisateur standard au démarrage." alt="" coords="104,63,250,90"/>
+<area shape="poly" id="edge60_Node000001_Node000043" title=" " alt="" coords="29,848,35,701,49,465,70,237,84,154,92,125,100,107,110,97,114,101,105,110,97,127,89,155,76,237,54,466,41,701,34,848"/>
+<area shape="rect" id="Node000045" href="$group__user__management.html#ga1262a0a40053af259446ef68f5bd176f" title="Définit l&#39;utilisateur courant." alt="" coords="312,114,431,141"/>
+<area shape="poly" id="edge93_Node000001_Node000045" title=" " alt="" coords="29,849,34,709,47,490,56,377,68,278,83,202,91,176,101,160,121,143,144,130,195,114,248,110,297,112,297,117,248,115,196,120,146,135,124,147,105,164,96,178,88,203,74,278,62,378,52,490,40,710,34,849"/>
+<area shape="rect" id="Node000047" href="$group__vfs__functions.html#ga485c455ca22bf60aada827b8e14bfbbb" title="Vérifie si un chemin est relatif." alt="" coords="121,1533,234,1559"/>
+<area shape="poly" id="edge66_Node000001_Node000047" title=" " alt="" coords="35,876,42,1007,56,1212,77,1410,90,1481,105,1519,110,1525,106,1528,100,1522,85,1482,72,1411,51,1213,36,1007,29,876"/>
+<area shape="rect" id="Node000048" href="$group__vfs__functions.html#gada74a80451424a86241f4c4741907429" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="324,317,419,343"/>
+<area shape="poly" id="edge67_Node000001_Node000048" title=" " alt="" coords="29,848,30,754,39,612,48,537,60,469,78,413,88,391,101,375,123,356,147,342,202,325,258,319,309,319,308,325,258,324,203,330,150,347,126,361,105,379,93,394,83,415,66,470,53,538,44,612,36,754,34,849"/>
+<area shape="rect" id="Node000049" href="$partition_8c.html#a3ad3344eab759f24efde2ff355898977" title="Loads an existing partition from a file." alt="" coords="128,1583,226,1610"/>
+<area shape="poly" id="edge70_Node000001_Node000049" title=" " alt="" coords="34,876,41,1016,54,1237,76,1452,89,1528,97,1554,105,1570,116,1580,113,1584,101,1573,92,1556,84,1530,71,1452,49,1237,35,1016,29,876"/>
+<area shape="rect" id="Node000050" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,671,252,698"/>
+<area shape="poly" id="edge71_Node000001_Node000050" title=" " alt="" coords="32,847,54,785,74,748,101,715,116,704,119,708,105,719,79,751,59,787,37,849"/>
+<area shape="rect" id="Node000051" href="$main_8c.html#ac785d2a728aba876f922d9c1593ee416" title="Convertit une chaîne SEEK_* en valeur numérique." alt="" coords="114,1634,241,1661"/>
+<area shape="poly" id="edge74_Node000001_Node000051" title=" " alt="" coords="34,876,40,1025,53,1263,74,1493,89,1576,96,1604,105,1621,106,1622,102,1625,100,1624,92,1606,83,1577,69,1494,48,1263,35,1026,29,876"/>
+<area shape="rect" id="Node000052" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="311,823,432,850"/>
+<area shape="poly" id="edge75_Node000001_Node000052" title=" " alt="" coords="55,858,295,840,296,845,55,863"/>
+<area shape="rect" id="Node000053" href="$partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059" title="Supprime un fichier du système de fichiers." alt="" coords="328,874,416,901"/>
+<area shape="poly" id="edge82_Node000001_Node000053" title=" " alt="" coords="55,861,312,880,311,886,55,867"/>
+<area shape="rect" id="Node000054" href="$group__user__management.html#ga1a8b21830bd87936ad644b67a7630fa6" title="Supprime un utilisateur par son ID." alt="" coords="129,215,226,242"/>
+<area shape="poly" id="edge88_Node000001_Node000054" title=" " alt="" coords="28,848,29,736,37,561,45,468,58,382,76,310,88,281,101,259,114,246,117,250,105,262,92,284,81,311,64,383,51,468,42,561,35,736,34,848"/>
+<area shape="rect" id="Node000055" href="$group__vfs__functions.html#gaca5a29815408d61083bbbfe7697e9d0e" title="Convertit un chemin relatif en chemin absolu." alt="" coords="105,1431,250,1458"/>
+<area shape="poly" id="edge91_Node000001_Node000055" title=" " alt="" coords="34,876,36,979,45,1139,54,1224,66,1302,83,1367,105,1411,114,1421,111,1425,100,1414,78,1368,61,1303,48,1224,40,1140,31,979,29,876"/>
+<area shape="rect" id="Node000056" href="$group__permission__management.html#gaf7b2a8cafb308992f9c9821b33195dff" title="Définit les permissions d&#39;un inode." alt="" coords="119,1685,236,1711"/>
+<area shape="poly" id="edge94_Node000001_Node000056" title=" " alt="" coords="34,876,39,1033,52,1287,61,1418,73,1534,88,1623,96,1653,105,1671,109,1675,105,1679,100,1674,91,1655,82,1624,68,1535,56,1419,46,1288,34,1034,29,876"/>
+<area shape="rect" id="Node000057" href="$group__tree__visualisation.html#gaccccf7c88162324fe8b2d2ed38ea735a" title="Affiche l&#39;arborescence du système de fichiers." alt="" coords="350,418,393,445"/>
+<area shape="poly" id="edge95_Node000001_Node000057" title=" " alt="" coords="29,848,33,769,44,652,53,592,65,537,81,492,101,462,127,442,157,428,188,420,221,415,283,415,335,421,334,426,283,420,221,420,189,425,158,433,130,447,105,465,86,494,70,538,58,593,49,653,38,769,34,849"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="234,544,300,555,372,560,443,555,492,547,493,553,444,561,372,566,300,561,233,549"/>
+<area shape="rect" id="Node000009" href="$group__vfs__functions.html#ga6ba40f28df8964130a55aac5472ea6d8" title="Simplifie un chemin en supprimant les . et .. inutiles." alt="" coords="322,519,421,546"/>
+<area shape="poly" id="edge7_Node000003_Node000009" title=" " alt="" coords="238,530,307,530,307,535,238,535"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="532,520,527,511,530,501,542,495,562,493,582,495,593,502,590,506,580,500,561,498,544,500,534,505,532,510,537,518"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="581,517,630,481,700,427,704,431,633,486,584,521"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="681,671,784,698"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="613,544,633,556,660,579,684,606,719,656,714,659,679,609,656,583,630,560,610,549"/>
+<area shape="poly" id="edge18_Node000012_Node000004" title=" " alt="" coords="427,770,441,759,458,734,466,709,467,685,465,660,463,635,464,609,472,583,489,556,492,554,496,557,493,560,477,585,469,610,468,634,470,659,472,685,471,710,463,736,445,763,431,774"/>
+<area shape="rect" id="Node000013" href="$partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="494,671,629,698"/>
+<area shape="poly" id="edge11_Node000012_Node000013" title=" " alt="" coords="420,770,442,759,456,746,465,734,475,721,490,708,498,703,501,708,493,712,479,725,470,737,460,750,445,763,422,775"/>
+<area shape="rect" id="Node000016" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="509,975,614,1002"/>
+<area shape="poly" id="edge14_Node000012_Node000016" title=" " alt="" coords="430,798,445,810,460,829,467,849,470,887,473,925,480,943,493,962,498,966,494,970,489,965,475,946,467,926,465,888,462,850,455,832,441,813,426,802"/>
+<area shape="rect" id="Node000021" href="$partition_8c.html#aead3f3e2f43bbe7333cb36561c0922eb" title="Alloue un nouvel inode." alt="" coords="509,570,614,597"/>
+<area shape="poly" id="edge15_Node000012_Node000021" title=" " alt="" coords="426,770,441,759,455,740,462,722,465,685,467,646,475,627,489,607,494,602,498,606,493,611,480,629,473,648,470,685,467,723,460,743,445,763,430,774"/>
+<area shape="rect" id="Node000022" href="$partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="491,621,632,647"/>
+<area shape="poly" id="edge16_Node000012_Node000022" title=" " alt="" coords="425,770,442,759,452,747,459,735,465,710,471,684,478,671,489,658,494,654,497,658,493,661,482,674,476,686,470,711,464,736,457,750,445,763,428,774"/>
+<area shape="rect" id="Node000017" href="$partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="521,925,602,951"/>
+<area shape="poly" id="edge19_Node000012_Node000017" title=" " alt="" coords="423,798,445,809,475,833,502,859,544,910,540,914,498,863,471,837,442,814,420,802"/>
+<area shape="rect" id="Node000023" href="$partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="521,722,602,749"/>
+<area shape="poly" id="edge20_Node000012_Node000023" title=" " alt="" coords="424,770,505,748,507,753,425,775"/>
+<area shape="rect" id="Node000024" href="$partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="523,773,600,799"/>
+<area shape="poly" id="edge21_Node000012_Node000024" title=" " alt="" coords="429,783,507,783,507,789,429,789"/>
+<area shape="poly" id="edge12_Node000013_Node000006" title=" " alt="" coords="629,682,666,682,666,687,629,687"/>
+<area shape="rect" id="Node000014" href="$partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="680,874,786,901"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="615,696,633,708,666,744,692,784,712,825,725,859,720,861,707,827,688,787,662,747,630,712,612,701"/>
+<area shape="poly" id="edge17_Node000022_Node000006" title=" " alt="" coords="610,646,672,664,670,669,609,651"/>
+<area shape="poly" id="edge26_Node000025_Node000004" title=" " alt="" coords="408,618,442,600,465,578,490,556,500,551,502,555,493,560,469,582,445,604,410,623"/>
+<area shape="poly" id="edge23_Node000025_Node000013" title=" " alt="" coords="413,642,495,664,493,669,412,647"/>
+<area shape="poly" id="edge24_Node000025_Node000021" title=" " alt="" coords="412,621,493,599,495,604,413,626"/>
+<area shape="poly" id="edge25_Node000025_Node000022" title=" " alt="" coords="413,631,476,631,476,637,413,637"/>
+<area shape="poly" id="edge27_Node000025_Node000023" title=" " alt="" coords="414,642,445,657,460,670,470,683,479,696,493,708,508,716,505,721,490,712,475,699,465,686,456,674,442,662,412,647"/>
+<area shape="poly" id="edge29_Node000025_Node000024" title=" " alt="" coords="414,640,445,657,457,671,464,684,470,709,476,735,482,747,493,759,510,770,507,774,490,763,478,750,471,736,465,711,459,686,452,674,442,662,412,645"/>
+<area shape="rect" id="Node000026" href="$partition_8c.html#a20c958c16161bb01bd511032a94fc0b8" title="Initialise un nouvel inode." alt="" coords="523,445,600,471"/>
+<area shape="poly" id="edge28_Node000025_Node000026" title=" " alt="" coords="385,618,441,557,454,536,462,517,472,500,490,481,508,470,510,475,493,486,476,503,467,520,459,538,445,560,389,622"/>
+<area shape="poly" id="edge37_Node000030_Node000004" title=" " alt="" coords="401,729,423,721,441,708,455,690,462,671,465,634,467,596,475,576,489,556,492,553,496,557,493,560,480,579,473,597,470,634,467,673,460,692,445,712,425,726,403,734"/>
+<area shape="poly" id="edge35_Node000030_Node000013" title=" " alt="" coords="401,725,493,700,495,705,403,730"/>
+<area shape="poly" id="edge36_Node000030_Node000022" title=" " alt="" coords="401,726,442,708,456,696,465,683,475,670,490,657,498,652,501,657,493,662,479,674,470,686,460,699,445,712,403,731"/>
+<area shape="poly" id="edge38_Node000030_Node000024" title=" " alt="" coords="403,741,508,769,507,774,401,746"/>
+<area shape="poly" id="edge41_Node000032_Node000004" title=" " alt="" coords="419,389,445,404,462,423,471,442,479,461,493,482,525,508,522,513,489,485,474,464,466,444,458,426,442,408,416,394"/>
+<area shape="rect" id="Node000034" href="$group__vfs__functions.html#ga009267d18ee7ae829643c2b8e1f17d69" title="Obtient le bloc physique correspondant à un bloc logique." alt="" coords="306,1330,438,1357"/>
+<area shape="poly" id="edge43_Node000033_Node000034" title=" " alt="" coords="210,1341,290,1341,290,1346,210,1346"/>
+<area shape="poly" id="edge49_Node000035_Node000004" title=" " alt="" coords="413,674,442,657,452,645,459,633,465,608,471,582,478,569,489,556,494,552,497,557,493,560,482,572,476,584,470,609,464,635,457,648,445,662,416,678"/>
+<area shape="poly" id="edge46_Node000035_Node000013" title=" " alt="" coords="414,682,478,682,478,687,414,687"/>
+<area shape="poly" id="edge47_Node000035_Node000021" title=" " alt="" coords="413,671,442,657,456,645,465,633,475,620,490,607,498,602,501,606,493,611,479,623,470,636,460,649,445,662,415,676"/>
+<area shape="poly" id="edge48_Node000035_Node000022" title=" " alt="" coords="413,671,493,650,494,655,415,676"/>
+<area shape="poly" id="edge50_Node000035_Node000023" title=" " alt="" coords="415,693,507,718,505,723,413,698"/>
+<area shape="poly" id="edge51_Node000035_Node000024" title=" " alt="" coords="415,694,445,708,460,721,470,734,479,746,493,759,510,768,507,772,490,763,475,750,465,737,456,725,442,712,413,698"/>
+<area shape="rect" id="Node000037" href="$partition_8c.html#a92d4051f4b5524af74e0930f133124c2" title=" " alt="" coords="308,925,435,967"/>
+<area shape="poly" id="edge53_Node000036_Node000037" title=" " alt="" coords="212,937,293,940,293,946,212,942"/>
+<area shape="poly" id="edge54_Node000037_Node000016" title=" " alt="" coords="436,958,494,971,493,976,435,963"/>
+<area shape="poly" id="edge58_Node000041_Node000006" title=" " alt="" coords="576,1125,603,1095,629,1057,650,1005,659,962,665,918,677,861,720,712,725,714,682,863,671,918,665,963,655,1007,634,1059,608,1099,580,1129"/>
+<area shape="poly" id="edge61_Node000043_Node000002" title=" " alt="" coords="231,60,319,37,320,42,232,65"/>
+<area shape="poly" id="edge62_Node000043_Node000040" title=" " alt="" coords="199,88,245,119,301,150,314,156,312,161,299,155,242,123,196,93"/>
+<area shape="rect" id="Node000044" href="$group__user__management.html#ga5afd363aea1ac3c120659883107eb00b" title="Récupère le nombre total d&#39;utilisateurs." alt="" coords="316,63,427,90"/>
+<area shape="poly" id="edge63_Node000043_Node000044" title=" " alt="" coords="251,74,301,74,301,79,251,79"/>
+<area shape="poly" id="edge64_Node000043_Node000045" title=" " alt="" coords="232,88,304,107,303,112,231,93"/>
+<area shape="rect" id="Node000046" href="$group__user__management.html#ga9021966bc232c76feb9c2fea36c1eba2" title="Récupère un utilisateur par son ID." alt="" coords="526,165,597,191"/>
+<area shape="poly" id="edge65_Node000045_Node000046" title=" " alt="" coords="425,139,511,162,510,167,424,144"/>
+<area shape="poly" id="edge68_Node000048_Node000004" title=" " alt="" coords="421,338,445,353,459,370,466,386,472,417,477,448,483,465,493,482,523,509,519,513,489,485,478,467,472,450,467,418,461,388,454,373,442,357,418,343"/>
+<area shape="poly" id="edge69_Node000048_Node000006" title=" " alt="" coords="421,334,470,346,526,364,583,392,610,410,634,431,656,457,674,486,703,548,721,608,730,656,725,657,715,609,698,550,670,489,651,460,630,435,607,414,581,397,524,369,468,351,419,340"/>
+<area shape="poly" id="edge72_Node000050_Node000012" title=" " alt="" coords="199,696,245,727,301,758,314,764,312,769,299,763,242,731,196,701"/>
+<area shape="poly" id="edge73_Node000050_Node000025" title=" " alt="" coords="231,668,315,646,317,651,232,673"/>
+<area shape="poly" id="edge76_Node000052_Node000004" title=" " alt="" coords="427,821,441,810,461,778,469,747,469,716,465,685,461,654,460,622,469,589,489,556,492,554,496,557,493,560,474,592,466,623,466,654,470,685,474,716,474,748,466,780,445,813,431,825"/>
+<area shape="poly" id="edge79_Node000052_Node000006" title=" " alt="" coords="433,841,478,842,529,839,582,829,630,809,659,789,682,763,716,711,721,713,687,766,662,793,633,814,583,834,530,844,479,848,433,846"/>
+<area shape="poly" id="edge81_Node000052_Node000014" title=" " alt="" coords="433,844,492,853,665,876,664,882,491,858,432,849"/>
+<area shape="poly" id="edge77_Node000052_Node000017" title=" " alt="" coords="421,848,445,860,469,882,493,904,512,915,510,920,490,908,466,886,442,864,419,853"/>
+<area shape="poly" id="edge78_Node000052_Node000023" title=" " alt="" coords="420,821,442,809,456,797,465,785,475,772,490,759,505,750,508,755,493,763,479,775,470,788,460,801,445,814,422,825"/>
+<area shape="poly" id="edge80_Node000052_Node000024" title=" " alt="" coords="424,820,507,798,508,803,425,825"/>
+<area shape="poly" id="edge83_Node000053_Node000004" title=" " alt="" coords="415,877,430,871,441,860,464,822,473,785,471,748,465,711,458,673,457,635,465,596,489,557,492,554,496,557,493,560,470,598,462,636,464,673,470,710,477,747,478,785,469,824,445,864,432,875,417,882"/>
+<area shape="poly" id="edge85_Node000053_Node000006" title=" " alt="" coords="418,895,445,911,457,924,463,938,468,965,474,991,481,1002,493,1012,529,1031,563,1038,595,1032,630,1012,721,712,726,714,634,1016,597,1037,562,1043,528,1036,490,1016,477,1005,469,993,463,967,458,940,452,927,442,915,415,899"/>
+<area shape="poly" id="edge87_Node000053_Node000014" title=" " alt="" coords="418,894,445,911,459,930,466,950,467,989,470,1025,478,1041,493,1056,528,1075,560,1081,593,1074,630,1056,649,1043,665,1027,691,989,710,950,722,915,727,917,715,952,696,992,669,1030,652,1047,633,1060,595,1079,560,1086,526,1080,490,1060,473,1044,465,1026,462,989,460,951,454,933,442,915,415,898"/>
+<area shape="poly" id="edge84_Node000053_Node000017" title=" " alt="" coords="417,897,506,921,505,926,416,902"/>
+<area shape="poly" id="edge86_Node000053_Node000024" title=" " alt="" coords="415,871,442,860,488,834,528,807,531,811,491,838,445,864,417,876"/>
+<area shape="poly" id="edge89_Node000054_Node000040" title=" " alt="" coords="225,214,302,193,304,199,227,219"/>
+<area shape="poly" id="edge90_Node000054_Node000046" title=" " alt="" coords="226,223,326,215,443,201,511,187,512,193,444,206,326,220,226,229"/>
+<area shape="poly" id="edge92_Node000055_Node000039" title=" " alt="" coords="250,1433,284,1428,285,1433,250,1438"/>
+<area shape="poly" id="edge96_Node000057_Node000004" title=" " alt="" coords="395,438,445,461,527,509,525,514,442,466,392,443"/>
 </map>

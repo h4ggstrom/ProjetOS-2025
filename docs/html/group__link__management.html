@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet 0S 2025: Gestion des liens</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet 0S 2025<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Gestion des liens</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga6b1db705bcdbaad9b6362d95b92f69ad" id="r_ga6b1db705bcdbaad9b6362d95b92f69ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6b1db705bcdbaad9b6362d95b92f69ad">fs_link</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *oldpath, const char *newpath)</td></tr>
+<tr class="memdesc:ga6b1db705bcdbaad9b6362d95b92f69ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un lien physique (hard link) vers un fichier existant.  <br /></td></tr>
+<tr class="separator:ga6b1db705bcdbaad9b6362d95b92f69ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6de27918294daad88762f3e47eaaa5a3" id="r_ga6de27918294daad88762f3e47eaaa5a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6de27918294daad88762f3e47eaaa5a3">create_hard_link</a> (const char *target, const char *linkpath)</td></tr>
+<tr class="memdesc:ga6de27918294daad88762f3e47eaaa5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un lien physique entre deux fichiers.  <br /></td></tr>
+<tr class="separator:ga6de27918294daad88762f3e47eaaa5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27e6adf5116e3f1b7b72ac730f69c8d3" id="r_ga27e6adf5116e3f1b7b72ac730f69c8d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga27e6adf5116e3f1b7b72ac730f69c8d3">create_soft_link</a> (const char *target, const char *linkpath)</td></tr>
+<tr class="memdesc:ga27e6adf5116e3f1b7b72ac730f69c8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un lien symbolique entre deux fichiers.  <br /></td></tr>
+<tr class="separator:ga27e6adf5116e3f1b7b72ac730f69c8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga429164ee1c82fc8db05788d710c1f92e" id="r_ga429164ee1c82fc8db05788d710c1f92e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga429164ee1c82fc8db05788d710c1f92e">display_soft_link_target</a> (const char *linkpath)</td></tr>
+<tr class="memdesc:ga429164ee1c82fc8db05788d710c1f92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la cible d'un lien symbolique.  <br /></td></tr>
+<tr class="separator:ga429164ee1c82fc8db05788d710c1f92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga6de27918294daad88762f3e47eaaa5a3" name="ga6de27918294daad88762f3e47eaaa5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6de27918294daad88762f3e47eaaa5a3">&#9670;&#160;</a></span>create_hard_link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int create_hard_link </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>linkpath</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un lien physique entre deux fichiers. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Fichier cible à lier </td></tr>
+    <tr><td class="paramname">linkpath</td><td>Chemin du nouveau lien physique </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 si succès, -1 si échec </dd></dl>
+
+</div>
+</div>
+<a id="ga27e6adf5116e3f1b7b72ac730f69c8d3" name="ga27e6adf5116e3f1b7b72ac730f69c8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27e6adf5116e3f1b7b72ac730f69c8d3">&#9670;&#160;</a></span>create_soft_link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int create_soft_link </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>linkpath</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un lien symbolique entre deux fichiers. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Fichier cible à lier </td></tr>
+    <tr><td class="paramname">linkpath</td><td>Chemin du nouveau lien symbolique </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 si succès, -1 si échec </dd></dl>
+
+</div>
+</div>
+<a id="ga429164ee1c82fc8db05788d710c1f92e" name="ga429164ee1c82fc8db05788d710c1f92e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga429164ee1c82fc8db05788d710c1f92e">&#9670;&#160;</a></span>display_soft_link_target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int display_soft_link_target </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>linkpath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la cible d'un lien symbolique. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">linkpath</td><td>Chemin du lien symbolique </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 si succès, -1 si échec </dd></dl>
+
+</div>
+</div>
+<a id="ga6b1db705bcdbaad9b6362d95b92f69ad" name="ga6b1db705bcdbaad9b6362d95b92f69ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b1db705bcdbaad9b6362d95b92f69ad">&#9670;&#160;</a></span>fs_link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int fs_link </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>oldpath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>newpath</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un lien physique (hard link) vers un fichier existant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">oldpath</td><td>Chemin existant du fichier </td></tr>
+    <tr><td class="paramname">newpath</td><td>Nouveau chemin à créer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 en cas de succès, -1 en cas d'échec </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_cgraph.png" border="0" usemap="#agroup__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_cgraph" alt=""/></div>
+<map name="agroup__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_cgraph" id="agroup__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_cgraph">
+<area shape="rect" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="5,239,65,266"/>
+<area shape="rect" href="partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="115,151,250,178"/>
+<area shape="poly" title=" " alt="" coords="48,237,76,212,111,188,122,182,124,187,114,192,79,217,52,241"/>
+<area shape="rect" href="partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="113,202,253,229"/>
+<area shape="poly" title=" " alt="" coords="64,243,112,230,114,236,66,248"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="116,277,250,303"/>
+<area shape="poly" title=" " alt="" coords="66,257,114,270,112,275,64,263"/>
+<area shape="rect" href="partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="144,327,222,354"/>
+<area shape="poly" title=" " alt="" coords="52,264,79,289,114,313,131,321,129,326,111,318,76,293,48,268"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="302,214,406,241"/>
+<area shape="poly" title=" " alt="" coords="223,176,254,188,302,206,301,211,252,193,221,181"/>
+<area shape="rect" href="partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="301,142,407,169"/>
+<area shape="poly" title=" " alt="" coords="251,158,285,156,286,162,251,164"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="469,223,585,250"/>
+<area shape="poly" title=" " alt="" coords="406,227,454,230,453,235,406,233"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="661,230,786,257"/>
+<area shape="poly" title=" " alt="" coords="585,236,645,238,645,243,585,241"/>
+<area shape="rect" href="partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="455,142,599,169"/>
+<area shape="poly" title=" " alt="" coords="408,153,440,153,440,158,408,158"/>
+<area shape="rect" href="partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="467,78,587,105"/>
+<area shape="poly" title=" " alt="" coords="391,139,474,108,476,113,393,144"/>
+<area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="848,27,952,54"/>
+<area shape="poly" title=" " alt="" coords="572,167,621,178,679,185,741,182,771,176,799,165,827,146,851,120,884,67,889,70,855,123,831,150,801,170,772,181,741,188,679,190,620,183,571,172"/>
+<area shape="rect" href="partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="683,129,764,155"/>
+<area shape="poly" title=" " alt="" coords="599,148,667,143,668,148,599,153"/>
+<area shape="poly" title=" " alt="" coords="542,75,586,42,615,25,646,13,697,4,749,4,799,11,842,20,841,25,798,16,749,10,698,9,647,18,617,30,589,46,545,80"/>
+<area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="647,27,800,54"/>
+<area shape="poly" title=" " alt="" coords="581,75,653,56,655,61,582,80"/>
+<area shape="rect" href="partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="659,78,788,105"/>
+<area shape="poly" title=" " alt="" coords="587,89,644,89,644,94,587,94"/>
+<area shape="poly" title=" " alt="" coords="801,38,833,38,833,43,801,43"/>
+<area shape="poly" title=" " alt="" coords="253,218,287,220,287,225,253,223"/>
+<area shape="poly" title=" " alt="" coords="221,274,300,244,302,249,223,279"/>
+<area shape="poly" title=" " alt="" coords="157,277,153,268,156,258,166,252,183,250,201,253,210,259,207,264,199,258,183,255,168,257,160,262,158,268,162,275"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="312,277,396,303"/>
+<area shape="poly" title=" " alt="" coords="250,287,296,287,296,293,250,293"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_icgraph.png" border="0" usemap="#agroup__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_icgraph" alt=""/></div>
+<map name="agroup__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_icgraph" id="agroup__link__management_ga6b1db705bcdbaad9b6362d95b92f69ad_icgraph">
+<area shape="rect" title="Crée un lien physique (hard link) vers un fichier existant." alt="" coords="103,5,162,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

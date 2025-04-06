@@ -93,15 +93,32 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Référence du fichier links.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+
+<p>Gestion des liens (hard links et symbolic links) dans le système de fichiers.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="partition_8h_source.html">partition.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de links.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="links_8h__incl.png" border="0" usemap="#ainclude_2links_8h" alt=""/></div>
 <map name="ainclude_2links_8h" id="ainclude_2links_8h">
-<area shape="rect" title=" " alt="" coords="5,5,110,32"/>
-<area shape="rect" title=" " alt="" coords="23,80,92,107"/>
-<area shape="poly" title=" " alt="" coords="60,33,60,64,55,64,55,33"/>
+<area shape="rect" title="Gestion des liens (hard links et symbolic links) dans le système de fichiers." alt="" coords="205,5,309,32"/>
+<area shape="rect" href="partition_8h.html" title="Header file for the partition management library." alt="" coords="218,80,296,107"/>
+<area shape="poly" title=" " alt="" coords="260,33,260,64,254,64,254,33"/>
+<area shape="rect" title=" " alt="" coords="5,155,69,181"/>
+<area shape="poly" title=" " alt="" coords="220,110,84,154,83,149,218,105"/>
+<area shape="rect" title=" " alt="" coords="93,155,157,181"/>
+<area shape="poly" title=" " alt="" coords="235,110,162,149,160,145,233,105"/>
+<area shape="rect" title=" " alt="" coords="182,155,242,181"/>
+<area shape="poly" title=" " alt="" coords="251,109,230,143,225,140,247,106"/>
+<area shape="rect" title=" " alt="" coords="266,155,341,181"/>
+<area shape="poly" title=" " alt="" coords="267,106,290,140,285,143,263,109"/>
+<area shape="rect" title=" " alt="" coords="364,155,422,181"/>
+<area shape="poly" title=" " alt="" coords="282,105,357,145,355,149,279,110"/>
+<area shape="rect" href="constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="446,155,542,181"/>
+<area shape="poly" title=" " alt="" coords="297,104,439,147,437,152,296,109"/>
+<area shape="rect" title=" " alt="" coords="462,229,526,256"/>
+<area shape="poly" title=" " alt="" coords="497,182,497,214,492,214,492,182"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,9 +126,11 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="links_8h__dep__incl.png" border="0" usemap="#ainclude_2links_8hdep" alt=""/></div>
 <map name="ainclude_2links_8hdep" id="ainclude_2links_8hdep">
-<area shape="rect" title=" " alt="" coords="5,5,110,32"/>
-<area shape="rect" href="main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="16,80,99,107"/>
-<area shape="poly" title=" " alt="" coords="60,48,60,80,55,80,55,48"/>
+<area shape="rect" title="Gestion des liens (hard links et symbolic links) dans le système de fichiers." alt="" coords="52,5,156,32"/>
+<area shape="rect" href="main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="5,80,88,107"/>
+<area shape="poly" title=" " alt="" coords="87,46,58,81,54,78,82,43"/>
+<area shape="rect" href="partition_8c.html" title="This file contains the functions to create and manage partitions." alt="" coords="112,80,213,107"/>
+<area shape="poly" title=" " alt="" coords="126,43,154,78,150,81,122,46"/>
 </map>
 </div>
 </div>
@@ -119,115 +138,32 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a6de27918294daad88762f3e47eaaa5a3" id="r_a6de27918294daad88762f3e47eaaa5a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6de27918294daad88762f3e47eaaa5a3">create_hard_link</a> (const char *target, const char *linkpath)</td></tr>
-<tr class="separator:a6de27918294daad88762f3e47eaaa5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27e6adf5116e3f1b7b72ac730f69c8d3" id="r_a27e6adf5116e3f1b7b72ac730f69c8d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27e6adf5116e3f1b7b72ac730f69c8d3">create_soft_link</a> (const char *target, const char *linkpath)</td></tr>
-<tr class="separator:a27e6adf5116e3f1b7b72ac730f69c8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a429164ee1c82fc8db05788d710c1f92e" id="r_a429164ee1c82fc8db05788d710c1f92e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a429164ee1c82fc8db05788d710c1f92e">display_soft_link_target</a> (const char *linkpath)</td></tr>
-<tr class="separator:a429164ee1c82fc8db05788d710c1f92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b1db705bcdbaad9b6362d95b92f69ad" id="r_ga6b1db705bcdbaad9b6362d95b92f69ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__link__management.html#ga6b1db705bcdbaad9b6362d95b92f69ad">fs_link</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *oldpath, const char *newpath)</td></tr>
+<tr class="memdesc:ga6b1db705bcdbaad9b6362d95b92f69ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un lien physique (hard link) vers un fichier existant.  <br /></td></tr>
+<tr class="separator:ga6b1db705bcdbaad9b6362d95b92f69ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6de27918294daad88762f3e47eaaa5a3" id="r_ga6de27918294daad88762f3e47eaaa5a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__link__management.html#ga6de27918294daad88762f3e47eaaa5a3">create_hard_link</a> (const char *target, const char *linkpath)</td></tr>
+<tr class="memdesc:ga6de27918294daad88762f3e47eaaa5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un lien physique entre deux fichiers.  <br /></td></tr>
+<tr class="separator:ga6de27918294daad88762f3e47eaaa5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27e6adf5116e3f1b7b72ac730f69c8d3" id="r_ga27e6adf5116e3f1b7b72ac730f69c8d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__link__management.html#ga27e6adf5116e3f1b7b72ac730f69c8d3">create_soft_link</a> (const char *target, const char *linkpath)</td></tr>
+<tr class="memdesc:ga27e6adf5116e3f1b7b72ac730f69c8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un lien symbolique entre deux fichiers.  <br /></td></tr>
+<tr class="separator:ga27e6adf5116e3f1b7b72ac730f69c8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga429164ee1c82fc8db05788d710c1f92e" id="r_ga429164ee1c82fc8db05788d710c1f92e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__link__management.html#ga429164ee1c82fc8db05788d710c1f92e">display_soft_link_target</a> (const char *linkpath)</td></tr>
+<tr class="memdesc:ga429164ee1c82fc8db05788d710c1f92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la cible d'un lien symbolique.  <br /></td></tr>
+<tr class="separator:ga429164ee1c82fc8db05788d710c1f92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a6de27918294daad88762f3e47eaaa5a3" name="a6de27918294daad88762f3e47eaaa5a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6de27918294daad88762f3e47eaaa5a3">&#9670;&#160;</a></span>create_hard_link()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int create_hard_link </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>linkpath</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Create a hard link between two files.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">target</td><td>The target file to link to. </td></tr>
-    <tr><td class="paramname">linkpath</td><td>The path of the new hard link. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 on success, -1 on failure.</dd></dl>
-<p>This file contains the functions to manage the links between the different files.</p>
-<dl class="section author"><dt>Auteur</dt><dd>Robin de Angelis (%) </dd>
-<dd>
-Alexandre Ledard (%) </dd>
-<dd>
-Killian Treuil (%)</dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.2 18/03/2025 Create a hard link between two files.</dd></dl>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">target</td><td>The target file to link to. </td></tr>
-    <tr><td class="paramname">linkpath</td><td>The path of the new hard link. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 on success, -1 on failure. </dd></dl>
-
-</div>
-</div>
-<a id="a27e6adf5116e3f1b7b72ac730f69c8d3" name="a27e6adf5116e3f1b7b72ac730f69c8d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27e6adf5116e3f1b7b72ac730f69c8d3">&#9670;&#160;</a></span>create_soft_link()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int create_soft_link </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>linkpath</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Create a symbolic (soft) link between two files.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">target</td><td>The target file to link to. </td></tr>
-    <tr><td class="paramname">linkpath</td><td>The path of the new symbolic link. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 on success, -1 on failure. </dd></dl>
-
-</div>
-</div>
-<a id="a429164ee1c82fc8db05788d710c1f92e" name="a429164ee1c82fc8db05788d710c1f92e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a429164ee1c82fc8db05788d710c1f92e">&#9670;&#160;</a></span>display_soft_link_target()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int display_soft_link_target </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>linkpath</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Display the target of a symbolic link.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">linkpath</td><td>The path of the symbolic link. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 on success, -1 on failure. </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gestion des liens (hard links et symbolic links) dans le système de fichiers. </p>
+<p>Ce fichier d'en-tête définit les fonctions pour créer et gérer les liens entre fichiers, incluant à la fois les liens physiques (hard links) et les liens symboliques (soft links).</p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>06/04/2025</dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd><ul>
+<li>Robin de Angelis 0 (%)</li>
+<li>Alexandre Ledard 100 (%)</li>
+<li>Killian Treuil 0 (%)</li>
+</ul>
+</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Pas de copyright spécifié </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

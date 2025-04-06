@@ -1,3 +1,26 @@
+/**
+ * @file user.h
+ * @brief Gestion des utilisateurs du système de fichiers
+ *
+ * @details Ce fichier d'en-tête définit la structure des utilisateurs et les fonctions
+ *          pour gérer leur cycle de vie (création, suppression, modification). Il inclut
+ *          également les différents types d'utilisateurs et leurs permissions.
+ *
+ * @version 1.0
+ * @date 06/04/2025
+ *
+ * @authors
+ * - Robin de Angelis 100(%)
+ * - Alexandre Ledard 0(%)
+ * - Killian Treuil 0(%)
+ *
+ * @copyright Pas de copyright spécifié
+ *
+ * @defgroup user_management Gestion des utilisateurs
+ * @{
+ */
+
+
 #ifndef USER_H
 #define USER_H
 
@@ -74,3 +97,5 @@ uint32_t get_user_count();
 void display_users();
 
 #endif // USER_H
+
+/** @} */ // Fin du groupe user_management

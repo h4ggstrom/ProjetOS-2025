@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['make_5fdemo_5fdirectory_1',['make_demo_directory',['../main_8c.html#a784957ab86b45802aa173d5e53f3af8b',1,'main.c']]],
-  ['mycp_2',['mycp',['../file__operations_8c.html#adf4b1cf00c440b09b0760b9ea0cb07df',1,'mycp(const char *source_path, const char *dest_path):&#160;file_operations.c'],['../file__operations_8h.html#adf4b1cf00c440b09b0760b9ea0cb07df',1,'mycp(const char *source_path, const char *dest_path):&#160;file_operations.c']]],
-  ['mymv_3',['mymv',['../file__operations_8c.html#ab840828b3ad045ea77d3537d948fef96',1,'mymv(const char *source_path, const char *dest_dir):&#160;file_operations.c'],['../file__operations_8h.html#a30a3ead9c3f2da14b94d57771ca79085',1,'mymv(const char *source_path, const char *dest_path):&#160;file_operations.c']]]
+  ['list_5fdirectory_0',['list_directory',['../group__vfs__functions.html#gada74a80451424a86241f4c4741907429',1,'list_directory(FileSystem *fs, const char *path, bool long_format):&#160;vfs_function.c'],['../group__vfs__functions.html#gada74a80451424a86241f4c4741907429',1,'list_directory(FileSystem *fs, const char *path, bool long_format):&#160;vfs_function.c']]],
+  ['load_5fpartition_1',['load_partition',['../partition_8c.html#a3ad3344eab759f24efde2ff355898977',1,'load_partition(FileSystem *fs, const char *img_path):&#160;partition.c'],['../partition_8h.html#a3ad3344eab759f24efde2ff355898977',1,'load_partition(FileSystem *fs, const char *img_path):&#160;partition.c']]]
 ];

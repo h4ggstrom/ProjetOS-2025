@@ -1,17 +1,20 @@
 <map id="free_inode" name="free_inode">
-<area shape="rect" id="Node000001" title="Libère un inode." alt="" coords="462,79,544,106"/>
-<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,28,414,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="447,76,397,58,399,53,449,71"/>
-<area shape="rect" id="Node000005" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,79,398,106"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="447,95,398,95,398,90,447,90"/>
-<area shape="rect" id="Node000006" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,130,238,156"/>
-<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="448,112,415,120,322,134,238,142,238,137,322,129,414,115,447,107"/>
-<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,54,55,80"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="300,26,256,16,206,10,154,9,104,19,72,35,47,55,43,51,69,31,102,14,154,4,207,4,257,11,301,21"/>
-<area shape="rect" id="Node000004" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,28,252,55"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,44,253,44,253,39,285,39"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="88,60,55,66,54,60,87,55"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="301,91,55,72,55,66,301,86"/>
-<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="301,79,226,58,228,53,302,74"/>
-<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="126,125,101,113,51,83,53,79,104,109,129,121"/>
+<area shape="rect" id="Node000001" title="Libère un inode." alt="" coords="462,109,544,136"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,33,414,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="465,103,413,74,389,63,392,58,416,69,467,98"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,84,398,110"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="446,115,398,107,399,101,447,110"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,134,220,161"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="447,129,220,147,220,142,447,124"/>
+<area shape="rect" id="Node000007" href="$partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4" title="Supprime un répertoire vide." alt="" coords="117,185,238,212"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="447,138,415,146,239,187,238,182,414,141,446,133"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,84,55,110"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,30,261,18,210,10,155,10,129,15,104,23,84,35,66,52,41,85,37,81,62,48,80,31,102,18,128,10,155,5,210,4,263,13,307,25"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,33,252,60"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,49,253,49,253,44,285,44"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="123,68,56,91,54,86,121,63"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="301,100,55,100,55,94,301,94"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="301,84,226,63,228,57,302,79"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="121,131,54,108,56,103,123,126"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="110,180,101,175,65,144,39,112,43,109,69,140,104,171,113,176"/>
 </map>

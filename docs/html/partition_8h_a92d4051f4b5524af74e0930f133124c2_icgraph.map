@@ -1,0 +1,7 @@
+<map id="allocate_block_for_inode" name="allocate_block_for_inode">
+<area shape="rect" id="Node000001" title=" " alt="" coords="218,5,344,48"/>
+<area shape="rect" id="Node000002" href="$group__vfs__functions.html#gabafd732c4c89442c2e7ee525a00c5895" title="Écrit des données dans un fichier." alt="" coords="103,13,170,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,29,170,29,170,24,202,24"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>

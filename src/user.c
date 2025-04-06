@@ -3,13 +3,13 @@
  * @brief Partie du programme qui regroupe les fonctions qui gérent le systéme d'utilisateur.
  *
  *
- * @version 0.3
- * @date 04/04/2025
+ * @version 1.0
+ * @date 06/04/2025
  *
  * @authors
- * - Robin de Angelis (%)
- * - Alexandre Ledard (%)
- * - Killian Treuil (%)
+ * - Robin de Angelis 100(%)
+ * - Alexandre Ledard 0(%)
+ * - Killian Treuil 0(%)
  */
 
 #include "user.h"

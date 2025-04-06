@@ -1,0 +1,17 @@
+<map id="allocate_inode" name="allocate_inode">
+<area shape="rect" id="Node000001" title="Alloue un nouvel inode libre." alt="" coords="462,79,567,106"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a7d352181413e68deca22594ee7779a73" title="Crée un nouveau répertoire dans le système de fichiers." alt="" coords="300,28,414,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="455,76,400,58,402,53,457,71"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#a340b93ed15aff9cf0dbc759ac4a926db" title="Crée un nouveau fichier dans le système de fichiers." alt="" coords="316,79,398,106"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="447,95,398,95,398,90,447,90"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#a2d82db1abf2ca97a5b809a26bfa44690" title="Crée un lien symbolique (soft link)" alt="" coords="135,130,220,156"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="451,113,415,120,310,135,220,143,220,138,309,130,414,115,450,107"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,54,55,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="300,26,256,16,206,10,154,9,104,19,72,35,47,55,43,51,69,31,102,14,154,4,207,4,257,11,301,21"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a784957ab86b45802aa173d5e53f3af8b" title=" " alt="" coords="103,28,252,55"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,44,253,44,253,39,285,39"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="88,60,55,66,54,60,87,55"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="301,91,55,72,55,66,301,86"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="301,79,226,58,228,53,302,74"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="126,125,101,113,51,83,53,79,104,109,129,121"/>
+</map>

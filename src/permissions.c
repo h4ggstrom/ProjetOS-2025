@@ -1,15 +1,15 @@
 /**
- * @file permission.c
+ * @file permissions.c
  * @brief  This file contains the functions that are used to manage the permissions and access to the files.
  *
  *
- * @version 0.3
- * @date 04/04/2025
+ * @version 1.0
+ * @date 06/04/2025
  *
  * @authors
- * - Robin de Angelis (%)
- * - Alexandre Ledard (%)
- * - Killian Treuil (%)
+ * - Robin de Angelis 100(%)
+ * - Alexandre Ledard 0 (%)
+ * - Killian Treuil 0(%)
  */
 
 #include <stdint.h>

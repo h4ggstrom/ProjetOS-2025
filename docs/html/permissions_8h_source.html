@@ -91,19 +91,32 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">permissions.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="permissions_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PERMISSIONS_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PERMISSIONS_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">int</span> <a class="code hl_function" href="permissions_8h.html#a572ccf7ddfdfd477e7c69ad2b9a36147">change_permissions</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, mode_t mode);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">int</span> <a class="code hl_function" href="permissions_8h.html#a39770f42f06ffed509e6c6c63fe50001">check_access</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keywordtype">int</span> mode);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif </span><span class="comment">// PERMISSIONS_H</span></div>
-<div class="ttc" id="apermissions_8h_html_a39770f42f06ffed509e6c6c63fe50001"><div class="ttname"><a href="permissions_8h.html#a39770f42f06ffed509e6c6c63fe50001">check_access</a></div><div class="ttdeci">int check_access(const char *path, int mode)</div><div class="ttdef"><b>Definition</b> permissions.c:45</div></div>
-<div class="ttc" id="apermissions_8h_html_a572ccf7ddfdfd477e7c69ad2b9a36147"><div class="ttname"><a href="permissions_8h.html#a572ccf7ddfdfd477e7c69ad2b9a36147">change_permissions</a></div><div class="ttdeci">int change_permissions(const char *path, mode_t mode)</div><div class="ttdef"><b>Definition</b> permissions.c:29</div></div>
+<a href="permissions_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor"> #ifndef PERMISSIONS_H</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor"> #define PERMISSIONS_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor"> #include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor"> #include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor"> #include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor"> #include &quot;<a class="code" href="user_8h.html">user.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor"> #include &quot;<a class="code" href="partition_8h.html">partition.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="group__permission__management.html#gaf7b2a8cafb308992f9c9821b33195dff">set_permissions</a>(<a class="code hl_struct" href="structInode.html">Inode</a> *inode, uint16_t permissions);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="group__permission__management.html#gac53e911f10c3da2d449dd417aa81bf92">check_permissions</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structInode.html">Inode</a> *inode, uint16_t required_permissions, <span class="keyword">const</span> <a class="code hl_struct" href="structUser.html">User</a> *user);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="group__permission__management.html#ga3f2b9b76c3267b4ad451e83f377b07f0">chown_inode</a>(<a class="code hl_struct" href="structInode.html">Inode</a> *inode, uint32_t new_owner_id, uint32_t new_group_id);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor"> #endif </span><span class="comment">// PERMISSIONS_H</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> <span class="comment">// Fin du groupe permission_management</span></div>
+<div class="ttc" id="agroup__permission__management_html_ga3f2b9b76c3267b4ad451e83f377b07f0"><div class="ttname"><a href="group__permission__management.html#ga3f2b9b76c3267b4ad451e83f377b07f0">chown_inode</a></div><div class="ttdeci">bool chown_inode(Inode *inode, uint32_t new_owner_id, uint32_t new_group_id)</div><div class="ttdoc">Change le propriétaire et groupe d'un inode.</div><div class="ttdef"><b>Definition</b> permissions.c:74</div></div>
+<div class="ttc" id="agroup__permission__management_html_gac53e911f10c3da2d449dd417aa81bf92"><div class="ttname"><a href="group__permission__management.html#gac53e911f10c3da2d449dd417aa81bf92">check_permissions</a></div><div class="ttdeci">bool check_permissions(const Inode *inode, uint16_t required_permissions, const User *user)</div><div class="ttdoc">Vérifie les permissions d'accès.</div><div class="ttdef"><b>Definition</b> permissions.c:46</div></div>
+<div class="ttc" id="agroup__permission__management_html_gaf7b2a8cafb308992f9c9821b33195dff"><div class="ttname"><a href="group__permission__management.html#gaf7b2a8cafb308992f9c9821b33195dff">set_permissions</a></div><div class="ttdeci">bool set_permissions(Inode *inode, uint16_t permissions)</div><div class="ttdoc">Définit les permissions d'un inode.</div><div class="ttdef"><b>Definition</b> permissions.c:29</div></div>
+<div class="ttc" id="apartition_8h_html"><div class="ttname"><a href="partition_8h.html">partition.h</a></div><div class="ttdoc">Header file for the partition management library.</div></div>
+<div class="ttc" id="astructInode_html"><div class="ttname"><a href="structInode.html">Inode</a></div><div class="ttdoc">Represents an inode in the file system.</div><div class="ttdef"><b>Definition</b> partition.h:79</div></div>
+<div class="ttc" id="astructUser_html"><div class="ttname"><a href="structUser.html">User</a></div><div class="ttdef"><b>Definition</b> user.h:30</div></div>
+<div class="ttc" id="auser_8h_html"><div class="ttname"><a href="user_8h.html">user.h</a></div><div class="ttdoc">Gestion des utilisateurs du système de fichiers.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

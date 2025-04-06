@@ -1,9 +1,11 @@
 <map id="include/vfs_function.h" name="include/vfs_function.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="75,5,224,32"/>
-<area shape="rect" id="Node000002" href="$constantes_8h.html" title=" " alt="" coords="5,155,102,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,34,72,143,68,140,139,31"/>
+<area shape="rect" id="Node000001" title="Fonctions du système de fichiers virtuel (VFS)" alt="" coords="171,5,320,32"/>
+<area shape="rect" id="Node000002" href="$constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="5,155,102,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,35,83,147,80,143,228,30"/>
 <area shape="rect" id="Node000004" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="206,80,285,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,30,218,68,215,73,165,35"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="248,33,248,64,243,64,243,33"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="309,80,398,107"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="266,30,323,69,320,73,263,35"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="21,229,86,256"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="56,182,56,214,51,214,51,182"/>
 <area shape="poly" id="edge9_Node000004_Node000002" title=" " alt="" coords="213,110,102,151,100,146,211,105"/>

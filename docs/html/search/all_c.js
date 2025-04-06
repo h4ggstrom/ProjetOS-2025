@@ -1,5 +1,22 @@
 var searchData=
 [
-  ['names_0',['names',['../structDirectory.html#ac3928002cf1e7b576ffc8d5263630262',1,'Directory']]],
-  ['numériques_201_2010_20_3a_1',['Options numériques (1-10) :',['../main_8c.html#autotoc_md1',1,'']]]
+  ['magic_0',['magic',['../structSuperblock.html#a621495d110ee3ca3f4f4fc766aa51e77',1,'Superblock']]],
+  ['magic_5fnumber_1',['MAGIC_NUMBER',['../group__constantes.html#ga54061e5993a5517320d425f44408cc86',1,'constantes.h']]],
+  ['main_2',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
+  ['main_2ec_3',['main.c',['../main_8c.html',1,'']]],
+  ['make_5fdemo_5fdirectory_4',['make_demo_directory',['../main_8c.html#a784957ab86b45802aa173d5e53f3af8b',1,'main.c']]],
+  ['makefile_5',['Makefile',['../Makefile.html',1,'']]],
+  ['max_5fargs_6',['MAX_ARGS',['../main_8c.html#a29b7451465deac204c5f7cb1f9c6e1fc',1,'main.c']]],
+  ['max_5fblocks_5fptr_7',['MAX_BLOCKS_PTR',['../group__constantes.html#gaa37fa0f324021ed61d6d26e948202f3b',1,'constantes.h']]],
+  ['max_5ffilename_5flen_8',['MAX_FILENAME_LEN',['../group__constantes.html#gacc9794f655f61a3246ba3fd5c9c67e14',1,'constantes.h']]],
+  ['max_5ffiles_9',['MAX_FILES',['../group__constantes.html#ga2c5eecb22513a88c24ae5831a3265e54',1,'constantes.h']]],
+  ['max_5fline_10',['MAX_LINE',['../main_8c.html#a842ed03f27719bc87666bfd1f75415b8',1,'main.c']]],
+  ['max_5fopen_5ffiles_11',['MAX_OPEN_FILES',['../group__constantes.html#gae4777ede3ed2173c78fab7798ad6eddb',1,'constantes.h']]],
+  ['max_5fopen_5ffiles_12',['max_open_files',['../structFileSystem.html#a40bd65b0c0fc8461150f99651bfb8c1b',1,'FileSystem']]],
+  ['max_5fpath_5fdepth_13',['MAX_PATH_DEPTH',['../group__constantes.html#gaa6817068c86820d11391ab6fd439190c',1,'constantes.h']]],
+  ['max_5fpath_5flen_14',['MAX_PATH_LEN',['../group__constantes.html#gabdd33f362ae3bbdacb5de76473aa8a2f',1,'constantes.h']]],
+  ['max_5fusers_15',['MAX_USERS',['../user_8c.html#a2c2a303621f66761529e598758d7ef34',1,'user.c']]],
+  ['min_16',['MIN',['../partition_8c.html#a3acffbd305ee72dcd4593c0d8af64a4f',1,'MIN:&#160;partition.c'],['../group__constantes.html#ga3acffbd305ee72dcd4593c0d8af64a4f',1,'MIN:&#160;constantes.h']]],
+  ['mode_17',['mode',['../structFileDescriptor.html#ab72db46b9ff6a82d8daaa04b58d8041c',1,'FileDescriptor']]],
+  ['modified_5fat_18',['modified_at',['../structInode.html#afcd987172b9f9b22adf59befb5fcade6',1,'Inode']]]
 ];

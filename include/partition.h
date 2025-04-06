@@ -8,13 +8,13 @@
  *          APIs for file system operations such as file creation, deletion,
  *          and directory manipulation.
  *
- * @version 0.3
- * @date 04/04/2025
+ * @version 1.0
+ * @date 06/04/2025
  * 
  * @authors
- * @author Robin de Angelis
- * @author Alexandre Ledard
- * @author Killian Treuil
+ * @author Robin de Angelis 35(%)
+ * @author Alexandre Ledard 50(%)
+ * @author Killian Treuil 15(%)
  * 
  */
 

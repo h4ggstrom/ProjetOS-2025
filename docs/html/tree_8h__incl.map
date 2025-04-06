@@ -1,8 +1,8 @@
 <map id="include/tree.h" name="include/tree.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="298,5,397,32"/>
+<area shape="rect" id="Node000001" title="Affichage de l&#39;arborescence du système de fichiers." alt="" coords="298,5,397,32"/>
 <area shape="rect" id="Node000002" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="264,155,343,181"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="346,33,332,81,314,141,309,139,326,79,341,32"/>
-<area shape="rect" id="Node000010" href="$vfs__function_8h.html" title=" " alt="" coords="341,80,445,107"/>
+<area shape="rect" id="Node000010" href="$vfs__function_8h.html" title="Fonctions du système de fichiers virtuel (VFS)" alt="" coords="341,80,445,107"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="358,31,379,65,375,68,353,34"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,229,69,256"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="265,183,85,231,83,226,263,177"/>
@@ -14,10 +14,12 @@
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="306,182,306,214,301,214,301,182"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="364,229,422,256"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="321,180,367,217,364,221,318,184"/>
-<area shape="rect" id="Node000008" href="$constantes_8h.html" title=" " alt="" coords="446,229,542,256"/>
+<area shape="rect" id="Node000008" href="$constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="446,229,542,256"/>
 <area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="338,179,448,221,446,226,336,184"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="462,304,526,331"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="497,257,497,288,492,288,492,257"/>
 <area shape="poly" id="edge11_Node000010_Node000002" title=" " alt="" coords="379,109,333,147,329,143,376,105"/>
-<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="404,106,479,215,475,218,399,109"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="397,106,405,141,422,180,440,201,462,218,458,222,437,205,417,183,400,143,392,107"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="431,155,520,181"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="409,105,452,142,448,146,406,109"/>
 </map>

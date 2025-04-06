@@ -1,0 +1,13 @@
+<map id="include/user.h" name="include/user.h">
+<area shape="rect" id="Node000001" title="Gestion des utilisateurs du système de fichiers." alt="" coords="114,5,216,32"/>
+<area shape="rect" id="Node000002" href="$permissions_8h.html" title="Gestion des permissions et propriétés des fichiers." alt="" coords="37,80,184,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,46,122,81,118,78,144,43"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="5,155,88,181"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="100,34,59,52,42,65,27,81,22,99,24,119,40,153,35,156,19,120,16,99,23,79,38,61,56,47,98,29"/>
+<area shape="rect" id="Node000004" href="$permissions_8c.html" title="This file contains the functions that are used to manage the permissions and access to the files." alt="" coords="135,155,259,181"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="184,45,198,79,203,120,201,154,196,154,198,120,193,81,179,47"/>
+<area shape="rect" id="Node000005" href="$user_8c.html" title="Partie du programme qui regroupe les fonctions qui gérent le systéme d&#39;utilisateur." alt="" coords="259,80,338,107"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="203,37,276,77,274,82,200,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,120,60,156,56,152,87,117"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="139,115,184,152,181,156,135,119"/>
+</map>

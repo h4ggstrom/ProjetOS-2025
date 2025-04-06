@@ -1,11 +1,13 @@
 <map id="src/vfs_function.c" name="src/vfs_function.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="87,5,212,32"/>
-<area shape="rect" id="Node000002" href="$vfs__function_8h.html" title=" " alt="" coords="98,80,201,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,33,152,64,147,64,147,33"/>
-<area shape="rect" id="Node000003" href="$constantes_8h.html" title=" " alt="" coords="5,229,102,256"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="144,109,72,218,68,215,139,106"/>
+<area shape="rect" id="Node000001" title="Partie du programme qui regroupe les commandes du terminales pour intéragir avec le File System." alt="" coords="183,5,308,32"/>
+<area shape="rect" id="Node000002" href="$vfs__function_8h.html" title="Fonctions du système de fichiers virtuel (VFS)" alt="" coords="194,80,297,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,33,248,64,243,64,243,33"/>
+<area shape="rect" id="Node000003" href="$constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="5,229,102,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,109,83,222,80,218,228,105"/>
 <area shape="rect" id="Node000005" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="206,155,285,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="168,105,218,143,215,147,165,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="248,107,248,139,243,139,243,107"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="309,155,398,181"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="266,105,323,143,320,148,263,109"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="21,304,86,331"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="56,257,56,288,51,288,51,257"/>
 <area shape="poly" id="edge10_Node000005_Node000003" title=" " alt="" coords="213,184,102,226,100,221,211,179"/>

@@ -1,3 +1,24 @@
+/**
+ * @file constantes.h
+ * @brief Définition des constantes et paramètres du système de fichiers
+ *
+ * @details Ce fichier d'en-tête contient toutes les constantes, macros et définitions
+ *          nécessaires au fonctionnement du système de fichiers. Il inclut les limites
+ *          système, les modes d'ouverture de fichiers, les permissions UNIX et les
+ *          codes d'erreur standardisés.
+ *
+ * @version 1.0
+ * @date 06/04/2025
+ *
+ * @authors
+ * - Robin de Angelis 33 (%)
+ * - Alexandre Ledard 33 (%)
+ * - Killian Treuil 33 (%)
+ *
+ *
+ * @defgroup constantes Constantes du système
+ * @{
+ */
 #ifndef CONSTANTES_H
 #define CONSTANTES_H
 
@@ -98,3 +119,5 @@
 #define DATA_BLOCKS_OFFSET (BLOCK_BITMAP_OFFSET + (MAX_FILES / 8))
 
 #endif // CONSTANTES_H
+
+/** @} */ // Fin du groupe constantes

@@ -1,0 +1,7 @@
+<map id="get_user_count" name="get_user_count">
+<area shape="rect" id="Node000001" title="Récupère le nombre d&#39;utilisateurs enregistrés." alt="" coords="297,5,407,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#ac6db79aef8cae53c124f4a1561576e27" title="Initialise un utilisateur standard au démarrage." alt="" coords="103,5,249,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="281,21,249,21,249,16,281,16"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

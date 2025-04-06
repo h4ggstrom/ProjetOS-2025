@@ -1,21 +1,31 @@
 <map id="include/constantes.h" name="include/constantes.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="128,5,269,32"/>
-<area shape="rect" id="Node000002" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="87,80,210,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,47,160,81,155,78,179,44"/>
-<area shape="rect" id="Node000006" href="$vfs__function_8h.html" title=" " alt="" coords="223,155,371,181"/>
-<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="217,43,291,153,286,156,213,46"/>
-<area shape="rect" id="Node000003" href="$tree_8h.html" title=" " alt="" coords="51,229,150,256"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,118,101,135,89,156,85,175,86,194,97,228,92,230,81,195,79,174,84,154,97,132,115,115"/>
-<area shape="rect" id="Node000004" href="$main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="106,304,189,331"/>
-<area shape="poly" id="edge9_Node000002_Node000004" title=" " alt="" coords="119,118,79,156,55,191,42,230,39,243,42,255,54,271,71,284,107,302,105,307,68,288,51,274,37,257,34,243,37,229,50,188,75,153,116,114"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="189,111,272,152,270,156,187,116"/>
-<area shape="rect" id="Node000008" href="$partition_8c.html" title="This file contains the functions to create and manage partitions." alt="" coords="99,155,199,181"/>
-<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="152,122,152,154,146,154,146,122"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="119,268,142,302,137,305,115,271"/>
-<area shape="rect" id="Node000005" href="$tree_8c.html" title="Partie du programme qui s&#39;occupe de l&#39;affichage de l&#39;arbre de repertoire." alt="" coords="5,304,82,331"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="84,270,55,305,51,302,79,267"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="249,190,136,231,134,226,248,185"/>
-<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="269,193,224,231,187,271,159,305,155,302,183,267,220,227,266,189"/>
-<area shape="rect" id="Node000007" href="$vfs__function_8c.html" title=" " alt="" coords="234,229,360,256"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="300,197,300,229,294,229,294,197"/>
+<area shape="rect" id="Node000001" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="392,5,533,32"/>
+<area shape="rect" id="Node000002" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="351,80,474,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="447,47,424,81,419,78,443,44"/>
+<area shape="rect" id="Node000010" href="$vfs__function_8h.html" title="Fonctions du système de fichiers virtuel (VFS)" alt="" coords="547,155,695,181"/>
+<area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="489,41,609,152,606,156,485,45"/>
+<area shape="rect" id="Node000003" href="$links_8h.html" title="Gestion des liens (hard links et symbolic links) dans le système de fichiers." alt="" coords="317,155,421,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,122,379,156,374,153,395,119"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="402,304,485,331"/>
+<area shape="poly" id="edge15_Node000002_Node000004" title=" " alt="" coords="426,121,435,154,445,239,446,304,441,304,440,240,430,155,421,122"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html" title="This file contains the functions to create and manage partitions." alt="" coords="252,229,352,256"/>
+<area shape="poly" id="edge16_Node000002_Node000005" title=" " alt="" coords="356,116,329,133,307,156,300,174,298,194,302,229,296,229,293,194,295,173,303,153,325,128,354,111"/>
+<area shape="rect" id="Node000006" href="$permissions_8h.html" title="Gestion des permissions et propriétés des fichiers." alt="" coords="95,155,242,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="357,114,212,157,211,151,355,109"/>
+<area shape="rect" id="Node000007" href="$permissions_8c.html" title="This file contains the functions that are used to manage the permissions and access to the files." alt="" coords="5,229,130,256"/>
+<area shape="poly" id="edge17_Node000002_Node000007" title=" " alt="" coords="336,101,265,108,191,119,126,135,102,145,85,157,75,173,69,192,68,229,63,229,64,192,70,171,82,153,99,140,125,130,190,114,265,103,335,96"/>
+<area shape="rect" id="Node000008" href="$tree_8h.html" title="Affichage de l&#39;arborescence du système de fichiers." alt="" coords="490,229,589,256"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="441,115,479,153,510,193,534,228,529,231,506,196,475,156,437,119"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="464,110,585,152,583,157,462,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="384,194,440,302,435,305,380,196"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="349,195,316,231,312,227,345,191"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="186,193,209,225,241,254,281,275,324,291,402,309,401,314,322,296,279,280,238,258,205,229,181,196"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="140,193,87,231,84,227,137,188"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="513,268,462,306,458,301,509,263"/>
+<area shape="rect" id="Node000009" href="$tree_8c.html" title="Partie du programme qui s&#39;occupe de l&#39;affichage de l&#39;arbre de repertoire." alt="" coords="509,304,586,331"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="545,271,549,303,543,304,540,272"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="624,197,618,228,603,258,583,272,554,285,486,307,484,302,552,280,581,267,599,254,613,226,618,196"/>
+<area shape="poly" id="edge12_Node000010_Node000008" title=" " alt="" coords="597,194,555,231,552,227,594,190"/>
+<area shape="rect" id="Node000011" href="$vfs__function_8c.html" title="Partie du programme qui regroupe les commandes du terminales pour intéragir avec le File System." alt="" coords="664,229,789,256"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="653,188,709,226,706,231,650,193"/>
 </map>

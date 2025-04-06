@@ -6,13 +6,13 @@
 directories, files, and links as specified in the requirements.
 The structure is created inside a "demo" directory at the root level of the project.
  *
- * @version 0.3
- * @date 04/04/2025
+ * @version 1.0
+ * @date 06/04/2025
  *
  * @authors
- * - Robin de Angelis (%)
- * - Alexandre Ledard (%)
- * - Killian Treuil (%)
+ * - Robin de Angelis 30(%)
+ * - Alexandre Ledard 50(%)
+ * - Killian Treuil 20(%)
  */
 
 #include <stdio.h>
@@ -114,12 +114,6 @@ int main()
             token = strtok(NULL, " ");
         }
         args[i] = NULL; // Terminer le tableau avec NULL
-
-        for (int j = 0; args[j] != NULL; j++)
-        {
-            printf("args[%d] = %s\t", j, args[j]);
-        }
-        printf("\n");
 
         if (args[0] == NULL)
         {

@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet 0S 2025: Fonctions VFS</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet 0S 2025<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="doc-content">
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Fonctions VFS</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5445cdb3533a4f28180e2748993bbcf2" id="r_ga5445cdb3533a4f28180e2748993bbcf2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5445cdb3533a4f28180e2748993bbcf2">VFS_FUNCTION_HANTES_H</a></td></tr>
+<tr class="separator:ga5445cdb3533a4f28180e2748993bbcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:gada74a80451424a86241f4c4741907429" id="r_gada74a80451424a86241f4c4741907429"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gada74a80451424a86241f4c4741907429">list_directory</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *path, bool long_format)</td></tr>
+<tr class="memdesc:gada74a80451424a86241f4c4741907429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste le contenu d'un répertoire (équivalent à ls)  <br /></td></tr>
+<tr class="separator:gada74a80451424a86241f4c4741907429"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga71c6e3b3b5dfc4397a3897968b86b239" id="r_ga71c6e3b3b5dfc4397a3897968b86b239"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga71c6e3b3b5dfc4397a3897968b86b239">change_directory</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *path)</td></tr>
+<tr class="memdesc:ga71c6e3b3b5dfc4397a3897968b86b239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le répertoire courant.  <br /></td></tr>
+<tr class="separator:ga71c6e3b3b5dfc4397a3897968b86b239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0ff391eb9b18e5a0dc8a463c2704553" id="r_gae0ff391eb9b18e5a0dc8a463c2704553"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae0ff391eb9b18e5a0dc8a463c2704553">get_current_directory</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs)</td></tr>
+<tr class="memdesc:gae0ff391eb9b18e5a0dc8a463c2704553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient le chemin absolu du répertoire courant.  <br /></td></tr>
+<tr class="separator:gae0ff391eb9b18e5a0dc8a463c2704553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca5a29815408d61083bbbfe7697e9d0e" id="r_gaca5a29815408d61083bbbfe7697e9d0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaca5a29815408d61083bbbfe7697e9d0e">resolve_relative_path</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, const char *rel_path, char *abs_path, size_t size)</td></tr>
+<tr class="memdesc:gaca5a29815408d61083bbbfe7697e9d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convertit un chemin relatif en chemin absolu.  <br /></td></tr>
+<tr class="separator:gaca5a29815408d61083bbbfe7697e9d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ba40f28df8964130a55aac5472ea6d8" id="r_ga6ba40f28df8964130a55aac5472ea6d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6ba40f28df8964130a55aac5472ea6d8">simplify_path</a> (char *path)</td></tr>
+<tr class="memdesc:ga6ba40f28df8964130a55aac5472ea6d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplifie un chemin en supprimant les . et .. inutiles.  <br /></td></tr>
+<tr class="separator:ga6ba40f28df8964130a55aac5472ea6d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabafd732c4c89442c2e7ee525a00c5895" id="r_gabafd732c4c89442c2e7ee525a00c5895"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabafd732c4c89442c2e7ee525a00c5895">fs_write</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, int fd, const void *buf, size_t count)</td></tr>
+<tr class="memdesc:gabafd732c4c89442c2e7ee525a00c5895"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écrit des données dans un fichier.  <br /></td></tr>
+<tr class="separator:gabafd732c4c89442c2e7ee525a00c5895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15b6b10188015572381ac9bb4437a7e1" id="r_ga15b6b10188015572381ac9bb4437a7e1"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga15b6b10188015572381ac9bb4437a7e1">fs_read</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, int fd, void *buf, size_t count)</td></tr>
+<tr class="memdesc:ga15b6b10188015572381ac9bb4437a7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit des données depuis un fichier.  <br /></td></tr>
+<tr class="separator:ga15b6b10188015572381ac9bb4437a7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga009267d18ee7ae829643c2b8e1f17d69" id="r_ga009267d18ee7ae829643c2b8e1f17d69"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga009267d18ee7ae829643c2b8e1f17d69">get_physical_block</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, <a class="el" href="structInode.html">Inode</a> *inode, uint32_t logical_block)</td></tr>
+<tr class="memdesc:ga009267d18ee7ae829643c2b8e1f17d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtient le bloc physique correspondant à un bloc logique.  <br /></td></tr>
+<tr class="separator:ga009267d18ee7ae829643c2b8e1f17d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51b658807c748db2ca12ac3af986fa96" id="r_ga51b658807c748db2ca12ac3af986fa96"><td class="memItemLeft" align="right" valign="top">off_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga51b658807c748db2ca12ac3af986fa96">fs_lseek</a> (<a class="el" href="structFileSystem.html">FileSystem</a> *fs, int fd, off_t offset, int whence)</td></tr>
+<tr class="memdesc:ga51b658807c748db2ca12ac3af986fa96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Repositionne l'offset de lecture/écriture d'un fichier.  <br /></td></tr>
+<tr class="separator:ga51b658807c748db2ca12ac3af986fa96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga485c455ca22bf60aada827b8e14bfbbb" id="r_ga485c455ca22bf60aada827b8e14bfbbb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga485c455ca22bf60aada827b8e14bfbbb">is_relative_path</a> (const char *path)</td></tr>
+<tr class="memdesc:ga485c455ca22bf60aada827b8e14bfbbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si un chemin est relatif.  <br /></td></tr>
+<tr class="separator:ga485c455ca22bf60aada827b8e14bfbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<h2 class="groupheader">Documentation des macros</h2>
+<a id="ga5445cdb3533a4f28180e2748993bbcf2" name="ga5445cdb3533a4f28180e2748993bbcf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5445cdb3533a4f28180e2748993bbcf2">&#9670;&#160;</a></span>VFS_FUNCTION_HANTES_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VFS_FUNCTION_HANTES_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga71c6e3b3b5dfc4397a3897968b86b239" name="ga71c6e3b3b5dfc4397a3897968b86b239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71c6e3b3b5dfc4397a3897968b86b239">&#9670;&#160;</a></span>change_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int change_directory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change le répertoire courant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">path</td><td>Chemin du nouveau répertoire courant </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 en cas de succès, -1 en cas d'échec </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_cgraph.png" border="0" usemap="#agroup__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_cgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_cgraph" id="agroup__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_cgraph">
+<area shape="rect" title="Change le répertoire courant." alt="" coords="5,56,126,83"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="174,31,307,57"/>
+<area shape="poly" title=" " alt="" coords="126,58,158,53,158,59,126,63"/>
+<area shape="rect" href="group__vfs__functions.html#ga6ba40f28df8964130a55aac5472ea6d8" title="Simplifie un chemin en supprimant les . et .. inutiles." alt="" coords="191,81,290,108"/>
+<area shape="poly" title=" " alt="" coords="126,75,176,83,175,88,126,81"/>
+<area shape="poly" title=" " alt="" coords="212,32,207,22,210,12,222,6,240,4,260,7,271,13,268,18,259,12,240,9,223,11,214,16,212,21,216,29"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="364,5,449,32"/>
+<area shape="poly" title=" " alt="" coords="307,31,349,25,350,30,308,36"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="355,56,458,83"/>
+<area shape="poly" title=" " alt="" coords="308,52,340,57,340,62,307,57"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="506,56,623,83"/>
+<area shape="poly" title=" " alt="" coords="459,67,491,67,491,72,459,72"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="671,56,796,83"/>
+<area shape="poly" title=" " alt="" coords="623,67,655,67,655,72,623,72"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_icgraph.png" border="0" usemap="#agroup__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_icgraph" id="agroup__vfs__functions_ga71c6e3b3b5dfc4397a3897968b86b239_icgraph">
+<area shape="rect" title="Change le répertoire courant." alt="" coords="103,5,223,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga51b658807c748db2ca12ac3af986fa96" name="ga51b658807c748db2ca12ac3af986fa96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga51b658807c748db2ca12ac3af986fa96">&#9670;&#160;</a></span>fs_lseek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">off_t fs_lseek </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>whence</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Repositionne l'offset de lecture/écriture d'un fichier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">fd</td><td>Descripteur de fichier </td></tr>
+    <tr><td class="paramname">offset</td><td>Décalage selon le paramètre whence </td></tr>
+    <tr><td class="paramname">whence</td><td>Origine de positionnement (SEEK_SET, SEEK_CUR, SEEK_END) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>off_t Nouvelle position, ou -1 en cas d'erreur </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga51b658807c748db2ca12ac3af986fa96_icgraph.png" border="0" usemap="#agroup__vfs__functions_ga51b658807c748db2ca12ac3af986fa96_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga51b658807c748db2ca12ac3af986fa96_icgraph" id="agroup__vfs__functions_ga51b658807c748db2ca12ac3af986fa96_icgraph">
+<area shape="rect" title="Repositionne l&#39;offset de lecture/écriture d&#39;un fichier." alt="" coords="103,5,173,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga15b6b10188015572381ac9bb4437a7e1" name="ga15b6b10188015572381ac9bb4437a7e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15b6b10188015572381ac9bb4437a7e1">&#9670;&#160;</a></span>fs_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t fs_read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lit des données depuis un fichier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">fd</td><td>Descripteur de fichier </td></tr>
+    <tr><td class="paramname">buf</td><td>Buffer de destination </td></tr>
+    <tr><td class="paramname">count</td><td>Nombre d'octets à lire </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>ssize_t Nombre d'octets lus, ou -1 en cas d'erreur </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_cgraph.png" border="0" usemap="#agroup__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_cgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_cgraph" id="agroup__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_cgraph">
+<area shape="rect" title="Lit des données depuis un fichier." alt="" coords="5,5,70,32"/>
+<area shape="rect" href="group__vfs__functions.html#ga009267d18ee7ae829643c2b8e1f17d69" title="Obtient le bloc physique correspondant à un bloc logique." alt="" coords="118,5,250,32"/>
+<area shape="poly" title=" " alt="" coords="70,16,102,16,102,21,70,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_icgraph.png" border="0" usemap="#agroup__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_icgraph" id="agroup__vfs__functions_ga15b6b10188015572381ac9bb4437a7e1_icgraph">
+<area shape="rect" title="Lit des données depuis un fichier." alt="" coords="103,5,167,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gabafd732c4c89442c2e7ee525a00c5895" name="gabafd732c4c89442c2e7ee525a00c5895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabafd732c4c89442c2e7ee525a00c5895">&#9670;&#160;</a></span>fs_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t fs_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Écrit des données dans un fichier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">fd</td><td>Descripteur de fichier </td></tr>
+    <tr><td class="paramname">buf</td><td>Données à écrire </td></tr>
+    <tr><td class="paramname">count</td><td>Nombre d'octets à écrire </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>ssize_t Nombre d'octets écrits, ou -1 en cas d'erreur </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_cgraph.png" border="0" usemap="#agroup__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_cgraph" alt=""/></div>
+<map name="agroup__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_cgraph" id="agroup__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_cgraph">
+<area shape="rect" title="Écrit des données dans un fichier." alt="" coords="5,24,73,50"/>
+<area shape="rect" href="partition_8c.html#a92d4051f4b5524af74e0930f133124c2" title=" " alt="" coords="121,16,247,58"/>
+<area shape="poly" title=" " alt="" coords="73,34,105,34,105,40,73,40"/>
+<area shape="rect" href="partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="496,24,601,50"/>
+<area shape="poly" title=" " alt="" coords="247,17,295,9,372,3,449,9,489,17,488,22,448,14,372,8,295,14,248,23"/>
+<area shape="rect" href="partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="295,24,448,50"/>
+<area shape="poly" title=" " alt="" coords="247,34,279,34,279,40,247,40"/>
+<area shape="rect" href="partition_8c.html#a75b615a241e5f4d9b104afb3263f1d19" title=" " alt="" coords="308,74,435,101"/>
+<area shape="poly" title=" " alt="" coords="248,51,306,67,304,72,247,56"/>
+<area shape="poly" title=" " alt="" coords="449,34,481,34,481,40,449,40"/>
+<area shape="poly" title=" " alt="" coords="420,71,484,52,486,57,422,76"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_icgraph.png" border="0" usemap="#agroup__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_icgraph" id="agroup__vfs__functions_gabafd732c4c89442c2e7ee525a00c5895_icgraph">
+<area shape="rect" title="Écrit des données dans un fichier." alt="" coords="103,5,170,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gae0ff391eb9b18e5a0dc8a463c2704553" name="gae0ff391eb9b18e5a0dc8a463c2704553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae0ff391eb9b18e5a0dc8a463c2704553">&#9670;&#160;</a></span>get_current_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * get_current_directory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtient le chemin absolu du répertoire courant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>const char* Chemin absolu du répertoire courant </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_gae0ff391eb9b18e5a0dc8a463c2704553_icgraph.png" border="0" usemap="#agroup__vfs__functions_gae0ff391eb9b18e5a0dc8a463c2704553_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_gae0ff391eb9b18e5a0dc8a463c2704553_icgraph" id="agroup__vfs__functions_gae0ff391eb9b18e5a0dc8a463c2704553_icgraph">
+<area shape="rect" title="Obtient le chemin absolu du répertoire courant." alt="" coords="295,5,438,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="279,21,55,21,55,16,279,16"/>
+<area shape="rect" href="group__vfs__functions.html#gaca5a29815408d61083bbbfe7697e9d0e" title="Convertit un chemin relatif en chemin absolu." alt="" coords="103,31,247,57"/>
+<area shape="poly" title=" " alt="" coords="280,33,248,37,247,32,279,28"/>
+<area shape="poly" title=" " alt="" coords="87,31,55,26,56,20,88,26"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga009267d18ee7ae829643c2b8e1f17d69" name="ga009267d18ee7ae829643c2b8e1f17d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga009267d18ee7ae829643c2b8e1f17d69">&#9670;&#160;</a></span>get_physical_block()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t get_physical_block </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structInode.html">Inode</a> *</td>          <td class="paramname"><span class="paramname"><em>inode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>logical_block</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtient le bloc physique correspondant à un bloc logique. </p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga009267d18ee7ae829643c2b8e1f17d69_icgraph.png" border="0" usemap="#agroup__vfs__functions_ga009267d18ee7ae829643c2b8e1f17d69_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga009267d18ee7ae829643c2b8e1f17d69_icgraph" id="agroup__vfs__functions_ga009267d18ee7ae829643c2b8e1f17d69_icgraph">
+<area shape="rect" title="Obtient le bloc physique correspondant à un bloc logique." alt="" coords="215,5,347,32"/>
+<area shape="rect" href="group__vfs__functions.html#ga15b6b10188015572381ac9bb4437a7e1" title="Lit des données depuis un fichier." alt="" coords="103,5,167,32"/>
+<area shape="poly" title=" " alt="" coords="200,21,167,21,167,16,200,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga485c455ca22bf60aada827b8e14bfbbb" name="ga485c455ca22bf60aada827b8e14bfbbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga485c455ca22bf60aada827b8e14bfbbb">&#9670;&#160;</a></span>is_relative_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool is_relative_path </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si un chemin est relatif. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Le chemin à vérifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si le chemin est relatif, false sinon </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga485c455ca22bf60aada827b8e14bfbbb_icgraph.png" border="0" usemap="#agroup__vfs__functions_ga485c455ca22bf60aada827b8e14bfbbb_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga485c455ca22bf60aada827b8e14bfbbb_icgraph" id="agroup__vfs__functions_ga485c455ca22bf60aada827b8e14bfbbb_icgraph">
+<area shape="rect" title="Vérifie si un chemin est relatif." alt="" coords="103,5,215,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gada74a80451424a86241f4c4741907429" name="gada74a80451424a86241f4c4741907429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gada74a80451424a86241f4c4741907429">&#9670;&#160;</a></span>list_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int list_directory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>long_format</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Liste le contenu d'un répertoire (équivalent à ls) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">path</td><td>Chemin du répertoire à lister </td></tr>
+    <tr><td class="paramname">long_format</td><td>Si true, affiche les détails complets (comme ls -l) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 en cas de succès, -1 en cas d'erreur </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_gada74a80451424a86241f4c4741907429_cgraph.png" border="0" usemap="#agroup__vfs__functions_gada74a80451424a86241f4c4741907429_cgraph" alt=""/></div>
+<map name="agroup__vfs__functions_gada74a80451424a86241f4c4741907429_cgraph" id="agroup__vfs__functions_gada74a80451424a86241f4c4741907429_cgraph">
+<area shape="rect" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="5,55,101,81"/>
+<area shape="rect" href="partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="149,29,282,56"/>
+<area shape="poly" title=" " alt="" coords="101,58,133,53,134,58,101,63"/>
+<area shape="rect" href="partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="330,80,433,107"/>
+<area shape="poly" title=" " alt="" coords="101,69,315,86,314,91,101,74"/>
+<area shape="poly" title=" " alt="" coords="187,30,182,21,186,11,197,5,215,3,235,5,245,12,243,16,233,10,215,8,199,10,190,15,188,20,192,28"/>
+<area shape="rect" href="partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="340,29,424,56"/>
+<area shape="poly" title=" " alt="" coords="282,40,324,40,324,45,282,45"/>
+<area shape="poly" title=" " alt="" coords="263,54,322,72,320,77,261,59"/>
+<area shape="rect" href="partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="481,80,598,107"/>
+<area shape="poly" title=" " alt="" coords="434,91,466,91,466,96,434,96"/>
+<area shape="rect" href="partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="646,80,771,107"/>
+<area shape="poly" title=" " alt="" coords="598,91,630,91,630,96,598,96"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_gada74a80451424a86241f4c4741907429_icgraph.png" border="0" usemap="#agroup__vfs__functions_gada74a80451424a86241f4c4741907429_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_gada74a80451424a86241f4c4741907429_icgraph" id="agroup__vfs__functions_gada74a80451424a86241f4c4741907429_icgraph">
+<area shape="rect" title="Liste le contenu d&#39;un répertoire (équivalent à ls)" alt="" coords="103,5,198,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="gaca5a29815408d61083bbbfe7697e9d0e" name="gaca5a29815408d61083bbbfe7697e9d0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca5a29815408d61083bbbfe7697e9d0e">&#9670;&#160;</a></span>resolve_relative_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int resolve_relative_path </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structFileSystem.html">FileSystem</a> *</td>          <td class="paramname"><span class="paramname"><em>fs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>relative_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>absolute_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>buffer_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convertit un chemin relatif en chemin absolu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Pointeur vers le système de fichiers </td></tr>
+    <tr><td class="paramname">rel_path</td><td>Chemin relatif </td></tr>
+    <tr><td class="paramname">abs_path</td><td>Buffer pour le chemin absolu </td></tr>
+    <tr><td class="paramname">size</td><td>Taille du buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int 0 en cas de succès, -1 en cas d'échec</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Le système de fichiers </td></tr>
+    <tr><td class="paramname">relative_path</td><td>Le chemin relatif </td></tr>
+    <tr><td class="paramname">absolute_path</td><td>Buffer pour stocker le chemin absolu </td></tr>
+    <tr><td class="paramname">buffer_size</td><td>Taille du buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 en cas de succès, -1 en cas d'erreur </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_cgraph.png" border="0" usemap="#agroup__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_cgraph" alt=""/></div>
+<map name="agroup__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_cgraph" id="agroup__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_cgraph">
+<area shape="rect" title="Convertit un chemin relatif en chemin absolu." alt="" coords="5,5,150,32"/>
+<area shape="rect" href="group__vfs__functions.html#gae0ff391eb9b18e5a0dc8a463c2704553" title="Obtient le chemin absolu du répertoire courant." alt="" coords="198,5,341,32"/>
+<area shape="poly" title=" " alt="" coords="150,16,182,16,182,21,150,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_icgraph.png" border="0" usemap="#agroup__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_icgraph" id="agroup__vfs__functions_gaca5a29815408d61083bbbfe7697e9d0e_icgraph">
+<area shape="rect" title="Convertit un chemin relatif en chemin absolu." alt="" coords="103,5,247,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ga6ba40f28df8964130a55aac5472ea6d8" name="ga6ba40f28df8964130a55aac5472ea6d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6ba40f28df8964130a55aac5472ea6d8">&#9670;&#160;</a></span>simplify_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void simplify_path </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simplifie un chemin en supprimant les . et .. inutiles. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Chemin à simplifier (modifié sur place) </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="group__vfs__functions_ga6ba40f28df8964130a55aac5472ea6d8_icgraph.png" border="0" usemap="#agroup__vfs__functions_ga6ba40f28df8964130a55aac5472ea6d8_icgraph" alt=""/></div>
+<map name="agroup__vfs__functions_ga6ba40f28df8964130a55aac5472ea6d8_icgraph" id="agroup__vfs__functions_ga6ba40f28df8964130a55aac5472ea6d8_icgraph">
+<area shape="rect" title="Simplifie un chemin en supprimant les . et .. inutiles." alt="" coords="271,5,369,32"/>
+<area shape="rect" href="group__vfs__functions.html#ga71c6e3b3b5dfc4397a3897968b86b239" title="Change le répertoire courant." alt="" coords="103,5,223,32"/>
+<area shape="poly" title=" " alt="" coords="255,21,223,21,223,16,255,16"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

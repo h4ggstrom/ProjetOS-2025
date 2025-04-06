@@ -6,6 +6,491 @@
       <Path>index.html</Path>
       <Subnodes>
        <Node>
+        <Name>Topics</Name>
+        <Path>topics.html</Path>
+      <Subnodes>
+         <Node>
+          <Name>Constantes du système</Name>
+          <Path>group__constantes.html</Path>
+        <Subnodes>
+           <Node>
+            <Name>BLOCK_BITMAP_OFFSET</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gab9b6f109a6de8a02776f531652006296</Anchor>
+           </Node>
+           <Node>
+            <Name>BLOCK_SIZE_DEFAULT</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga02008179c65a73b2ef03b3120463b8af</Anchor>
+           </Node>
+           <Node>
+            <Name>DATA_BLOCKS_OFFSET</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga6a4bc429928537956bef270e1505de40</Anchor>
+           </Node>
+           <Node>
+            <Name>DIR_ENTRIES_LIMIT</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga8626418160ea337a214a7e21d7ff2372</Anchor>
+           </Node>
+           <Node>
+            <Name>DIR_ENTRY_SIZE</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga708effadc6982b89faaf84eab0d56d76</Anchor>
+           </Node>
+           <Node>
+            <Name>E_EXISTS</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gaf48d333c144fdec9fd5049ce3c77a392</Anchor>
+           </Node>
+           <Node>
+            <Name>E_FD</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga80e6b7c952c0dc1bf590c9fa5f5d762e</Anchor>
+           </Node>
+           <Node>
+            <Name>E_INVAL</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gae40ab627615d211f3f276ce105b03eae</Anchor>
+           </Node>
+           <Node>
+            <Name>E_IO</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga7bc8ad5836a0f238e9525e90e9b816dc</Anchor>
+           </Node>
+           <Node>
+            <Name>E_ISDIR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga3f6298f93399476b2701dbf731a95c3c</Anchor>
+           </Node>
+           <Node>
+            <Name>E_MAXFILES</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga984fb395609ef49b289c437a18fc1d97</Anchor>
+           </Node>
+           <Node>
+            <Name>E_NOMEM</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga2c08bce13e2f5280d96f8d8e39a5ff35</Anchor>
+           </Node>
+           <Node>
+            <Name>E_NOSPC</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gac4f7f3d82f9993ad27b7d25b5edd42ff</Anchor>
+           </Node>
+           <Node>
+            <Name>E_NOTDIR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gab17b5bc389c695e27bfa4b9763a20877</Anchor>
+           </Node>
+           <Node>
+            <Name>E_NOTFOUND</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gaaa1771c30a9d47c05446a786ae261814</Anchor>
+           </Node>
+           <Node>
+            <Name>E_PERM</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga03c9d534ad6cebb0c80b7e0dcff09394</Anchor>
+           </Node>
+           <Node>
+            <Name>INODE_SIZE</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga34a3a3e2e3a4bd30b993bce5b19f3d73</Anchor>
+           </Node>
+           <Node>
+            <Name>INODE_TABLE_OFFSET</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga02e5a8e1c9a1a7726d359b42d02aff1c</Anchor>
+           </Node>
+           <Node>
+            <Name>MAGIC_NUMBER</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga54061e5993a5517320d425f44408cc86</Anchor>
+           </Node>
+           <Node>
+            <Name>MAX_BLOCKS_PTR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gaa37fa0f324021ed61d6d26e948202f3b</Anchor>
+           </Node>
+           <Node>
+            <Name>MAX_FILENAME_LEN</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gacc9794f655f61a3246ba3fd5c9c67e14</Anchor>
+           </Node>
+           <Node>
+            <Name>MAX_FILES</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga2c5eecb22513a88c24ae5831a3265e54</Anchor>
+           </Node>
+           <Node>
+            <Name>MAX_OPEN_FILES</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gae4777ede3ed2173c78fab7798ad6eddb</Anchor>
+           </Node>
+           <Node>
+            <Name>MAX_PATH_DEPTH</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gaa6817068c86820d11391ab6fd439190c</Anchor>
+           </Node>
+           <Node>
+            <Name>MAX_PATH_LEN</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gabdd33f362ae3bbdacb5de76473aa8a2f</Anchor>
+           </Node>
+           <Node>
+            <Name>MIN</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga3acffbd305ee72dcd4593c0d8af64a4f</Anchor>
+           </Node>
+           <Node>
+            <Name>O_APPEND</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gae036f789407d21f07b211552d67b3214</Anchor>
+           </Node>
+           <Node>
+            <Name>O_CREAT</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga1cf6b1de1fffedaa1d26b189e9a8d2cc</Anchor>
+           </Node>
+           <Node>
+            <Name>O_EXCL</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga9f5acfe79fafe14b6694447bd0e9f10b</Anchor>
+           </Node>
+           <Node>
+            <Name>O_RDONLY</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga7a68c9ffaac7dbcd652225dd7c06a54b</Anchor>
+           </Node>
+           <Node>
+            <Name>O_RDWR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gabb0586253488ee61072b73557eeb873b</Anchor>
+           </Node>
+           <Node>
+            <Name>O_TRUNC</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gad1d67e453fb3031f40f8cd3403773813</Anchor>
+           </Node>
+           <Node>
+            <Name>O_WRONLY</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga11b644a8526139c4cc1850dac1271ced</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IFDIR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga11fb0652b963a735f3377eb1c9239f2d</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IFMT</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gab5bee51e9ee68b83ab11d4b340f7200b</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IFREG</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga1aaa48b192a5dd3b6d7ee91fc98cd17d</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IRGRP</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga4f5f280b929768113739fb34d6f7be8a</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IROTH</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga071147a0cb995036967c80f64b1f74b9</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IRUSR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga84c7dbf5cf2fdfb690f76348b60a8cb7</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IWGRP</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gae6774871a90d9442f00abe18b87fee6e</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IWOTH</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga5303f49f26293acdb9533756c78322fb</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IWUSR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gad70001754261c15a1bdc8e876c6d09d7</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IXGRP</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga042e69ac0e7dd56e5cfcd9e97d010323</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IXOTH</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga40223db1b95a04f5b28cceb3c34cfebd</Anchor>
+           </Node>
+           <Node>
+            <Name>S_IXUSR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gaf10a35e3950795d6ee4e07157d000131</Anchor>
+           </Node>
+           <Node>
+            <Name>SEEK_CUR</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga4c8d0b76b470ba65a43ca46a88320f39</Anchor>
+           </Node>
+           <Node>
+            <Name>SEEK_END</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gad2a2e6c114780c3071efd24f16c7f7d8</Anchor>
+           </Node>
+           <Node>
+            <Name>SEEK_SET</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga0d112bae8fd35be772185b6ec6bcbe64</Anchor>
+           </Node>
+           <Node>
+            <Name>SUCCESS</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gaa90cac659d18e8ef6294c7ae337f6b58</Anchor>
+           </Node>
+           <Node>
+            <Name>SUPERBLOCK_OFFSET</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>gae9e5bed110d8e9128d5d07f8cbe9896b</Anchor>
+           </Node>
+           <Node>
+            <Name>SUPERBLOCK_SIZE</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga8394ddfc34b82667f24d6a5944cb00ec</Anchor>
+           </Node>
+           <Node>
+            <Name>VERSION</Name>
+            <Path>group__constantes.html</Path>
+            <Anchor>ga1c6d5de492ac61ad29aec7aa9a436bbf</Anchor>
+           </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Gestion des liens</Name>
+          <Path>group__link__management.html</Path>
+        <Subnodes>
+           <Node>
+            <Name>create_hard_link</Name>
+            <Path>group__link__management.html</Path>
+            <Anchor>ga6de27918294daad88762f3e47eaaa5a3</Anchor>
+           </Node>
+           <Node>
+            <Name>create_soft_link</Name>
+            <Path>group__link__management.html</Path>
+            <Anchor>ga27e6adf5116e3f1b7b72ac730f69c8d3</Anchor>
+           </Node>
+           <Node>
+            <Name>display_soft_link_target</Name>
+            <Path>group__link__management.html</Path>
+            <Anchor>ga429164ee1c82fc8db05788d710c1f92e</Anchor>
+           </Node>
+           <Node>
+            <Name>fs_link</Name>
+            <Path>group__link__management.html</Path>
+            <Anchor>ga6b1db705bcdbaad9b6362d95b92f69ad</Anchor>
+           </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Gestion des permissions</Name>
+          <Path>group__permission__management.html</Path>
+        <Subnodes>
+           <Node>
+            <Name>check_permissions</Name>
+            <Path>group__permission__management.html</Path>
+            <Anchor>gac53e911f10c3da2d449dd417aa81bf92</Anchor>
+           </Node>
+           <Node>
+            <Name>chown_inode</Name>
+            <Path>group__permission__management.html</Path>
+            <Anchor>ga3f2b9b76c3267b4ad451e83f377b07f0</Anchor>
+           </Node>
+           <Node>
+            <Name>set_permissions</Name>
+            <Path>group__permission__management.html</Path>
+            <Anchor>gaf7b2a8cafb308992f9c9821b33195dff</Anchor>
+           </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Visualisation arborescente</Name>
+          <Path>group__tree__visualisation.html</Path>
+        <Subnodes>
+           <Node>
+            <Name>tree</Name>
+            <Path>group__tree__visualisation.html</Path>
+            <Anchor>gaccccf7c88162324fe8b2d2ed38ea735a</Anchor>
+           </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Gestion des utilisateurs</Name>
+          <Path>group__user__management.html</Path>
+        <Subnodes>
+           <Node>
+            <Name>User</Name>
+            <Path>structUser.html</Path>
+          <Subnodes>
+             <Node>
+              <Name>group_id</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a63795b3803ea2ef33cdb1e034d63316d</Anchor>
+             </Node>
+             <Node>
+              <Name>permissions</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a7d72d40e10d1e103f22c28d5b73cf559</Anchor>
+             </Node>
+             <Node>
+              <Name>user_id</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a32adf6a1d0bb8d2ade4139e396612df7</Anchor>
+             </Node>
+             <Node>
+              <Name>username</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a9f83d87e6e823657696f55f42c508bb3</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>User</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>gaebb0f8a8bd00b8afba0e5abcf5b559c7</Anchor>
+           </Node>
+           <Node>
+            <Name>UserType</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>ga196c5ae3c192f069339f2966656f6fe9</Anchor>
+          <Subnodes>
+             <Node>
+              <Name>USER_TYPE_ADMIN</Name>
+              <Path>group__user__management.html</Path>
+              <Anchor>gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7</Anchor>
+             </Node>
+             <Node>
+              <Name>USER_TYPE_USER</Name>
+              <Path>group__user__management.html</Path>
+              <Anchor>gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b</Anchor>
+             </Node>
+             <Node>
+              <Name>USER_TYPE_GUEST</Name>
+              <Path>group__user__management.html</Path>
+              <Anchor>gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>add_user</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>gaf7e248432c320d6a4db3b0d9700689dd</Anchor>
+           </Node>
+           <Node>
+            <Name>display_users</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>gad47cb0106d6f756714576cffabbf5b5b</Anchor>
+           </Node>
+           <Node>
+            <Name>get_current_user</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>ga4db0c9bfbc4d58f62ec3f76bafef1290</Anchor>
+           </Node>
+           <Node>
+            <Name>get_user</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>ga9021966bc232c76feb9c2fea36c1eba2</Anchor>
+           </Node>
+           <Node>
+            <Name>get_user_count</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>ga5afd363aea1ac3c120659883107eb00b</Anchor>
+           </Node>
+           <Node>
+            <Name>remove_user</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>ga1a8b21830bd87936ad644b67a7630fa6</Anchor>
+           </Node>
+           <Node>
+            <Name>set_current_user</Name>
+            <Path>group__user__management.html</Path>
+            <Anchor>ga1262a0a40053af259446ef68f5bd176f</Anchor>
+           </Node>
+          </Subnodes>
+         </Node>
+         <Node>
+          <Name>Fonctions VFS</Name>
+          <Path>group__vfs__functions.html</Path>
+        <Subnodes>
+           <Node>
+            <Name>VFS_FUNCTION_HANTES_H</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>ga5445cdb3533a4f28180e2748993bbcf2</Anchor>
+           </Node>
+           <Node>
+            <Name>change_directory</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>ga71c6e3b3b5dfc4397a3897968b86b239</Anchor>
+           </Node>
+           <Node>
+            <Name>fs_lseek</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>ga51b658807c748db2ca12ac3af986fa96</Anchor>
+           </Node>
+           <Node>
+            <Name>fs_read</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>ga15b6b10188015572381ac9bb4437a7e1</Anchor>
+           </Node>
+           <Node>
+            <Name>fs_write</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>gabafd732c4c89442c2e7ee525a00c5895</Anchor>
+           </Node>
+           <Node>
+            <Name>get_current_directory</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>gae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
+           </Node>
+           <Node>
+            <Name>get_physical_block</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>ga009267d18ee7ae829643c2b8e1f17d69</Anchor>
+           </Node>
+           <Node>
+            <Name>is_relative_path</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>ga485c455ca22bf60aada827b8e14bfbbb</Anchor>
+           </Node>
+           <Node>
+            <Name>list_directory</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>gada74a80451424a86241f4c4741907429</Anchor>
+           </Node>
+           <Node>
+            <Name>resolve_relative_path</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>gaca5a29815408d61083bbbfe7697e9d0e</Anchor>
+           </Node>
+           <Node>
+            <Name>simplify_path</Name>
+            <Path>group__vfs__functions.html</Path>
+            <Anchor>ga6ba40f28df8964130a55aac5472ea6d8</Anchor>
+           </Node>
+          </Subnodes>
+         </Node>
+        </Subnodes>
+       </Node>
+       <Node>
         <Name>Classes</Name>
         <Path>annotated.html</Path>
       <Subnodes>
@@ -206,6 +691,16 @@
               <Path>structInode.html</Path>
               <Anchor>aa0ca5befd9af1bd6d529682a244b5262</Anchor>
              </Node>
+             <Node>
+              <Name>symlink_target</Name>
+              <Path>structInode.html</Path>
+              <Anchor>afc01ce234a2790fa85e34306bc4be897</Anchor>
+             </Node>
+             <Node>
+              <Name>type</Name>
+              <Path>structInode.html</Path>
+              <Anchor>aa8a25e8de112992423f9021dac792b27</Anchor>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
@@ -290,6 +785,32 @@
              </Node>
             </Subnodes>
            </Node>
+           <Node>
+            <Name>User</Name>
+            <Path>structUser.html</Path>
+          <Subnodes>
+             <Node>
+              <Name>group_id</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a63795b3803ea2ef33cdb1e034d63316d</Anchor>
+             </Node>
+             <Node>
+              <Name>permissions</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a7d72d40e10d1e103f22c28d5b73cf559</Anchor>
+             </Node>
+             <Node>
+              <Name>user_id</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a32adf6a1d0bb8d2ade4139e396612df7</Anchor>
+             </Node>
+             <Node>
+              <Name>username</Name>
+              <Path>structUser.html</Path>
+              <Anchor>a9f83d87e6e823657696f55f42c508bb3</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
           </Subnodes>
          </Node>
          <Node>
@@ -325,283 +846,268 @@
             <Path>dir_d44c64559bbebec7f509842c48db8b23.html</Path>
           <Subnodes>
              <Node>
-              <Name>config.h</Name>
-              <Path>config_8h.html</Path>
-             </Node>
-             <Node>
               <Name>constantes.h</Name>
               <Path>constantes_8h.html</Path>
             <Subnodes>
                <Node>
                 <Name>BLOCK_BITMAP_OFFSET</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ab9b6f109a6de8a02776f531652006296</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gab9b6f109a6de8a02776f531652006296</Anchor>
                </Node>
                <Node>
                 <Name>BLOCK_SIZE_DEFAULT</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a02008179c65a73b2ef03b3120463b8af</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga02008179c65a73b2ef03b3120463b8af</Anchor>
                </Node>
                <Node>
                 <Name>DATA_BLOCKS_OFFSET</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a6a4bc429928537956bef270e1505de40</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga6a4bc429928537956bef270e1505de40</Anchor>
                </Node>
                <Node>
                 <Name>DIR_ENTRIES_LIMIT</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a8626418160ea337a214a7e21d7ff2372</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga8626418160ea337a214a7e21d7ff2372</Anchor>
                </Node>
                <Node>
                 <Name>DIR_ENTRY_SIZE</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a708effadc6982b89faaf84eab0d56d76</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga708effadc6982b89faaf84eab0d56d76</Anchor>
                </Node>
                <Node>
                 <Name>E_EXISTS</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>af48d333c144fdec9fd5049ce3c77a392</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gaf48d333c144fdec9fd5049ce3c77a392</Anchor>
                </Node>
                <Node>
                 <Name>E_FD</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a80e6b7c952c0dc1bf590c9fa5f5d762e</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga80e6b7c952c0dc1bf590c9fa5f5d762e</Anchor>
                </Node>
                <Node>
                 <Name>E_INVAL</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ae40ab627615d211f3f276ce105b03eae</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gae40ab627615d211f3f276ce105b03eae</Anchor>
                </Node>
                <Node>
                 <Name>E_IO</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a7bc8ad5836a0f238e9525e90e9b816dc</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga7bc8ad5836a0f238e9525e90e9b816dc</Anchor>
                </Node>
                <Node>
                 <Name>E_ISDIR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a3f6298f93399476b2701dbf731a95c3c</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga3f6298f93399476b2701dbf731a95c3c</Anchor>
                </Node>
                <Node>
                 <Name>E_MAXFILES</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a984fb395609ef49b289c437a18fc1d97</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga984fb395609ef49b289c437a18fc1d97</Anchor>
                </Node>
                <Node>
                 <Name>E_NOMEM</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a2c08bce13e2f5280d96f8d8e39a5ff35</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga2c08bce13e2f5280d96f8d8e39a5ff35</Anchor>
                </Node>
                <Node>
                 <Name>E_NOSPC</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ac4f7f3d82f9993ad27b7d25b5edd42ff</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gac4f7f3d82f9993ad27b7d25b5edd42ff</Anchor>
                </Node>
                <Node>
                 <Name>E_NOTDIR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ab17b5bc389c695e27bfa4b9763a20877</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gab17b5bc389c695e27bfa4b9763a20877</Anchor>
                </Node>
                <Node>
                 <Name>E_NOTFOUND</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>aaa1771c30a9d47c05446a786ae261814</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gaaa1771c30a9d47c05446a786ae261814</Anchor>
                </Node>
                <Node>
                 <Name>E_PERM</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a03c9d534ad6cebb0c80b7e0dcff09394</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga03c9d534ad6cebb0c80b7e0dcff09394</Anchor>
                </Node>
                <Node>
                 <Name>INODE_SIZE</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a34a3a3e2e3a4bd30b993bce5b19f3d73</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga34a3a3e2e3a4bd30b993bce5b19f3d73</Anchor>
                </Node>
                <Node>
                 <Name>INODE_TABLE_OFFSET</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a02e5a8e1c9a1a7726d359b42d02aff1c</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga02e5a8e1c9a1a7726d359b42d02aff1c</Anchor>
                </Node>
                <Node>
                 <Name>MAGIC_NUMBER</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a54061e5993a5517320d425f44408cc86</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga54061e5993a5517320d425f44408cc86</Anchor>
                </Node>
                <Node>
                 <Name>MAX_BLOCKS_PTR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>aa37fa0f324021ed61d6d26e948202f3b</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gaa37fa0f324021ed61d6d26e948202f3b</Anchor>
                </Node>
                <Node>
                 <Name>MAX_FILENAME_LEN</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>acc9794f655f61a3246ba3fd5c9c67e14</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gacc9794f655f61a3246ba3fd5c9c67e14</Anchor>
                </Node>
                <Node>
                 <Name>MAX_FILES</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a2c5eecb22513a88c24ae5831a3265e54</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga2c5eecb22513a88c24ae5831a3265e54</Anchor>
                </Node>
                <Node>
                 <Name>MAX_OPEN_FILES</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ae4777ede3ed2173c78fab7798ad6eddb</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gae4777ede3ed2173c78fab7798ad6eddb</Anchor>
                </Node>
                <Node>
                 <Name>MAX_PATH_DEPTH</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>aa6817068c86820d11391ab6fd439190c</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gaa6817068c86820d11391ab6fd439190c</Anchor>
                </Node>
                <Node>
                 <Name>MAX_PATH_LEN</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>abdd33f362ae3bbdacb5de76473aa8a2f</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gabdd33f362ae3bbdacb5de76473aa8a2f</Anchor>
+               </Node>
+               <Node>
+                <Name>MIN</Name>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga3acffbd305ee72dcd4593c0d8af64a4f</Anchor>
                </Node>
                <Node>
                 <Name>O_APPEND</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ae036f789407d21f07b211552d67b3214</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gae036f789407d21f07b211552d67b3214</Anchor>
                </Node>
                <Node>
                 <Name>O_CREAT</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a1cf6b1de1fffedaa1d26b189e9a8d2cc</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga1cf6b1de1fffedaa1d26b189e9a8d2cc</Anchor>
                </Node>
                <Node>
                 <Name>O_EXCL</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a9f5acfe79fafe14b6694447bd0e9f10b</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga9f5acfe79fafe14b6694447bd0e9f10b</Anchor>
                </Node>
                <Node>
                 <Name>O_RDONLY</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a7a68c9ffaac7dbcd652225dd7c06a54b</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga7a68c9ffaac7dbcd652225dd7c06a54b</Anchor>
                </Node>
                <Node>
                 <Name>O_RDWR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>abb0586253488ee61072b73557eeb873b</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gabb0586253488ee61072b73557eeb873b</Anchor>
                </Node>
                <Node>
                 <Name>O_TRUNC</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ad1d67e453fb3031f40f8cd3403773813</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gad1d67e453fb3031f40f8cd3403773813</Anchor>
                </Node>
                <Node>
                 <Name>O_WRONLY</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a11b644a8526139c4cc1850dac1271ced</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga11b644a8526139c4cc1850dac1271ced</Anchor>
                </Node>
                <Node>
                 <Name>S_IFDIR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a11fb0652b963a735f3377eb1c9239f2d</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga11fb0652b963a735f3377eb1c9239f2d</Anchor>
                </Node>
                <Node>
                 <Name>S_IFMT</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ab5bee51e9ee68b83ab11d4b340f7200b</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gab5bee51e9ee68b83ab11d4b340f7200b</Anchor>
                </Node>
                <Node>
                 <Name>S_IFREG</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a1aaa48b192a5dd3b6d7ee91fc98cd17d</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga1aaa48b192a5dd3b6d7ee91fc98cd17d</Anchor>
                </Node>
                <Node>
                 <Name>S_IRGRP</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a4f5f280b929768113739fb34d6f7be8a</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga4f5f280b929768113739fb34d6f7be8a</Anchor>
                </Node>
                <Node>
                 <Name>S_IROTH</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a071147a0cb995036967c80f64b1f74b9</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga071147a0cb995036967c80f64b1f74b9</Anchor>
                </Node>
                <Node>
                 <Name>S_IRUSR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a84c7dbf5cf2fdfb690f76348b60a8cb7</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga84c7dbf5cf2fdfb690f76348b60a8cb7</Anchor>
                </Node>
                <Node>
                 <Name>S_IWGRP</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ae6774871a90d9442f00abe18b87fee6e</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gae6774871a90d9442f00abe18b87fee6e</Anchor>
                </Node>
                <Node>
                 <Name>S_IWOTH</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a5303f49f26293acdb9533756c78322fb</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga5303f49f26293acdb9533756c78322fb</Anchor>
                </Node>
                <Node>
                 <Name>S_IWUSR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ad70001754261c15a1bdc8e876c6d09d7</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gad70001754261c15a1bdc8e876c6d09d7</Anchor>
                </Node>
                <Node>
                 <Name>S_IXGRP</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a042e69ac0e7dd56e5cfcd9e97d010323</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga042e69ac0e7dd56e5cfcd9e97d010323</Anchor>
                </Node>
                <Node>
                 <Name>S_IXOTH</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a40223db1b95a04f5b28cceb3c34cfebd</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga40223db1b95a04f5b28cceb3c34cfebd</Anchor>
                </Node>
                <Node>
                 <Name>S_IXUSR</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>af10a35e3950795d6ee4e07157d000131</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gaf10a35e3950795d6ee4e07157d000131</Anchor>
+               </Node>
+               <Node>
+                <Name>SEEK_CUR</Name>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga4c8d0b76b470ba65a43ca46a88320f39</Anchor>
+               </Node>
+               <Node>
+                <Name>SEEK_END</Name>
+                <Path>group__constantes.html</Path>
+                <Anchor>gad2a2e6c114780c3071efd24f16c7f7d8</Anchor>
+               </Node>
+               <Node>
+                <Name>SEEK_SET</Name>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga0d112bae8fd35be772185b6ec6bcbe64</Anchor>
                </Node>
                <Node>
                 <Name>SUCCESS</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>aa90cac659d18e8ef6294c7ae337f6b58</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gaa90cac659d18e8ef6294c7ae337f6b58</Anchor>
                </Node>
                <Node>
                 <Name>SUPERBLOCK_OFFSET</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>ae9e5bed110d8e9128d5d07f8cbe9896b</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>gae9e5bed110d8e9128d5d07f8cbe9896b</Anchor>
                </Node>
                <Node>
                 <Name>SUPERBLOCK_SIZE</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a8394ddfc34b82667f24d6a5944cb00ec</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga8394ddfc34b82667f24d6a5944cb00ec</Anchor>
                </Node>
                <Node>
                 <Name>VERSION</Name>
-                <Path>constantes_8h.html</Path>
-                <Anchor>a1c6d5de492ac61ad29aec7aa9a436bbf</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>file_operations.h</Name>
-              <Path>file__operations_8h.html</Path>
-            <Subnodes>
-               <Node>
-                <Name>create_file</Name>
-                <Path>file__operations_8h.html</Path>
-                <Anchor>aaea333fb93f037479d66a618708eec2f</Anchor>
-               </Node>
-               <Node>
-                <Name>delete_file</Name>
-                <Path>file__operations_8h.html</Path>
-                <Anchor>ac0daef4f09b7330b4dc70425fbcc3d53</Anchor>
-               </Node>
-               <Node>
-                <Name>mycp</Name>
-                <Path>file__operations_8h.html</Path>
-                <Anchor>adf4b1cf00c440b09b0760b9ea0cb07df</Anchor>
-               </Node>
-               <Node>
-                <Name>mymv</Name>
-                <Path>file__operations_8h.html</Path>
-                <Anchor>a30a3ead9c3f2da14b94d57771ca79085</Anchor>
-               </Node>
-               <Node>
-                <Name>print_directory_content</Name>
-                <Path>file__operations_8h.html</Path>
-                <Anchor>a5f29bd86efa1a5ff44e14c7980f5650b</Anchor>
+                <Path>group__constantes.html</Path>
+                <Anchor>ga1c6d5de492ac61ad29aec7aa9a436bbf</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -611,18 +1117,23 @@
             <Subnodes>
                <Node>
                 <Name>create_hard_link</Name>
-                <Path>links_8h.html</Path>
-                <Anchor>a6de27918294daad88762f3e47eaaa5a3</Anchor>
+                <Path>group__link__management.html</Path>
+                <Anchor>ga6de27918294daad88762f3e47eaaa5a3</Anchor>
                </Node>
                <Node>
                 <Name>create_soft_link</Name>
-                <Path>links_8h.html</Path>
-                <Anchor>a27e6adf5116e3f1b7b72ac730f69c8d3</Anchor>
+                <Path>group__link__management.html</Path>
+                <Anchor>ga27e6adf5116e3f1b7b72ac730f69c8d3</Anchor>
                </Node>
                <Node>
                 <Name>display_soft_link_target</Name>
-                <Path>links_8h.html</Path>
-                <Anchor>a429164ee1c82fc8db05788d710c1f92e</Anchor>
+                <Path>group__link__management.html</Path>
+                <Anchor>ga429164ee1c82fc8db05788d710c1f92e</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_link</Name>
+                <Path>group__link__management.html</Path>
+                <Anchor>ga6b1db705bcdbaad9b6362d95b92f69ad</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -724,6 +1235,16 @@
                   <Name>size</Name>
                   <Path>structInode.html</Path>
                   <Anchor>aa0ca5befd9af1bd6d529682a244b5262</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>symlink_target</Name>
+                  <Path>structInode.html</Path>
+                  <Anchor>afc01ce234a2790fa85e34306bc4be897</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>type</Name>
+                  <Path>structInode.html</Path>
+                  <Anchor>aa8a25e8de112992423f9021dac792b27</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -943,6 +1464,28 @@
                 <Anchor>a670d5ca19aae094f5716f19faf517dd7</Anchor>
                </Node>
                <Node>
+                <Name>FileType</Name>
+                <Path>partition_8h.html</Path>
+                <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3</Anchor>
+              <Subnodes>
+                 <Node>
+                  <Name>FILE_REGULAR</Name>
+                  <Path>partition_8h.html</Path>
+                  <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3aa2a2d933a005816134ee11ad33143366</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>FILE_DIRECTORY</Name>
+                  <Path>partition_8h.html</Path>
+                  <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3a8eca42b79a25f753c72cb9ce685525c1</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>FILE_SYMLINK</Name>
+                  <Path>partition_8h.html</Path>
+                  <Anchor>a2c794c5c13ab4dd7e65bad031dbe41c3ab494be86e30c8a171d5a23d76eb3ade8</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>add_directory_entry</Name>
                 <Path>partition_8h.html</Path>
                 <Anchor>ab0c8e3ef484d10290e18112478f8e49a</Anchor>
@@ -965,7 +1508,7 @@
                <Node>
                 <Name>allocate_inode</Name>
                 <Path>partition_8h.html</Path>
-                <Anchor>a010b1b2eeac4e5444f921d9e124dbb7f</Anchor>
+                <Anchor>aead3f3e2f43bbe7333cb36561c0922eb</Anchor>
                </Node>
                <Node>
                 <Name>create_directory</Name>
@@ -1005,7 +1548,7 @@
                <Node>
                 <Name>fs_close_file</Name>
                 <Path>partition_8h.html</Path>
-                <Anchor>a6c7a5dfb40fb024a3db304109d7c2b87</Anchor>
+                <Anchor>af2eb262e960129690f2dd3a336635c69</Anchor>
                </Node>
                <Node>
                 <Name>fs_open_file</Name>
@@ -1013,9 +1556,29 @@
                 <Anchor>a7e3bde988e14b04d26a63d543cee8642</Anchor>
                </Node>
                <Node>
+                <Name>fs_readlink</Name>
+                <Path>partition_8h.html</Path>
+                <Anchor>ab6dfaed9a58f6cd361e692e341e20b4f</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_symlink</Name>
+                <Path>partition_8h.html</Path>
+                <Anchor>a2d82db1abf2ca97a5b809a26bfa44690</Anchor>
+               </Node>
+               <Node>
                 <Name>get_indirect_block</Name>
                 <Path>partition_8h.html</Path>
                 <Anchor>a75b615a241e5f4d9b104afb3263f1d19</Anchor>
+               </Node>
+               <Node>
+                <Name>get_inode_by_path</Name>
+                <Path>partition_8h.html</Path>
+                <Anchor>a81e29a7864e7f551a1c884cbf3e1404c</Anchor>
+               </Node>
+               <Node>
+                <Name>handle_indirect_block</Name>
+                <Path>partition_8h.html</Path>
+                <Anchor>a50664fa786c8fbbc57c3bb56b8aa2de9</Anchor>
                </Node>
                <Node>
                 <Name>init_inode</Name>
@@ -1084,14 +1647,19 @@
               <Path>permissions_8h.html</Path>
             <Subnodes>
                <Node>
-                <Name>change_permissions</Name>
-                <Path>permissions_8h.html</Path>
-                <Anchor>a572ccf7ddfdfd477e7c69ad2b9a36147</Anchor>
+                <Name>check_permissions</Name>
+                <Path>group__permission__management.html</Path>
+                <Anchor>gac53e911f10c3da2d449dd417aa81bf92</Anchor>
                </Node>
                <Node>
-                <Name>check_access</Name>
-                <Path>permissions_8h.html</Path>
-                <Anchor>a39770f42f06ffed509e6c6c63fe50001</Anchor>
+                <Name>chown_inode</Name>
+                <Path>group__permission__management.html</Path>
+                <Anchor>ga3f2b9b76c3267b4ad451e83f377b07f0</Anchor>
+               </Node>
+               <Node>
+                <Name>set_permissions</Name>
+                <Path>group__permission__management.html</Path>
+                <Anchor>gaf7b2a8cafb308992f9c9821b33195dff</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1101,14 +1669,78 @@
             <Subnodes>
                <Node>
                 <Name>tree</Name>
-                <Path>tree_8h.html</Path>
-                <Anchor>accccf7c88162324fe8b2d2ed38ea735a</Anchor>
+                <Path>group__tree__visualisation.html</Path>
+                <Anchor>gaccccf7c88162324fe8b2d2ed38ea735a</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>utils.h</Name>
-              <Path>utils_8h.html</Path>
+              <Name>user.h</Name>
+              <Path>user_8h.html</Path>
+            <Subnodes>
+               <Node>
+                <Name>User</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>gaebb0f8a8bd00b8afba0e5abcf5b559c7</Anchor>
+               </Node>
+               <Node>
+                <Name>UserType</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga196c5ae3c192f069339f2966656f6fe9</Anchor>
+              <Subnodes>
+                 <Node>
+                  <Name>USER_TYPE_ADMIN</Name>
+                  <Path>group__user__management.html</Path>
+                  <Anchor>gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>USER_TYPE_USER</Name>
+                  <Path>group__user__management.html</Path>
+                  <Anchor>gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>USER_TYPE_GUEST</Name>
+                  <Path>group__user__management.html</Path>
+                  <Anchor>gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>add_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>gaf7e248432c320d6a4db3b0d9700689dd</Anchor>
+               </Node>
+               <Node>
+                <Name>display_users</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>gad47cb0106d6f756714576cffabbf5b5b</Anchor>
+               </Node>
+               <Node>
+                <Name>get_current_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga4db0c9bfbc4d58f62ec3f76bafef1290</Anchor>
+               </Node>
+               <Node>
+                <Name>get_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga9021966bc232c76feb9c2fea36c1eba2</Anchor>
+               </Node>
+               <Node>
+                <Name>get_user_count</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga5afd363aea1ac3c120659883107eb00b</Anchor>
+               </Node>
+               <Node>
+                <Name>remove_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga1a8b21830bd87936ad644b67a7630fa6</Anchor>
+               </Node>
+               <Node>
+                <Name>set_current_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga1262a0a40053af259446ef68f5bd176f</Anchor>
+               </Node>
+              </Subnodes>
              </Node>
              <Node>
               <Name>vfs_function.h</Name>
@@ -1116,33 +1748,58 @@
             <Subnodes>
                <Node>
                 <Name>VFS_FUNCTION_HANTES_H</Name>
-                <Path>vfs__function_8h.html</Path>
-                <Anchor>a5445cdb3533a4f28180e2748993bbcf2</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga5445cdb3533a4f28180e2748993bbcf2</Anchor>
                </Node>
                <Node>
                 <Name>change_directory</Name>
-                <Path>vfs__function_8h.html</Path>
-                <Anchor>a71c6e3b3b5dfc4397a3897968b86b239</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga71c6e3b3b5dfc4397a3897968b86b239</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_lseek</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga51b658807c748db2ca12ac3af986fa96</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_read</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga15b6b10188015572381ac9bb4437a7e1</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_write</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gabafd732c4c89442c2e7ee525a00c5895</Anchor>
                </Node>
                <Node>
                 <Name>get_current_directory</Name>
-                <Path>vfs__function_8h.html</Path>
-                <Anchor>ae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
+               </Node>
+               <Node>
+                <Name>get_physical_block</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga009267d18ee7ae829643c2b8e1f17d69</Anchor>
+               </Node>
+               <Node>
+                <Name>is_relative_path</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga485c455ca22bf60aada827b8e14bfbbb</Anchor>
                </Node>
                <Node>
                 <Name>list_directory</Name>
-                <Path>vfs__function_8h.html</Path>
-                <Anchor>ada74a80451424a86241f4c4741907429</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gada74a80451424a86241f4c4741907429</Anchor>
                </Node>
                <Node>
                 <Name>resolve_relative_path</Name>
-                <Path>vfs__function_8h.html</Path>
-                <Anchor>aca5a29815408d61083bbbfe7697e9d0e</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gaca5a29815408d61083bbbfe7697e9d0e</Anchor>
                </Node>
                <Node>
                 <Name>simplify_path</Name>
-                <Path>vfs__function_8h.html</Path>
-                <Anchor>a6ba40f28df8964130a55aac5472ea6d8</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga6ba40f28df8964130a55aac5472ea6d8</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1152,53 +1809,6 @@
             <Name>src</Name>
             <Path>dir_68267d1309a1af8e8297ef4c3efbcdba.html</Path>
           <Subnodes>
-             <Node>
-              <Name>file_operations.c</Name>
-              <Path>file__operations_8c.html</Path>
-            <Subnodes>
-               <Node>
-                <Name>delete_file</Name>
-                <Path>file__operations_8c.html</Path>
-                <Anchor>ac0daef4f09b7330b4dc70425fbcc3d53</Anchor>
-               </Node>
-               <Node>
-                <Name>mycp</Name>
-                <Path>file__operations_8c.html</Path>
-                <Anchor>adf4b1cf00c440b09b0760b9ea0cb07df</Anchor>
-               </Node>
-               <Node>
-                <Name>mymv</Name>
-                <Path>file__operations_8c.html</Path>
-                <Anchor>ab840828b3ad045ea77d3537d948fef96</Anchor>
-               </Node>
-               <Node>
-                <Name>print_directory_content</Name>
-                <Path>file__operations_8c.html</Path>
-                <Anchor>a5f29bd86efa1a5ff44e14c7980f5650b</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>links.c</Name>
-              <Path>links_8c.html</Path>
-            <Subnodes>
-               <Node>
-                <Name>create_hard_link</Name>
-                <Path>links_8c.html</Path>
-                <Anchor>a6de27918294daad88762f3e47eaaa5a3</Anchor>
-               </Node>
-               <Node>
-                <Name>create_soft_link</Name>
-                <Path>links_8c.html</Path>
-                <Anchor>a27e6adf5116e3f1b7b72ac730f69c8d3</Anchor>
-               </Node>
-               <Node>
-                <Name>display_soft_link_target</Name>
-                <Path>links_8c.html</Path>
-                <Anchor>a429164ee1c82fc8db05788d710c1f92e</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
              <Node>
               <Name>main.c</Name>
               <Path>main_8c.html</Path>
@@ -1219,11 +1829,6 @@
                 <Anchor>a64f3fb177239bacaba969954a942f190</Anchor>
                </Node>
                <Node>
-                <Name>build_partition</Name>
-                <Path>main_8c.html</Path>
-                <Anchor>a6a449e6c5d62a6286cf5faf43d3eb301</Anchor>
-               </Node>
-               <Node>
                 <Name>display_help</Name>
                 <Path>main_8c.html</Path>
                 <Anchor>a8f0b63bf650a5ceefc36d7e3bcb02f63</Anchor>
@@ -1239,6 +1844,11 @@
                 <Anchor>a2df91205ef0176b28a13e9714271c34c</Anchor>
                </Node>
                <Node>
+                <Name>initialize_default_user</Name>
+                <Path>main_8c.html</Path>
+                <Anchor>ac6db79aef8cae53c124f4a1561576e27</Anchor>
+               </Node>
+               <Node>
                 <Name>is_string_numeric</Name>
                 <Path>main_8c.html</Path>
                 <Anchor>a36864fe07aaf6282a3fbc6d56a6e6323</Anchor>
@@ -1252,6 +1862,11 @@
                 <Name>make_demo_directory</Name>
                 <Path>main_8c.html</Path>
                 <Anchor>a784957ab86b45802aa173d5e53f3af8b</Anchor>
+               </Node>
+               <Node>
+                <Name>parse_seek_mode</Name>
+                <Path>main_8c.html</Path>
+                <Anchor>ac785d2a728aba876f922d9c1593ee416</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1287,7 +1902,7 @@
                <Node>
                 <Name>allocate_inode</Name>
                 <Path>partition_8c.html</Path>
-                <Anchor>a010b1b2eeac4e5444f921d9e124dbb7f</Anchor>
+                <Anchor>aead3f3e2f43bbe7333cb36561c0922eb</Anchor>
                </Node>
                <Node>
                 <Name>create_directory</Name>
@@ -1327,7 +1942,12 @@
                <Node>
                 <Name>fs_close_file</Name>
                 <Path>partition_8c.html</Path>
-                <Anchor>a6c7a5dfb40fb024a3db304109d7c2b87</Anchor>
+                <Anchor>af2eb262e960129690f2dd3a336635c69</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_link</Name>
+                <Path>group__link__management.html</Path>
+                <Anchor>ga6b1db705bcdbaad9b6362d95b92f69ad</Anchor>
                </Node>
                <Node>
                 <Name>fs_open_file</Name>
@@ -1335,9 +1955,24 @@
                 <Anchor>a7e3bde988e14b04d26a63d543cee8642</Anchor>
                </Node>
                <Node>
+                <Name>fs_readlink</Name>
+                <Path>partition_8c.html</Path>
+                <Anchor>ab6dfaed9a58f6cd361e692e341e20b4f</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_symlink</Name>
+                <Path>partition_8c.html</Path>
+                <Anchor>a2d82db1abf2ca97a5b809a26bfa44690</Anchor>
+               </Node>
+               <Node>
                 <Name>get_indirect_block</Name>
                 <Path>partition_8c.html</Path>
                 <Anchor>a75b615a241e5f4d9b104afb3263f1d19</Anchor>
+               </Node>
+               <Node>
+                <Name>get_inode_by_path</Name>
+                <Path>partition_8c.html</Path>
+                <Anchor>a81e29a7864e7f551a1c884cbf3e1404c</Anchor>
                </Node>
                <Node>
                 <Name>init_inode</Name>
@@ -1411,14 +2046,19 @@
               <Path>permissions_8c.html</Path>
             <Subnodes>
                <Node>
-                <Name>change_permissions</Name>
-                <Path>permissions_8c.html</Path>
-                <Anchor>a572ccf7ddfdfd477e7c69ad2b9a36147</Anchor>
+                <Name>check_permissions</Name>
+                <Path>group__permission__management.html</Path>
+                <Anchor>gac53e911f10c3da2d449dd417aa81bf92</Anchor>
                </Node>
                <Node>
-                <Name>check_access</Name>
-                <Path>permissions_8c.html</Path>
-                <Anchor>a39770f42f06ffed509e6c6c63fe50001</Anchor>
+                <Name>chown_inode</Name>
+                <Path>group__permission__management.html</Path>
+                <Anchor>ga3f2b9b76c3267b4ad451e83f377b07f0</Anchor>
+               </Node>
+               <Node>
+                <Name>set_permissions</Name>
+                <Path>group__permission__management.html</Path>
+                <Anchor>gaf7b2a8cafb308992f9c9821b33195dff</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1428,14 +2068,56 @@
             <Subnodes>
                <Node>
                 <Name>tree</Name>
-                <Path>tree_8c.html</Path>
-                <Anchor>accccf7c88162324fe8b2d2ed38ea735a</Anchor>
+                <Path>group__tree__visualisation.html</Path>
+                <Anchor>gaccccf7c88162324fe8b2d2ed38ea735a</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>utils.c</Name>
-              <Path>utils_8c.html</Path>
+              <Name>user.c</Name>
+              <Path>user_8c.html</Path>
+            <Subnodes>
+               <Node>
+                <Name>MAX_USERS</Name>
+                <Path>user_8c.html</Path>
+                <Anchor>a2c2a303621f66761529e598758d7ef34</Anchor>
+               </Node>
+               <Node>
+                <Name>add_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>gaf7e248432c320d6a4db3b0d9700689dd</Anchor>
+               </Node>
+               <Node>
+                <Name>display_users</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>gad47cb0106d6f756714576cffabbf5b5b</Anchor>
+               </Node>
+               <Node>
+                <Name>get_current_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga4db0c9bfbc4d58f62ec3f76bafef1290</Anchor>
+               </Node>
+               <Node>
+                <Name>get_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga9021966bc232c76feb9c2fea36c1eba2</Anchor>
+               </Node>
+               <Node>
+                <Name>get_user_count</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga5afd363aea1ac3c120659883107eb00b</Anchor>
+               </Node>
+               <Node>
+                <Name>remove_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga1a8b21830bd87936ad644b67a7630fa6</Anchor>
+               </Node>
+               <Node>
+                <Name>set_current_user</Name>
+                <Path>group__user__management.html</Path>
+                <Anchor>ga1262a0a40053af259446ef68f5bd176f</Anchor>
+               </Node>
+              </Subnodes>
              </Node>
              <Node>
               <Name>vfs_function.c</Name>
@@ -1443,28 +2125,53 @@
             <Subnodes>
                <Node>
                 <Name>change_directory</Name>
-                <Path>vfs__function_8c.html</Path>
-                <Anchor>a71c6e3b3b5dfc4397a3897968b86b239</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga71c6e3b3b5dfc4397a3897968b86b239</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_lseek</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga51b658807c748db2ca12ac3af986fa96</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_read</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga15b6b10188015572381ac9bb4437a7e1</Anchor>
+               </Node>
+               <Node>
+                <Name>fs_write</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gabafd732c4c89442c2e7ee525a00c5895</Anchor>
                </Node>
                <Node>
                 <Name>get_current_directory</Name>
-                <Path>vfs__function_8c.html</Path>
-                <Anchor>ae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gae0ff391eb9b18e5a0dc8a463c2704553</Anchor>
+               </Node>
+               <Node>
+                <Name>get_physical_block</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga009267d18ee7ae829643c2b8e1f17d69</Anchor>
+               </Node>
+               <Node>
+                <Name>is_relative_path</Name>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga485c455ca22bf60aada827b8e14bfbbb</Anchor>
                </Node>
                <Node>
                 <Name>list_directory</Name>
-                <Path>vfs__function_8c.html</Path>
-                <Anchor>ada74a80451424a86241f4c4741907429</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gada74a80451424a86241f4c4741907429</Anchor>
                </Node>
                <Node>
                 <Name>resolve_relative_path</Name>
-                <Path>vfs__function_8c.html</Path>
-                <Anchor>aca5a29815408d61083bbbfe7697e9d0e</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>gaca5a29815408d61083bbbfe7697e9d0e</Anchor>
                </Node>
                <Node>
                 <Name>simplify_path</Name>
-                <Path>vfs__function_8c.html</Path>
-                <Anchor>a6ba40f28df8964130a55aac5472ea6d8</Anchor>
+                <Path>group__vfs__functions.html</Path>
+                <Anchor>ga6ba40f28df8964130a55aac5472ea6d8</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -1491,6 +2198,14 @@
            <Node>
             <Name>Définitions de type</Name>
             <Path>globals_type.html</Path>
+           </Node>
+           <Node>
+            <Name>Énumérations</Name>
+            <Path>globals_enum.html</Path>
+           </Node>
+           <Node>
+            <Name>Valeurs énumérées</Name>
+            <Path>globals_eval.html</Path>
            </Node>
            <Node>
             <Name>Macros</Name>

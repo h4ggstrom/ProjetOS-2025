@@ -6,13 +6,13 @@
  *          a file system partition, including block management, inode handling,
  *          and directory operations.
  *
- * @version 0.3
- * @date 04/04/2025
+ * @version 1.0
+ * @date 06/04/2025
  *
  * @authors
- * - Robin de Angelis (%)
- * - Alexandre Ledard (%)
- * - Killian Treuil (%)
+ * - Robin de Angelis  35 (%)
+ * - Alexandre Ledard 50 (%)
+ * - Killian Treuil 15 (%)
  */
 
 #include <string.h>

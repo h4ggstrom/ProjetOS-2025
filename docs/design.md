@@ -29,19 +29,22 @@ typedef struct Block {
 
 ```c
 typedef struct Inode {
-    uint32_t id;               ///< Unique identifier for the inode
-    uint32_t size;             ///< Size of the file (in bytes)
-    uint32_t blocks[12];       ///< Direct pointers to data blocks
-    uint32_t indirect_block;   ///< Pointer to an indirect block (if needed)
-    uint32_t double_indirect;  ///< Pointer to a double-indirect block (if needed)
-    uint16_t permissions;      ///< File permissions (UNIX style: rwxrwxrwx)
-    uint16_t links_count;      ///< Number of links pointing to this inode
-    uint32_t owner_id;         ///< Owner ID
-    uint32_t group_id;         ///< Group ID
-    uint64_t created_at;       ///< Creation timestamp
-    uint64_t modified_at;      ///< Last modification timestamp
-    uint64_t accessed_at;      ///< Last access timestamp
-    bool is_directory;         ///< Indicates whether the inode represents a directory
+    uint32_t id;              ///< Unique identifier for the inode
+    uint32_t size;            ///< Size of the file (in bytes)
+    uint32_t blocks[12];      ///< Direct pointers to data blocks
+    uint32_t indirect_block;  ///< Pointer to an indirect block (if needed)
+    uint32_t double_indirect; ///< Pointer to a double-indirect block (if needed)
+    uint16_t permissions;     ///< File permissions (UNIX style: rwxrwxrwx)
+    uint16_t links_count;     ///< Number of links pointing to this inode
+    uint32_t owner_id;        ///< Owner ID
+    uint32_t group_id;        ///< Group ID
+    uint64_t created_at;      ///< Creation timestamp
+    uint64_t modified_at;     ///< Last modification timestamp
+    uint64_t accessed_at;     ///< Last access timestamp
+    FileType type;          // Type de fichier
+    char *symlink_target;   // Chemin cible pour les liens symboliques
+    bool is_directory;        ///< Indicates whether the inode represents a directory
+    bool is_used;             ///< Indicates if the inode is allocated/used
 } Inode;
 ```
 
@@ -116,9 +119,13 @@ typedef struct Partition {
 
 ```c
 typedef struct FileSystem {
-    Superblock superblock;    ///< Superblock of the partition
-    Inode *inode_table;       ///< Table of inodes
-    Partition partition;      ///< Raw partition
+    Superblock superblock;            ///< Superblock of the partition
+    Inode *inode_table;               ///< Table of inodes
+    Partition partition;              ///< Raw partition
+    FileDescriptor *open_files_table; ///< Table of open file descriptors
+    uint32_t max_open_files;          ///< Maximum number of files that can be opened simultaneously
+    uint32_t current_directory;       ///<Inode du répertoire courant (0 pour la racine)
+    char current_path[MAX_PATH_LEN];  ///< Chemin absolu courant
 } FileSystem;
 ```
 
@@ -143,6 +150,38 @@ typedef struct FileSystem {
 - **Justification** :
   - Les types comme `uint32_t` et `uint8_t` garantissent une portabilité et une précision dans la gestion des tailles et indices.
   - Les timestamps utilisent `uint64_t` pour représenter les dates et heures avec une grande précision, compatible avec les systèmes modernes.
+
+## 10. **Structure `FileDescriptor`**
+
+### **Definition**
+
+```c
+typedef struct FileDescriptor
+{
+    uint32_t fd_id;       ///< Unique file descriptor ID
+    uint32_t inode_id;    ///< Inode of the opened file
+    uint32_t current_pos; ///< Current read/write position (offset in bytes)
+    uint16_t mode;        ///< Opening mode (e.g., read-only, write-only, read-write)
+    bool is_used;         ///< Indicates if the descriptor is currently in use
+} FileDescriptor;
+```
+- **Justification** :
+Cette structure permet de gérer les fichiers ouverts dans le système. Chaque descripteur conserve l'état d'un fichier pendant son utilisation.
+
+Identifiant unique (`fd_id`)
+Un numéro qui distingue chaque fichier ouvert. On utilise un entier 32 bits pour pouvoir gérer beaucoup de fichiers simultanément sans complexité inutile.
+
+Lien vers l'inode (`inode_id`)
+Référence le fichier concret dans le système. Plutôt que de stocker le chemin complet, on garde juste l'identifiant de l'inode, ce qui est plus efficace.
+
+Position actuelle (`current_pos`)
+Indique où se trouve la "tête" de lecture/écriture dans le fichier. C'est essentiel pour lire ou écrire séquentiellement sans tout recommencer à zéro à chaque opération.
+
+Mode d'ouverture (`mode`)
+Mémorise si le fichier est ouvert en lecture, écriture ou les deux. Cela permet de vérifier rapidement si une opération est autorisée.
+
+Statut d'utilisation (`is_used`)
+Un simple vrai/faux qui indique si le descripteur est actuellement utilisé. Quand on ferme un fichier, cette valeur passe à faux, permettant de réutiliser l'emplacement.
 
 ## Conclusion
 

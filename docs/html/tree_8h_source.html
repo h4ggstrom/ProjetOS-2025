@@ -91,21 +91,26 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">tree.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="tree_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TREE_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TREE_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="partition_8h.html">partition.h</a>&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="vfs__function_8h.html">vfs_function.h</a>&gt;</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="tree_8h.html#accccf7c88162324fe8b2d2ed38ea735a">tree</a>(<a class="code hl_struct" href="structFileSystem.html">FileSystem</a> *fs, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keywordtype">int</span> max_depth);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">static</span> <span class="keywordtype">void</span> print_tree_recursive(<a class="code hl_struct" href="structFileSystem.html">FileSystem</a> *fs, uint32_t dir_inode, </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">int</span> current_depth, <span class="keywordtype">int</span> max_depth, </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif </span><span class="comment">// FILE_OPERATIONS_H</span></div>
+<a href="tree_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor"> #ifndef TREE_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor"> #define TREE_H</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor"> #include &lt;<a class="code" href="partition_8h.html">partition.h</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor"> #include &lt;<a class="code" href="vfs__function_8h.html">vfs_function.h</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__tree__visualisation.html#gaccccf7c88162324fe8b2d2ed38ea735a">tree</a>(<a class="code hl_struct" href="structFileSystem.html">FileSystem</a> *fs, <span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keywordtype">int</span> max_depth);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> <span class="keyword">static</span> <span class="keywordtype">void</span> print_tree_recursive(<a class="code hl_struct" href="structFileSystem.html">FileSystem</a> *fs, uint32_t dir_inode,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>     <span class="keywordtype">int</span> current_depth, <span class="keywordtype">int</span> max_depth,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>     <span class="keyword">const</span> <span class="keywordtype">char</span> *prefix);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor"> #endif </span><span class="comment">// TREE_H</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> <span class="comment">// Fin du groupe tree_visualisation</span></div>
+<div class="ttc" id="agroup__tree__visualisation_html_gaccccf7c88162324fe8b2d2ed38ea735a"><div class="ttname"><a href="group__tree__visualisation.html#gaccccf7c88162324fe8b2d2ed38ea735a">tree</a></div><div class="ttdeci">void tree(FileSystem *fs, const char *path, int max_depth)</div><div class="ttdoc">Affiche l'arborescence du système de fichiers.</div><div class="ttdef"><b>Definition</b> tree.c:23</div></div>
 <div class="ttc" id="apartition_8h_html"><div class="ttname"><a href="partition_8h.html">partition.h</a></div><div class="ttdoc">Header file for the partition management library.</div></div>
-<div class="ttc" id="astructFileSystem_html"><div class="ttname"><a href="structFileSystem.html">FileSystem</a></div><div class="ttdoc">Represents the global file system structure.</div><div class="ttdef"><b>Definition</b> partition.h:162</div></div>
-<div class="ttc" id="atree_8h_html_accccf7c88162324fe8b2d2ed38ea735a"><div class="ttname"><a href="tree_8h.html#accccf7c88162324fe8b2d2ed38ea735a">tree</a></div><div class="ttdeci">void tree(FileSystem *fs, const char *path, int max_depth)</div><div class="ttdoc">Affiche l'arborescence du système de fichiers.</div><div class="ttdef"><b>Definition</b> tree.c:23</div></div>
-<div class="ttc" id="avfs__function_8h_html"><div class="ttname"><a href="vfs__function_8h.html">vfs_function.h</a></div></div>
+<div class="ttc" id="astructFileSystem_html"><div class="ttname"><a href="structFileSystem.html">FileSystem</a></div><div class="ttdoc">Represents the global file system structure.</div><div class="ttdef"><b>Definition</b> partition.h:173</div></div>
+<div class="ttc" id="avfs__function_8h_html"><div class="ttname"><a href="vfs__function_8h.html">vfs_function.h</a></div><div class="ttdoc">Fonctions du système de fichiers virtuel (VFS)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

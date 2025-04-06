@@ -1,0 +1,5 @@
+<map id="resolve_relative_path" name="resolve_relative_path">
+<area shape="rect" id="Node000001" title="Convertit un chemin relatif en chemin absolu." alt="" coords="5,5,150,32"/>
+<area shape="rect" id="Node000002" href="$group__vfs__functions.html#gae0ff391eb9b18e5a0dc8a463c2704553" title="Obtient le chemin absolu du répertoire courant." alt="" coords="198,5,341,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,16,182,16,182,21,150,21"/>
+</map>

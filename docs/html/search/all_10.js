@@ -1,23 +1,10 @@
 var searchData=
 [
-  ['s_5fifdir_0',['S_IFDIR',['../constantes_8h.html#a11fb0652b963a735f3377eb1c9239f2d',1,'constantes.h']]],
-  ['s_5fifmt_1',['S_IFMT',['../constantes_8h.html#ab5bee51e9ee68b83ab11d4b340f7200b',1,'constantes.h']]],
-  ['s_5fifreg_2',['S_IFREG',['../constantes_8h.html#a1aaa48b192a5dd3b6d7ee91fc98cd17d',1,'constantes.h']]],
-  ['s_5firgrp_3',['S_IRGRP',['../constantes_8h.html#a4f5f280b929768113739fb34d6f7be8a',1,'constantes.h']]],
-  ['s_5firoth_4',['S_IROTH',['../constantes_8h.html#a071147a0cb995036967c80f64b1f74b9',1,'constantes.h']]],
-  ['s_5firusr_5',['S_IRUSR',['../constantes_8h.html#a84c7dbf5cf2fdfb690f76348b60a8cb7',1,'constantes.h']]],
-  ['s_5fiwgrp_6',['S_IWGRP',['../constantes_8h.html#ae6774871a90d9442f00abe18b87fee6e',1,'constantes.h']]],
-  ['s_5fiwoth_7',['S_IWOTH',['../constantes_8h.html#a5303f49f26293acdb9533756c78322fb',1,'constantes.h']]],
-  ['s_5fiwusr_8',['S_IWUSR',['../constantes_8h.html#ad70001754261c15a1bdc8e876c6d09d7',1,'constantes.h']]],
-  ['s_5fixgrp_9',['S_IXGRP',['../constantes_8h.html#a042e69ac0e7dd56e5cfcd9e97d010323',1,'constantes.h']]],
-  ['s_5fixoth_10',['S_IXOTH',['../constantes_8h.html#a40223db1b95a04f5b28cceb3c34cfebd',1,'constantes.h']]],
-  ['s_5fixusr_11',['S_IXUSR',['../constantes_8h.html#af10a35e3950795d6ee4e07157d000131',1,'constantes.h']]],
-  ['simplify_5fpath_12',['simplify_path',['../vfs__function_8c.html#a6ba40f28df8964130a55aac5472ea6d8',1,'simplify_path(char *path):&#160;vfs_function.c'],['../vfs__function_8h.html#a6ba40f28df8964130a55aac5472ea6d8',1,'simplify_path(char *path):&#160;vfs_function.c']]],
-  ['size_13',['size',['../structInode.html#aa0ca5befd9af1bd6d529682a244b5262',1,'Inode']]],
-  ['split_5fpath_14',['split_path',['../partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79',1,'split_path(const char *full_path, char *parent_path, char *filename):&#160;partition.c'],['../partition_8h.html#af1d21082ab63ee7bc27239c210bbaf79',1,'split_path(const char *full_path, char *parent_path, char *filename):&#160;partition.c']]],
-  ['success_15',['SUCCESS',['../constantes_8h.html#aa90cac659d18e8ef6294c7ae337f6b58',1,'constantes.h']]],
-  ['superblock_16',['Superblock',['../structSuperblock.html',1,'Superblock'],['../partition_8h.html#a670d5ca19aae094f5716f19faf517dd7',1,'Superblock:&#160;partition.h']]],
-  ['superblock_17',['superblock',['../structFileSystem.html#ac62fe7b969d5b46012a153044c43870f',1,'FileSystem']]],
-  ['superblock_5foffset_18',['SUPERBLOCK_OFFSET',['../constantes_8h.html#ae9e5bed110d8e9128d5d07f8cbe9896b',1,'constantes.h']]],
-  ['superblock_5fsize_19',['SUPERBLOCK_SIZE',['../constantes_8h.html#a8394ddfc34b82667f24d6a5944cb00ec',1,'constantes.h']]]
+  ['read_5fdirectory_0',['read_directory',['../partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52',1,'read_directory(FileSystem *fs, uint32_t inode_num, Directory *dir):&#160;partition.c'],['../partition_8h.html#a8807a1cc626bf65ac4dc0c35d71d9c52',1,'read_directory(FileSystem *fs, uint32_t inode_num, Directory *dir):&#160;partition.c']]],
+  ['read_5finode_5fdata_1',['read_inode_data',['../partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5',1,'partition.c']]],
+  ['read_5fsingle_5fblock_2',['read_single_block',['../partition_8c.html#adbd691d83c490dfc3e97812cd599c73a',1,'partition.c']]],
+  ['remove_5fdirectory_3',['remove_directory',['../partition_8c.html#a06734098ed3c80ccff8ce130d0f443e4',1,'remove_directory(FileSystem *fs, const char *path):&#160;partition.c'],['../partition_8h.html#a06734098ed3c80ccff8ce130d0f443e4',1,'remove_directory(FileSystem *fs, const char *path):&#160;partition.c']]],
+  ['remove_5ffile_4',['remove_file',['../partition_8c.html#a2e34ff6a91cdbce8a425e88982a72059',1,'remove_file(FileSystem *fs, const char *path):&#160;partition.c'],['../partition_8h.html#a2e34ff6a91cdbce8a425e88982a72059',1,'remove_file(FileSystem *fs, const char *path):&#160;partition.c']]],
+  ['remove_5fuser_5',['remove_user',['../group__user__management.html#ga1a8b21830bd87936ad644b67a7630fa6',1,'remove_user(uint32_t user_id):&#160;user.c'],['../group__user__management.html#ga1a8b21830bd87936ad644b67a7630fa6',1,'remove_user(uint32_t user_id):&#160;user.c']]],
+  ['resolve_5frelative_5fpath_6',['resolve_relative_path',['../group__vfs__functions.html#gaca5a29815408d61083bbbfe7697e9d0e',1,'resolve_relative_path(FileSystem *fs, const char *relative_path, char *absolute_path, size_t buffer_size):&#160;vfs_function.c'],['../group__vfs__functions.html#gaca5a29815408d61083bbbfe7697e9d0e',1,'resolve_relative_path(FileSystem *fs, const char *rel_path, char *abs_path, size_t size):&#160;vfs_function.c']]]
 ];

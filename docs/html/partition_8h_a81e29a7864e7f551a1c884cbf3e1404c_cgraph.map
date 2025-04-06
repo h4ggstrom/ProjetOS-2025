@@ -1,0 +1,9 @@
+<map id="get_inode_by_path" name="get_inode_by_path">
+<area shape="rect" id="Node000001" title="Trouve l&#39;inode correspondant à un chemin donné." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="184,5,287,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,16,168,16,168,21,136,21"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="335,5,451,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,16,319,16,319,21,287,21"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="499,5,625,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="452,16,484,16,484,21,452,21"/>
+</map>

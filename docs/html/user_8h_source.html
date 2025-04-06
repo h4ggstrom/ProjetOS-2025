@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projet 0S 2025:  Fichier source de include/user.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Projet 0S 2025<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',false);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">user.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="user_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef USER_H</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define USER_H</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structUser.html">   30</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structUser.html">User</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structUser.html#a32adf6a1d0bb8d2ade4139e396612df7">   31</a></span>    uint32_t <a class="code hl_variable" href="structUser.html#a32adf6a1d0bb8d2ade4139e396612df7">user_id</a>;       <span class="comment">// Identifiant unique de l&#39;utilisateur</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structUser.html#a63795b3803ea2ef33cdb1e034d63316d">   32</a></span>    uint32_t <a class="code hl_variable" href="structUser.html#a63795b3803ea2ef33cdb1e034d63316d">group_id</a>;      <span class="comment">// Identifiant du groupe auquel appartient l&#39;utilisateur</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structUser.html#a9f83d87e6e823657696f55f42c508bb3">   33</a></span>    <span class="keywordtype">char</span> <a class="code hl_variable" href="structUser.html#a9f83d87e6e823657696f55f42c508bb3">username</a>[32];      <span class="comment">// Nom d&#39;utilisateur</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structUser.html#a7d72d40e10d1e103f22c28d5b73cf559">   34</a></span>    uint16_t <a class="code hl_variable" href="structUser.html#a7d72d40e10d1e103f22c28d5b73cf559">permissions</a>;   <span class="comment">// Permissions par défaut de l&#39;utilisateur (rwxrwxrwx)</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="group__user__management.html#gaebb0f8a8bd00b8afba0e5abcf5b559c7">   35</a></span>} <a class="code hl_typedef" href="group__user__management.html#gaebb0f8a8bd00b8afba0e5abcf5b559c7">User</a>;</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// Types d&#39;utilisateurs</span></div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="group__user__management.html#ga196c5ae3c192f069339f2966656f6fe9">   38</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7">   39</a></span>    <a class="code hl_enumvalue" href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7">USER_TYPE_ADMIN</a>,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b">   40</a></span>    <a class="code hl_enumvalue" href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b">USER_TYPE_USER</a>,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_enumvalue" href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8">USER_TYPE_GUEST</a></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8">   42</a></span>} <a class="code hl_enumeration" href="group__user__management.html#ga196c5ae3c192f069339f2966656f6fe9">UserType</a>;</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// Prototypes des fonctions définies dans user.c</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>uint32_t <a class="code hl_function" href="group__user__management.html#gaf7e248432c320d6a4db3b0d9700689dd">add_user</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *username, uint32_t group_id, <a class="code hl_enumeration" href="group__user__management.html#ga196c5ae3c192f069339f2966656f6fe9">UserType</a> user_type);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><a class="code hl_struct" href="structUser.html">User</a> *<a class="code hl_function" href="group__user__management.html#ga9021966bc232c76feb9c2fea36c1eba2">get_user</a>(uint32_t user_id);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__user__management.html#ga1262a0a40053af259446ef68f5bd176f">set_current_user</a>(uint32_t user_id);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><a class="code hl_struct" href="structUser.html">User</a> *<a class="code hl_function" href="group__user__management.html#ga4db0c9bfbc4d58f62ec3f76bafef1290">get_current_user</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">bool</span> <a class="code hl_function" href="group__user__management.html#ga1a8b21830bd87936ad644b67a7630fa6">remove_user</a>(uint32_t user_id);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>uint32_t <a class="code hl_function" href="group__user__management.html#ga5afd363aea1ac3c120659883107eb00b">get_user_count</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__user__management.html#gad47cb0106d6f756714576cffabbf5b5b">display_users</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">// USER_H</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> <span class="comment">// Fin du groupe user_management</span></div>
+<div class="ttc" id="agroup__user__management_html_ga1262a0a40053af259446ef68f5bd176f"><div class="ttname"><a href="group__user__management.html#ga1262a0a40053af259446ef68f5bd176f">set_current_user</a></div><div class="ttdeci">bool set_current_user(uint32_t user_id)</div><div class="ttdoc">Définit l'utilisateur courant.</div><div class="ttdef"><b>Definition</b> user.c:83</div></div>
+<div class="ttc" id="agroup__user__management_html_ga196c5ae3c192f069339f2966656f6fe9"><div class="ttname"><a href="group__user__management.html#ga196c5ae3c192f069339f2966656f6fe9">UserType</a></div><div class="ttdeci">UserType</div><div class="ttdef"><b>Definition</b> user.h:38</div></div>
+<div class="ttc" id="agroup__user__management_html_ga1a8b21830bd87936ad644b67a7630fa6"><div class="ttname"><a href="group__user__management.html#ga1a8b21830bd87936ad644b67a7630fa6">remove_user</a></div><div class="ttdeci">bool remove_user(uint32_t user_id)</div><div class="ttdoc">Supprime un utilisateur par son ID.</div><div class="ttdef"><b>Definition</b> user.c:109</div></div>
+<div class="ttc" id="agroup__user__management_html_ga4db0c9bfbc4d58f62ec3f76bafef1290"><div class="ttname"><a href="group__user__management.html#ga4db0c9bfbc4d58f62ec3f76bafef1290">get_current_user</a></div><div class="ttdeci">User * get_current_user()</div><div class="ttdoc">Récupère l'utilisateur courant.</div><div class="ttdef"><b>Definition</b> user.c:99</div></div>
+<div class="ttc" id="agroup__user__management_html_ga5afd363aea1ac3c120659883107eb00b"><div class="ttname"><a href="group__user__management.html#ga5afd363aea1ac3c120659883107eb00b">get_user_count</a></div><div class="ttdeci">uint32_t get_user_count()</div><div class="ttdoc">Récupère le nombre d'utilisateurs enregistrés.</div><div class="ttdef"><b>Definition</b> user.c:147</div></div>
+<div class="ttc" id="agroup__user__management_html_ga9021966bc232c76feb9c2fea36c1eba2"><div class="ttname"><a href="group__user__management.html#ga9021966bc232c76feb9c2fea36c1eba2">get_user</a></div><div class="ttdeci">User * get_user(uint32_t user_id)</div><div class="ttdoc">Récupère un utilisateur par son ID.</div><div class="ttdef"><b>Definition</b> user.c:70</div></div>
+<div class="ttc" id="agroup__user__management_html_gad47cb0106d6f756714576cffabbf5b5b"><div class="ttname"><a href="group__user__management.html#gad47cb0106d6f756714576cffabbf5b5b">display_users</a></div><div class="ttdeci">void display_users()</div><div class="ttdoc">Affiche tous les utilisateurs disponibles.</div><div class="ttdef"><b>Definition</b> user.c:154</div></div>
+<div class="ttc" id="agroup__user__management_html_gaebb0f8a8bd00b8afba0e5abcf5b559c7"><div class="ttname"><a href="group__user__management.html#gaebb0f8a8bd00b8afba0e5abcf5b559c7">User</a></div><div class="ttdeci">struct User User</div></div>
+<div class="ttc" id="agroup__user__management_html_gaf7e248432c320d6a4db3b0d9700689dd"><div class="ttname"><a href="group__user__management.html#gaf7e248432c320d6a4db3b0d9700689dd">add_user</a></div><div class="ttdeci">uint32_t add_user(const char *username, uint32_t group_id, UserType user_type)</div><div class="ttdoc">Ajoute un nouvel utilisateur.</div><div class="ttdef"><b>Definition</b> user.c:34</div></div>
+<div class="ttc" id="agroup__user__management_html_gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b"><div class="ttname"><a href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9a622e16e7abc75bef6944e7ca7f82123b">USER_TYPE_USER</a></div><div class="ttdeci">@ USER_TYPE_USER</div><div class="ttdef"><b>Definition</b> user.h:40</div></div>
+<div class="ttc" id="agroup__user__management_html_gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8"><div class="ttname"><a href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9aec3f50db3251722bcbdefa920a2d49c8">USER_TYPE_GUEST</a></div><div class="ttdeci">@ USER_TYPE_GUEST</div><div class="ttdef"><b>Definition</b> user.h:41</div></div>
+<div class="ttc" id="agroup__user__management_html_gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7"><div class="ttname"><a href="group__user__management.html#gga196c5ae3c192f069339f2966656f6fe9af25431acf1e754280735e14e903073d7">USER_TYPE_ADMIN</a></div><div class="ttdeci">@ USER_TYPE_ADMIN</div><div class="ttdef"><b>Definition</b> user.h:39</div></div>
+<div class="ttc" id="astructUser_html"><div class="ttname"><a href="structUser.html">User</a></div><div class="ttdef"><b>Definition</b> user.h:30</div></div>
+<div class="ttc" id="astructUser_html_a32adf6a1d0bb8d2ade4139e396612df7"><div class="ttname"><a href="structUser.html#a32adf6a1d0bb8d2ade4139e396612df7">User::user_id</a></div><div class="ttdeci">uint32_t user_id</div><div class="ttdef"><b>Definition</b> user.h:31</div></div>
+<div class="ttc" id="astructUser_html_a63795b3803ea2ef33cdb1e034d63316d"><div class="ttname"><a href="structUser.html#a63795b3803ea2ef33cdb1e034d63316d">User::group_id</a></div><div class="ttdeci">uint32_t group_id</div><div class="ttdef"><b>Definition</b> user.h:32</div></div>
+<div class="ttc" id="astructUser_html_a7d72d40e10d1e103f22c28d5b73cf559"><div class="ttname"><a href="structUser.html#a7d72d40e10d1e103f22c28d5b73cf559">User::permissions</a></div><div class="ttdeci">uint16_t permissions</div><div class="ttdef"><b>Definition</b> user.h:34</div></div>
+<div class="ttc" id="astructUser_html_a9f83d87e6e823657696f55f42c508bb3"><div class="ttname"><a href="structUser.html#a9f83d87e6e823657696f55f42c508bb3">User::username</a></div><div class="ttdeci">char username[32]</div><div class="ttdef"><b>Definition</b> user.h:33</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
+</small></address>
+</div><!-- doc-content -->
+</body>
+</html>

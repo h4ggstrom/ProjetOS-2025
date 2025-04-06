@@ -1,0 +1,42 @@
+<map id="fs_symlink" name="fs_symlink">
+<area shape="rect" id="Node000001" title="Crée un lien symbolique (soft link)" alt="" coords="5,266,90,293"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#ab0c8e3ef484d10290e18112478f8e49a" title="Ajoute une entrée dans un répertoire." alt="" coords="140,127,276,154"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,264,86,216,109,188,136,164,143,159,146,163,139,168,113,192,90,219,58,267"/>
+<area shape="rect" id="Node000013" href="$partition_8c.html#aead3f3e2f43bbe7333cb36561c0922eb" title="Alloue un nouvel inode." alt="" coords="156,178,260,205"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="64,263,97,239,136,214,148,209,151,213,139,219,100,243,67,268"/>
+<area shape="rect" id="Node000014" href="$partition_8c.html#a14c71a5fc446af43ac09e6b9a5d0d5d2" title="Trouve un fichier dans un répertoire." alt="" coords="138,229,278,255"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="90,267,132,257,134,262,91,272"/>
+<area shape="rect" id="Node000015" href="$partition_8c.html#a4a49bb6c6005509f8399caba46350afe" title="Trouve l&#39;inode correspondant à un chemin donné" alt="" coords="141,303,274,330"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="91,287,134,297,132,302,90,292"/>
+<area shape="rect" id="Node000017" href="$partition_8c.html#a9ae32cbb8926e46177187c97fdaa21e6" title="Libère un inode." alt="" coords="167,354,248,381"/>
+<area shape="poly" id="edge21_Node000001_Node000017" title=" " alt="" coords="67,291,100,315,139,340,154,347,152,352,136,344,97,320,64,295"/>
+<area shape="rect" id="Node000018" href="$partition_8c.html#af1d21082ab63ee7bc27239c210bbaf79" title="Sépare un chemin en répertoire parent et nom de fichier." alt="" coords="169,405,246,431"/>
+<area shape="poly" id="edge22_Node000001_Node000018" title=" " alt="" coords="58,292,90,340,113,367,139,390,156,400,153,405,136,395,109,371,86,343,54,295"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#a8807a1cc626bf65ac4dc0c35d71d9c52" title="Lit le contenu d&#39;un répertoire dans une structure Directory." alt="" coords="328,229,431,255"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,152,279,164,319,189,353,216,350,220,316,194,277,168,252,157"/>
+<area shape="rect" id="Node000006" href="$partition_8c.html#a2a7b6cb87b4359db6682050ab28e6fe9" title="Écrit le contenu d&#39;un répertoire dans les blocs de l&#39;inode." alt="" coords="326,127,432,154"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="276,138,310,138,310,143,276,143"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#a50cf879b8204ef34a06d5ff1422f48b5" title="Lit les données d&#39;un inode depuis plusieurs blocs." alt="" coords="494,229,610,255"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="431,239,478,239,478,245,431,245"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#adbd691d83c490dfc3e97812cd599c73a" title="Lit des données depuis un seul bloc." alt="" coords="686,229,811,255"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="610,239,670,239,670,245,610,245"/>
+<area shape="rect" id="Node000007" href="$partition_8c.html#a3b9f31961bf6fcb3017315f5a9a49b6d" title="Garantit que l&#39;inode a assez de blocs alloués." alt="" coords="480,127,624,154"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="433,138,465,138,465,143,433,143"/>
+<area shape="rect" id="Node000010" href="$partition_8c.html#ad43c60c9cb30ca48859c564c066990e5" title="Écrit des données dans les blocs d&#39;un inode." alt="" coords="492,51,612,78"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="411,124,505,82,507,87,413,129"/>
+<area shape="rect" id="Node000008" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="873,26,977,53"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="588,152,637,168,697,179,762,180,794,175,824,164,852,144,876,119,909,65,914,68,880,122,856,148,826,168,795,180,763,186,696,185,635,173,586,157"/>
+<area shape="rect" id="Node000009" href="$partition_8c.html#a4c183efe422b7bd7ca0a0d5ee02a6ae6" title="Frees a block in the partition." alt="" coords="708,127,789,154"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="624,138,692,138,692,143,624,143"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="577,48,620,28,671,11,714,4,748,3,825,11,865,19,864,24,825,17,748,8,715,10,672,17,622,33,579,53"/>
+<area shape="rect" id="Node000011" href="$partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="672,26,825,53"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="612,54,656,49,656,54,612,60"/>
+<area shape="rect" id="Node000012" href="$partition_8c.html#a0cd1521fe9fd47ac9a6d1fcd3716dd95" title="Écrit des données dans un seul bloc." alt="" coords="684,77,812,103"/>
+<area shape="poly" id="edge13_Node000010_Node000012" title=" " alt="" coords="612,70,669,77,668,82,612,75"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="826,37,858,37,858,42,826,42"/>
+<area shape="poly" id="edge16_Node000014_Node000003" title=" " alt="" coords="278,239,312,239,312,245,278,245"/>
+<area shape="poly" id="edge20_Node000015_Node000003" title=" " alt="" coords="239,300,332,260,334,264,242,305"/>
+<area shape="poly" id="edge18_Node000015_Node000015" title=" " alt="" coords="180,304,175,295,179,285,190,279,208,277,227,279,238,286,235,290,225,284,208,282,191,284,183,289,180,294,185,302"/>
+<area shape="rect" id="Node000016" href="$partition_8c.html#ab6dfaed9a58f6cd361e692e341e20b4f" title="Lit la cible d&#39;un lien symbolique." alt="" coords="337,303,421,330"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="275,314,321,314,321,319,275,319"/>
+</map>

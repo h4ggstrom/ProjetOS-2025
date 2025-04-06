@@ -1,0 +1,13 @@
+<map id="fs_write" name="fs_write">
+<area shape="rect" id="Node000001" title="Écrit des données dans un fichier." alt="" coords="5,24,73,50"/>
+<area shape="rect" id="Node000002" href="$partition_8c.html#a92d4051f4b5524af74e0930f133124c2" title=" " alt="" coords="121,16,247,58"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,34,105,34,105,40,73,40"/>
+<area shape="rect" id="Node000003" href="$partition_8c.html#afc7c191d37608ce420b97b044a0f3362" title="Allocates a free block in the partition." alt="" coords="496,24,601,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="247,17,295,9,372,3,449,9,489,17,488,22,448,14,372,8,295,14,248,23"/>
+<area shape="rect" id="Node000004" href="$partition_8c.html#abef1d8ce728124ca0a8cee0e877b18f5" title=" " alt="" coords="295,24,448,50"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="247,34,279,34,279,40,247,40"/>
+<area shape="rect" id="Node000005" href="$partition_8c.html#a75b615a241e5f4d9b104afb3263f1d19" title=" " alt="" coords="308,74,435,101"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="248,51,306,67,304,72,247,56"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="449,34,481,34,481,40,449,40"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="420,71,484,52,486,57,422,76"/>
+</map>

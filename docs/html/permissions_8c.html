@@ -93,102 +93,78 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Référence du fichier permissions.c</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;sys/stat.h&gt;</code><br />
-<code>#include &lt;errno.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
+
+<p>This file contains the functions that are used to manage the permissions and access to the files.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &lt;fcntl.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="partition_8h_source.html">partition.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="permissions_8h_source.html">permissions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="user_8h_source.html">user.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de permissions.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="permissions_8c__incl.png" border="0" usemap="#asrc_2permissions_8c" alt=""/></div>
 <map name="asrc_2permissions_8c" id="asrc_2permissions_8c">
-<area shape="rect" title=" " alt="" coords="207,5,331,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,85,107"/>
-<area shape="poly" title=" " alt="" coords="231,35,99,77,98,72,229,30"/>
-<area shape="rect" title=" " alt="" coords="109,80,170,107"/>
-<area shape="poly" title=" " alt="" coords="248,35,177,74,174,70,245,30"/>
-<area shape="rect" title=" " alt="" coords="194,80,258,107"/>
-<area shape="poly" title=" " alt="" coords="264,34,244,68,239,65,259,31"/>
-<area shape="rect" title=" " alt="" coords="283,80,343,107"/>
-<area shape="poly" title=" " alt="" coords="279,31,300,65,295,68,274,34"/>
-<area shape="rect" title=" " alt="" coords="367,80,435,107"/>
-<area shape="poly" title=" " alt="" coords="293,30,366,70,364,75,291,35"/>
-<area shape="rect" title=" " alt="" coords="459,80,516,107"/>
-<area shape="poly" title=" " alt="" coords="308,30,445,75,443,80,306,35"/>
+<area shape="rect" title="This file contains the functions that are used to manage the permissions and access to the files." alt="" coords="473,5,598,32"/>
+<area shape="rect" title=" " alt="" coords="522,304,586,331"/>
+<area shape="poly" title=" " alt="" coords="563,30,595,49,632,76,666,111,690,154,694,177,691,199,681,220,667,239,631,273,593,298,590,294,628,269,663,236,677,217,686,197,689,177,685,156,662,115,629,80,592,54,560,35"/>
+<area shape="rect" title=" " alt="" coords="5,229,66,256"/>
+<area shape="poly" title=" " alt="" coords="495,35,362,82,199,158,73,224,70,219,197,153,360,78,493,30"/>
+<area shape="rect" title=" " alt="" coords="526,229,601,256"/>
+<area shape="poly" title=" " alt="" coords="540,32,563,214,557,215,534,33"/>
+<area shape="rect" href="partition_8h.html" title="Header file for the partition management library." alt="" coords="248,155,327,181"/>
+<area shape="poly" title=" " alt="" coords="505,35,458,56,408,82,358,115,316,147,313,143,355,111,405,78,456,51,503,30"/>
+<area shape="rect" href="permissions_8h.html" title="Gestion des permissions et propriétés des fichiers." alt="" coords="418,80,520,107"/>
+<area shape="poly" title=" " alt="" coords="526,34,492,70,489,67,522,31"/>
+<area shape="rect" href="user_8h.html" title="Gestion des utilisateurs du système de fichiers." alt="" coords="618,155,675,181"/>
+<area shape="poly" title=" " alt="" coords="552,30,576,52,600,78,621,109,637,140,632,142,616,112,596,82,572,55,549,34"/>
+<area shape="poly" title=" " alt="" coords="249,183,81,231,80,226,247,178"/>
+<area shape="poly" title=" " alt="" coords="328,177,512,225,510,230,326,182"/>
+<area shape="rect" title=" " alt="" coords="170,229,234,256"/>
+<area shape="poly" title=" " alt="" coords="274,184,230,221,226,217,271,180"/>
+<area shape="rect" title=" " alt="" coords="258,229,322,256"/>
+<area shape="poly" title=" " alt="" coords="291,182,292,214,286,214,285,182"/>
+<area shape="rect" title=" " alt="" coords="90,229,147,256"/>
+<area shape="poly" title=" " alt="" coords="259,184,162,225,160,221,257,179"/>
+<area shape="rect" href="constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="346,229,442,256"/>
+<area shape="poly" title=" " alt="" coords="308,180,364,218,361,222,305,184"/>
+<area shape="poly" title=" " alt="" coords="423,254,514,295,511,300,421,259"/>
+<area shape="poly" title=" " alt="" coords="444,110,422,123,402,140,390,160,389,170,393,180,405,197,419,207,436,215,456,227,531,291,527,295,453,231,433,219,416,211,401,201,388,183,384,170,385,158,398,137,419,119,441,105"/>
+<area shape="poly" title=" " alt="" coords="479,106,549,215,545,217,475,109"/>
+<area shape="poly" title=" " alt="" coords="438,110,334,151,332,146,436,105"/>
+<area shape="rect" title=" " alt="" coords="402,155,491,181"/>
+<area shape="poly" title=" " alt="" coords="467,108,457,141,452,139,462,106"/>
+<area shape="poly" title=" " alt="" coords="501,105,605,147,603,152,499,110"/>
+<area shape="poly" title=" " alt="" coords="646,183,634,217,615,257,583,295,579,292,611,255,630,215,641,181"/>
+<area shape="poly" title=" " alt="" coords="634,184,591,221,587,217,630,180"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a572ccf7ddfdfd477e7c69ad2b9a36147" id="r_a572ccf7ddfdfd477e7c69ad2b9a36147"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572ccf7ddfdfd477e7c69ad2b9a36147">change_permissions</a> (const char *path, mode_t mode)</td></tr>
-<tr class="separator:a572ccf7ddfdfd477e7c69ad2b9a36147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39770f42f06ffed509e6c6c63fe50001" id="r_a39770f42f06ffed509e6c6c63fe50001"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39770f42f06ffed509e6c6c63fe50001">check_access</a> (const char *path, int mode)</td></tr>
-<tr class="separator:a39770f42f06ffed509e6c6c63fe50001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7b2a8cafb308992f9c9821b33195dff" id="r_gaf7b2a8cafb308992f9c9821b33195dff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__permission__management.html#gaf7b2a8cafb308992f9c9821b33195dff">set_permissions</a> (<a class="el" href="structInode.html">Inode</a> *inode, uint16_t permissions)</td></tr>
+<tr class="memdesc:gaf7b2a8cafb308992f9c9821b33195dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit les permissions d'un inode.  <br /></td></tr>
+<tr class="separator:gaf7b2a8cafb308992f9c9821b33195dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac53e911f10c3da2d449dd417aa81bf92" id="r_gac53e911f10c3da2d449dd417aa81bf92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__permission__management.html#gac53e911f10c3da2d449dd417aa81bf92">check_permissions</a> (const <a class="el" href="structInode.html">Inode</a> *inode, uint16_t required_permissions, const <a class="el" href="structUser.html">User</a> *user)</td></tr>
+<tr class="memdesc:gac53e911f10c3da2d449dd417aa81bf92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si un inode a les permissions nécessaires pour un utilisateur donné.  <br /></td></tr>
+<tr class="separator:gac53e911f10c3da2d449dd417aa81bf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f2b9b76c3267b4ad451e83f377b07f0" id="r_ga3f2b9b76c3267b4ad451e83f377b07f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__permission__management.html#ga3f2b9b76c3267b4ad451e83f377b07f0">chown_inode</a> (<a class="el" href="structInode.html">Inode</a> *inode, uint32_t new_owner_id, uint32_t new_group_id)</td></tr>
+<tr class="memdesc:ga3f2b9b76c3267b4ad451e83f377b07f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le propriétaire et le groupe d'un inode.  <br /></td></tr>
+<tr class="separator:ga3f2b9b76c3267b4ad451e83f377b07f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a572ccf7ddfdfd477e7c69ad2b9a36147" name="a572ccf7ddfdfd477e7c69ad2b9a36147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a572ccf7ddfdfd477e7c69ad2b9a36147">&#9670;&#160;</a></span>change_permissions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int change_permissions </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mode_t</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Change the permissions of a file or directory.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>The path of the file or directory. </td></tr>
-    <tr><td class="paramname">mode</td><td>The new permissions (e.g., 0644, 0755). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 on success, -1 on failure. </dd></dl>
-
-</div>
-</div>
-<a id="a39770f42f06ffed509e6c6c63fe50001" name="a39770f42f06ffed509e6c6c63fe50001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39770f42f06ffed509e6c6c63fe50001">&#9670;&#160;</a></span>check_access()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int check_access </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Check if a file or directory is accessible with the given mode.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>The path of the file or directory. </td></tr>
-    <tr><td class="paramname">mode</td><td>The access mode to check (e.g., R_OK, W_OK, X_OK). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 if accessible, -1 otherwise. </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>This file contains the functions that are used to manage the permissions and access to the files. </p>
+<dl class="section version"><dt>Version</dt><dd>0.3 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>04/04/2025</dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd><ul>
+<li>Robin de Angelis 100(%)</li>
+<li>Alexandre Ledard 0 (%)</li>
+<li>Killian Treuil 0(%) </li>
+</ul>
+</dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0

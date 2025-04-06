@@ -1,5 +1,27 @@
 <map id="include/permissions.h" name="include/permissions.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,153,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="34,80,124,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,33,82,64,76,64,76,33"/>
+<area shape="rect" id="Node000001" title="Gestion des permissions et propriétés des fichiers." alt="" coords="126,5,273,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,95,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,35,91,75,89,70,172,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="151,229,216,256"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,34,173,55,161,81,155,116,158,152,165,186,175,214,170,216,160,188,152,153,150,116,155,79,169,52,185,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="221,155,295,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,31,228,52,243,79,253,110,258,139,253,140,248,111,238,81,224,55,208,34"/>
+<area shape="rect" id="Node000005" href="$user_8h.html" title="Gestion des utilisateurs du système de fichiers." alt="" coords="171,80,228,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="202,33,202,64,197,64,197,33"/>
+<area shape="rect" id="Node000006" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="430,80,508,107"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="247,30,415,75,414,80,246,35"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="201,107,189,214,184,214,195,107"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="212,106,240,141,236,144,207,109"/>
+<area shape="poly" id="edge11_Node000006_Node000004" title=" " alt="" coords="433,110,310,152,308,147,431,105"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="521,155,584,181"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="485,105,528,142,525,146,482,109"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="608,155,673,181"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="500,105,598,146,596,151,498,110"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="697,155,758,181"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="509,103,683,151,681,156,508,108"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="440,155,497,181"/>
+<area shape="poly" id="edge12_Node000006_Node000010" title=" " alt="" coords="471,107,471,139,466,139,466,107"/>
+<area shape="rect" id="Node000011" href="$constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="319,155,416,181"/>
+<area shape="poly" id="edge13_Node000006_Node000011" title=" " alt="" coords="453,109,399,147,396,143,449,105"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="336,184,230,226,229,221,334,179"/>
 </map>

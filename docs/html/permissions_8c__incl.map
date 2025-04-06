@@ -1,15 +1,34 @@
 <map id="src/permissions.c" name="src/permissions.c">
-<area shape="rect" id="Node000001" title=" " alt="" coords="207,5,331,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,85,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,35,99,77,98,72,229,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="109,80,170,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,35,177,74,174,70,245,30"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="194,80,258,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="264,34,244,68,239,65,259,31"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="283,80,343,107"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="279,31,300,65,295,68,274,34"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="367,80,435,107"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="293,30,366,70,364,75,291,35"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="459,80,516,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="308,30,445,75,443,80,306,35"/>
+<area shape="rect" id="Node000001" title="This file contains the functions that are used to manage the permissions and access to the files." alt="" coords="473,5,598,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="522,304,586,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="563,30,595,49,632,76,666,111,690,154,694,177,691,199,681,220,667,239,631,273,593,298,590,294,628,269,663,236,677,217,686,197,689,177,685,156,662,115,629,80,592,54,560,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,229,66,256"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="495,35,362,82,199,158,73,224,70,219,197,153,360,78,493,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="526,229,601,256"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="540,32,563,214,557,215,534,33"/>
+<area shape="rect" id="Node000005" href="$partition_8h.html" title="Header file for the partition management library." alt="" coords="248,155,327,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="505,35,458,56,408,82,358,115,316,147,313,143,355,111,405,78,456,51,503,30"/>
+<area shape="rect" id="Node000010" href="$permissions_8h.html" title="Gestion des permissions et propriétés des fichiers." alt="" coords="418,80,520,107"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="526,34,492,70,489,67,522,31"/>
+<area shape="rect" id="Node000012" href="$user_8h.html" title="Gestion des utilisateurs du système de fichiers." alt="" coords="618,155,675,181"/>
+<area shape="poly" id="edge20_Node000001_Node000012" title=" " alt="" coords="552,30,576,52,600,78,621,109,637,140,632,142,616,112,596,82,572,55,549,34"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="249,183,81,231,80,226,247,178"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="328,177,512,225,510,230,326,182"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="170,229,234,256"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="274,184,230,221,226,217,271,180"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="258,229,322,256"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="291,182,292,214,286,214,285,182"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="90,229,147,256"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="259,184,162,225,160,221,257,179"/>
+<area shape="rect" id="Node000009" href="$constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="346,229,442,256"/>
+<area shape="poly" id="edge10_Node000005_Node000009" title=" " alt="" coords="308,180,364,218,361,222,305,184"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="423,254,514,295,511,300,421,259"/>
+<area shape="poly" id="edge14_Node000010_Node000002" title=" " alt="" coords="444,110,422,123,402,140,390,160,389,170,393,180,405,197,419,207,436,215,456,227,531,291,527,295,453,231,433,219,416,211,401,201,388,183,384,170,385,158,398,137,419,119,441,105"/>
+<area shape="poly" id="edge15_Node000010_Node000004" title=" " alt="" coords="479,106,549,215,545,217,475,109"/>
+<area shape="poly" id="edge19_Node000010_Node000005" title=" " alt="" coords="438,110,334,151,332,146,436,105"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="402,155,491,181"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="467,108,457,141,452,139,462,106"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="501,105,605,147,603,152,499,110"/>
+<area shape="poly" id="edge17_Node000012_Node000002" title=" " alt="" coords="646,183,634,217,615,257,583,295,579,292,611,255,630,215,641,181"/>
+<area shape="poly" id="edge18_Node000012_Node000004" title=" " alt="" coords="634,184,591,221,587,217,630,180"/>
 </map>

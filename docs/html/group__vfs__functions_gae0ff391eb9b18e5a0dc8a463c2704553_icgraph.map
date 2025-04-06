@@ -1,0 +1,8 @@
+<map id="get_current_directory" name="get_current_directory">
+<area shape="rect" id="Node000001" title="Obtient le chemin absolu du répertoire courant." alt="" coords="295,5,438,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Point d&#39;entrée principal du shell interactif." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="279,21,55,21,55,16,279,16"/>
+<area shape="rect" id="Node000003" href="$group__vfs__functions.html#gaca5a29815408d61083bbbfe7697e9d0e" title="Convertit un chemin relatif en chemin absolu." alt="" coords="103,31,247,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="280,33,248,37,247,32,279,28"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="87,31,55,26,56,20,88,26"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="fs_read" name="fs_read">
+<area shape="rect" id="Node000001" title="Lit des données depuis un fichier." alt="" coords="5,5,70,32"/>
+<area shape="rect" id="Node000002" href="$group__vfs__functions.html#ga009267d18ee7ae829643c2b8e1f17d69" title="Obtient le bloc physique correspondant à un bloc logique." alt="" coords="118,5,250,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,16,102,16,102,21,70,21"/>
+</map>

@@ -1,3 +1,25 @@
+/**
+ * @file vfs_function.h
+ * @brief Fonctions du système de fichiers virtuel (VFS)
+ *
+ * @details Ce fichier d'en-tête contient les déclarations des fonctions principales
+ *          du système de fichiers virtuel, incluant la gestion des répertoires,
+ *          les opérations de lecture/écriture, et les fonctions de chemin.
+ *
+ * @version 1.0
+ * @date 06/04/2025
+ *
+ * @authors
+ * - Robin de Angelis 30(%)
+ * - Alexandre Ledard 50(%)
+ * - Killian Treuil 20(%)
+ *
+ * @copyright Pas de copyright spécifié
+ *
+ * @defgroup vfs_functions Fonctions VFS
+ * @{
+ */
+
 #ifndef VFS_FUNCTION_H
 #define VFS_FUNCTION_HANTES_H
 #include <constantes.h>
@@ -98,3 +120,6 @@ off_t fs_lseek(FileSystem *fs, int fd, off_t offset, int whence) ;
  */
 bool is_relative_path(const char *path);
 #endif
+
+
+/** @} */ // Fin du groupe vfs_functions

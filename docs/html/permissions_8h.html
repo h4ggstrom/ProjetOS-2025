@@ -93,15 +93,44 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">Référence du fichier permissions.h</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Gestion des permissions et propriétés des fichiers.  
+<a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="user_8h_source.html">user.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="partition_8h_source.html">partition.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de permissions.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="permissions_8h__incl.png" border="0" usemap="#ainclude_2permissions_8h" alt=""/></div>
 <map name="ainclude_2permissions_8h" id="ainclude_2permissions_8h">
-<area shape="rect" title=" " alt="" coords="5,5,153,32"/>
-<area shape="rect" title=" " alt="" coords="34,80,124,107"/>
-<area shape="poly" title=" " alt="" coords="82,33,82,64,76,64,76,33"/>
+<area shape="rect" title="Gestion des permissions et propriétés des fichiers." alt="" coords="126,5,273,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,95,107"/>
+<area shape="poly" title=" " alt="" coords="174,35,91,75,89,70,172,30"/>
+<area shape="rect" title=" " alt="" coords="151,229,216,256"/>
+<area shape="poly" title=" " alt="" coords="189,34,173,55,161,81,155,116,158,152,165,186,175,214,170,216,160,188,152,153,150,116,155,79,169,52,185,31"/>
+<area shape="rect" title=" " alt="" coords="221,155,295,181"/>
+<area shape="poly" title=" " alt="" coords="212,31,228,52,243,79,253,110,258,139,253,140,248,111,238,81,224,55,208,34"/>
+<area shape="rect" href="user_8h.html" title="Gestion des utilisateurs du système de fichiers." alt="" coords="171,80,228,107"/>
+<area shape="poly" title=" " alt="" coords="202,33,202,64,197,64,197,33"/>
+<area shape="rect" href="partition_8h.html" title="Header file for the partition management library." alt="" coords="430,80,508,107"/>
+<area shape="poly" title=" " alt="" coords="247,30,415,75,414,80,246,35"/>
+<area shape="poly" title=" " alt="" coords="201,107,189,214,184,214,195,107"/>
+<area shape="poly" title=" " alt="" coords="212,106,240,141,236,144,207,109"/>
+<area shape="poly" title=" " alt="" coords="433,110,310,152,308,147,431,105"/>
+<area shape="rect" title=" " alt="" coords="521,155,584,181"/>
+<area shape="poly" title=" " alt="" coords="485,105,528,142,525,146,482,109"/>
+<area shape="rect" title=" " alt="" coords="608,155,673,181"/>
+<area shape="poly" title=" " alt="" coords="500,105,598,146,596,151,498,110"/>
+<area shape="rect" title=" " alt="" coords="697,155,758,181"/>
+<area shape="poly" title=" " alt="" coords="509,103,683,151,681,156,508,108"/>
+<area shape="rect" title=" " alt="" coords="440,155,497,181"/>
+<area shape="poly" title=" " alt="" coords="471,107,471,139,466,139,466,107"/>
+<area shape="rect" href="constantes_8h.html" title="Définition des constantes et paramètres du système de fichiers." alt="" coords="319,155,416,181"/>
+<area shape="poly" title=" " alt="" coords="453,109,399,147,396,143,449,105"/>
+<area shape="poly" title=" " alt="" coords="336,184,230,226,229,221,334,179"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,9 +138,11 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <div class="dyncontent">
 <div class="center"><img src="permissions_8h__dep__incl.png" border="0" usemap="#ainclude_2permissions_8hdep" alt=""/></div>
 <map name="ainclude_2permissions_8hdep" id="ainclude_2permissions_8hdep">
-<area shape="rect" title=" " alt="" coords="5,5,153,32"/>
-<area shape="rect" href="main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="38,80,120,107"/>
-<area shape="poly" title=" " alt="" coords="82,48,82,80,76,80,76,48"/>
+<area shape="rect" title="Gestion des permissions et propriétés des fichiers." alt="" coords="37,5,184,32"/>
+<area shape="rect" href="main_8c.html" title="Main program for creating the required directory structure and files." alt="" coords="5,80,88,107"/>
+<area shape="poly" title=" " alt="" coords="91,46,60,81,56,78,87,42"/>
+<area shape="rect" href="permissions_8c.html" title="This file contains the functions that are used to manage the permissions and access to the files." alt="" coords="112,80,237,107"/>
+<area shape="poly" title=" " alt="" coords="134,42,165,78,161,81,130,46"/>
 </map>
 </div>
 </div>
@@ -119,73 +150,29 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a572ccf7ddfdfd477e7c69ad2b9a36147" id="r_a572ccf7ddfdfd477e7c69ad2b9a36147"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572ccf7ddfdfd477e7c69ad2b9a36147">change_permissions</a> (const char *path, mode_t mode)</td></tr>
-<tr class="separator:a572ccf7ddfdfd477e7c69ad2b9a36147"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39770f42f06ffed509e6c6c63fe50001" id="r_a39770f42f06ffed509e6c6c63fe50001"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39770f42f06ffed509e6c6c63fe50001">check_access</a> (const char *path, int mode)</td></tr>
-<tr class="separator:a39770f42f06ffed509e6c6c63fe50001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7b2a8cafb308992f9c9821b33195dff" id="r_gaf7b2a8cafb308992f9c9821b33195dff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__permission__management.html#gaf7b2a8cafb308992f9c9821b33195dff">set_permissions</a> (<a class="el" href="structInode.html">Inode</a> *inode, uint16_t permissions)</td></tr>
+<tr class="memdesc:gaf7b2a8cafb308992f9c9821b33195dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit les permissions d'un inode.  <br /></td></tr>
+<tr class="separator:gaf7b2a8cafb308992f9c9821b33195dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac53e911f10c3da2d449dd417aa81bf92" id="r_gac53e911f10c3da2d449dd417aa81bf92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__permission__management.html#gac53e911f10c3da2d449dd417aa81bf92">check_permissions</a> (const <a class="el" href="structInode.html">Inode</a> *inode, uint16_t required_permissions, const <a class="el" href="structUser.html">User</a> *user)</td></tr>
+<tr class="memdesc:gac53e911f10c3da2d449dd417aa81bf92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie les permissions d'accès.  <br /></td></tr>
+<tr class="separator:gac53e911f10c3da2d449dd417aa81bf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f2b9b76c3267b4ad451e83f377b07f0" id="r_ga3f2b9b76c3267b4ad451e83f377b07f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__permission__management.html#ga3f2b9b76c3267b4ad451e83f377b07f0">chown_inode</a> (<a class="el" href="structInode.html">Inode</a> *inode, uint32_t new_owner_id, uint32_t new_group_id)</td></tr>
+<tr class="memdesc:ga3f2b9b76c3267b4ad451e83f377b07f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change le propriétaire et groupe d'un inode.  <br /></td></tr>
+<tr class="separator:ga3f2b9b76c3267b4ad451e83f377b07f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a572ccf7ddfdfd477e7c69ad2b9a36147" name="a572ccf7ddfdfd477e7c69ad2b9a36147"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a572ccf7ddfdfd477e7c69ad2b9a36147">&#9670;&#160;</a></span>change_permissions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int change_permissions </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mode_t</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Change the permissions of a file or directory.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>The path of the file or directory. </td></tr>
-    <tr><td class="paramname">mode</td><td>The new permissions (e.g., 0644, 0755). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 on success, -1 on failure. </dd></dl>
-
-</div>
-</div>
-<a id="a39770f42f06ffed509e6c6c63fe50001" name="a39770f42f06ffed509e6c6c63fe50001"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39770f42f06ffed509e6c6c63fe50001">&#9670;&#160;</a></span>check_access()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int check_access </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Check if a file or directory is accessible with the given mode.</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>The path of the file or directory. </td></tr>
-    <tr><td class="paramname">mode</td><td>The access mode to check (e.g., R_OK, W_OK, X_OK). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>0 if accessible, -1 otherwise. </dd></dl>
-
-</div>
-</div>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gestion des permissions et propriétés des fichiers. </p>
+<p>Ce fichier d'en-tête définit les fonctions de gestion des permissions UNIX (rwxrwxrwx) et des propriétaires pour les inodes du système de fichiers. Il permet de modifier et vérifier les droits d'accès aux fichiers.</p>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>04/04/2025</dd></dl>
+<dl class="section author"><dt>Auteurs</dt><dd><ul>
+<li>Robin de Angelis 100(%)</li>
+<li>Alexandre Ledard 0(%)</li>
+<li>Killian Treuil 0(%)</li>
+</ul>
+</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Pas de copyright spécifié </dd></dl>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0
