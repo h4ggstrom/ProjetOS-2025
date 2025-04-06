@@ -12,41 +12,75 @@
  * - Killian Treuil (%)
  */
 
-#include <sys/stat.h>
-#include <errno.h>
-#include <string.h>
+#include <stdint.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include <stdbool.h>
+#include "partition.h"
+#include "permissions.h"
+#include "user.h"
 
 /**
- * Change the permissions of a file or directory.
+ * @brief Définit les permissions d'un inode.
  * 
- * @param path The path of the file or directory.
- * @param mode The new permissions (e.g., 0644, 0755).
- * @return 0 on success, -1 on failure.
+ * @param inode L'inode cible.
+ * @param permissions Les nouvelles permissions (format UNIX : rwxrwxrwx).
+ * @return true si les permissions ont été définies avec succès, false sinon.
  */
-int change_permissions(const char *path, mode_t mode) {
-    if (chmod(path, mode) == -1) {
-        fprintf(stderr, "Error changing permissions: %s\n", strerror(errno));
-        return -1;
+bool set_permissions(Inode *inode, uint16_t permissions) {
+    if (!inode) {
+        fprintf(stderr, "Erreur : inode invalide.\n");
+        return false;
     }
-    printf("Permissions changed successfully: %s\n", path);
-    return 0;
+    inode->permissions = permissions;
+    return true;
 }
 
 /**
- * Check if a file or directory is accessible with the given mode.
+ * @brief Vérifie si un inode a les permissions nécessaires pour un utilisateur donné.
  * 
- * @param path The path of the file or directory.
- * @param mode The access mode to check (e.g., R_OK, W_OK, X_OK).
- * @return 0 if accessible, -1 otherwise.
+ * @param inode L'inode cible.
+ * @param required_permissions Les permissions requises (format UNIX : rwxrwxrwx).
+ * @param user L'utilisateur pour lequel vérifier les permissions.
+ * @return true si les permissions sont suffisantes, false sinon.
  */
-int check_access(const char *path, int mode) {
-    if (access(path, mode) == -1) {
-        fprintf(stderr, "Access check failed for %s: %s\n", path, strerror(errno));
-        return -1;
+bool check_permissions(const Inode *inode, uint16_t required_permissions, const User *user) {
+    if (!inode || !user) {
+        fprintf(stderr, "Erreur : inode ou utilisateur invalide.\n");
+        return false;
     }
-    printf("Access check passed for %s\n", path);
-    return 0;
+
+    // Vérifie les permissions du propriétaire
+    if (inode->owner_id == user->user_id) {
+        return (inode->permissions & (required_permissions << 6)) == (required_permissions << 6);
+    }
+
+    // Vérifie les permissions du groupe
+    if (inode->group_id == user->group_id) {
+        return (inode->permissions & (required_permissions << 3)) == (required_permissions << 3);
+    }
+
+    // Vérifie les permissions globales
+    return (inode->permissions & required_permissions) == required_permissions;
 }
+
+/**
+ * @brief Change le propriétaire et le groupe d'un inode.
+ * 
+ * @param inode L'inode cible.
+ * @param new_owner_id Le nouvel ID du propriétaire.
+ * @param new_group_id Le nouvel ID du groupe.
+ * @return true si l'opération a réussi, false sinon.
+ */
+bool chown_inode(Inode *inode, uint32_t new_owner_id, uint32_t new_group_id) {
+    if (!inode) {
+        fprintf(stderr, "Erreur : inode invalide.\n");
+        return false;
+    }
+
+    // Met à jour le propriétaire et le groupe
+    inode->owner_id = new_owner_id;
+    inode->group_id = new_group_id;
+
+    return true;
+}
+

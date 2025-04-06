@@ -15,6 +15,8 @@
  * - Killian Treuil (%)
  */
 
+#include <string.h>
+#include <stdio.h>
 #include "partition.h" // Inclure les déclarations des structures et fonctions
 
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
@@ -305,7 +307,7 @@ bool read_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t siz
     uint32_t block_size = fs->partition.block_size;
 
     // 1. Lire les blocs directs
-    for (int i = 0; i < 12 && bytes_read < size; i++)
+    for (uint32_t i = 0; i < 12 && bytes_read < size; i++)
     {
         if (inode->blocks[i] == 0)
         {
@@ -631,9 +633,9 @@ int fs_open_file(FileSystem *fs, const char *path, int mode)
  * @param fd Descripteur de fichier à fermer
  * @return int 0 en cas de succès, -1 en cas d'échec
  */
-int fs_close_file(FileSystem *fs, int fd) {
+int fs_close_file(FileSystem *fs, uint32_t fd) {
     // 1. Vérifications de base
-    if (!fs || fd < 0 || fd >= fs->max_open_files) {
+    if (!fs || fd >= fs->max_open_files) {
         fprintf(stderr, "Descripteur de fichier invalide\n");
         return -1;
     }
@@ -1103,7 +1105,7 @@ bool write_inode_data(FileSystem *fs, Inode *inode, uint8_t *buffer, uint32_t si
 
     // Gestion des blocs indirects si besoin (exemple simplifié)
     if (bytes_written < size ) {
-        if (inode->indirect_block == NULL){
+        if (!inode->indirect_block){ // TODO: check si c'est bon
         inode->indirect_block = allocate_indirect_block(fs);}
 
         // [...] Écriture dans les blocs indirects
@@ -1175,8 +1177,6 @@ int allocate_block_for_inode(FileSystem *fs, Inode *inode, uint32_t logical_bloc
         if (inode->indirect_block == 0)
         {
             inode->indirect_block = allocate_indirect_block(fs);
-            if (inode->indirect_block == -1)
-                return -1;
         }
         return get_indirect_block(fs, inode->indirect_block, logical_block - 12);
     }
@@ -1187,6 +1187,8 @@ int allocate_block_for_inode(FileSystem *fs, Inode *inode, uint32_t logical_bloc
         if (inode->double_indirect == -1) return -1;
     }
     return get_double_indirect_block(fs, inode->double_indirect, logical_block - 12 - 1024);*/
+
+    return -1; // Erreur : trop de blocs
 }
 
 int allocate_indirect_block(FileSystem *fs)
@@ -1199,6 +1201,7 @@ int allocate_indirect_block(FileSystem *fs)
         memset(ptrs, 0, fs->superblock.block_size);
     }
     return blk;
+    return -1;
 }
 
 uint32_t get_indirect_block(FileSystem *fs, uint32_t indirect_blk, uint32_t idx)
@@ -1541,4 +1544,63 @@ int remove_file(FileSystem *fs, const char *path) {
     parent->modified_at = time(NULL);
 
     return 0;
+}
+
+/**
+ * @brief Trouve l'inode correspondant à un chemin donné.
+ *
+ * @param fs Pointeur vers le système de fichiers.
+ * @param path Chemin du fichier ou répertoire (ex: "/dir1/file.txt").
+ * @return Inode* Pointeur vers l'inode correspondant, ou NULL si non trouvé.
+ */
+Inode *get_inode_by_path(FileSystem *fs, const char *path) {
+    if (!fs || !path || path[0] != '/') {
+        fprintf(stderr, "Erreur : chemin invalide ou système de fichiers non initialisé.\n");
+        return NULL;
+    }
+
+    // Commence à la racine (inode 0)
+    uint32_t current_inode_index = 0;
+    Inode *current_inode = &fs->inode_table[current_inode_index];
+
+    // Tokenize le chemin pour parcourir les répertoires
+    char path_copy[MAX_PATH_LEN];
+    strncpy(path_copy, path, MAX_PATH_LEN - 1);
+    path_copy[MAX_PATH_LEN - 1] = '\0';
+
+    char *token = strtok(path_copy, "/");
+    while (token != NULL) {
+        if (!current_inode->is_directory) {
+            fprintf(stderr, "Erreur : '%s' n'est pas un répertoire.\n", token);
+            return NULL;
+        }
+
+        // Lire le contenu du répertoire
+        Directory dir;
+        if (!read_directory(fs, current_inode_index, &dir)) {
+            fprintf(stderr, "Erreur : impossible de lire le répertoire '%s'.\n", token);
+            return NULL;
+        }
+
+        // Chercher l'entrée correspondante
+        uint32_t next_inode_index = (uint32_t)-1;
+        for (uint32_t i = 0; i < dir.entry_count; i++) {
+            if (strcmp(dir.names[i], token) == 0) {
+                next_inode_index = dir.entries[i];
+                break;
+            }
+        }
+
+        if (next_inode_index == (uint32_t)-1) {
+            fprintf(stderr, "Erreur : '%s' introuvable dans le répertoire.\n", token);
+            return NULL;
+        }
+
+        // Passer à l'inode suivant
+        current_inode_index = next_inode_index;
+        current_inode = &fs->inode_table[current_inode_index];
+        token = strtok(NULL, "/");
+    }
+
+    return current_inode;
 }
