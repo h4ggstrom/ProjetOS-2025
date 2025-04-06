@@ -12,7 +12,7 @@
 - Un `make` installé | A `make` installed
 - Un système Unix/Linux (ou WSL sur windows) | A Unix/Linux system (or WSL on windows)
 
-### Etapes
+### Etapes | Steps
 
 1. Cloner le dépôt (ou télécharger le projet) | Clone the github repository (or download the project):
 
@@ -29,7 +29,7 @@
 
 Le fichier exécutable est généré dans /bin | The executable file is generated in /bin.
 
-3. Executer le programme :
+3. Executer le programme | Execute the program :
 
 ```bash
 > ./bin/main
@@ -43,7 +43,7 @@ Le fichier exécutable est généré dans /bin | The executable file is generate
 | exit               | exit                                              | Quitter le terminal / Quit the terminal.                                                |
 | clear              | clear                                             | Vider le terminal / Clear the terminal.                                                 |
 | cd                 | cd \<dir_name>                                    | Changer de répertoire / Change directory.                                               |
-| ls                 | ls \<dir_name> -l (optionnal)                     | Liste le contenu d'un répertoire / List directory files. '-l' for permissions too.      |
+| ls                 | ls \<dir_name> -l (optionnal)                     | Liste le contenu d'un répertoire / List directory files. Add '-l' for permissions too.  |
 | make_demo          | make_demo                                         | Créée les fichiers pour la démonstration / Creates files for the demonstration.         |
 | build              | build                                             | Créée la partition / Build the partition.                                               |
 | load               | load                                              | Charge la partition / Load the partition.                                               |
@@ -64,8 +64,11 @@ Le fichier exécutable est généré dans /bin | The executable file is generate
 | check_permissions  | check_permissions \<path> \<required_permissions> | Vérifier une permission pour un fichier / Check a permission for a file.                |
 | chown              | chown \<path> \<new_owner_id> \<new_group_id>     | Changer le propriétaire et le groupe d'un fichier / Change owner and group of a file.   |
 | switch_user        | switch_user \<user_id>                            | Changer d'utilisateur / Switch user.                                                    |
+| link               | link <source_file> <destination_file>             | Créée un hardlink entre deux fichiers / Creates a hard link between two files.          |
+| symlink            | symlink <source_file> <destination_file>          | Créée un lien symbolique entre deux fichiers / Creates a soft link between two files.   |
+| read_symlink       | read_symlink <file_name>                          | Renvoie où le fichier renseigné pointe / Gives where the given file is linked.          |
 
-### Structure du projet
+### Structure du projet | Project structure
 
 ```
 ProjetOS-2025/
@@ -89,7 +92,7 @@ ProjetOS-2025/
 |   ├── user.c
 |   ├── utils.c
 │   └── vfs_function.c
-├── tests/               # Fichiers tests / tests files
+├── tests/               # Fichiers tests / Tests files
 │   ├── test_file_operations.c
 |   ├── test_hello_world.c
 |   ├── test_links.c
@@ -101,7 +104,7 @@ ProjetOS-2025/
 └── README.md
 ```
 
-### Auteurs
+### Auteurs | Authors
 
 - Alexandre Ledard
 - Robin de Angelis
