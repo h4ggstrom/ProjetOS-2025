@@ -159,41 +159,42 @@ int main()
             {
                 printf("Il faut indiquer un nom de fichier\n");
             }
-            else
-            {
-                if (args[1][0] != "/")
-                {
-                    char path[MAX_PATH_LEN];
-                    const char *current_dir = get_current_directory(&fs);
-                    if (current_dir[0] == '/')
-                    {
-                        snprintf(path, sizeof(path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
-                    }
-                    else
-                    {
-                        snprintf(path, sizeof(path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
-                    }
-                    uint32_t new_file = create_file(&fs, path, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-                    if (new_file != (uint32_t)-1)
-                    {
-                        printf("Fichier créé avec inode %u\n", new_file);
-                    }
-                    else
-                    {
-                        printf("Échec de la création du fichier\n");
-                    }
+            else {
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
                 }
-                else
-                {
-                    uint32_t new_file = create_file(&fs, args[1], S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-                    if (new_file != (uint32_t)-1)
-                    {
-                        printf("Fichier créé avec inode %u\n", new_file);
-                    }
-                    else
-                    {
-                        printf("Échec de la création du fichier\n");
-                    };
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
+                
+                uint32_t new_file = create_file(&fs, path, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+                if (new_file != (uint32_t)-1) {
+                    printf("Fichier créé avec inode %u\n", new_file);
+                } else {
+                    printf("Échec de la création du fichier\n");
+                }
+                continue;
+            }
+        }
+        else if (strcmp(args[0], "remove_file") == 0)
+        {
+            if (args[1] == 0)
+            {
+                printf("Il faut indiquer un nom de fichier\n");
+            }
+            else {
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
+                if (remove_file(&fs,path)) {
+                    printf("Fichier \"%s\"suprimmé avec succés %u\n", path);
+                } else {
+                    printf("Échec de la suppression du fichier\n");
                 }
                 continue;
             }
@@ -206,7 +207,14 @@ int main()
             }
             else
             {
-                int fd = fs_open_file(&fs, args[1], O_RDWR);
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
+                int fd = fs_open_file(&fs,path, O_RDWR);
                 if (fd == -1)
                 {
                     perror("open_file failed\n");
@@ -392,18 +400,13 @@ int main()
             }
             else
             {
-                if (args[1][0] != '/')
-                {
-                    char path[MAX_PATH_LEN];
-                    const char *current_dir = get_current_directory(&fs);
-                    if (current_dir[0] == '/')
-                    {
-                        snprintf(path, sizeof(path), "%s/%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
-                    }
-                    else
-                    {
-                        snprintf(path, sizeof(path), "/%s/%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
-                    }
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
                     if (remove_directory(&fs, path) == 0)
                     {
                         printf("Répertoire \"%s\" supprimé avec succès\n", path);
@@ -413,18 +416,6 @@ int main()
                         printf("Échec de la suppression du répertoire: %s\n", path);
                     }
                 }
-                else
-                {
-                    if (remove_directory(&fs, args[1]) == 0)
-                    {
-                        printf("Répertoire \"%s\" supprimé avec succès\n", args[1]);
-                    }
-                    else
-                    {
-                        printf("Échec de la suppression du répertoire:\n", args[1]);
-                    }
-                }
-            }
             continue;
         }
 
@@ -436,18 +427,13 @@ int main()
             }
             else
             {
-                if (args[1][0] != "/")
-                {
-                    char path[MAX_PATH_LEN];
-                    const char *current_dir = get_current_directory(&fs);
-                    if (current_dir[0] == '/')
-                    {
-                        snprintf(path, sizeof(path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
-                    }
-                    else
-                    {
-                        snprintf(path, sizeof(path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
-                    }
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
                     if (change_directory(&fs, path) == 0)
                     {
                         printf("Déplacement dans le répertoire \"%s\"\n", path);
@@ -457,18 +443,6 @@ int main()
                         printf("Échec du déplacement dans le répertoire: %s\n", path);
                     }
                 }
-                else
-                {
-                    if (change_directory(&fs, args[1]) == 0)
-                    {
-                        printf("Déplacement dans le répertoire\"%s\"\n", args[1]);
-                    }
-                    else
-                    {
-                        printf("Échec du déplacement dans le répertoire: %s\n", args[1]);
-                    }
-                }
-            }
             continue;
         }
         else if (strcmp(args[0], "ls") == 0)
@@ -684,39 +658,24 @@ int main()
             }
             if ((args[1] != NULL) && (args[2] != NULL))
             {
-                /*
                 char old_path[MAX_PATH_LEN];
-                char new_path[MAX_PATH_LEN];
-                const char *current_dir = get_current_directory(&fs);
-                if ((args[1][0] != "/")&&(args[2][0] != "/"))
-                {
-                    if (current_dir[0] == '/')
-                    {
-                        snprintf(old_path, sizeof(old_path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
-                        snprintf(new_path, sizeof(new_path), "%s%s", current_dir, args[1]);
-                    }
-                    else
-                    {
-                        snprintf(old_path, sizeof(old_path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
-                        snprintf(old_path, sizeof(old_path), "/%s/%s", current_dir, args[1]);
-                    }
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], old_path, sizeof(old_path));
                 }
-                else if ((args[1][0] == "/")&&(args[2][0] != "/"))
+                else {
+                    strncpy(old_path, args[1], sizeof(old_path));
+                }
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[2])) {
+                    resolve_relative_path(&fs, args[2], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[2], sizeof(path));
+                }
+
+                if (fs_link(&fs, old_path, path) == 0)
                 {
-                    if (current_dir[0] == '/')
-                    {
-                        snprintf(old_path, sizeof(old_path), "%s", args[1]); // Garde le chemin tel quel (déjà absolu)
-                        snprintf(new_path, sizeof(new_path), "%s%s", current_dir, args[1]);
-                    }
-                    else
-                    {
-                        snprintf(old_path, sizeof(old_path), "%s", args[1]);
-                        snprintf(old_path, sizeof(old_path), "/%s%s", current_dir, args[1]);// Ajoute un "/" seulement si nécessaire
-                    }
-                }*/
-                if (fs_link(&fs, args[1], args[2]) == 0)
-                {
-                    printf("Fichiers liée avec succées: %s -> %s\n", args[1], args[2]);
+                    printf("Fichiers liée avec succées: %s -> %s\n", old_path, path);
                 }
                 else
                 {
@@ -737,9 +696,23 @@ int main()
             }
             if ((args[1] != NULL) && (args[2] != NULL))
             {
-                if (fs_symlink(&fs, args[1], args[2]) == 0)
+                char old_path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], old_path, sizeof(old_path));
+                }
+                else {
+                    strncpy(old_path, args[1], sizeof(old_path));
+                }
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[2])) {
+                    resolve_relative_path(&fs, args[2], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[2], sizeof(path));
+                }
+                if (fs_symlink(&fs, old_path, path) == 0)
                 {
-                    printf("Fichiers liée symboliquement avec succées: %s -> %s\n", args[1], args[2]);
+                    printf("Fichiers liée symboliquement avec succées: %s -> %s\n", old_path, path);
                 }
                 else
                 {
@@ -757,6 +730,13 @@ int main()
             if (args[1] != NULL)
             {
                 char resolved_path[MAX_PATH_LEN];
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
                 if (fs_readlink(&fs, find_inode_by_path(&fs, args[1]), resolved_path, MAX_PATH_LEN) == 0)
                 {
                     printf("Le lien pointe vers: %s\n", resolved_path);

@@ -90,4 +90,11 @@ uint32_t get_physical_block(FileSystem *fs, Inode *inode, uint32_t logical_block
  * @return off_t Nouvelle position, ou -1 en cas d'erreur
  */
 off_t fs_lseek(FileSystem *fs, int fd, off_t offset, int whence) ;
+
+/**
+ * @brief Vérifie si un chemin est relatif
+ * @param path Le chemin à vérifier
+ * @return true si le chemin est relatif, false sinon
+ */
+bool is_relative_path(const char *path);
 #endif
