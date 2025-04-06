@@ -211,39 +211,36 @@ int main()
             else
             {
                 int fd = fs_open_file(&fs, args[1], O_RDWR);
-                printf("Descripteur de fichier:%d\n", fd);
                 if (fd == -1)
                 {
                     perror("open_file failed\n");
                 }
                 else
                 {
-                    printf("Fichier ouvert avec succees\n");
+                    printf("Fichier ouvert avec le descripteur de fichier:%d\n", fd);
                 }
                 continue;
             }
         }
         else if (strcmp(args[0], "close_file") == 0)
         {
-            if (args[1] == 0)
+            if (args[1] == NULL)
             {
-                printf("Il faut indiquer un nom de fichier\n");
+                printf("Il faut indiquer un descripteur\n");
             }
             else
             {
-                int fd = fs_close_file(&fs, fd);
-                printf("Descripteur de fichier:%d\n", fd);
-                if (fd == -1)
+                int fd = atoi(args[1]);
+                if(fs_close_file(&fs,fd)==0)
                 {
-                    perror("close_file failed\n");
+                printf("Fichier fermé de descripteur:%d\n", fd);
                 }
-                else
-                {
-                    printf("Fichier ferme avec succee\n");
+                else{
+                    perror("Erreur lors de la fermeture du fichier\n");
                 }
-                continue;
+                    continue;
             }
-        }
+    }
         else if (strcmp(args[0], "tree") == 0)
         {
             char path[MAX_PATH_LEN];
