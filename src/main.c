@@ -540,8 +540,15 @@ int main()
             }
             else
             {
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
                 uint16_t permissions = strtol(args[2], NULL, 8); // Convertir les permissions en octal
-                Inode *inode = get_inode_by_path(&fs, args[1]);  // Fonction pour récupérer l'inode par chemin
+                Inode *inode = get_inode_by_path(&fs, path);  // Fonction pour récupérer l'inode par chemin
                 if (inode == NULL)
                 {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
@@ -590,9 +597,16 @@ int main()
             }
             else
             {
+                char path[MAX_PATH_LEN];
+                if (is_relative_path(args[1])) {
+                    resolve_relative_path(&fs, args[1], path, sizeof(path));
+                }
+                else {
+                    strncpy(path, args[1], sizeof(path));
+                }
                 uint32_t new_owner_id = atoi(args[2]);
                 uint32_t new_group_id = atoi(args[3]);
-                Inode *inode = get_inode_by_path(&fs, args[1]); // Fonction pour récupérer l'inode par chemin
+                Inode *inode = get_inode_by_path(&fs, path); // Fonction pour récupérer l'inode par chemin
                 if (inode == NULL)
                 {
                     printf("Erreur : fichier ou répertoire introuvable : %s\n", args[1]);
