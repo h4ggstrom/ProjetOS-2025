@@ -1,7 +1,17 @@
 #ifndef LINKS_H
 #define LINKS_H
 
-#include <stddef.h> // Pour size_t
+#include <partition.h>
+
+/**
+ * @brief Crée un lien physique (hard link) vers un fichier existant
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param oldpath Chemin existant du fichier
+ * @param newpath Nouveau chemin à créer
+ * @return int 0 en cas de succès, -1 en cas d'échec
+ */
+int fs_link(FileSystem *fs, const char *oldpath, const char *newpath);
 
 /**
  * Create a hard link between two files.

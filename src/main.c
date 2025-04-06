@@ -33,7 +33,6 @@ The structure is created inside a "demo" directory at the root level of the proj
 
 // Prototype
 void display_menu();
-void build_partition(FileSystem *fs);
 void build_demo();
 void execute_cd(char **args);
 int is_string_numeric(const char *str);
@@ -331,11 +330,11 @@ int main()
                     }
                     if (remove_directory(&fs, path) == 0)
                     {
-                        printf("Répertoire \"%s\" supprimé avec succès\n",path);
+                        printf("Répertoire \"%s\" supprimé avec succès\n", path);
                     }
                     else
                     {
-                        printf("Échec de la suppression du répertoire: %s\n",path);
+                        printf("Échec de la suppression du répertoire: %s\n", path);
                     }
                 }
                 else
@@ -346,7 +345,7 @@ int main()
                     }
                     else
                     {
-                        printf("Échec de la suppression du répertoire:\n",args[1]);
+                        printf("Échec de la suppression du répertoire:\n", args[1]);
                     }
                 }
             }
@@ -361,13 +360,37 @@ int main()
             }
             else
             {
-                if (change_directory(&fs, args[1]) == 0)
+                if (args[1][0] != "/")
                 {
-                    printf("Déplacement dans le repertoire \"%s\"\n", args[1]);
+                    char path[MAX_PATH_LEN];
+                    const char *current_dir = get_current_directory(&fs);
+                    if (current_dir[0] == '/')
+                    {
+                        snprintf(path, sizeof(path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
+                    }
+                    else
+                    {
+                        snprintf(path, sizeof(path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
+                    }
+                    if (change_directory(&fs, path) == 0)
+                    {
+                        printf("Déplacement dans le répertoire \"%s\"\n", path);
+                    }
+                    else
+                    {
+                        printf("Échec du déplacement dans le répertoire: %s\n", path);
+                    }
                 }
                 else
                 {
-                    printf("Échec du déplacement dans le répertoire\n");
+                    if (change_directory(&fs, args[1]) == 0)
+                    {
+                        printf("Déplacement dans le répertoire\"%s\"\n", args[1]);
+                    }
+                    else
+                    {
+                        printf("Échec du déplacement dans le répertoire: %s\n", args[1]);
+                    }
                 }
             }
             continue;
@@ -461,13 +484,6 @@ void display_help()
     printf("  %-20s %s\n", "cd [dir]", "Changer de répertoire");
     printf("  %-20s %s\n", "build_demo", "Construire l'arborescence de démo");
     printf("  %-20s %s\n", "help", "Afficher cette aide");
-}
-
-void build_partition(FileSystem *fs)
-{
-    printf("Début du Build de la partition");
-    init_partition(fs, "image.img", 5000000, 1024);
-    printf("Build de la partition terminé");
 }
 
 int make_demo_directory(FileSystem *fs)

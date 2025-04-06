@@ -703,7 +703,7 @@ uint32_t create_file(FileSystem *fs, const char *path, uint16_t mode)
     }
 
     // 5. Allouer un nouvel inode
-    uint32_t new_inode = allocate_inode(fs);
+    uint32_t new_inode = allocate_inode(fs,FILE_REGULAR);
     if (new_inode == (uint32_t)-1)
     {
         return (uint32_t)-1;
@@ -765,24 +765,39 @@ bool split_path(const char *full_path, char *parent_path, char *filename)
 }
 
 /**
- * @brief Alloue un nouvel inode libre
- *
+ * @brief Alloue un nouvel inode
+ * 
  * @param fs Pointeur vers le système de fichiers
+ * @param type Type de fichier (FILE_REGULAR, FILE_DIRECTORY, FILE_SYMLINK)
  * @return uint32_t Numéro d'inode alloué, ou (uint32_t)-1 si erreur
  */
-
-uint32_t allocate_inode(FileSystem *fs)
-{
+uint32_t allocate_inode(FileSystem *fs, FileType type) {
     if (!fs)
         return (uint32_t)-1;
-    for (uint32_t i = 0; i < MAX_FILES; i++)
-    {
-        // Vérifie à la fois le flag is_used ET l'id
-        if (!fs->inode_table[i].is_used && fs->inode_table[i].id == 0)
-        {
-            // Marque l'inode comme utilisé
+
+    for (uint32_t i = 0; i < MAX_FILES; i++) {
+        if (!fs->inode_table[i].is_used && fs->inode_table[i].id == 0) {
+            // Initialisation complète de l'inode
             fs->inode_table[i].is_used = true;
-            fs->inode_table[i].id = i; // ID correspond à l'index
+            fs->inode_table[i].id = i;
+            fs->inode_table[i].type = type;
+            fs->inode_table[i].links_count = 1; // 1 lien par défaut
+            fs->inode_table[i].size = 0;
+            fs->inode_table[i].permissions = (type == FILE_DIRECTORY) ? 0755 : 0644;
+            fs->inode_table[i].created_at = time(NULL);
+            fs->inode_table[i].modified_at = fs->inode_table[i].created_at;
+            fs->inode_table[i].accessed_at = fs->inode_table[i].created_at;
+            
+            // Initialisation spécifique aux liens symboliques
+            if (type == FILE_SYMLINK) {
+                fs->inode_table[i].permissions = 0777; // lrwxrwxrwx
+                fs->inode_table[i].symlink_target = NULL;
+            }
+
+            // Initialisation des blocs
+            memset(fs->inode_table[i].blocks, 0, sizeof(fs->inode_table[i].blocks));
+            fs->inode_table[i].indirect_block = 0;
+
             return i;
         }
     }

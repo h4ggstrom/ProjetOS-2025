@@ -60,6 +60,15 @@ typedef struct Block
 } Block;
 
 /**
+ * @brief Type de inode possible
+ */
+typedef enum {
+    FILE_REGULAR,
+    FILE_DIRECTORY,
+    FILE_SYMLINK
+} FileType;
+
+/**
  * @struct Inode
  * @brief Represents an inode in the file system.
  *
@@ -80,6 +89,8 @@ typedef struct Inode
     uint64_t created_at;      ///< Creation timestamp
     uint64_t modified_at;     ///< Last modification timestamp
     uint64_t accessed_at;     ///< Last access timestamp
+    FileType type;          // Type de fichier
+    char *symlink_target;   // Chemin cible pour les liens symboliques
     bool is_directory;        ///< Indicates whether the inode represents a directory
     bool is_used;             ///< Indicates if the inode is allocated/used
 } Inode;
