@@ -2,7 +2,7 @@
 
 [FR] Ce projet est un gestionnaire simple de fichier, développé en C dans le cadre de l'UE Systèmes d'exploitation.
 
-[EN] This project is a simple file manager, programmed in C for pour operating system class.
+[EN] This project is a simple file manager, programmed in C for our operating system class.
 
 ## Installation
 
@@ -107,6 +107,6 @@ ProjetOS-2025/
 
 ### Auteurs | Authors
 
-- Alexandre Ledard
-- Robin de Angelis
-- Killian Treuil
+- Alexandre Ledard, L3 Informatique <alexandre.ledard@etu.cyu.fr>
+- Robin de Angelis, L3 Informatique <robin.de-angelis@etu.cyu.fr>
+- Killian Treuil, L3 Informatique <killian.treuil@etu.cyu.fr>
