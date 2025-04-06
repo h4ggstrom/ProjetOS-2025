@@ -167,31 +167,35 @@ const char* get_current_directory(FileSystem *fs) {
 
 /**
  * @brief Convertit un chemin relatif en chemin absolu
- * 
- * @param fs Pointeur vers le système de fichiers
- * @param rel_path Chemin relatif
- * @param abs_path Buffer pour le chemin absolu
- * @param size Taille du buffer
- * @return int 0 en cas de succès, -1 en cas d'échec
+ * @param fs Le système de fichiers
+ * @param relative_path Le chemin relatif
+ * @param absolute_path Buffer pour stocker le chemin absolu
+ * @param buffer_size Taille du buffer
+ * @return 0 en cas de succès, -1 en cas d'erreur
  */
-int resolve_relative_path(FileSystem *fs, const char *rel_path, char *abs_path, size_t size) {
-    if (!fs || !rel_path || !abs_path || size < 2) {
-        return -1;
+int resolve_relative_path(FileSystem *fs, const char *relative_path, char *absolute_path, size_t buffer_size) {
+    const char *current_dir = get_current_directory(fs);
+    
+    if(strcmp(current_dir, "/") == 0){
+    // Éviter les doublons de '/'
+    if (current_dir[strlen(current_dir) - 1] == '/' && relative_path[0] == '/') {
+        snprintf(absolute_path, buffer_size, "%s%s", current_dir, relative_path + 1);
+    } else if (current_dir[strlen(current_dir) - 1] != '/' && relative_path[0] != '/') {
+        snprintf(absolute_path, buffer_size, "%s/%s", current_dir, relative_path);
+    } else {
+        snprintf(absolute_path, buffer_size, "%s%s", current_dir, relative_path);
     }
-
-    if (rel_path[0] == '/') {
-        // C'est déjà un chemin absolu
-        strncpy(abs_path, rel_path, size);
-        return 0;
-    }
-
-    // Construire le chemin absolu
-    if (snprintf(abs_path, size, "%s/%s", fs->current_path, rel_path) >= (int)size) {
-        return -1; // Buffer trop petit
-    }
-
-    // Simplifier le chemin (enlever les ./ et ../ inutiles)
-    simplify_path(abs_path);
+}
+else{
+    // Éviter les doublons de '/'
+    if (current_dir[strlen(current_dir) - 1] == '/' && relative_path[0] == '/') {
+        snprintf(absolute_path, buffer_size, "%s%s", current_dir, relative_path + 1);
+    } else if (current_dir[strlen(current_dir) - 1] != '/' && relative_path[0] != '/') {
+        snprintf(absolute_path, buffer_size, "/%s/%s", current_dir, relative_path);
+    } else {
+        snprintf(absolute_path, buffer_size, "/%s%s", current_dir, relative_path);
+}
+}
     
     return 0;
 }
@@ -489,4 +493,16 @@ off_t fs_lseek(FileSystem *fs, int fd, off_t offset, int whence) {
     fdesc->current_pos = new_pos;
 
     return new_pos;
+}
+
+/**
+ * @brief Vérifie si un chemin est relatif
+ * @param path Le chemin à vérifier
+ * @return true si le chemin est relatif, false sinon
+ */
+bool is_relative_path(const char *path) {
+    if (path == NULL || strlen(path) == 0) {
+        return false; // Cas invalide,
+    }
+    return (path[0] != '/');
 }
