@@ -15,9 +15,8 @@ CC = gcc
 ## @var CFLAGS
 #  @brief Options de compilation :
 #  - -Iinclude : Chemin des headers
-#  - -Wall -Wextra : Avertissements
 #  - -g : Informations de débogage
-CFLAGS = -Iinclude -Wall -Wextra -g
+CFLAGS = -Iinclude -w -Wextra -g
 
 ## @var LDFLAGS
 #  @brief Options d'édition de liens :
@@ -120,10 +119,8 @@ $(TEST_BIN): $(TEST_OBJ_FILES) $(filter-out $(BUILD_DIR)/main.o, $(OBJ_FILES))
 #  @details Supprime :
 #  - Le répertoire build/
 #  - Le répertoire bin/
-#  - Les fichiers dans demo/
 clean:
 	rm -rf $(BUILD_DIR) $(BIN_DIR)
-	rm -rf demo/*
 
 ## @}
 
