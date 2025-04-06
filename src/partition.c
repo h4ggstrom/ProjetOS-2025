@@ -1403,25 +1403,25 @@ int remove_directory(FileSystem *fs, const char *path) {
         return -1;
     }
 
-    // 6. Trouver le répertoire parent
-    uint32_t parent_inode = dir.parent_inode; // '..' pointe vers le parent
-    if (parent_inode >= MAX_FILES) {
-        fprintf(stderr, "Répertoire parent invalide\n");
-        return -1;
-    }
-
-    // 7. Vérifier les permissions du parent
-    Inode *parent = &fs->inode_table[parent_inode];
-    if (!(parent->permissions & 0222)) {
-        fprintf(stderr, "Permission refusée\n");
-        return -1;
-    }
-
-    // 8. Extraire le nom du répertoire à supprimer
+    // 6. Extraire le chemin du répertoire parent et le nom du répertoire
     char parent_path[MAX_PATH_LEN];
     char dirname[MAX_FILENAME_LEN];
     if (!split_path(path, parent_path, dirname)) {
         fprintf(stderr, "Impossible d'extraire le nom du répertoire\n");
+        return -1;
+    }
+
+    // 7. Trouver l'inode du répertoire parent
+    uint32_t parent_inode = find_inode_by_path(fs, parent_path);
+    if (parent_inode == (uint32_t)-1) {
+        fprintf(stderr, "Répertoire parent non trouvé\n");
+        return -1;
+    }
+
+    // 8. Vérifier les permissions du parent
+    Inode *parent = &fs->inode_table[parent_inode];
+    if (!(parent->permissions & 0222)) {
+        fprintf(stderr, "Permission refusée\n");
         return -1;
     }
 
@@ -1437,8 +1437,8 @@ int remove_directory(FileSystem *fs, const char *path) {
         if (strcmp(parent_dir.names[i], dirname) == 0 && parent_dir.entries[i] == dir_inode) {
             // Décaler les entrées suivantes
             for (uint32_t j = i; j < parent_dir.entry_count - 1; j++) {
-                parent_dir.entries[j] = parent_dir.entries[j+1];
-                strcpy(parent_dir.names[j], parent_dir.names[j+1]);
+                parent_dir.entries[j] = parent_dir.entries[j + 1];
+                strcpy(parent_dir.names[j], parent_dir.names[j + 1]);
             }
             parent_dir.entry_count--;
             found = true;
