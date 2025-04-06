@@ -15,7 +15,6 @@ The structure is created inside a "demo" directory at the root level of the proj
  * - Killian Treuil (%)
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -89,7 +88,7 @@ int main()
     while (1)
     {
         // Afficher le prompt
-        printf("Tapez \"help\" pour afficher l'aide\nmyshell> ");
+        printf("myshell>");
         fflush(stdout);
 
         // Lire la ligne de commande
@@ -119,6 +118,7 @@ int main()
 
         if (args[0] == NULL)
         {
+            printf("Tapez \"help\" pour afficher l'aide\n");
             continue;
         }
         else if (strcmp(args[0], "help") == 0)
@@ -139,15 +139,13 @@ int main()
         else if (strcmp(args[0], "build") == 0)
         {
             printf("Début du Build de la partition\n");
-            init_partition(&fs, "image.img", 524288, 16384);
+            init_partition(&fs, "image.img", 16777216, 16384);
             printf("Build de la partition terminé\n");
             continue;
         }
         else if (strcmp(args[0], "load") == 0)
         {
-            printf("Test chargement de la partition\n");
             load_partition(&fs, "image.img");
-            printf("Chargement de la partition terminé\n");
             continue;
         }
         else if (strcmp(args[0], "getcwd") == 0)
@@ -163,16 +161,40 @@ int main()
             }
             else
             {
-                uint32_t new_file = create_file(&fs, args[1],
-                                                S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
-                if (new_file != (uint32_t)-1)
+                if (args[1][0] != "/")
                 {
-                    printf("Fichier créé avec inode %u\n", new_file);
+                    char path[MAX_PATH_LEN];
+                    const char *current_dir = get_current_directory(&fs);
+                    if (current_dir[0] == '/')
+                    {
+                        snprintf(path, sizeof(path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
+                    }
+                    else
+                    {
+                        snprintf(path, sizeof(path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
+                    }
+                    uint32_t new_file = create_file(&fs, path, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+                    if (new_file != (uint32_t)-1)
+                    {
+                        printf("Fichier créé avec inode %u\n", new_file);
+                    }
+                    else
+                    {
+                        printf("Échec de la création du fichier\n");
+                    }
                 }
                 else
                 {
-                    printf("Échec de la création du fichier\n");
-                };
+                    uint32_t new_file = create_file(&fs, args[1], S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+                    if (new_file != (uint32_t)-1)
+                    {
+                        printf("Fichier créé avec inode %u\n", new_file);
+                    }
+                    else
+                    {
+                        printf("Échec de la création du fichier\n");
+                    };
+                }
                 continue;
             }
         }
@@ -184,13 +206,18 @@ int main()
             }
             else
             {
-               int fd = fs_open_file(&fs,args[1],O_RDWR);
-               printf("Descripteur de fichier:%d\n",fd);
-               if (fd == -1) {
-                perror("open_file failed\n");
+                int fd = fs_open_file(&fs, args[1], O_RDWR);
+                printf("Descripteur de fichier:%d\n", fd);
+                if (fd == -1)
+                {
+                    perror("open_file failed\n");
+                }
+                else
+                {
+                    printf("Fichier ouvert avec succees\n");
+                }
+                continue;
             }
-            else{printf("Fichier ouvert avec succees\n");}
-            continue;}
         }
         else if (strcmp(args[0], "close_file") == 0)
         {
@@ -200,12 +227,18 @@ int main()
             }
             else
             {
-               int fd = fs_close_file(&fs,fd);
-               printf("Descripteur de fichier:%d\n",fd);
-               if (fd == -1) {
-                perror("close_file failed\n");
-            }else{printf("Fichier ferme avec succee\n");}
-            continue;}
+                int fd = fs_close_file(&fs, fd);
+                printf("Descripteur de fichier:%d\n", fd);
+                if (fd == -1)
+                {
+                    perror("close_file failed\n");
+                }
+                else
+                {
+                    printf("Fichier ferme avec succee\n");
+                }
+                continue;
+            }
         }
         else if (strcmp(args[0], "tree") == 0)
         {
@@ -222,11 +255,11 @@ int main()
                 {
                     snprintf(path, sizeof(path), "/%s", current_dir); // Ajoute un "/" seulement si nécessaire
                 }
-                tree(&fs, path,MAX_PATH_DEPTH);
+                tree(&fs, path, MAX_PATH_DEPTH);
             }
-            else if(!args[1] == NULL)
+            else if (!args[1] == NULL)
             {
-                tree(&fs,args[1],MAX_PATH_DEPTH);
+                tree(&fs, args[1], MAX_PATH_DEPTH);
             }
             continue;
         }
@@ -235,63 +268,91 @@ int main()
         {
             if (args[1] == 0)
             {
-                printf("Il faut indiquer un nom de repertoire\n");
+                printf("Il faut indiquer un nom de répertoire\n");
             }
             else
             {
-                // Créer un répertoire avec les permissions par défaut (0755)
-                char *path_copy = strdup(args[1]);
-                uint32_t dir_inode = create_directory(&fs, path_copy, 0755);
-                if (dir_inode == (uint32_t)-1)
+                if (args[1][0] != "/")
                 {
-                    printf("Échec de la création du répertoire\n");
+                    char path[MAX_PATH_LEN];
+                    const char *current_dir = get_current_directory(&fs);
+                    if (current_dir[0] == '/')
+                    {
+                        snprintf(path, sizeof(path), "%s%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
+                    }
+                    else
+                    {
+                        snprintf(path, sizeof(path), "/%s%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
+                    }
+                    uint32_t new_directory = create_directory(&fs, path, 0755);
+                    if (new_directory != (uint32_t)-1)
+                    {
+                        printf("Repertoire créé avec l'inode %u\n", new_directory);
+                    }
+                    else
+                    {
+                        printf("Échec de la création du repertoire\n");
+                    }
                 }
                 else
                 {
-                    printf("Répertoire créé avec succès (inode %u)\n", dir_inode);
+                    uint32_t new_directory = create_directory(&fs, args[1], 0755);
+                    if (new_directory != (uint32_t)-1)
+                    {
+                        printf("Fichier créé avec inode %u\n", new_directory);
+                    }
+                    else
+                    {
+                        printf("Échec de la création du fichier\n");
+                    };
                 }
             }
             continue;
         }
         else if (strcmp(args[0], "remove_directory") == 0)
         {
-            if (args[1] == NULL)
+            if (args[1] == 0)
             {
-                printf("Il faut indiquer un répertoire à supprimer\n");
+                printf("Il faut indiquer un nom de répertoire\n");
             }
             else
             {
-                if (remove_directory(&fs, args[1]) == 0)
+                if (args[1][0] != "/")
                 {
-                    printf("Répertoire \"%s\" supprimé avec succès\n", args[1]);
+                    char path[MAX_PATH_LEN];
+                    const char *current_dir = get_current_directory(&fs);
+                    if (current_dir[0] == '/')
+                    {
+                        snprintf(path, sizeof(path), "%s/%s", current_dir, args[1]); // Garde le chemin tel quel (déjà absolu)
+                    }
+                    else
+                    {
+                        snprintf(path, sizeof(path), "/%s/%s", current_dir, args[1]); // Ajoute un "/" seulement si nécessaire
+                    }
+                    if (remove_directory(&fs, path) == 0)
+                    {
+                        printf("Répertoire \"%s\" supprimé avec succès\n",path);
+                    }
+                    else
+                    {
+                        printf("Échec de la suppression du répertoire: %s\n",path);
+                    }
                 }
                 else
                 {
-                    printf("Échec de la suppression du répertoire\n");
+                    if (remove_directory(&fs, args[1]) == 0)
+                    {
+                        printf("Répertoire \"%s\" supprimé avec succès\n", args[1]);
+                    }
+                    else
+                    {
+                        printf("Échec de la suppression du répertoire:\n",args[1]);
+                    }
                 }
             }
             continue;
         }
-        else if (strcmp(args[0], "remove_file") == 0)
-        {
-            if (args[1] == NULL)
-            {
-                printf("Il faut indiquer un fichier à supprimer\n");
-            }
-            else
-            {
-                if (remove_file(&fs, args[1]) == 0)
-                {
-                    printf("Fichier \"%s\" supprimé avec succès\n", args[1]);
-                }
-                else
-                {
-                    printf("Échec de la suppression du fichier\n");
-                }
-            }
-            continue;
-        }
-        
+
         else if (strcmp(args[0], "chdir") == 0)
         {
             if (args[1] == NULL)
@@ -409,27 +470,40 @@ void build_partition(FileSystem *fs)
     printf("Build de la partition terminé");
 }
 
-int make_demo_directory(FileSystem *fs){
+int make_demo_directory(FileSystem *fs)
+{
 
-    if (!fs) return -1;
+    if (!fs)
+        return -1;
     // Création des répertoires avec permissions 0755
-    if (create_directory(fs, "/home", 0755) == (uint32_t)-1) return -1;
-    if (create_directory(fs, "/home/user", 0755) == (uint32_t)-1) return -1;
-    if (create_directory(fs, "/home/guest", 0755) == (uint32_t)-1) return -1;
-    if (create_directory(fs, "/home/user/documents", 0755) == (uint32_t)-1) return -1;
-    if (create_directory(fs, "/home/user/photos", 0755) == (uint32_t)-1) return -1;
-    if (create_directory(fs, "/bin", 0755) == (uint32_t)-1) return -1;
-    if (create_directory(fs, "/etc", 0755) == (uint32_t)-1) return -1;
+    if (create_directory(fs, "/home", 0755) == (uint32_t)-1)
+        return -1;
+    if (create_directory(fs, "/home/user", 0755) == (uint32_t)-1)
+        return -1;
+    if (create_directory(fs, "/home/guest", 0755) == (uint32_t)-1)
+        return -1;
+    if (create_directory(fs, "/home/user/documents", 0755) == (uint32_t)-1)
+        return -1;
+    if (create_directory(fs, "/home/user/photos", 0755) == (uint32_t)-1)
+        return -1;
+    if (create_directory(fs, "/bin", 0755) == (uint32_t)-1)
+        return -1;
+    if (create_directory(fs, "/etc", 0755) == (uint32_t)-1)
+        return -1;
 
     // Création des fichiers exécutables avec permissions 0755
-    if (create_file(fs, "/bin/ls", 0755) == (uint32_t)-1) return -1;
-    if (create_file(fs, "/bin/sh", 0755) == (uint32_t)-1) return -1;
+    if (create_file(fs, "/bin/ls", 0755) == (uint32_t)-1)
+        return -1;
+    if (create_file(fs, "/bin/sh", 0755) == (uint32_t)-1)
+        return -1;
 
     // Création des fichiers de configuration avec permissions 0644
-    if (create_file(fs, "/etc/config", 0644) == (uint32_t)-1) return -1;
+    if (create_file(fs, "/etc/config", 0644) == (uint32_t)-1)
+        return -1;
 
     // Création du fichier passwd avec permissions restreintes 0600
-    if (create_file(fs, "/etc/passwd", 0600) == (uint32_t)-1) return -1;
+    if (create_file(fs, "/etc/passwd", 0600) == (uint32_t)-1)
+        return -1;
 
     return 0;
 }
