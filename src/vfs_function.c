@@ -427,3 +427,66 @@ uint32_t get_physical_block(FileSystem *fs, Inode *inode, uint32_t logical_block
 
     return (uint32_t)-1;
 }
+
+/**
+ * @brief Repositionne l'offset de lecture/écriture d'un fichier
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param fd Descripteur de fichier
+ * @param offset Décalage selon le paramètre whence
+ * @param whence Origine de positionnement (SEEK_SET, SEEK_CUR, SEEK_END)
+ * @return off_t Nouvelle position, ou -1 en cas d'erreur
+ */
+off_t fs_lseek(FileSystem *fs, int fd, off_t offset, int whence) {
+    // 1. Vérifications de base
+    if (!fs || fd < 0 || fd >= fs->max_open_files || !fs->open_files_table[fd].is_used) {
+        fprintf(stderr, "Descripteur de fichier invalide\n");
+        return -1;
+    }
+
+    FileDescriptor *fdesc = &fs->open_files_table[fd];
+    Inode *inode = &fs->inode_table[fdesc->inode_id];
+    off_t new_pos;
+
+    // 2. Calculer la nouvelle position selon 'whence'
+    switch (whence) {
+        case SEEK_SET: // Début du fichier
+            new_pos = offset;
+            break;
+
+        case SEEK_CUR: // Position actuelle
+            new_pos = fdesc->current_pos + offset;
+            break;
+
+        case SEEK_END: // Fin du fichier
+            new_pos = inode->size + offset;
+            break;
+
+        default:
+            fprintf(stderr, "Valeur 'whence' invalide\n");
+            return -1;
+    }
+
+    // 3. Validation de la nouvelle position
+    if (new_pos < 0) {
+        fprintf(stderr, "Position invalide (négative)\n");
+        return -1;
+    }
+
+    // 4. Optionnel: Autoriser le positionnement après la fin du fichier
+    // (Comportement standard Unix)
+    if (new_pos > inode->size) {
+        // Si le fichier est ouvert en écriture, étendre avec des zéros
+        if ((fdesc->mode & O_WRONLY) || (fdesc->mode & O_RDWR)) {
+            uint32_t extension = new_pos - inode->size;
+            if (extend_file(fs, inode, extension) < 0) {
+                return -1;
+            }
+        }
+    }
+
+    // 5. Mettre à jour la position
+    fdesc->current_pos = new_pos;
+
+    return new_pos;
+}

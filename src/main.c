@@ -40,6 +40,7 @@ int is_string_numeric(const char *str);
 void display_help();
 int make_demo_directory(FileSystem *fs);
 void initialize_default_user();
+int parse_seek_mode(const char *seek_str);
 
 /**
  * @brief Point d'entrée principal du shell interactif
@@ -284,6 +285,35 @@ int main()
                 else
                 {
                     printf("Lu %zd octets: %.*s\n", bytes_read, (int)bytes_read, buffer);
+                }
+            }
+            continue;
+        }
+        else if (strcmp(args[0], "lseek") == 0)
+        {
+            if (args[1] == NULL)
+            {
+                printf("Il faut indiquer un descripteur\n");
+            }
+            else if (args[2] == NULL)
+            {
+                printf("Il faut indiquer un décalage\n");
+            }
+            else if (args[3] == NULL)
+            {
+                printf("Il faut indiquer une origine de positionnement (SEEK_SET, SEEK_CUR, SEEK_END)\n");
+            }
+            else
+            {
+                int fd = atoi(args[1]);
+                int offset = atoi(args[2]);
+                int wheel = parse_seek_mode(args[3]);
+                off_t pos = fs_lseek(&fs, fd, offset, wheel);
+                if (pos == -1) {
+                    perror("Erreur de positionnement");
+                }
+                else{
+                    printf("Votre position est l'octet: %zd",pos);
                 }
             }
             continue;
@@ -864,4 +894,32 @@ void initialize_default_user()
     {
         printf("Utilisateur par défaut connecté : %s\n", get_current_user()->username);
     }
+}
+/**
+ * @brief Convertit une chaîne SEEK_* en valeur numérique
+ * 
+ * @param seek_str Chaîne à convertir ("SEEK_SET", "SEEK_CUR", "SEEK_END")
+ * @return int Valeur numérique ou -1 si invalide
+ */
+int parse_seek_mode(const char *seek_str) {
+    if (!seek_str) return -1;
+
+    if (strcmp(seek_str, "SEEK_SET") == 0) {
+        return SEEK_SET;
+    } else if (strcmp(seek_str, "SEEK_CUR") == 0) {
+        return SEEK_CUR;
+    } else if (strcmp(seek_str, "SEEK_END") == 0) {
+        return SEEK_END;
+    }
+
+    // Gestion des versions courtes si besoin
+    if (strcmp(seek_str, "SET") == 0) {
+        return SEEK_SET;
+    } else if (strcmp(seek_str, "CUR") == 0) {
+        return SEEK_CUR;
+    } else if (strcmp(seek_str, "END") == 0) {
+        return SEEK_END;
+    }
+
+    return -1; // Mode invalide
 }

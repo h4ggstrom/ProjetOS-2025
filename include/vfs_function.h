@@ -79,4 +79,15 @@ static int extend_file(FileSystem *fs, Inode *inode, uint32_t bytes_needed);
  * @brief Obtient le bloc physique correspondant à un bloc logique
  */
 uint32_t get_physical_block(FileSystem *fs, Inode *inode, uint32_t logical_block) ;
+
+/**
+ * @brief Repositionne l'offset de lecture/écriture d'un fichier
+ * 
+ * @param fs Pointeur vers le système de fichiers
+ * @param fd Descripteur de fichier
+ * @param offset Décalage selon le paramètre whence
+ * @param whence Origine de positionnement (SEEK_SET, SEEK_CUR, SEEK_END)
+ * @return off_t Nouvelle position, ou -1 en cas d'erreur
+ */
+off_t fs_lseek(FileSystem *fs, int fd, off_t offset, int whence) ;
 #endif

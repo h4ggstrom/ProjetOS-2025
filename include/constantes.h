@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+
 #ifndef MIN
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 #endif
@@ -87,6 +88,10 @@
  *         OFFSETS DANS LE DISQUE             *
  **********************************************/
 
+
+#define SEEK_SET 0 // Début du fichier
+#define SEEK_CUR 1 // Position actuelle
+#define SEEK_END 2 // Fin du fichier
 #define SUPERBLOCK_OFFSET 0
 #define INODE_TABLE_OFFSET SUPERBLOCK_SIZE
 #define BLOCK_BITMAP_OFFSET (INODE_TABLE_OFFSET + (MAX_FILES * INODE_SIZE))
