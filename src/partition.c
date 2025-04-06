@@ -1492,7 +1492,7 @@ int remove_file(FileSystem *fs, const char *path) {
     // 3. Vérifier que ce n'est pas un répertoire
     Inode *inode = &fs->inode_table[file_inode];
     if (inode->is_directory) {
-        fprintf(stderr, "Impossible de supprimer un répertoire avec unlink: %s\n", path);
+        fprintf(stderr, "Impossible de supprimer un répertoire avec remove_file: %s\n", path);
         return -1;
     }
 
@@ -1581,6 +1581,7 @@ int remove_file(FileSystem *fs, const char *path) {
         // Réinitialiser l'inode
         inode->size = 0;
         inode->is_used = false;
+        inode->id = false;
         inode->modified_at = time(NULL);
     }
 

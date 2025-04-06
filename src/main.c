@@ -191,7 +191,7 @@ int main()
                 else {
                     strncpy(path, args[1], sizeof(path));
                 }
-                if (remove_file(&fs,path)) {
+                if (remove_file(&fs,path)==0) {
                     printf("Fichier \"%s\"suprimmé avec succés %u\n", path);
                 } else {
                     printf("Échec de la suppression du fichier\n");
